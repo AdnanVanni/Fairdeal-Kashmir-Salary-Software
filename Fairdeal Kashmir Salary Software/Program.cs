@@ -12,7 +12,7 @@ namespace Fairdeal_Kashmir_Salary_Software
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        static void Main()ii
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
