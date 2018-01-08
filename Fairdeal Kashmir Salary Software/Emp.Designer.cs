@@ -55,7 +55,7 @@
             this.labelPFloanMonthlyDeduction = new System.Windows.Forms.Label();
             this.labelAdvAmt = new System.Windows.Forms.Label();
             this.labelAdvancedMonthlyDeduction = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textMonthlySalary = new System.Windows.Forms.TextBox();
             this.textPFLW = new System.Windows.Forms.TextBox();
             this.textPFMD = new System.Windows.Forms.TextBox();
             this.textAACD = new System.Windows.Forms.TextBox();
@@ -71,7 +71,6 @@
             this.labelFName.Size = new System.Drawing.Size(57, 13);
             this.labelFName.TabIndex = 0;
             this.labelFName.Text = "First Name";
-            this.labelFName.Click += new System.EventHandler(this.label1_Click);
             // 
             // labelLName
             // 
@@ -81,7 +80,6 @@
             this.labelLName.Size = new System.Drawing.Size(58, 13);
             this.labelLName.TabIndex = 1;
             this.labelLName.Text = "Last Name";
-            this.labelLName.Click += new System.EventHandler(this.label2_Click);
             // 
             // labelAccountNumber
             // 
@@ -145,7 +143,6 @@
             this.labelPhone.Size = new System.Drawing.Size(38, 13);
             this.labelPhone.TabIndex = 8;
             this.labelPhone.Text = "Phone";
-            this.labelPhone.Click += new System.EventHandler(this.label9_Click);
             // 
             // labelEmail
             // 
@@ -162,7 +159,6 @@
             this.txtFNmame.Name = "txtFNmame";
             this.txtFNmame.Size = new System.Drawing.Size(100, 20);
             this.txtFNmame.TabIndex = 10;
-            this.txtFNmame.TextChanged += new System.EventHandler(this.txtFNmame_TextChanged);
             // 
             // textLName
             // 
@@ -170,7 +166,6 @@
             this.textLName.Name = "textLName";
             this.textLName.Size = new System.Drawing.Size(100, 20);
             this.textLName.TabIndex = 11;
-            this.textLName.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textParentage
             // 
@@ -178,7 +173,6 @@
             this.textParentage.Name = "textParentage";
             this.textParentage.Size = new System.Drawing.Size(100, 20);
             this.textParentage.TabIndex = 12;
-            this.textParentage.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textPhone
             // 
@@ -193,7 +187,6 @@
             this.textEmail.Name = "textEmail";
             this.textEmail.Size = new System.Drawing.Size(100, 20);
             this.textEmail.TabIndex = 14;
-            this.textEmail.TextChanged += new System.EventHandler(this.textEmail_TextChanged);
             // 
             // textResidence
             // 
@@ -208,7 +201,6 @@
             this.textDesignation.Name = "textDesignation";
             this.textDesignation.Size = new System.Drawing.Size(100, 20);
             this.textDesignation.TabIndex = 18;
-            this.textDesignation.TextChanged += new System.EventHandler(this.textDesignation_TextChanged);
             // 
             // textAcc
             // 
@@ -297,12 +289,12 @@
             this.labelAdvancedMonthlyDeduction.TabIndex = 28;
             this.labelAdvancedMonthlyDeduction.Text = "Advanced Amount Monthly Deduction";
             // 
-            // textBox1
+            // textMonthlySalary
             // 
-            this.textBox1.Location = new System.Drawing.Point(117, 320);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 29;
+            this.textMonthlySalary.Location = new System.Drawing.Point(117, 320);
+            this.textMonthlySalary.Name = "textMonthlySalary";
+            this.textMonthlySalary.Size = new System.Drawing.Size(100, 20);
+            this.textMonthlySalary.TabIndex = 29;
             // 
             // textPFLW
             // 
@@ -340,8 +332,9 @@
             this.btnSave.TabIndex = 34;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // Form1
+            // Emp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -351,7 +344,7 @@
             this.Controls.Add(this.textAACD);
             this.Controls.Add(this.textPFMD);
             this.Controls.Add(this.textPFLW);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textMonthlySalary);
             this.Controls.Add(this.labelAdvancedMonthlyDeduction);
             this.Controls.Add(this.labelAdvAmt);
             this.Controls.Add(this.labelPFloanMonthlyDeduction);
@@ -379,7 +372,7 @@
             this.Controls.Add(this.labelAccountNumber);
             this.Controls.Add(this.labelLName);
             this.Controls.Add(this.labelFName);
-            this.Name = "Form1";
+            this.Name = "Emp";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -399,7 +392,6 @@
         private System.Windows.Forms.Label labelPhone;
         private System.Windows.Forms.Label labelEmail;
         private System.Windows.Forms.TextBox txtFNmame;
-        private System.Windows.Forms.TextBox textLName;
         private System.Windows.Forms.TextBox textParentage;
         private System.Windows.Forms.TextBox textPhone;
         private System.Windows.Forms.TextBox textEmail;
@@ -415,12 +407,13 @@
         private System.Windows.Forms.Label labelPFloanMonthlyDeduction;
         private System.Windows.Forms.Label labelAdvAmt;
         private System.Windows.Forms.Label labelAdvancedMonthlyDeduction;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textMonthlySalary;
         private System.Windows.Forms.TextBox textPFLW;
         private System.Windows.Forms.TextBox textPFMD;
         private System.Windows.Forms.TextBox textAACD;
         private System.Windows.Forms.TextBox textAAMD;
         private System.Windows.Forms.Button btnSave;
+        public System.Windows.Forms.TextBox textLName;
     }
 }
 

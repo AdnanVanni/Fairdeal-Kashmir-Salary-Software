@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Fairdeal_Kashmir_Salary_Software
 {
@@ -19,47 +20,18 @@ namespace Fairdeal_Kashmir_Salary_Software
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textDesignation_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
             
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        
+       
+        private void btnSave_Click(object sender, EventArgs e)
         {
 
-        }
+            SqlCommand cmd = new SqlCommand();
+           cmd.CommandText= "select * from employee";
+            DataManager.executeNonQuery(cmd);
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        private void txtFNmame_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textEmail_TextChanged(object sender, EventArgs e)
-        {
-this is A TEST
         }
     }
 }
