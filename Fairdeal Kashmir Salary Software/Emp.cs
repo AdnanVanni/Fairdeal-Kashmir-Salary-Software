@@ -20,22 +20,30 @@ namespace Fairdeal_Kashmir_Salary_Software
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            gfhgfhgf
         }
         
        
         private void btnSave_Click(object sender, EventArgs e)
         {
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "insert into employee values @EmpFname, @EmpLname, @AccNumber, @Department,@JoinDate,@SalaryPerMonth,@EmpType,@Designation,@AdvanceAmt,@PFloanWithdrawn,@MonthlyAdvAmountSubtracted],@MonthlyPFLoansubtracted,@Phone,@Email  ";
+            cmd.CommandText = "insert into employee values( @EmpFname, @EmpLname, @AccNumber, @Department,@JoinDate,@SalaryPerMonth,@EmpType,@Designation,@AdvanceAmt,@PFloanWithdrawn,@MonthlyAdvAmountSubtracted,@MonthlyPFLoansubtracted,@Phone,@Email");
 
-            
-            cmd.Parameters.Add("Id", txtFNmame).Value = "00A640BD-1A0D-499D-9155-BA2B626D7B68";
-            //cmd.Parameters.Add("AccountId", SqlDbType.NVarChar).Value = "DCBA241B-2B06-48D7-9AC1-6E277FBB1C2A";
-            //cmd.Parameters.Add("FirstName", SqlDbType.NVarChar).Value = "Mark";
-            //cmd.Parameters.Add("LastName", SqlDbType.NVarChar).Value = "Wahlberg";
-            //cmd.Parameters.Add("JobTitle", SqlDbType.NVarChar).Value = "Actor";
-            //cmd.Parameters.Add("PhoneNumber", SqlDbType.NVarChar).Value = "9889898989";
+
+            cmd.Parameters.AddWithValue("@EmpFname", txtFNmame.Text);
+            cmd.Parameters.AddWithValue("@EmpLname", textLName.Text);
+            cmd.Parameters.AddWithValue("@AccNumber", textAcc.Text);
+            cmd.Parameters.AddWithValue("@Department", textDpt.Text);
+            cmd.Parameters.AddWithValue("@JoinDate", dateTimePicker1.Text);
+            cmd.Parameters.AddWithValue("@SalaryPerMonth",textMonthlySalary.Text);
+            cmd.Parameters.AddWithValue("@EmpType", txtFNmame.Text);
+            cmd.Parameters.AddWithValue("@Designation", textLName.Text);
+            cmd.Parameters.AddWithValue("@AdvanceAmt",textAACD .Text);
+            cmd.Parameters.AddWithValue("@PFloanWithdrawn", textPFLW.Text);
+            cmd.Parameters.AddWithValue("@MonthlyAdvAmountSubtracted", textAAMD.Text);
+            cmd.Parameters.AddWithValue("@MonthlyPFLoansubtracted",textPFMD.Text);
+            cmd.Parameters.AddWithValue("@phone",textPhone.Text);
+            cmd.Parameters.AddWithValue("@Email",textEmail.Text);
 
             return cmd.ExecuteNonQuery();
             SqlCommand cmd = new SqlCommand();
