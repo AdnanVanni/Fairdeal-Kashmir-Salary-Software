@@ -20,35 +20,59 @@ namespace Fairdeal_Kashmir_Salary_Software
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            gfhgfhgf
+            
         }
         
        
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (txtFNmame.Text == string.Empty)
+            {
+                MessageBox.Show("Please enter Employee's first name");
+                return;
+            }
+            else if (textLName.Text == string.Empty)
+            {
+                MessageBox.Show("Please enter Employee's last name");
+                return;
+            }
+            else if (textDpt.Text == string.Empty)
+            {
+                MessageBox.Show("Please enter the department");
+                return;
+            }
+            else if (textAcc.Text == string.Empty)
+            {
+                MessageBox.Show("Please enter account number!");
+                return;
+            }
+           
+            else { 
+           
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "insert into employee values( @EmpFname, @EmpLname, @AccNumber, @Department,@JoinDate,@SalaryPerMonth,@EmpType,@Designation,@AdvanceAmt,@PFloanWithdrawn,@MonthlyAdvAmountSubtracted,@MonthlyPFLoansubtracted,@Phone,@Email");
+                cmd.CommandText = "insert into departments values (@EmpFname, @EmpLname, @AccNumber, @Department, @JoinDate, @SalaryPerMonth, @EmpType, @Designation, @AdvanceAmt, @PFloanWithdrawn, @MonthlyAdvAmountSubtracted, @MonthlyPFLoansubtracted, @Phone, @Email,@Parentage)";
 
 
-            cmd.Parameters.AddWithValue("@EmpFname", txtFNmame.Text);
-            cmd.Parameters.AddWithValue("@EmpLname", textLName.Text);
-            cmd.Parameters.AddWithValue("@AccNumber", textAcc.Text);
-            cmd.Parameters.AddWithValue("@Department", textDpt.Text);
-            cmd.Parameters.AddWithValue("@JoinDate", dateTimePicker1.Text);
-            cmd.Parameters.AddWithValue("@SalaryPerMonth",textMonthlySalary.Text);
-            cmd.Parameters.AddWithValue("@EmpType", txtFNmame.Text);
-            cmd.Parameters.AddWithValue("@Designation", textLName.Text);
-            cmd.Parameters.AddWithValue("@AdvanceAmt",textAACD .Text);
-            cmd.Parameters.AddWithValue("@PFloanWithdrawn", textPFLW.Text);
-            cmd.Parameters.AddWithValue("@MonthlyAdvAmountSubtracted", textAAMD.Text);
-            cmd.Parameters.AddWithValue("@MonthlyPFLoansubtracted",textPFMD.Text);
-            cmd.Parameters.AddWithValue("@phone",textPhone.Text);
-            cmd.Parameters.AddWithValue("@Email",textEmail.Text);
-
-            return cmd.ExecuteNonQuery();
-            SqlCommand cmd = new SqlCommand();
-           cmd.CommandText= "select * from employee";
-            DataManager.executeDataset(cmd);
+                cmd.Parameters.AddWithValue("@EmpFname", txtFNmame.Text);
+                cmd.Parameters.AddWithValue("@EmpLname", textLName.Text);
+                cmd.Parameters.AddWithValue("@AccNumber", textAcc.Text);
+                cmd.Parameters.AddWithValue("@Department", textDpt.Text);
+                cmd.Parameters.AddWithValue("@JoinDate", dateTimePicker1.Text);
+                cmd.Parameters.AddWithValue("@SalaryPerMonth", textMonthlySalary.Text);
+                cmd.Parameters.AddWithValue("@EmpType", txtFNmame.Text);
+                cmd.Parameters.AddWithValue("@Designation", textLName.Text);
+                cmd.Parameters.AddWithValue("@AdvanceAmt", textAACD.Text);
+                cmd.Parameters.AddWithValue("@PFloanWithdrawn", textPFLW.Text);
+                cmd.Parameters.AddWithValue("@MonthlyAdvAmountSubtracted", textAAMD.Text);
+                cmd.Parameters.AddWithValue("@MonthlyPFLoansubtracted", textPFMD.Text);
+                cmd.Parameters.AddWithValue("@phone", textPhone.Text);
+                cmd.Parameters.AddWithValue("@Email", textEmail.Text);
+                cmd.Parameters.AddWithValue("@Parentage", textParentage.Text);
+                cmd.Parameters.AddWithValue("@Residence",textResidence.Text);
+                cmd.Connection = new SqlConnection();
+                DataManager.executeNonQuery(cmd);
+            }
+           
             txtFNmame.Text = "done";
 
         }
