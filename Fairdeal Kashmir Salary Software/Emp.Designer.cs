@@ -61,6 +61,12 @@
             this.textAACD = new System.Windows.Forms.TextBox();
             this.textAAMD = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.editEmployeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.departmentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.monthlyTransactionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelFName
@@ -334,6 +340,44 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.editEmployeeToolStripMenuItem,
+            this.departmentsToolStripMenuItem,
+            this.monthlyTransactionToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(878, 24);
+            this.menuStrip1.TabIndex = 35;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(112, 20);
+            this.toolStripMenuItem1.Text = "                               ";
+            // 
+            // editEmployeeToolStripMenuItem
+            // 
+            this.editEmployeeToolStripMenuItem.Name = "editEmployeeToolStripMenuItem";
+            this.editEmployeeToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
+            this.editEmployeeToolStripMenuItem.Text = " Employee";
+            this.editEmployeeToolStripMenuItem.Click += new System.EventHandler(this.editEmployeeToolStripMenuItem_Click);
+            // 
+            // departmentsToolStripMenuItem
+            // 
+            this.departmentsToolStripMenuItem.Name = "departmentsToolStripMenuItem";
+            this.departmentsToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
+            this.departmentsToolStripMenuItem.Text = "Departments";
+            // 
+            // monthlyTransactionToolStripMenuItem
+            // 
+            this.monthlyTransactionToolStripMenuItem.Name = "monthlyTransactionToolStripMenuItem";
+            this.monthlyTransactionToolStripMenuItem.Size = new System.Drawing.Size(128, 20);
+            this.monthlyTransactionToolStripMenuItem.Text = "Monthly Transaction";
+            // 
             // Emp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -372,8 +416,12 @@
             this.Controls.Add(this.labelAccountNumber);
             this.Controls.Add(this.labelLName);
             this.Controls.Add(this.labelFName);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Emp";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -414,6 +462,11 @@
         private System.Windows.Forms.TextBox textAAMD;
         private System.Windows.Forms.Button btnSave;
         public System.Windows.Forms.TextBox textLName;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem editEmployeeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem departmentsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem monthlyTransactionToolStripMenuItem;
     }
 }
 

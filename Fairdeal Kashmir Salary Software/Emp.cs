@@ -20,7 +20,8 @@ namespace Fairdeal_Kashmir_Salary_Software
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            this.Location = new Point(0, 0);
+            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
         }
         
        
@@ -75,6 +76,14 @@ namespace Fairdeal_Kashmir_Salary_Software
            
             txtFNmame.Text = "done";
 
+        }
+
+        private void editEmployeeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Emp emp = new Emp();
+            emp.Tag = this;
+            emp.Show(this);
+            Hide();
         }
     }
 }
