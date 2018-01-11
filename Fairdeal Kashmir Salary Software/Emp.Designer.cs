@@ -64,8 +64,11 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.editEmployeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addEmployeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.departmentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addDepartmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.monthlyTransactionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.createMonthsTransactionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -301,6 +304,7 @@
             this.textMonthlySalary.Name = "textMonthlySalary";
             this.textMonthlySalary.Size = new System.Drawing.Size(100, 20);
             this.textMonthlySalary.TabIndex = 29;
+            this.textMonthlySalary.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textMonthlySalary_KeyPress);
             // 
             // textPFLW
             // 
@@ -308,6 +312,7 @@
             this.textPFLW.Name = "textPFLW";
             this.textPFLW.Size = new System.Drawing.Size(100, 20);
             this.textPFLW.TabIndex = 30;
+            this.textPFLW.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textPFLW_KeyPress);
             // 
             // textPFMD
             // 
@@ -315,6 +320,7 @@
             this.textPFMD.Name = "textPFMD";
             this.textPFMD.Size = new System.Drawing.Size(100, 20);
             this.textPFMD.TabIndex = 31;
+            this.textPFMD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textPFMD_KeyPress);
             // 
             // textAACD
             // 
@@ -322,6 +328,7 @@
             this.textAACD.Name = "textAACD";
             this.textAACD.Size = new System.Drawing.Size(100, 20);
             this.textAACD.TabIndex = 32;
+            this.textAACD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textAACD_KeyPress);
             // 
             // textAAMD
             // 
@@ -329,6 +336,7 @@
             this.textAAMD.Name = "textAAMD";
             this.textAAMD.Size = new System.Drawing.Size(100, 20);
             this.textAAMD.TabIndex = 33;
+            this.textAAMD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textAAMD_KeyPress);
             // 
             // btnSave
             // 
@@ -361,22 +369,49 @@
             // 
             // editEmployeeToolStripMenuItem
             // 
+            this.editEmployeeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addEmployeeToolStripMenuItem});
             this.editEmployeeToolStripMenuItem.Name = "editEmployeeToolStripMenuItem";
             this.editEmployeeToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
             this.editEmployeeToolStripMenuItem.Text = " Employee";
             this.editEmployeeToolStripMenuItem.Click += new System.EventHandler(this.editEmployeeToolStripMenuItem_Click);
             // 
+            // addEmployeeToolStripMenuItem
+            // 
+            this.addEmployeeToolStripMenuItem.Name = "addEmployeeToolStripMenuItem";
+            this.addEmployeeToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.addEmployeeToolStripMenuItem.Text = "Add Employee";
+            this.addEmployeeToolStripMenuItem.Click += new System.EventHandler(this.addEmployeeToolStripMenuItem_Click);
+            // 
             // departmentsToolStripMenuItem
             // 
+            this.departmentsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addDepartmentToolStripMenuItem});
             this.departmentsToolStripMenuItem.Name = "departmentsToolStripMenuItem";
             this.departmentsToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
             this.departmentsToolStripMenuItem.Text = "Departments";
             // 
+            // addDepartmentToolStripMenuItem
+            // 
+            this.addDepartmentToolStripMenuItem.Name = "addDepartmentToolStripMenuItem";
+            this.addDepartmentToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.addDepartmentToolStripMenuItem.Text = "Add Department";
+            this.addDepartmentToolStripMenuItem.Click += new System.EventHandler(this.addDepartmentToolStripMenuItem_Click);
+            // 
             // monthlyTransactionToolStripMenuItem
             // 
+            this.monthlyTransactionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.createMonthsTransactionToolStripMenuItem});
             this.monthlyTransactionToolStripMenuItem.Name = "monthlyTransactionToolStripMenuItem";
             this.monthlyTransactionToolStripMenuItem.Size = new System.Drawing.Size(128, 20);
             this.monthlyTransactionToolStripMenuItem.Text = "Monthly Transaction";
+            // 
+            // createMonthsTransactionToolStripMenuItem
+            // 
+            this.createMonthsTransactionToolStripMenuItem.Name = "createMonthsTransactionToolStripMenuItem";
+            this.createMonthsTransactionToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.createMonthsTransactionToolStripMenuItem.Text = "Create Month\'sTransaction";
+            this.createMonthsTransactionToolStripMenuItem.Click += new System.EventHandler(this.createMonthsTransactionToolStripMenuItem_Click);
             // 
             // Emp
             // 
@@ -467,6 +502,9 @@
         private System.Windows.Forms.ToolStripMenuItem editEmployeeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem departmentsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem monthlyTransactionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addEmployeeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addDepartmentToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem createMonthsTransactionToolStripMenuItem;
     }
 }
 

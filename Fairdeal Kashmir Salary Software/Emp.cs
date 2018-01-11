@@ -22,6 +22,7 @@ namespace Fairdeal_Kashmir_Salary_Software
         {
             this.Location = new Point(0, 0);
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+            
         }
         
        
@@ -85,5 +86,103 @@ namespace Fairdeal_Kashmir_Salary_Software
             emp.Show(this);
             Hide();
         }
+      
+        private void textMonthlySalary_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+                   (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textPFMD_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+                   (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textAACD_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+                   (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textAAMD_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+                   (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textPFLW_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+                   (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void addEmployeeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Emp emp1 = new Emp();
+            emp1.Show();
+            this.Hide();
+        }
+
+        private void addDepartmentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Deptt d = new Deptt();
+            d.Show();
+            this.Hide();
+        }
+
+        private void createMonthsTransactionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Monthly_Transaction m = new Monthly_Transaction();
+            m.Show();
+            this.Hide();
+        }
+
+        
     }
 }
