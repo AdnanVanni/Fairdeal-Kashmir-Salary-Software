@@ -295,6 +295,7 @@
             this.textMonthlySalary.Name = "textMonthlySalary";
             this.textMonthlySalary.Size = new System.Drawing.Size(100, 20);
             this.textMonthlySalary.TabIndex = 29;
+            this.textMonthlySalary.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textMonthlySalary_KeyPress);
             // 
             // textPFLW
             // 
