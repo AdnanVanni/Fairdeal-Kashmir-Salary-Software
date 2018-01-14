@@ -32,12 +32,12 @@
             this.lblTdc = new System.Windows.Forms.Label();
             this.lblMonth = new System.Windows.Forms.Label();
             this.lblEmployeeNamee = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtFine = new System.Windows.Forms.TextBox();
+            this.txtTdc = new System.Windows.Forms.TextBox();
             this.Ename = new System.Windows.Forms.ComboBox();
             this.comboBoxYear = new System.Windows.Forms.ComboBox();
             this.comboBoxMonth = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCalcSalary = new System.Windows.Forms.Button();
             this.lbLMPFLS = new System.Windows.Forms.Label();
             this.txtMPFLS = new System.Windows.Forms.TextBox();
             this.txtNetSalary = new System.Windows.Forms.TextBox();
@@ -88,19 +88,21 @@
             this.lblEmployeeNamee.TabIndex = 8;
             this.lblEmployeeNamee.Text = "Employee";
             // 
-            // textBox3
+            // txtFine
             // 
-            this.textBox3.Location = new System.Drawing.Point(217, 307);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(121, 20);
-            this.textBox3.TabIndex = 15;
+            this.txtFine.Location = new System.Drawing.Point(217, 307);
+            this.txtFine.Name = "txtFine";
+            this.txtFine.Size = new System.Drawing.Size(121, 20);
+            this.txtFine.TabIndex = 15;
+            this.txtFine.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFine_KeyPress);
             // 
-            // textBox4
+            // txtTdc
             // 
-            this.textBox4.Location = new System.Drawing.Point(217, 340);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(121, 20);
-            this.textBox4.TabIndex = 16;
+            this.txtTdc.Location = new System.Drawing.Point(217, 340);
+            this.txtTdc.Name = "txtTdc";
+            this.txtTdc.Size = new System.Drawing.Size(121, 20);
+            this.txtTdc.TabIndex = 16;
+            this.txtTdc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTdc_KeyPress);
             // 
             // Ename
             // 
@@ -110,6 +112,7 @@
             this.Ename.Name = "Ename";
             this.Ename.Size = new System.Drawing.Size(121, 21);
             this.Ename.TabIndex = 18;
+            this.Ename.Click += new System.EventHandler(this.Ename_Click);
             // 
             // comboBoxYear
             // 
@@ -184,14 +187,14 @@
             this.comboBoxMonth.Size = new System.Drawing.Size(84, 21);
             this.comboBoxMonth.TabIndex = 20;
             // 
-            // button1
+            // btnCalcSalary
             // 
-            this.button1.Location = new System.Drawing.Point(128, 432);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(130, 23);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "Calculate Salary";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCalcSalary.Location = new System.Drawing.Point(128, 432);
+            this.btnCalcSalary.Name = "btnCalcSalary";
+            this.btnCalcSalary.Size = new System.Drawing.Size(130, 23);
+            this.btnCalcSalary.TabIndex = 21;
+            this.btnCalcSalary.Text = "Calculate Salary";
+            this.btnCalcSalary.UseVisualStyleBackColor = true;
             // 
             // lbLMPFLS
             // 
@@ -208,13 +211,15 @@
             this.txtMPFLS.Name = "txtMPFLS";
             this.txtMPFLS.Size = new System.Drawing.Size(121, 20);
             this.txtMPFLS.TabIndex = 23;
+            this.txtMPFLS.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMPFLS_KeyPress);
             // 
             // txtNetSalary
             // 
-            this.txtNetSalary.Location = new System.Drawing.Point(307, 435);
+            this.txtNetSalary.Location = new System.Drawing.Point(291, 432);
             this.txtNetSalary.Name = "txtNetSalary";
             this.txtNetSalary.Size = new System.Drawing.Size(130, 20);
             this.txtNetSalary.TabIndex = 24;
+            this.txtNetSalary.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNetSalary_KeyPress);
             // 
             // txtSaveRecord
             // 
@@ -224,6 +229,7 @@
             this.txtSaveRecord.TabIndex = 25;
             this.txtSaveRecord.Text = "Save Record";
             this.txtSaveRecord.UseVisualStyleBackColor = true;
+            this.txtSaveRecord.Click += new System.EventHandler(this.txtSaveRecord_Click);
             // 
             // lblMemo
             // 
@@ -248,6 +254,7 @@
             this.txtPF.Name = "txtPF";
             this.txtPF.Size = new System.Drawing.Size(121, 20);
             this.txtPF.TabIndex = 29;
+            this.txtPF.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPF_KeyPress);
             // 
             // txtAAMD
             // 
@@ -255,6 +262,7 @@
             this.txtAAMD.Name = "txtAAMD";
             this.txtAAMD.Size = new System.Drawing.Size(121, 20);
             this.txtAAMD.TabIndex = 31;
+            this.txtAAMD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAAMD_KeyPress);
             // 
             // label2
             // 
@@ -268,7 +276,7 @@
             // lblPFCalc
             // 
             this.lblPFCalc.AutoSize = true;
-            this.lblPFCalc.Location = new System.Drawing.Point(116, 180);
+            this.lblPFCalc.Location = new System.Drawing.Point(126, 180);
             this.lblPFCalc.Name = "lblPFCalc";
             this.lblPFCalc.Size = new System.Drawing.Size(79, 13);
             this.lblPFCalc.TabIndex = 34;
@@ -280,6 +288,7 @@
             this.txtMonthlySalary.Name = "txtMonthlySalary";
             this.txtMonthlySalary.Size = new System.Drawing.Size(121, 20);
             this.txtMonthlySalary.TabIndex = 30;
+            this.txtMonthlySalary.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMonthlySalary_KeyPress);
             // 
             // lblActualSalary
             // 
@@ -307,12 +316,12 @@
             this.Controls.Add(this.txtNetSalary);
             this.Controls.Add(this.txtMPFLS);
             this.Controls.Add(this.lbLMPFLS);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnCalcSalary);
             this.Controls.Add(this.comboBoxMonth);
             this.Controls.Add(this.comboBoxYear);
             this.Controls.Add(this.Ename);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtTdc);
+            this.Controls.Add(this.txtFine);
             this.Controls.Add(this.lblEmployeeNamee);
             this.Controls.Add(this.lblMonth);
             this.Controls.Add(this.lblTdc);
@@ -330,12 +339,12 @@
         private System.Windows.Forms.Label lblTdc;
         private System.Windows.Forms.Label lblMonth;
         private System.Windows.Forms.Label lblEmployeeNamee;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtFine;
+        private System.Windows.Forms.TextBox txtTdc;
         private System.Windows.Forms.ComboBox Ename;
         private System.Windows.Forms.ComboBox comboBoxYear;
         private System.Windows.Forms.ComboBox comboBoxMonth;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCalcSalary;
         private System.Windows.Forms.Label lbLMPFLS;
         private System.Windows.Forms.TextBox txtMPFLS;
         private System.Windows.Forms.TextBox txtNetSalary;
