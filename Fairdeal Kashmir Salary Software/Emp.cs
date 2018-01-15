@@ -28,16 +28,12 @@ namespace Fairdeal_Kashmir_Salary_Software
        
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtFNmame.Text == string.Empty)
+            if (txtName.Text == string.Empty)
             {
-                MessageBox.Show("Please enter Employee's first name");
+                MessageBox.Show("Please enter Employee's name");
                 return;
             }
-            else if (textLName.Text == string.Empty)
-            {
-                MessageBox.Show("Please enter Employee's last name");
-                return;
-            }
+            
             else if (textDpt.Text == string.Empty)
             {
                 MessageBox.Show("Please enter the department");
@@ -52,17 +48,15 @@ namespace Fairdeal_Kashmir_Salary_Software
             else { 
            
             SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "insert into departments values (@EmpFname, @EmpLname, @AccNumber, @Department, @JoinDate, @SalaryPerMonth, @EmpType, @Designation, @AdvanceAmt, @PFloanWithdrawn, @MonthlyAdvAmountSubtracted, @MonthlyPFLoansubtracted, @Phone, @Email,@Parentage)";
+                cmd.CommandText = "insert into departments values (@EmpName,  @AccNumber, @Department, @JoinDate, @SalaryPerMonth, @EmpType, @Designation, @AdvanceAmt, @PFloanWithdrawn, @MonthlyAdvAmountSubtracted, @MonthlyPFLoansubtracted, @Phone, @Email,@Parentage)";
 
 
-                cmd.Parameters.AddWithValue("@EmpFname", txtFNmame.Text);
-                cmd.Parameters.AddWithValue("@EmpLname", textLName.Text);
+                cmd.Parameters.AddWithValue("@EmpName", txtName.Text);
                 cmd.Parameters.AddWithValue("@AccNumber", textAcc.Text);
                 cmd.Parameters.AddWithValue("@Department", textDpt.Text);
                 cmd.Parameters.AddWithValue("@JoinDate", dateTimePicker1.Text);
                 cmd.Parameters.AddWithValue("@SalaryPerMonth", textMonthlySalary.Text);
-                cmd.Parameters.AddWithValue("@EmpType", txtFNmame.Text);
-                cmd.Parameters.AddWithValue("@Designation", textLName.Text);
+                cmd.Parameters.AddWithValue("@EmpType", listBoxEmpType.Text);
                 cmd.Parameters.AddWithValue("@AdvanceAmt", textAACD.Text);
                 cmd.Parameters.AddWithValue("@PFloanWithdrawn", textPFLW.Text);
                 cmd.Parameters.AddWithValue("@MonthlyAdvAmountSubtracted", textAAMD.Text);
@@ -75,7 +69,7 @@ namespace Fairdeal_Kashmir_Salary_Software
                 DataManager.executeNonQuery(cmd);
             }
            
-            txtFNmame.Text = "done";
+            txtName.Text = "done";
 
         }
 

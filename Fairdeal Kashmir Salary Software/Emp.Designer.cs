@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelFName = new System.Windows.Forms.Label();
-            this.labelLName = new System.Windows.Forms.Label();
+            this.labelName = new System.Windows.Forms.Label();
             this.labelAccountNumber = new System.Windows.Forms.Label();
             this.labelParentage = new System.Windows.Forms.Label();
             this.labelResidence = new System.Windows.Forms.Label();
@@ -38,8 +37,7 @@
             this.labelDesignation = new System.Windows.Forms.Label();
             this.labelPhone = new System.Windows.Forms.Label();
             this.labelEmail = new System.Windows.Forms.Label();
-            this.txtFNmame = new System.Windows.Forms.TextBox();
-            this.textLName = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.textParentage = new System.Windows.Forms.TextBox();
             this.textPhone = new System.Windows.Forms.TextBox();
             this.textEmail = new System.Windows.Forms.TextBox();
@@ -49,7 +47,7 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.textDpt = new System.Windows.Forms.TextBox();
             this.labelDpt = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.listBoxEmpType = new System.Windows.Forms.ListBox();
             this.labelSalary = new System.Windows.Forms.Label();
             this.labelPFLoanWithdrawn = new System.Windows.Forms.Label();
             this.labelPFloanMonthlyDeduction = new System.Windows.Forms.Label();
@@ -72,23 +70,14 @@
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // labelFName
+            // labelName
             // 
-            this.labelFName.AutoSize = true;
-            this.labelFName.Location = new System.Drawing.Point(116, 51);
-            this.labelFName.Name = "labelFName";
-            this.labelFName.Size = new System.Drawing.Size(57, 13);
-            this.labelFName.TabIndex = 0;
-            this.labelFName.Text = "First Name";
-            // 
-            // labelLName
-            // 
-            this.labelLName.AutoSize = true;
-            this.labelLName.Location = new System.Drawing.Point(116, 83);
-            this.labelLName.Name = "labelLName";
-            this.labelLName.Size = new System.Drawing.Size(58, 13);
-            this.labelLName.TabIndex = 1;
-            this.labelLName.Text = "Last Name";
+            this.labelName.AutoSize = true;
+            this.labelName.Location = new System.Drawing.Point(116, 51);
+            this.labelName.Name = "labelName";
+            this.labelName.Size = new System.Drawing.Size(35, 13);
+            this.labelName.TabIndex = 0;
+            this.labelName.Text = "Name";
             // 
             // labelAccountNumber
             // 
@@ -162,19 +151,12 @@
             this.labelEmail.TabIndex = 9;
             this.labelEmail.Text = "Email";
             // 
-            // txtFNmame
+            // txtName
             // 
-            this.txtFNmame.Location = new System.Drawing.Point(234, 43);
-            this.txtFNmame.Name = "txtFNmame";
-            this.txtFNmame.Size = new System.Drawing.Size(100, 20);
-            this.txtFNmame.TabIndex = 10;
-            // 
-            // textLName
-            // 
-            this.textLName.Location = new System.Drawing.Point(234, 80);
-            this.textLName.Name = "textLName";
-            this.textLName.Size = new System.Drawing.Size(100, 20);
-            this.textLName.TabIndex = 11;
+            this.txtName.Location = new System.Drawing.Point(234, 44);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(141, 20);
+            this.txtName.TabIndex = 10;
             // 
             // textParentage
             // 
@@ -241,17 +223,17 @@
             this.labelDpt.TabIndex = 22;
             this.labelDpt.Text = "Department";
             // 
-            // listBox1
+            // listBoxEmpType
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Items.AddRange(new object[] {
+            this.listBoxEmpType.FormattingEnabled = true;
+            this.listBoxEmpType.Items.AddRange(new object[] {
             "Salaried",
             "Contract",
             "Hourly"});
-            this.listBox1.Location = new System.Drawing.Point(514, 115);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(100, 43);
-            this.listBox1.TabIndex = 23;
+            this.listBoxEmpType.Location = new System.Drawing.Point(514, 115);
+            this.listBoxEmpType.Name = "listBoxEmpType";
+            this.listBoxEmpType.Size = new System.Drawing.Size(100, 43);
+            this.listBoxEmpType.TabIndex = 23;
             // 
             // labelSalary
             // 
@@ -429,7 +411,7 @@
             this.Controls.Add(this.labelPFloanMonthlyDeduction);
             this.Controls.Add(this.labelPFLoanWithdrawn);
             this.Controls.Add(this.labelSalary);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.listBoxEmpType);
             this.Controls.Add(this.labelDpt);
             this.Controls.Add(this.textDpt);
             this.Controls.Add(this.dateTimePicker1);
@@ -439,8 +421,7 @@
             this.Controls.Add(this.textEmail);
             this.Controls.Add(this.textPhone);
             this.Controls.Add(this.textParentage);
-            this.Controls.Add(this.textLName);
-            this.Controls.Add(this.txtFNmame);
+            this.Controls.Add(this.txtName);
             this.Controls.Add(this.labelEmail);
             this.Controls.Add(this.labelPhone);
             this.Controls.Add(this.labelDesignation);
@@ -449,8 +430,7 @@
             this.Controls.Add(this.labelResidence);
             this.Controls.Add(this.labelParentage);
             this.Controls.Add(this.labelAccountNumber);
-            this.Controls.Add(this.labelLName);
-            this.Controls.Add(this.labelFName);
+            this.Controls.Add(this.labelName);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Emp";
@@ -464,8 +444,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label labelFName;
-        private System.Windows.Forms.Label labelLName;
+        private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label labelAccountNumber;
         private System.Windows.Forms.Label labelParentage;
         private System.Windows.Forms.Label labelResidence;
@@ -474,7 +453,7 @@
         private System.Windows.Forms.Label labelDesignation;
         private System.Windows.Forms.Label labelPhone;
         private System.Windows.Forms.Label labelEmail;
-        private System.Windows.Forms.TextBox txtFNmame;
+        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox textParentage;
         private System.Windows.Forms.TextBox textPhone;
         private System.Windows.Forms.TextBox textEmail;
@@ -484,7 +463,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.TextBox textDpt;
         private System.Windows.Forms.Label labelDpt;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox listBoxEmpType;
         private System.Windows.Forms.Label labelSalary;
         private System.Windows.Forms.Label labelPFLoanWithdrawn;
         private System.Windows.Forms.Label labelPFloanMonthlyDeduction;
@@ -496,7 +475,6 @@
         private System.Windows.Forms.TextBox textAACD;
         private System.Windows.Forms.TextBox textAAMD;
         private System.Windows.Forms.Button btnSave;
-        public System.Windows.Forms.TextBox textLName;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem editEmployeeToolStripMenuItem;

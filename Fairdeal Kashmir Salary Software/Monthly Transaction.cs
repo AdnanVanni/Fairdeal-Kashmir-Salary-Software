@@ -172,7 +172,7 @@ namespace Fairdeal_Kashmir_Salary_Software
         {
             SqlConnection conn = new SqlConnection(DataManager.connectionString);
 
-            SqlCommand cmd = new SqlCommand("select EmpId,EmpFName,EmpLName from employee",conn);
+            SqlCommand cmd = new SqlCommand("select EmpId,EmpName from employee",conn);
 
             
               SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -185,16 +185,23 @@ namespace Fairdeal_Kashmir_Salary_Software
             for (int i = 0; i < Ds.Tables[0].Rows.Count; i++)
 
             {
-
-                Ename.Items.Add(Ds.Tables[0].Rows[i][0] + " " + Ds.Tables[0].Rows[i][1] + " " + Ds.Tables[0].Rows[i][2]);
+                Ename.Items.Add(Ds.Tables[0].Rows[i][1]);
 
             }
-            //SqlDataAdapter da = new SqlDataAdapter("select EmpFName,EmpLName from employee", DataManager.connectionString);
-            //DataTable dt = new DataTable();
-            //da.Fill(dt);
-            //Ename.DataSource = dt;
-            //Ename.DisplayMember = "EmpFName";
-            //Ename.ValueMember = "EmpFName";
+
+        }
+
+        private void Ename_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            SqlConnection conn1 = new SqlConnection(DataManager.connectionString);
+            SqlCommand cmd1 = new SqlCommand("select * from employee where EmpName=@EmpName", conn1);
+            cmd1.Parameters.AddWithValue("@EmpName", Ename.SelectedItem);
+
+            DataSet DS1 = DataManager.executeDataset(cmd1);
+            txtNetSalary.Text = DS1.Tables[0].Rows[0][5].ToString();
+            txtMPFLS.Text = DS1.Tables[0].Rows[0][10].ToString();
+            txtAAMD.Text = DS1.Tables[0].Rows[0][11].ToString();
         }
     }
 }

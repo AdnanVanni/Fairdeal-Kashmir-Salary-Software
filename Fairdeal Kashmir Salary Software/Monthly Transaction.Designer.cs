@@ -112,6 +112,7 @@
             this.Ename.Name = "Ename";
             this.Ename.Size = new System.Drawing.Size(121, 21);
             this.Ename.TabIndex = 18;
+            this.Ename.SelectedIndexChanged += new System.EventHandler(this.Ename_SelectedIndexChanged);
             this.Ename.Click += new System.EventHandler(this.Ename_Click);
             // 
             // comboBoxYear
