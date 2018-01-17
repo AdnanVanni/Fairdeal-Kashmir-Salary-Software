@@ -196,6 +196,7 @@
             this.btnCalcSalary.TabIndex = 21;
             this.btnCalcSalary.Text = "Calculate Salary";
             this.btnCalcSalary.UseVisualStyleBackColor = true;
+            this.btnCalcSalary.Click += new System.EventHandler(this.btnCalcSalary_Click);
             // 
             // lbLMPFLS
             // 

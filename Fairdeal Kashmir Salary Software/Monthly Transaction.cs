@@ -203,5 +203,14 @@ namespace Fairdeal_Kashmir_Salary_Software
             txtMPFLS.Text = DS1.Tables[0].Rows[0][10].ToString();
             txtAAMD.Text = DS1.Tables[0].Rows[0][11].ToString();
         }
+
+        private void btnCalcSalary_Click(object sender, EventArgs e)
+        {
+            
+
+            Int32 abc = Convert.ToInt32(txtMonthlySalary.Text) - Convert.ToInt32(txtPF.Text) - Convert.ToInt32(txtAAMD.Text) - Convert.ToInt32(txtMPFLS.Text)- Convert.ToInt32(txtTdc.Text)-Convert.ToInt32(txtFine.Text);
+            txtNetSalary.Text = Convert.ToString(abc);
+
+        }
     }
 }
