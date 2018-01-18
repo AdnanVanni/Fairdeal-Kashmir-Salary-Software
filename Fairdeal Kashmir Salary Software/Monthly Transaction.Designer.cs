@@ -50,6 +50,8 @@
             this.lblPFCalc = new System.Windows.Forms.Label();
             this.txtMonthlySalary = new System.Windows.Forms.TextBox();
             this.lblActualSalary = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtAbsent = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblFine
@@ -171,18 +173,18 @@
             this.comboBoxMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxMonth.FormattingEnabled = true;
             this.comboBoxMonth.Items.AddRange(new object[] {
-            "JAN",
-            "FEB",
-            "MAR",
-            "APR",
+            "JANUARY",
+            "FEBRUARY",
+            "MARCH",
+            "APRIL",
             "MAY",
-            "JUN",
+            "JUNE",
             "JULY",
-            "AUG",
-            "SEP",
-            "OCT",
-            "NOV",
-            "DEC"});
+            "AUGUST",
+            "SEPTEMBER",
+            "OCTOBER",
+            "NOVEMBER",
+            "DECEMBER"});
             this.comboBoxMonth.Location = new System.Drawing.Point(217, 103);
             this.comboBoxMonth.Name = "comboBoxMonth";
             this.comboBoxMonth.Size = new System.Drawing.Size(84, 21);
@@ -236,7 +238,7 @@
             // lblMemo
             // 
             this.lblMemo.AutoSize = true;
-            this.lblMemo.Location = new System.Drawing.Point(475, 74);
+            this.lblMemo.Location = new System.Drawing.Point(657, 55);
             this.lblMemo.Name = "lblMemo";
             this.lblMemo.Size = new System.Drawing.Size(64, 13);
             this.lblMemo.TabIndex = 27;
@@ -244,7 +246,7 @@
             // 
             // richTextBoxMemo
             // 
-            this.richTextBoxMemo.Location = new System.Drawing.Point(478, 90);
+            this.richTextBoxMemo.Location = new System.Drawing.Point(660, 86);
             this.richTextBoxMemo.Name = "richTextBoxMemo";
             this.richTextBoxMemo.Size = new System.Drawing.Size(217, 96);
             this.richTextBoxMemo.TabIndex = 28;
@@ -301,11 +303,30 @@
             this.lblActualSalary.TabIndex = 35;
             this.lblActualSalary.Text = "Actual Salary";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(367, 145);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 13);
+            this.label1.TabIndex = 36;
+            this.label1.Text = "Absent Days";
+            // 
+            // txtAbsent
+            // 
+            this.txtAbsent.Location = new System.Drawing.Point(453, 138);
+            this.txtAbsent.Name = "txtAbsent";
+            this.txtAbsent.Size = new System.Drawing.Size(121, 20);
+            this.txtAbsent.TabIndex = 37;
+            this.txtAbsent.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAbsent_KeyPress);
+            // 
             // Monthly_Transaction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(727, 579);
+            this.ClientSize = new System.Drawing.Size(964, 579);
+            this.Controls.Add(this.txtAbsent);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblActualSalary);
             this.Controls.Add(this.lblPFCalc);
             this.Controls.Add(this.label2);
@@ -359,5 +380,7 @@
         private System.Windows.Forms.Label lblPFCalc;
         private System.Windows.Forms.TextBox txtMonthlySalary;
         private System.Windows.Forms.Label lblActualSalary;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtAbsent;
     }
 }
