@@ -48,13 +48,14 @@ namespace Fairdeal_Kashmir_Salary_Software
             else { 
            
             SqlCommand cmd = new SqlCommand();
-                cmd.CommandText = "insert into departments values (@EmpName,  @AccNumber, @Department, @JoinDate, @SalaryPerMonth, @EmpType, @Designation, @AdvanceAmt, @PFloanWithdrawn, @MonthlyAdvAmountSubtracted, @MonthlyPFLoansubtracted, @Phone, @Email,@Parentage)";
+                cmd.CommandText = "insert into employee values (@EmpName,  @AccNumber, @Department, @JoinDate, @SalaryPerMonth, @EmpType, @Designation, @AdvanceAmt, @PFloanWithdrawn, @MonthlyAdvAmountSubtracted, @MonthlyPFLoansubtracted, @Phone, @Email,@Parentage,@Residence)";
 
 
                 cmd.Parameters.AddWithValue("@EmpName", txtName.Text);
                 cmd.Parameters.AddWithValue("@AccNumber", textAcc.Text);
                 cmd.Parameters.AddWithValue("@Department", textDpt.Text);
-                cmd.Parameters.AddWithValue("@JoinDate", dateTimePicker1.Text);
+                cmd.Parameters.AddWithValue("@Designation", textDesignation.Text);
+                cmd.Parameters.AddWithValue("@JoinDate", dateTimePicker1.Value);
                 cmd.Parameters.AddWithValue("@SalaryPerMonth", textMonthlySalary.Text);
                 cmd.Parameters.AddWithValue("@EmpType", listBoxEmpType.Text);
                 cmd.Parameters.AddWithValue("@AdvanceAmt", textAACD.Text);

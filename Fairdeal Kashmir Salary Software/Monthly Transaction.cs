@@ -206,10 +206,58 @@ namespace Fairdeal_Kashmir_Salary_Software
 
         private void btnCalcSalary_Click(object sender, EventArgs e)
         {
-            
+            int a;
 
-            Int32 abc = Convert.ToInt32(txtMonthlySalary.Text) - Convert.ToInt32(txtPF.Text) - Convert.ToInt32(txtAAMD.Text) - Convert.ToInt32(txtMPFLS.Text)- Convert.ToInt32(txtTdc.Text)-Convert.ToInt32(txtFine.Text);
-            txtNetSalary.Text = Convert.ToString(abc);
+            if (Ename.Text == null || Ename.Text == "")
+            {
+                MessageBox.Show("Please select employee");
+                return;
+            }
+            if(comboBoxMonth.Text== null || comboBoxMonth.Text=="")
+            {
+                MessageBox.Show("Please select the month");
+                return;
+            }
+            if (comboBoxYear.Text == null || comboBoxYear.Text == "")
+            {
+                MessageBox.Show("Please enter year");
+                return;
+            }
+            if(txtMonthlySalary.Text==null||txtMonthlySalary.Text=="")
+                {
+                MessageBox.Show("Please enter Salary");
+                return;
+            }
+            else
+            {
+                a = Convert.ToInt32(txtMonthlySalary.Text);
+            }
+            if(!(txtPF.Text == null || txtPF.Text == ""))
+            {
+
+                a = a - Convert.ToInt32(txtPF.Text);
+            }
+            if (!(txtAAMD.Text == null || txtAAMD.Text == ""))
+            {
+
+                a = a - Convert.ToInt32(txtAAMD.Text);
+            }
+            if (!(txtMPFLS.Text == null || txtMPFLS.Text == ""))
+            {
+              
+                 a = a - Convert.ToInt32(txtMPFLS.Text);
+            }
+            if (!(txtTdc.Text == null || txtTdc.Text == ""))
+            {
+
+                a = a - Convert.ToInt32(txtTdc.Text);
+            }
+            if (!(txtFine.Text == null || txtFine.Text == ""))
+            {
+
+                a = a - Convert.ToInt32(txtFine.Text);
+            }
+           txtNetSalary.Text = a.ToString();
 
         }
     }
