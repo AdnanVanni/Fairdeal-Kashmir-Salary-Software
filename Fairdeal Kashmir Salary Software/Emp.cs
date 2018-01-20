@@ -22,10 +22,22 @@ namespace Fairdeal_Kashmir_Salary_Software
         {
             this.Location = new Point(0, 0);
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
-            
+
+            SqlCommand cmdd = new SqlCommand();           
+            cmdd.CommandText = "SELECT * FROM Employee";
+            SqlConnection connection1 = new SqlConnection(DataManager.connectionString);
+            SqlDataAdapter dataadapter = new SqlDataAdapter(cmdd.CommandText,DataManager.connectionString);
+            connection1.Open();
+            DataSet ds1 = new DataSet();
+            dataadapter.Fill(ds1, "Employee");
+            connection1.Close();
+            dataGridViewEmp.DataSource = ds1;
+            dataGridViewEmp.DataMember = "Employee";
+
+
         }
-        
-       
+
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (txtName.Text == string.Empty)

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblFine = new System.Windows.Forms.Label();
             this.lblTdc = new System.Windows.Forms.Label();
             this.lblMonth = new System.Windows.Forms.Label();
@@ -52,6 +53,7 @@
             this.lblActualSalary = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtAbsent = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.SuspendLayout();
             // 
             // lblFine
@@ -320,6 +322,11 @@
             this.txtAbsent.TabIndex = 37;
             this.txtAbsent.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAbsent_KeyPress);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
             // Monthly_Transaction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -382,5 +389,6 @@
         private System.Windows.Forms.Label lblActualSalary;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtAbsent;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }
