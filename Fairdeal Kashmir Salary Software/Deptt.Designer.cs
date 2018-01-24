@@ -32,7 +32,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtDName = new System.Windows.Forms.TextBox();
             this.TxtDLocation = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.dataGridViewDeptt = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDeptt)).BeginInit();
             this.SuspendLayout();
             // 
             // labelDLocation
@@ -67,21 +70,39 @@
             this.TxtDLocation.Size = new System.Drawing.Size(167, 20);
             this.TxtDLocation.TabIndex = 12;
             // 
-            // button1
+            // btnAdd
             // 
-            this.button1.Location = new System.Drawing.Point(503, 198);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAdd.Location = new System.Drawing.Point(503, 198);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.TabIndex = 13;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewDeptt
+            // 
+            this.dataGridViewDeptt.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewDeptt.Location = new System.Drawing.Point(164, 253);
+            this.dataGridViewDeptt.Name = "dataGridViewDeptt";
+            this.dataGridViewDeptt.Size = new System.Drawing.Size(477, 150);
+            this.dataGridViewDeptt.TabIndex = 14;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(65, 75);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 13);
+            this.label2.TabIndex = 15;
             // 
             // Deptt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(724, 415);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.dataGridViewDeptt);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.TxtDLocation);
             this.Controls.Add(this.txtDName);
             this.Controls.Add(this.label1);
@@ -89,6 +110,7 @@
             this.Name = "Deptt";
             this.Text = "Deptt";
             this.Load += new System.EventHandler(this.Deptt_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDeptt)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -100,6 +122,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtDName;
         private System.Windows.Forms.TextBox TxtDLocation;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.DataGridView dataGridViewDeptt;
+        private System.Windows.Forms.Label label2;
     }
 }
