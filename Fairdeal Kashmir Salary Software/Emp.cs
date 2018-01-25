@@ -92,7 +92,7 @@ namespace Fairdeal_Kashmir_Salary_Software
                 DataManager.executeNonQuery(cmd);
             }
            
-            txtName.Text = "done";
+            /*/*txtName.Text = "done"*/*/;
 
         }
 
@@ -202,17 +202,28 @@ namespace Fairdeal_Kashmir_Salary_Software
 
         private void dataGridViewEmp_SelectionChanged(object sender, EventArgs e)
         {
-           
             foreach (DataGridViewRow row in dataGridViewEmp.SelectedRows)
             {
                 btnSave.Text = "Update";
-                label1.Text = row.Cells[0].Value.ToString();
+                label1.Text = "Update Details of"+ row.Cells[1].Value.ToString();
                 txtName.Text = row.Cells[1].Value.ToString();
-                textParentage.Text = row.Cells[1].Value.ToString();
-                text
+                textParentage.Text= row.Cells[14].Value.ToString();
+                textPhone.Text= row.Cells[12].Value.ToString();
+                textEmail.Text= row.Cells[13].Value.ToString();
+                textDpt.Text= row.Cells[3].Value.ToString();
+                textResidence.Text= row.Cells[15].Value.ToString();
+                dateTimePicker1.Text= row.Cells[4].Value.ToString();
+                listBoxEmpType.SelectedValue= row.Cells[6].Value.ToString();
+                textDesignation.Text= row.Cells[9].Value.ToString();
+                textAcc.Text= row.Cells[2].Value.ToString();
+                textMonthlySalary.Text= row.Cells[5].Value.ToString();
+                textPFLW.Text= row.Cells[9].Value.ToString();
+                textPFMD.Text= row.Cells[11].Value.ToString();
+                textAACD.Text= row.Cells[8].Value.ToString(); ;
+                textAAMD.Text= row.Cells[10].Value.ToString();
                 //...
+
             }
-        
     }
     }
 }

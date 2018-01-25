@@ -245,7 +245,7 @@
             // labelSalary
             // 
             this.labelSalary.AutoSize = true;
-            this.labelSalary.Location = new System.Drawing.Point(114, 288);
+            this.labelSalary.Location = new System.Drawing.Point(114, 293);
             this.labelSalary.Name = "labelSalary";
             this.labelSalary.Size = new System.Drawing.Size(76, 13);
             this.labelSalary.TabIndex = 24;
@@ -406,6 +406,7 @@
             // 
             this.dataGridViewEmp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewEmp.Location = new System.Drawing.Point(115, 590);
+            this.dataGridViewEmp.MultiSelect = false;
             this.dataGridViewEmp.Name = "dataGridViewEmp";
             this.dataGridViewEmp.Size = new System.Drawing.Size(1108, 219);
             this.dataGridViewEmp.TabIndex = 36;
@@ -442,7 +443,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(183)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1315, 881);
+            this.ClientSize = new System.Drawing.Size(1315, 741);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
