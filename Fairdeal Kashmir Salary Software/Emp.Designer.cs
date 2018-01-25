@@ -67,7 +67,13 @@
             this.addDepartmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.monthlyTransactionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createMonthsTransactionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dataGridViewEmp = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelName
@@ -82,7 +88,7 @@
             // labelAccountNumber
             // 
             this.labelAccountNumber.AutoSize = true;
-            this.labelAccountNumber.Location = new System.Drawing.Point(411, 219);
+            this.labelAccountNumber.Location = new System.Drawing.Point(497, 219);
             this.labelAccountNumber.Name = "labelAccountNumber";
             this.labelAccountNumber.Size = new System.Drawing.Size(64, 13);
             this.labelAccountNumber.TabIndex = 2;
@@ -100,7 +106,7 @@
             // labelResidence
             // 
             this.labelResidence.AutoSize = true;
-            this.labelResidence.Location = new System.Drawing.Point(411, 51);
+            this.labelResidence.Location = new System.Drawing.Point(497, 51);
             this.labelResidence.Name = "labelResidence";
             this.labelResidence.Size = new System.Drawing.Size(58, 13);
             this.labelResidence.TabIndex = 4;
@@ -109,7 +115,7 @@
             // labelJoinDate
             // 
             this.labelJoinDate.AutoSize = true;
-            this.labelJoinDate.Location = new System.Drawing.Point(411, 83);
+            this.labelJoinDate.Location = new System.Drawing.Point(497, 83);
             this.labelJoinDate.Name = "labelJoinDate";
             this.labelJoinDate.Size = new System.Drawing.Size(52, 13);
             this.labelJoinDate.TabIndex = 5;
@@ -118,7 +124,7 @@
             // labelEmpType
             // 
             this.labelEmpType.AutoSize = true;
-            this.labelEmpType.Location = new System.Drawing.Point(411, 113);
+            this.labelEmpType.Location = new System.Drawing.Point(497, 116);
             this.labelEmpType.Name = "labelEmpType";
             this.labelEmpType.Size = new System.Drawing.Size(80, 13);
             this.labelEmpType.TabIndex = 6;
@@ -127,7 +133,7 @@
             // labelDesignation
             // 
             this.labelDesignation.AutoSize = true;
-            this.labelDesignation.Location = new System.Drawing.Point(412, 176);
+            this.labelDesignation.Location = new System.Drawing.Point(497, 176);
             this.labelDesignation.Name = "labelDesignation";
             this.labelDesignation.Size = new System.Drawing.Size(63, 13);
             this.labelDesignation.TabIndex = 7;
@@ -153,6 +159,7 @@
             // 
             // txtName
             // 
+            this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtName.Location = new System.Drawing.Point(234, 44);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(141, 20);
@@ -181,28 +188,28 @@
             // 
             // textResidence
             // 
-            this.textResidence.Location = new System.Drawing.Point(514, 48);
+            this.textResidence.Location = new System.Drawing.Point(604, 48);
             this.textResidence.Name = "textResidence";
             this.textResidence.Size = new System.Drawing.Size(100, 20);
             this.textResidence.TabIndex = 15;
             // 
             // textDesignation
             // 
-            this.textDesignation.Location = new System.Drawing.Point(514, 176);
+            this.textDesignation.Location = new System.Drawing.Point(604, 176);
             this.textDesignation.Name = "textDesignation";
             this.textDesignation.Size = new System.Drawing.Size(100, 20);
             this.textDesignation.TabIndex = 18;
             // 
             // textAcc
             // 
-            this.textAcc.Location = new System.Drawing.Point(514, 216);
+            this.textAcc.Location = new System.Drawing.Point(604, 212);
             this.textAcc.Name = "textAcc";
             this.textAcc.Size = new System.Drawing.Size(100, 20);
             this.textAcc.TabIndex = 19;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(514, 83);
+            this.dateTimePicker1.Location = new System.Drawing.Point(604, 77);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(181, 20);
             this.dateTimePicker1.TabIndex = 20;
@@ -230,7 +237,7 @@
             "Salaried",
             "Contract",
             "Hourly"});
-            this.listBoxEmpType.Location = new System.Drawing.Point(514, 115);
+            this.listBoxEmpType.Location = new System.Drawing.Point(604, 113);
             this.listBoxEmpType.Name = "listBoxEmpType";
             this.listBoxEmpType.Size = new System.Drawing.Size(100, 43);
             this.listBoxEmpType.TabIndex = 23;
@@ -282,7 +289,7 @@
             // 
             // textMonthlySalary
             // 
-            this.textMonthlySalary.Location = new System.Drawing.Point(117, 320);
+            this.textMonthlySalary.Location = new System.Drawing.Point(115, 325);
             this.textMonthlySalary.Name = "textMonthlySalary";
             this.textMonthlySalary.Size = new System.Drawing.Size(100, 20);
             this.textMonthlySalary.TabIndex = 29;
@@ -322,7 +329,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(709, 501);
+            this.btnSave.Location = new System.Drawing.Point(539, 528);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 34;
@@ -339,7 +346,7 @@
             this.monthlyTransactionToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(878, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1315, 24);
             this.menuStrip1.TabIndex = 35;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -395,11 +402,51 @@
             this.createMonthsTransactionToolStripMenuItem.Text = "Create Month\'sTransaction";
             this.createMonthsTransactionToolStripMenuItem.Click += new System.EventHandler(this.createMonthsTransactionToolStripMenuItem_Click);
             // 
+            // dataGridViewEmp
+            // 
+            this.dataGridViewEmp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewEmp.Location = new System.Drawing.Point(115, 590);
+            this.dataGridViewEmp.Name = "dataGridViewEmp";
+            this.dataGridViewEmp.Size = new System.Drawing.Size(1108, 219);
+            this.dataGridViewEmp.TabIndex = 36;
+            this.dataGridViewEmp.SelectionChanged += new System.EventHandler(this.dataGridViewEmp_SelectionChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(54, 51);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 37;
+            this.label1.Text = "label1";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(664, 528);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 38;
+            this.button1.Text = "Add New";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(971, 116);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.TabIndex = 39;
+            // 
             // Emp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(878, 544);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(183)))), ((int)(((byte)(255)))));
+            this.ClientSize = new System.Drawing.Size(1315, 881);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dataGridViewEmp);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.textAAMD);
             this.Controls.Add(this.textAACD);
@@ -437,6 +484,8 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -483,6 +532,10 @@
         private System.Windows.Forms.ToolStripMenuItem addEmployeeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addDepartmentToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem createMonthsTransactionToolStripMenuItem;
+        private System.Windows.Forms.DataGridView dataGridViewEmp;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 
