@@ -23,11 +23,21 @@ namespace Fairdeal_Kashmir_Salary_Software
             this.Location = new Point(0, 0);
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
             fillGrid();
+            label1.Visible = false;
+            btnDelete.Visible = false;
+            SqlCommand cmdDept = new SqlCommand();
+            cmdDept.CommandText = "SELECT * from Departments";
+            DataSet DSdept =DataManager.executeDataset(cmdDept);
+            comboBoxDept.DataSource = DSdept.Tables[0];
+            comboBoxDept.ValueMember = "DepartmentName";
+            comboBoxDept.DisplayMember = "DepartmentName";
+
             
+          
             
         }
         private void fillGrid()
-        {
+        { 
             SqlCommand cmdd = new SqlCommand();
             cmdd.CommandText = "SELECT * FROM Employee";
             SqlConnection connection1 = new SqlConnection(DataManager.connectionString);
@@ -38,19 +48,29 @@ namespace Fairdeal_Kashmir_Salary_Software
             connection1.Close();
             dataGridViewEmp.DataSource = ds1;
             dataGridViewEmp.DataMember = "Employee";
+            dataGridViewEmp.Columns[0].Visible = false;
+            dataGridViewEmp.Columns[4].Visible = false;
+            dataGridViewEmp.Columns[5].Visible = false;
+            dataGridViewEmp.Columns[6].Visible = false;
+            dataGridViewEmp.Columns[8].Visible = false;
+            dataGridViewEmp.Columns[9].Visible = false;
+            dataGridViewEmp.Columns[10].Visible = false;
+            dataGridViewEmp.Columns[11].Visible = false;
+
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+        
             if (txtName.Text == string.Empty)
             {
                 MessageBox.Show("Please enter Employee's name");
                 return;
             }
-            
-            else if (textDpt.Text == string.Empty)
+
+            else if (comboBoxDept.Text == string.Empty)
             {
-                MessageBox.Show("Please enter the department");
+                MessageBox.Show("Please select the department");
                 return;
             }
             else if (textAcc.Text == string.Empty)
@@ -58,41 +78,48 @@ namespace Fairdeal_Kashmir_Salary_Software
                 MessageBox.Show("Please enter account number!");
                 return;
             }
-           
-            else { 
+
+            else {
 
 
-           
-            SqlCommand cmd = new SqlCommand();
-                if (btnSave.Text =="Save")
+
+                SqlCommand cmd = new SqlCommand();
+                if (btnSave.Text == "Save")
                 {
-                    cmd.CommandText = "insert into departments values (@EmpName,  @AccNumber, @Department, @JoinDate, @SalaryPerMonth, @EmpType, @Designation, @AdvanceAmt, @PFloanWithdrawn, @MonthlyAdvAmountSubtracted, @MonthlyPFLoansubtracted, @Phone, @Email,@Parentage)";
+                    cmd.CommandText = "insert into Employee values  (@EmpName,  @AccNumber, @Department, @JoinDate, @SalaryPerMonth, @EmpType, @Designation, @AdvanceAmt, @PFloanWithdrawn, @MonthlyAdvAmountSubtracted, @MonthlyPFLoansubtracted, @Phone, @Email,@Parentage,@Residence)";
                 }
-                if(btnSave.Text=="Update")
+                if (btnSave.Text == "Update")
                 {
-                    cmd.CommandText = "UPDATE [dbo].[Employee] SET[EmpFname] = @EmpName,[AccNumber] = @AccNumber,[Department] = @Department,[JoinDate] = @JoinDate,[SalaryPerMonth] = @SalaryPerMonth,[EmpType] = @EmpType,[Designation] = @Designation, [AdvanceAmt] = @AdvanceAmt,[PFloanWithdrawn] = @PFloanWithdrawn,[MonthlyAdvAmountSubtracted] = @MonthlyAdvAmountSubtracted,[MonthlyPFLoansubtracted] = @MonthlyPFLoansubtracted,[Phone] = @Phone,[Email] = @Email,[Parentage] = @Parentage,[Residence] = @Residence where empId=@label1";
+                    cmd.CommandText = "UPDATE [dbo].[Employee] SET[EmpName] = @EmpName,[AccNumber] = @AccNumber,[Department] = @Department,[JoinDate] = @JoinDate,[SalaryPerMonth] = @SalaryPerMonth,[EmpType] = @EmpType,[Designation] = @Designation, [AdvanceAmt] = @AdvanceAmt,[PFloanWithdrawn] = @PFloanWithdrawn,[MonthlyAdvAmountSubtracted] = @MonthlyAdvAmountSubtracted,[MonthlyPFLoansubtracted] = @MonthlyPFLoansubtracted,[Phone] = @Phone,[Email] = @Email,[Parentage] = @Parentage,[Residence] = @Residence where empId=@label1";
                 }
 
                 cmd.Parameters.AddWithValue("@EmpName", txtName.Text);
                 cmd.Parameters.AddWithValue("@AccNumber", textAcc.Text);
-                cmd.Parameters.AddWithValue("@Department", textDpt.Text);
-                cmd.Parameters.AddWithValue("@JoinDate", dateTimePicker1.Text);
+                cmd.Parameters.AddWithValue("@Department",comboBoxDept.SelectedValue);
+                cmd.Parameters.AddWithValue("@JoinDate", dateTimePicker1.Value);
                 cmd.Parameters.AddWithValue("@SalaryPerMonth", textMonthlySalary.Text);
                 cmd.Parameters.AddWithValue("@EmpType", listBoxEmpType.Text);
                 cmd.Parameters.AddWithValue("@AdvanceAmt", textAACD.Text);
                 cmd.Parameters.AddWithValue("@PFloanWithdrawn", textPFLW.Text);
                 cmd.Parameters.AddWithValue("@MonthlyAdvAmountSubtracted", textAAMD.Text);
+                cmd.Parameters.AddWithValue("@Designation", textDesignation.Text);
                 cmd.Parameters.AddWithValue("@MonthlyPFLoansubtracted", textPFMD.Text);
                 cmd.Parameters.AddWithValue("@phone", textPhone.Text);
                 cmd.Parameters.AddWithValue("@Email", textEmail.Text);
                 cmd.Parameters.AddWithValue("@Parentage", textParentage.Text);
-                cmd.Parameters.AddWithValue("@Residence",textResidence.Text);
+                cmd.Parameters.AddWithValue("@Residence", textResidence.Text);
                 cmd.Parameters.AddWithValue("@label1", label1.Text);
                 cmd.Connection = new SqlConnection();
                 DataManager.executeNonQuery(cmd);
+                MessageBox.Show("Saved");
+                Emp emp = new Emp();
+                emp.Tag = this;
+                emp.Show(this);
+                Hide();
             }
-           
-            /*/*txtName.Text = "done"*/*/;
+
+            /*/*txtName.Text = "done"*/
+            
 
         }
 
@@ -202,15 +229,16 @@ namespace Fairdeal_Kashmir_Salary_Software
 
         private void dataGridViewEmp_SelectionChanged(object sender, EventArgs e)
         {
+            btnDelete.Visible = true;
             foreach (DataGridViewRow row in dataGridViewEmp.SelectedRows)
             {
                 btnSave.Text = "Update";
-                label1.Text = "Update Details of"+ row.Cells[1].Value.ToString();
+                label1.Text =  row.Cells[0].Value.ToString();
                 txtName.Text = row.Cells[1].Value.ToString();
                 textParentage.Text= row.Cells[14].Value.ToString();
                 textPhone.Text= row.Cells[12].Value.ToString();
                 textEmail.Text= row.Cells[13].Value.ToString();
-                textDpt.Text= row.Cells[3].Value.ToString();
+                comboBoxDept.Text= row.Cells[3].Value.ToString();
                 textResidence.Text= row.Cells[15].Value.ToString();
                 dateTimePicker1.Text= row.Cells[4].Value.ToString();
                 listBoxEmpType.SelectedValue= row.Cells[6].Value.ToString();
@@ -225,5 +253,112 @@ namespace Fairdeal_Kashmir_Salary_Software
 
             }
     }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            SqlCommand cmdDel = new SqlCommand();
+            cmdDel.CommandText = "delete from Employee where empId=@empId";
+            cmdDel.Parameters.AddWithValue("@empId", label1.Text);
+            DataManager.executeNonQuery(cmdDel);
+            MessageBox.Show("Delete successful");
+            Emp emp1 = new Emp();
+            emp1.Show();
+            this.Hide();
+        }
+
+        private void textPFMD_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textAAMD_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textAACD_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textPFLW_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textMonthlySalary_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxDept_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelAdvAmt_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelAdvancedMonthlyDeduction_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelPFloanMonthlyDeduction_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelPFLoanWithdrawn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelSalary_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textAcc_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textDesignation_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBoxEmpType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textResidence_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelResidence_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelJoinDate_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

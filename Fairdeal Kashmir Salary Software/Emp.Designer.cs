@@ -45,7 +45,6 @@
             this.textDesignation = new System.Windows.Forms.TextBox();
             this.textAcc = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textDpt = new System.Windows.Forms.TextBox();
             this.labelDpt = new System.Windows.Forms.Label();
             this.listBoxEmpType = new System.Windows.Forms.ListBox();
             this.labelSalary = new System.Windows.Forms.Label();
@@ -70,14 +69,17 @@
             this.dataGridViewEmp = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.comboBoxDept = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmp)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelName
             // 
+            this.labelName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelName.AutoSize = true;
             this.labelName.Location = new System.Drawing.Point(116, 51);
             this.labelName.Name = "labelName";
@@ -87,8 +89,11 @@
             // 
             // labelAccountNumber
             // 
+            this.labelAccountNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelAccountNumber.AutoSize = true;
-            this.labelAccountNumber.Location = new System.Drawing.Point(497, 219);
+            this.labelAccountNumber.Location = new System.Drawing.Point(401, 224);
             this.labelAccountNumber.Name = "labelAccountNumber";
             this.labelAccountNumber.Size = new System.Drawing.Size(64, 13);
             this.labelAccountNumber.TabIndex = 2;
@@ -96,6 +101,9 @@
             // 
             // labelParentage
             // 
+            this.labelParentage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelParentage.AutoSize = true;
             this.labelParentage.Location = new System.Drawing.Point(116, 113);
             this.labelParentage.Name = "labelParentage";
@@ -105,26 +113,37 @@
             // 
             // labelResidence
             // 
+            this.labelResidence.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelResidence.AutoSize = true;
-            this.labelResidence.Location = new System.Drawing.Point(497, 51);
+            this.labelResidence.Location = new System.Drawing.Point(401, 51);
             this.labelResidence.Name = "labelResidence";
             this.labelResidence.Size = new System.Drawing.Size(58, 13);
             this.labelResidence.TabIndex = 4;
             this.labelResidence.Text = "Residence";
+            this.labelResidence.Click += new System.EventHandler(this.labelResidence_Click);
             // 
             // labelJoinDate
             // 
+            this.labelJoinDate.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelJoinDate.AutoSize = true;
-            this.labelJoinDate.Location = new System.Drawing.Point(497, 83);
+            this.labelJoinDate.Location = new System.Drawing.Point(401, 84);
             this.labelJoinDate.Name = "labelJoinDate";
             this.labelJoinDate.Size = new System.Drawing.Size(52, 13);
             this.labelJoinDate.TabIndex = 5;
             this.labelJoinDate.Text = "Join Date";
+            this.labelJoinDate.Click += new System.EventHandler(this.labelJoinDate_Click);
             // 
             // labelEmpType
             // 
+            this.labelEmpType.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelEmpType.AutoSize = true;
-            this.labelEmpType.Location = new System.Drawing.Point(497, 116);
+            this.labelEmpType.Location = new System.Drawing.Point(352, 120);
             this.labelEmpType.Name = "labelEmpType";
             this.labelEmpType.Size = new System.Drawing.Size(80, 13);
             this.labelEmpType.TabIndex = 6;
@@ -132,8 +151,11 @@
             // 
             // labelDesignation
             // 
+            this.labelDesignation.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelDesignation.AutoSize = true;
-            this.labelDesignation.Location = new System.Drawing.Point(497, 176);
+            this.labelDesignation.Location = new System.Drawing.Point(401, 183);
             this.labelDesignation.Name = "labelDesignation";
             this.labelDesignation.Size = new System.Drawing.Size(63, 13);
             this.labelDesignation.TabIndex = 7;
@@ -141,6 +163,9 @@
             // 
             // labelPhone
             // 
+            this.labelPhone.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelPhone.AutoSize = true;
             this.labelPhone.Location = new System.Drawing.Point(116, 142);
             this.labelPhone.Name = "labelPhone";
@@ -150,6 +175,9 @@
             // 
             // labelEmail
             // 
+            this.labelEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelEmail.AutoSize = true;
             this.labelEmail.Location = new System.Drawing.Point(116, 176);
             this.labelEmail.Name = "labelEmail";
@@ -159,6 +187,9 @@
             // 
             // txtName
             // 
+            this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtName.Location = new System.Drawing.Point(234, 44);
             this.txtName.Name = "txtName";
@@ -167,6 +198,9 @@
             // 
             // textParentage
             // 
+            this.textParentage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textParentage.Location = new System.Drawing.Point(234, 113);
             this.textParentage.Name = "textParentage";
             this.textParentage.Size = new System.Drawing.Size(100, 20);
@@ -174,6 +208,9 @@
             // 
             // textPhone
             // 
+            this.textPhone.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textPhone.Location = new System.Drawing.Point(234, 142);
             this.textPhone.Name = "textPhone";
             this.textPhone.Size = new System.Drawing.Size(100, 20);
@@ -181,6 +218,9 @@
             // 
             // textEmail
             // 
+            this.textEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textEmail.Location = new System.Drawing.Point(234, 176);
             this.textEmail.Name = "textEmail";
             this.textEmail.Size = new System.Drawing.Size(100, 20);
@@ -188,41 +228,53 @@
             // 
             // textResidence
             // 
-            this.textResidence.Location = new System.Drawing.Point(604, 48);
+            this.textResidence.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textResidence.Location = new System.Drawing.Point(486, 48);
             this.textResidence.Name = "textResidence";
             this.textResidence.Size = new System.Drawing.Size(100, 20);
             this.textResidence.TabIndex = 15;
+            this.textResidence.TextChanged += new System.EventHandler(this.textResidence_TextChanged);
             // 
             // textDesignation
             // 
-            this.textDesignation.Location = new System.Drawing.Point(604, 176);
+            this.textDesignation.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textDesignation.Location = new System.Drawing.Point(488, 183);
             this.textDesignation.Name = "textDesignation";
             this.textDesignation.Size = new System.Drawing.Size(100, 20);
             this.textDesignation.TabIndex = 18;
+            this.textDesignation.TextChanged += new System.EventHandler(this.textDesignation_TextChanged);
             // 
             // textAcc
             // 
-            this.textAcc.Location = new System.Drawing.Point(604, 212);
+            this.textAcc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textAcc.Location = new System.Drawing.Point(488, 221);
             this.textAcc.Name = "textAcc";
             this.textAcc.Size = new System.Drawing.Size(100, 20);
             this.textAcc.TabIndex = 19;
+            this.textAcc.TextChanged += new System.EventHandler(this.textAcc_TextChanged);
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(604, 77);
+            this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dateTimePicker1.Location = new System.Drawing.Point(486, 78);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(181, 20);
             this.dateTimePicker1.TabIndex = 20;
-            // 
-            // textDpt
-            // 
-            this.textDpt.Location = new System.Drawing.Point(234, 212);
-            this.textDpt.Name = "textDpt";
-            this.textDpt.Size = new System.Drawing.Size(100, 20);
-            this.textDpt.TabIndex = 21;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // labelDpt
             // 
+            this.labelDpt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelDpt.AutoSize = true;
             this.labelDpt.Location = new System.Drawing.Point(114, 219);
             this.labelDpt.Name = "labelDpt";
@@ -232,104 +284,151 @@
             // 
             // listBoxEmpType
             // 
+            this.listBoxEmpType.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.listBoxEmpType.FormattingEnabled = true;
             this.listBoxEmpType.Items.AddRange(new object[] {
             "Salaried",
             "Contract",
             "Hourly"});
-            this.listBoxEmpType.Location = new System.Drawing.Point(604, 113);
+            this.listBoxEmpType.Location = new System.Drawing.Point(438, 124);
             this.listBoxEmpType.Name = "listBoxEmpType";
-            this.listBoxEmpType.Size = new System.Drawing.Size(100, 43);
+            this.listBoxEmpType.Size = new System.Drawing.Size(180, 43);
             this.listBoxEmpType.TabIndex = 23;
+            this.listBoxEmpType.SelectedIndexChanged += new System.EventHandler(this.listBoxEmpType_SelectedIndexChanged);
             // 
             // labelSalary
             // 
+            this.labelSalary.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelSalary.AutoSize = true;
             this.labelSalary.Location = new System.Drawing.Point(114, 293);
             this.labelSalary.Name = "labelSalary";
             this.labelSalary.Size = new System.Drawing.Size(76, 13);
             this.labelSalary.TabIndex = 24;
             this.labelSalary.Text = "Monthly Salary";
+            this.labelSalary.Click += new System.EventHandler(this.labelSalary_Click);
             // 
             // labelPFLoanWithdrawn
             // 
+            this.labelPFLoanWithdrawn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelPFLoanWithdrawn.AutoSize = true;
-            this.labelPFLoanWithdrawn.Location = new System.Drawing.Point(114, 366);
+            this.labelPFLoanWithdrawn.Location = new System.Drawing.Point(116, 354);
             this.labelPFLoanWithdrawn.Name = "labelPFLoanWithdrawn";
             this.labelPFLoanWithdrawn.Size = new System.Drawing.Size(101, 13);
             this.labelPFLoanWithdrawn.TabIndex = 25;
             this.labelPFLoanWithdrawn.Text = "PF Loan Withdrawn";
+            this.labelPFLoanWithdrawn.Click += new System.EventHandler(this.labelPFLoanWithdrawn_Click);
             // 
             // labelPFloanMonthlyDeduction
             // 
+            this.labelPFloanMonthlyDeduction.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelPFloanMonthlyDeduction.AutoSize = true;
-            this.labelPFloanMonthlyDeduction.Location = new System.Drawing.Point(112, 448);
+            this.labelPFloanMonthlyDeduction.Location = new System.Drawing.Point(116, 415);
             this.labelPFloanMonthlyDeduction.Name = "labelPFloanMonthlyDeduction";
             this.labelPFloanMonthlyDeduction.Size = new System.Drawing.Size(139, 13);
             this.labelPFloanMonthlyDeduction.TabIndex = 26;
             this.labelPFloanMonthlyDeduction.Text = "PF Loan Monthly Deduction";
+            this.labelPFloanMonthlyDeduction.Click += new System.EventHandler(this.labelPFloanMonthlyDeduction_Click);
             // 
             // labelAdvAmt
             // 
+            this.labelAdvAmt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelAdvAmt.AutoSize = true;
-            this.labelAdvAmt.Location = new System.Drawing.Point(411, 366);
+            this.labelAdvAmt.Location = new System.Drawing.Point(412, 354);
             this.labelAdvAmt.Name = "labelAdvAmt";
             this.labelAdvAmt.Size = new System.Drawing.Size(174, 13);
             this.labelAdvAmt.TabIndex = 27;
             this.labelAdvAmt.Text = "Advanced Amount Current Balance";
+            this.labelAdvAmt.Click += new System.EventHandler(this.labelAdvAmt_Click);
             // 
             // labelAdvancedMonthlyDeduction
             // 
+            this.labelAdvancedMonthlyDeduction.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelAdvancedMonthlyDeduction.AutoSize = true;
-            this.labelAdvancedMonthlyDeduction.Location = new System.Drawing.Point(412, 448);
+            this.labelAdvancedMonthlyDeduction.Location = new System.Drawing.Point(412, 415);
             this.labelAdvancedMonthlyDeduction.Name = "labelAdvancedMonthlyDeduction";
             this.labelAdvancedMonthlyDeduction.Size = new System.Drawing.Size(187, 13);
             this.labelAdvancedMonthlyDeduction.TabIndex = 28;
             this.labelAdvancedMonthlyDeduction.Text = "Advanced Amount Monthly Deduction";
+            this.labelAdvancedMonthlyDeduction.Click += new System.EventHandler(this.labelAdvancedMonthlyDeduction_Click);
             // 
             // textMonthlySalary
             // 
-            this.textMonthlySalary.Location = new System.Drawing.Point(115, 325);
+            this.textMonthlySalary.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textMonthlySalary.Location = new System.Drawing.Point(115, 318);
             this.textMonthlySalary.Name = "textMonthlySalary";
             this.textMonthlySalary.Size = new System.Drawing.Size(100, 20);
             this.textMonthlySalary.TabIndex = 29;
+            this.textMonthlySalary.TextChanged += new System.EventHandler(this.textMonthlySalary_TextChanged);
             this.textMonthlySalary.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textMonthlySalary_KeyPress);
             // 
             // textPFLW
             // 
-            this.textPFLW.Location = new System.Drawing.Point(115, 396);
+            this.textPFLW.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textPFLW.Location = new System.Drawing.Point(119, 380);
             this.textPFLW.Name = "textPFLW";
             this.textPFLW.Size = new System.Drawing.Size(100, 20);
             this.textPFLW.TabIndex = 30;
+            this.textPFLW.TextChanged += new System.EventHandler(this.textPFLW_TextChanged);
             this.textPFLW.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textPFLW_KeyPress);
             // 
             // textPFMD
             // 
-            this.textPFMD.Location = new System.Drawing.Point(115, 476);
+            this.textPFMD.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textPFMD.Location = new System.Drawing.Point(119, 448);
             this.textPFMD.Name = "textPFMD";
             this.textPFMD.Size = new System.Drawing.Size(100, 20);
             this.textPFMD.TabIndex = 31;
+            this.textPFMD.TextChanged += new System.EventHandler(this.textPFMD_TextChanged);
             this.textPFMD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textPFMD_KeyPress);
             // 
             // textAACD
             // 
-            this.textAACD.Location = new System.Drawing.Point(414, 396);
+            this.textAACD.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textAACD.Location = new System.Drawing.Point(415, 380);
             this.textAACD.Name = "textAACD";
             this.textAACD.Size = new System.Drawing.Size(100, 20);
             this.textAACD.TabIndex = 32;
+            this.textAACD.TextChanged += new System.EventHandler(this.textAACD_TextChanged);
             this.textAACD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textAACD_KeyPress);
             // 
             // textAAMD
             // 
-            this.textAAMD.Location = new System.Drawing.Point(414, 476);
+            this.textAAMD.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textAAMD.Location = new System.Drawing.Point(415, 448);
             this.textAAMD.Name = "textAAMD";
             this.textAAMD.Size = new System.Drawing.Size(100, 20);
             this.textAAMD.TabIndex = 33;
+            this.textAAMD.TextChanged += new System.EventHandler(this.textAAMD_TextChanged);
             this.textAAMD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textAAMD_KeyPress);
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(539, 528);
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSave.Location = new System.Drawing.Point(488, 502);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 34;
@@ -404,11 +503,16 @@
             // 
             // dataGridViewEmp
             // 
+            this.dataGridViewEmp.AllowUserToAddRows = false;
+            this.dataGridViewEmp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewEmp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewEmp.Location = new System.Drawing.Point(115, 590);
+            this.dataGridViewEmp.Location = new System.Drawing.Point(673, 77);
+            this.dataGridViewEmp.MinimumSize = new System.Drawing.Size(400, 400);
             this.dataGridViewEmp.MultiSelect = false;
             this.dataGridViewEmp.Name = "dataGridViewEmp";
-            this.dataGridViewEmp.Size = new System.Drawing.Size(1108, 219);
+            this.dataGridViewEmp.Size = new System.Drawing.Size(630, 400);
             this.dataGridViewEmp.TabIndex = 36;
             this.dataGridViewEmp.SelectionChanged += new System.EventHandler(this.dataGridViewEmp_SelectionChanged);
             // 
@@ -417,34 +521,55 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(54, 51);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 37;
-            this.label1.Text = "label1";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(664, 528);
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(576, 502);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 38;
             this.button1.Text = "Add New";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // dataGridView1
+            // btnDelete
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(971, 116);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 39;
+            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDelete.Location = new System.Drawing.Point(667, 502);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 39;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // comboBoxDept
+            // 
+            this.comboBoxDept.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxDept.FormattingEnabled = true;
+            this.comboBoxDept.Location = new System.Drawing.Point(234, 216);
+            this.comboBoxDept.Name = "comboBoxDept";
+            this.comboBoxDept.Size = new System.Drawing.Size(100, 21);
+            this.comboBoxDept.TabIndex = 40;
+            this.comboBoxDept.SelectedIndexChanged += new System.EventHandler(this.comboBoxDept_SelectedIndexChanged);
             // 
             // Emp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(183)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1315, 741);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(1315, 733);
+            this.Controls.Add(this.comboBoxDept);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridViewEmp);
@@ -461,7 +586,6 @@
             this.Controls.Add(this.labelSalary);
             this.Controls.Add(this.listBoxEmpType);
             this.Controls.Add(this.labelDpt);
-            this.Controls.Add(this.textDpt);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.textAcc);
             this.Controls.Add(this.textDesignation);
@@ -486,7 +610,6 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmp)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -511,7 +634,6 @@
         private System.Windows.Forms.TextBox textDesignation;
         private System.Windows.Forms.TextBox textAcc;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textDpt;
         private System.Windows.Forms.Label labelDpt;
         private System.Windows.Forms.ListBox listBoxEmpType;
         private System.Windows.Forms.Label labelSalary;
@@ -536,7 +658,8 @@
         private System.Windows.Forms.DataGridView dataGridViewEmp;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.ComboBox comboBoxDept;
     }
 }
 
