@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Emp));
             this.labelName = new System.Windows.Forms.Label();
             this.labelAccountNumber = new System.Windows.Forms.Label();
             this.labelParentage = new System.Windows.Forms.Label();
@@ -72,6 +73,8 @@
             this.comboBoxDept = new System.Windows.Forms.ComboBox();
             this.listBoxEmpType = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.txtSeach = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmp)).BeginInit();
             this.SuspendLayout();
@@ -471,12 +474,31 @@
             this.label2.Size = new System.Drawing.Size(0, 13);
             this.label2.TabIndex = 42;
             // 
+            // txtSeach
+            // 
+            this.txtSeach.Location = new System.Drawing.Point(621, 51);
+            this.txtSeach.Name = "txtSeach";
+            this.txtSeach.Size = new System.Drawing.Size(100, 20);
+            this.txtSeach.TabIndex = 43;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
+            this.btnSearch.Location = new System.Drawing.Point(718, 51);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(26, 20);
+            this.btnSearch.TabIndex = 44;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
             // Emp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(183)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1315, 733);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.txtSeach);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.listBoxEmpType);
             this.Controls.Add(this.comboBoxDept);
@@ -571,6 +593,8 @@
         private System.Windows.Forms.ComboBox comboBoxDept;
         private System.Windows.Forms.ListBox listBoxEmpType;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtSeach;
+        private System.Windows.Forms.Button btnSearch;
     }
 }
 

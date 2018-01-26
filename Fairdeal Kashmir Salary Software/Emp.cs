@@ -62,6 +62,31 @@ namespace Fairdeal_Kashmir_Salary_Software
             dataGridViewEmp.Columns[11].Visible = false;
 
         }
+        private void fillGridSearch(string key)
+        {
+            SqlCommand cmdd = new SqlCommand();
+            cmdd.CommandText = "SELECT * FROM Employee where empName like '%" +@key+"%'";
+            cmdd.Parameters.AddWithValue("@key",key);
+            SqlConnection connection1 = new SqlConnection(DataManager.connectionString);
+            SqlDataAdapter dataadapter = new SqlDataAdapter(cmdd.CommandText, DataManager.connectionString);
+            connection1.Open();
+            DataSet ds1 = new DataSet();
+            dataadapter.Fill(ds1, "Employee");
+            connection1.Close();
+            dataGridViewEmp.DataSource = ds1;
+            dataGridViewEmp.DataMember = "Employee";
+            dataGridViewEmp.Columns[1].HeaderText = "Name";
+            dataGridViewEmp.Columns[2].HeaderText = "Account No.";
+            dataGridViewEmp.Columns[0].Visible = false;
+            dataGridViewEmp.Columns[4].Visible = false;
+            dataGridViewEmp.Columns[5].Visible = false;
+            dataGridViewEmp.Columns[6].Visible = false;
+            dataGridViewEmp.Columns[8].Visible = false;
+            dataGridViewEmp.Columns[9].Visible = false;
+            dataGridViewEmp.Columns[10].Visible = false;
+            dataGridViewEmp.Columns[11].Visible = false;
+
+        }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -371,6 +396,11 @@ namespace Fairdeal_Kashmir_Salary_Software
         private void labelJoinDate_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            fillGridSearch(txtSeach.Text);
         }
     }
 }
