@@ -23,6 +23,7 @@ namespace Fairdeal_Kashmir_Salary_Software
             this.Location = new Point(0, 0);
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
             fillGrid();
+            comboBoxDept.SelectedIndex = -1;
             label1.Visible = false;
             btnDelete.Visible = false;
             SqlCommand cmdDept = new SqlCommand();
@@ -31,6 +32,7 @@ namespace Fairdeal_Kashmir_Salary_Software
             comboBoxDept.DataSource = DSdept.Tables[0];
             comboBoxDept.ValueMember = "DepartmentName";
             comboBoxDept.DisplayMember = "DepartmentName";
+            comboBoxDept.Text = "--Select--";
 
             
           
@@ -48,6 +50,8 @@ namespace Fairdeal_Kashmir_Salary_Software
             connection1.Close();
             dataGridViewEmp.DataSource = ds1;
             dataGridViewEmp.DataMember = "Employee";
+            dataGridViewEmp.Columns[1].HeaderText = "Name";
+            dataGridViewEmp.Columns[2].HeaderText = "Account No.";
             dataGridViewEmp.Columns[0].Visible = false;
             dataGridViewEmp.Columns[4].Visible = false;
             dataGridViewEmp.Columns[5].Visible = false;
@@ -65,6 +69,11 @@ namespace Fairdeal_Kashmir_Salary_Software
             if (txtName.Text == string.Empty)
             {
                 MessageBox.Show("Please enter Employee's name");
+                return;
+            }
+            if (comboBoxDept.Text == "--Select--")
+            {
+                MessageBox.Show("Please select the department");
                 return;
             }
 
@@ -232,6 +241,9 @@ namespace Fairdeal_Kashmir_Salary_Software
             btnDelete.Visible = true;
             foreach (DataGridViewRow row in dataGridViewEmp.SelectedRows)
             {
+
+                label2.Text = "*Please note that you are updating " + row.Cells[1].Value.ToString() + "'s details";
+                label2.ForeColor = System.Drawing.Color.Red;
                 btnSave.Text = "Update";
                 label1.Text =  row.Cells[0].Value.ToString();
                 txtName.Text = row.Cells[1].Value.ToString();

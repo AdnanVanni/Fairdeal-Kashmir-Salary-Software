@@ -46,7 +46,6 @@
             this.textAcc = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.labelDpt = new System.Windows.Forms.Label();
-            this.listBoxEmpType = new System.Windows.Forms.ListBox();
             this.labelSalary = new System.Windows.Forms.Label();
             this.labelPFLoanWithdrawn = new System.Windows.Forms.Label();
             this.labelPFloanMonthlyDeduction = new System.Windows.Forms.Label();
@@ -71,17 +70,16 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.comboBoxDept = new System.Windows.Forms.ComboBox();
+            this.listBoxEmpType = new System.Windows.Forms.ListBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmp)).BeginInit();
             this.SuspendLayout();
             // 
             // labelName
             // 
-            this.labelName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelName.AutoSize = true;
-            this.labelName.Location = new System.Drawing.Point(116, 51);
+            this.labelName.Location = new System.Drawing.Point(45, 68);
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(35, 13);
             this.labelName.TabIndex = 0;
@@ -89,11 +87,8 @@
             // 
             // labelAccountNumber
             // 
-            this.labelAccountNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelAccountNumber.AutoSize = true;
-            this.labelAccountNumber.Location = new System.Drawing.Point(401, 224);
+            this.labelAccountNumber.Location = new System.Drawing.Point(401, 302);
             this.labelAccountNumber.Name = "labelAccountNumber";
             this.labelAccountNumber.Size = new System.Drawing.Size(64, 13);
             this.labelAccountNumber.TabIndex = 2;
@@ -101,11 +96,8 @@
             // 
             // labelParentage
             // 
-            this.labelParentage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelParentage.AutoSize = true;
-            this.labelParentage.Location = new System.Drawing.Point(116, 113);
+            this.labelParentage.Location = new System.Drawing.Point(45, 113);
             this.labelParentage.Name = "labelParentage";
             this.labelParentage.Size = new System.Drawing.Size(56, 13);
             this.labelParentage.TabIndex = 3;
@@ -113,11 +105,8 @@
             // 
             // labelResidence
             // 
-            this.labelResidence.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelResidence.AutoSize = true;
-            this.labelResidence.Location = new System.Drawing.Point(401, 51);
+            this.labelResidence.Location = new System.Drawing.Point(291, 68);
             this.labelResidence.Name = "labelResidence";
             this.labelResidence.Size = new System.Drawing.Size(58, 13);
             this.labelResidence.TabIndex = 4;
@@ -126,11 +115,8 @@
             // 
             // labelJoinDate
             // 
-            this.labelJoinDate.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelJoinDate.AutoSize = true;
-            this.labelJoinDate.Location = new System.Drawing.Point(401, 84);
+            this.labelJoinDate.Location = new System.Drawing.Point(291, 109);
             this.labelJoinDate.Name = "labelJoinDate";
             this.labelJoinDate.Size = new System.Drawing.Size(52, 13);
             this.labelJoinDate.TabIndex = 5;
@@ -139,11 +125,8 @@
             // 
             // labelEmpType
             // 
-            this.labelEmpType.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelEmpType.AutoSize = true;
-            this.labelEmpType.Location = new System.Drawing.Point(352, 120);
+            this.labelEmpType.Location = new System.Drawing.Point(291, 150);
             this.labelEmpType.Name = "labelEmpType";
             this.labelEmpType.Size = new System.Drawing.Size(80, 13);
             this.labelEmpType.TabIndex = 6;
@@ -151,11 +134,8 @@
             // 
             // labelDesignation
             // 
-            this.labelDesignation.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelDesignation.AutoSize = true;
-            this.labelDesignation.Location = new System.Drawing.Point(401, 183);
+            this.labelDesignation.Location = new System.Drawing.Point(291, 227);
             this.labelDesignation.Name = "labelDesignation";
             this.labelDesignation.Size = new System.Drawing.Size(63, 13);
             this.labelDesignation.TabIndex = 7;
@@ -163,11 +143,8 @@
             // 
             // labelPhone
             // 
-            this.labelPhone.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelPhone.AutoSize = true;
-            this.labelPhone.Location = new System.Drawing.Point(116, 142);
+            this.labelPhone.Location = new System.Drawing.Point(45, 150);
             this.labelPhone.Name = "labelPhone";
             this.labelPhone.Size = new System.Drawing.Size(38, 13);
             this.labelPhone.TabIndex = 8;
@@ -175,11 +152,8 @@
             // 
             // labelEmail
             // 
-            this.labelEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelEmail.AutoSize = true;
-            this.labelEmail.Location = new System.Drawing.Point(116, 176);
+            this.labelEmail.Location = new System.Drawing.Point(45, 190);
             this.labelEmail.Name = "labelEmail";
             this.labelEmail.Size = new System.Drawing.Size(32, 13);
             this.labelEmail.TabIndex = 9;
@@ -187,51 +161,36 @@
             // 
             // txtName
             // 
-            this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtName.Location = new System.Drawing.Point(234, 44);
+            this.txtName.Location = new System.Drawing.Point(114, 61);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(141, 20);
             this.txtName.TabIndex = 10;
             // 
             // textParentage
             // 
-            this.textParentage.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textParentage.Location = new System.Drawing.Point(234, 113);
+            this.textParentage.Location = new System.Drawing.Point(114, 106);
             this.textParentage.Name = "textParentage";
             this.textParentage.Size = new System.Drawing.Size(100, 20);
             this.textParentage.TabIndex = 12;
             // 
             // textPhone
             // 
-            this.textPhone.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textPhone.Location = new System.Drawing.Point(234, 142);
+            this.textPhone.Location = new System.Drawing.Point(114, 147);
             this.textPhone.Name = "textPhone";
             this.textPhone.Size = new System.Drawing.Size(100, 20);
             this.textPhone.TabIndex = 13;
             // 
             // textEmail
             // 
-            this.textEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEmail.Location = new System.Drawing.Point(234, 176);
+            this.textEmail.Location = new System.Drawing.Point(114, 183);
             this.textEmail.Name = "textEmail";
             this.textEmail.Size = new System.Drawing.Size(100, 20);
             this.textEmail.TabIndex = 14;
             // 
             // textResidence
             // 
-            this.textResidence.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textResidence.Location = new System.Drawing.Point(486, 48);
+            this.textResidence.Location = new System.Drawing.Point(390, 61);
             this.textResidence.Name = "textResidence";
             this.textResidence.Size = new System.Drawing.Size(100, 20);
             this.textResidence.TabIndex = 15;
@@ -239,10 +198,7 @@
             // 
             // textDesignation
             // 
-            this.textDesignation.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textDesignation.Location = new System.Drawing.Point(488, 183);
+            this.textDesignation.Location = new System.Drawing.Point(390, 224);
             this.textDesignation.Name = "textDesignation";
             this.textDesignation.Size = new System.Drawing.Size(100, 20);
             this.textDesignation.TabIndex = 18;
@@ -250,10 +206,7 @@
             // 
             // textAcc
             // 
-            this.textAcc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textAcc.Location = new System.Drawing.Point(488, 221);
+            this.textAcc.Location = new System.Drawing.Point(404, 327);
             this.textAcc.Name = "textAcc";
             this.textAcc.Size = new System.Drawing.Size(100, 20);
             this.textAcc.TabIndex = 19;
@@ -261,10 +214,7 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(486, 78);
+            this.dateTimePicker1.Location = new System.Drawing.Point(390, 106);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(181, 20);
             this.dateTimePicker1.TabIndex = 20;
@@ -272,39 +222,17 @@
             // 
             // labelDpt
             // 
-            this.labelDpt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelDpt.AutoSize = true;
-            this.labelDpt.Location = new System.Drawing.Point(114, 219);
+            this.labelDpt.Location = new System.Drawing.Point(45, 219);
             this.labelDpt.Name = "labelDpt";
             this.labelDpt.Size = new System.Drawing.Size(62, 13);
             this.labelDpt.TabIndex = 22;
             this.labelDpt.Text = "Department";
             // 
-            // listBoxEmpType
-            // 
-            this.listBoxEmpType.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.listBoxEmpType.FormattingEnabled = true;
-            this.listBoxEmpType.Items.AddRange(new object[] {
-            "Salaried",
-            "Contract",
-            "Hourly"});
-            this.listBoxEmpType.Location = new System.Drawing.Point(438, 124);
-            this.listBoxEmpType.Name = "listBoxEmpType";
-            this.listBoxEmpType.Size = new System.Drawing.Size(180, 43);
-            this.listBoxEmpType.TabIndex = 23;
-            this.listBoxEmpType.SelectedIndexChanged += new System.EventHandler(this.listBoxEmpType_SelectedIndexChanged);
-            // 
             // labelSalary
             // 
-            this.labelSalary.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelSalary.AutoSize = true;
-            this.labelSalary.Location = new System.Drawing.Point(114, 293);
+            this.labelSalary.Location = new System.Drawing.Point(54, 302);
             this.labelSalary.Name = "labelSalary";
             this.labelSalary.Size = new System.Drawing.Size(76, 13);
             this.labelSalary.TabIndex = 24;
@@ -313,11 +241,8 @@
             // 
             // labelPFLoanWithdrawn
             // 
-            this.labelPFLoanWithdrawn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelPFLoanWithdrawn.AutoSize = true;
-            this.labelPFLoanWithdrawn.Location = new System.Drawing.Point(116, 354);
+            this.labelPFLoanWithdrawn.Location = new System.Drawing.Point(56, 363);
             this.labelPFLoanWithdrawn.Name = "labelPFLoanWithdrawn";
             this.labelPFLoanWithdrawn.Size = new System.Drawing.Size(101, 13);
             this.labelPFLoanWithdrawn.TabIndex = 25;
@@ -326,11 +251,8 @@
             // 
             // labelPFloanMonthlyDeduction
             // 
-            this.labelPFloanMonthlyDeduction.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelPFloanMonthlyDeduction.AutoSize = true;
-            this.labelPFloanMonthlyDeduction.Location = new System.Drawing.Point(116, 415);
+            this.labelPFloanMonthlyDeduction.Location = new System.Drawing.Point(56, 432);
             this.labelPFloanMonthlyDeduction.Name = "labelPFloanMonthlyDeduction";
             this.labelPFloanMonthlyDeduction.Size = new System.Drawing.Size(139, 13);
             this.labelPFloanMonthlyDeduction.TabIndex = 26;
@@ -339,11 +261,8 @@
             // 
             // labelAdvAmt
             // 
-            this.labelAdvAmt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelAdvAmt.AutoSize = true;
-            this.labelAdvAmt.Location = new System.Drawing.Point(412, 354);
+            this.labelAdvAmt.Location = new System.Drawing.Point(401, 363);
             this.labelAdvAmt.Name = "labelAdvAmt";
             this.labelAdvAmt.Size = new System.Drawing.Size(174, 13);
             this.labelAdvAmt.TabIndex = 27;
@@ -356,7 +275,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelAdvancedMonthlyDeduction.AutoSize = true;
-            this.labelAdvancedMonthlyDeduction.Location = new System.Drawing.Point(412, 415);
+            this.labelAdvancedMonthlyDeduction.Location = new System.Drawing.Point(402, 432);
             this.labelAdvancedMonthlyDeduction.Name = "labelAdvancedMonthlyDeduction";
             this.labelAdvancedMonthlyDeduction.Size = new System.Drawing.Size(187, 13);
             this.labelAdvancedMonthlyDeduction.TabIndex = 28;
@@ -365,10 +284,7 @@
             // 
             // textMonthlySalary
             // 
-            this.textMonthlySalary.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textMonthlySalary.Location = new System.Drawing.Point(115, 318);
+            this.textMonthlySalary.Location = new System.Drawing.Point(57, 327);
             this.textMonthlySalary.Name = "textMonthlySalary";
             this.textMonthlySalary.Size = new System.Drawing.Size(100, 20);
             this.textMonthlySalary.TabIndex = 29;
@@ -377,10 +293,7 @@
             // 
             // textPFLW
             // 
-            this.textPFLW.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textPFLW.Location = new System.Drawing.Point(119, 380);
+            this.textPFLW.Location = new System.Drawing.Point(57, 392);
             this.textPFLW.Name = "textPFLW";
             this.textPFLW.Size = new System.Drawing.Size(100, 20);
             this.textPFLW.TabIndex = 30;
@@ -389,10 +302,7 @@
             // 
             // textPFMD
             // 
-            this.textPFMD.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textPFMD.Location = new System.Drawing.Point(119, 448);
+            this.textPFMD.Location = new System.Drawing.Point(59, 457);
             this.textPFMD.Name = "textPFMD";
             this.textPFMD.Size = new System.Drawing.Size(100, 20);
             this.textPFMD.TabIndex = 31;
@@ -401,10 +311,7 @@
             // 
             // textAACD
             // 
-            this.textAACD.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textAACD.Location = new System.Drawing.Point(415, 380);
+            this.textAACD.Location = new System.Drawing.Point(404, 392);
             this.textAACD.Name = "textAACD";
             this.textAACD.Size = new System.Drawing.Size(100, 20);
             this.textAACD.TabIndex = 32;
@@ -413,10 +320,7 @@
             // 
             // textAAMD
             // 
-            this.textAAMD.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textAAMD.Location = new System.Drawing.Point(415, 448);
+            this.textAAMD.Location = new System.Drawing.Point(404, 457);
             this.textAAMD.Name = "textAAMD";
             this.textAAMD.Size = new System.Drawing.Size(100, 20);
             this.textAAMD.TabIndex = 33;
@@ -425,10 +329,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSave.Location = new System.Drawing.Point(488, 502);
+            this.btnSave.Location = new System.Drawing.Point(405, 550);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 34;
@@ -504,15 +405,12 @@
             // dataGridViewEmp
             // 
             this.dataGridViewEmp.AllowUserToAddRows = false;
-            this.dataGridViewEmp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewEmp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewEmp.Location = new System.Drawing.Point(673, 77);
+            this.dataGridViewEmp.Location = new System.Drawing.Point(621, 77);
             this.dataGridViewEmp.MinimumSize = new System.Drawing.Size(400, 400);
             this.dataGridViewEmp.MultiSelect = false;
             this.dataGridViewEmp.Name = "dataGridViewEmp";
-            this.dataGridViewEmp.Size = new System.Drawing.Size(630, 400);
+            this.dataGridViewEmp.Size = new System.Drawing.Size(682, 447);
             this.dataGridViewEmp.TabIndex = 36;
             this.dataGridViewEmp.SelectionChanged += new System.EventHandler(this.dataGridViewEmp_SelectionChanged);
             // 
@@ -526,10 +424,7 @@
             // 
             // button1
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(576, 502);
+            this.button1.Location = new System.Drawing.Point(496, 550);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 38;
@@ -539,10 +434,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDelete.Location = new System.Drawing.Point(667, 502);
+            this.btnDelete.Location = new System.Drawing.Point(590, 550);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 39;
@@ -552,15 +444,32 @@
             // 
             // comboBoxDept
             // 
-            this.comboBoxDept.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxDept.FormattingEnabled = true;
-            this.comboBoxDept.Location = new System.Drawing.Point(234, 216);
+            this.comboBoxDept.Location = new System.Drawing.Point(115, 216);
             this.comboBoxDept.Name = "comboBoxDept";
             this.comboBoxDept.Size = new System.Drawing.Size(100, 21);
             this.comboBoxDept.TabIndex = 40;
             this.comboBoxDept.SelectedIndexChanged += new System.EventHandler(this.comboBoxDept_SelectedIndexChanged);
+            // 
+            // listBoxEmpType
+            // 
+            this.listBoxEmpType.FormattingEnabled = true;
+            this.listBoxEmpType.Items.AddRange(new object[] {
+            "Salaried",
+            "Contractual",
+            "Hourly"});
+            this.listBoxEmpType.Location = new System.Drawing.Point(390, 150);
+            this.listBoxEmpType.Name = "listBoxEmpType";
+            this.listBoxEmpType.Size = new System.Drawing.Size(100, 43);
+            this.listBoxEmpType.TabIndex = 41;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(111, 35);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 13);
+            this.label2.TabIndex = 42;
             // 
             // Emp
             // 
@@ -568,6 +477,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(183)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1315, 733);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.listBoxEmpType);
             this.Controls.Add(this.comboBoxDept);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.button1);
@@ -584,7 +495,6 @@
             this.Controls.Add(this.labelPFloanMonthlyDeduction);
             this.Controls.Add(this.labelPFLoanWithdrawn);
             this.Controls.Add(this.labelSalary);
-            this.Controls.Add(this.listBoxEmpType);
             this.Controls.Add(this.labelDpt);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.textAcc);
@@ -635,7 +545,6 @@
         private System.Windows.Forms.TextBox textAcc;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label labelDpt;
-        private System.Windows.Forms.ListBox listBoxEmpType;
         private System.Windows.Forms.Label labelSalary;
         private System.Windows.Forms.Label labelPFLoanWithdrawn;
         private System.Windows.Forms.Label labelPFloanMonthlyDeduction;
@@ -660,6 +569,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.ComboBox comboBoxDept;
+        private System.Windows.Forms.ListBox listBoxEmpType;
+        private System.Windows.Forms.Label label2;
     }
 }
 
