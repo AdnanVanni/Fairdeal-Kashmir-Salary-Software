@@ -323,9 +323,12 @@ namespace Fairdeal_Kashmir_Salary_Software
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void txtAddNew_Click(object sender, EventArgs e)
         {
-
+            Emp emp = new Emp();
+            emp.Tag = this;
+            emp.Show(this);
+            Hide();
         }
 
         private void textMonthlySalary_TextChanged(object sender, EventArgs e)
