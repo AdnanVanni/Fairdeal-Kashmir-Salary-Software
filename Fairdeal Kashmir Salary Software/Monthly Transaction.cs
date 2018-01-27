@@ -22,6 +22,18 @@ namespace Fairdeal_Kashmir_Salary_Software
         {
             this.Location = new Point(0, 0);
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+            PopulateEmpComboBox();
+        }
+        private void PopulateEmpComboBox()
+        {
+            SqlCommand cmd15 = new SqlCommand();
+            cmd15.CommandText = "select EmpId,EmpName from employee";
+            DataSet DS1 = new DataSet();
+               DS1= DataManager.executeDataset(cmd15);
+            Ename.DisplayMember = "EmpName";
+            Ename.ValueMember = "EmpId";
+            Ename.DataSource = DS1.Tables[0];
+            
         }
 
         private void txtSaveRecord_Click(object sender, EventArgs e)
@@ -47,6 +59,17 @@ namespace Fairdeal_Kashmir_Salary_Software
                 MessageBox.Show("Net Salary not calculated");
                 return;
             }
+            string MonthYear = comboBoxMonth.Text + comboBoxYear.Text;
+            SqlCommand Save = new SqlCommand();
+            Save.CommandText = "INSERT INTO[dbo].[MonthlyTransaction]([EmployeeName] ,[MonthYear] ,[TDC],[Fine],[SalaryInHand],[Memo]) VALUES(@EmployeeName,@MonthYear,@TDC,@Fine,@SalaryInHand,@Memo)";
+            Save.Parameters.AddWithValue("@EmployeeName",Ename.SelectedText);
+            Save.Parameters.AddWithValue("@MonthYear",MonthYear);
+            Save.Parameters.AddWithValue("@TDC",txtTdc.Text);
+            Save.Parameters.AddWithValue("@Fine",txtFine.Text);
+            Save.Parameters.AddWithValue("@SalaryInHand",txtNetSalary.Text);
+            Save.Parameters.AddWithValue("@Memo",richTextBoxMemo.Text);
+            DataManager.executeNonQuery(Save);
+
         }
 
         private void txtMonthlySalary_KeyPress(object sender, KeyPressEventArgs e)
@@ -170,38 +193,21 @@ namespace Fairdeal_Kashmir_Salary_Software
 
         private void Ename_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection(DataManager.connectionString);
-
-            SqlCommand cmd = new SqlCommand("select EmpId,EmpName from employee",conn);
-
             
-              SqlDataAdapter da = new SqlDataAdapter(cmd);
-
-            DataSet Ds = new DataSet();
-
-            da.Fill(Ds);
-
-            
-            for (int i = 0; i < Ds.Tables[0].Rows.Count; i++)
-
-            {
-                Ename.Items.Add(Ds.Tables[0].Rows[i][1]);
-
-            }
 
         }
 
         private void Ename_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            SqlConnection conn1 = new SqlConnection(DataManager.connectionString);
-            SqlCommand cmd1 = new SqlCommand("select * from employee where EmpName=@EmpName", conn1);
-            cmd1.Parameters.AddWithValue("@EmpName", Ename.SelectedItem);
+            //SqlConnection conn1 = new SqlConnection(DataManager.connectionString);
+            //SqlCommand cmd1 = new SqlCommand("select * from employee where EmpName=@EmpName", conn1);
+            //cmd1.Parameters.AddWithValue("@EmpName", Ename.SelectedItem);
 
-            DataSet DS1 = DataManager.executeDataset(cmd1);
-            txtNetSalary.Text = DS1.Tables[0].Rows[0][5].ToString();
-            txtMPFLS.Text = DS1.Tables[0].Rows[0][10].ToString();
-            txtAAMD.Text = DS1.Tables[0].Rows[0][11].ToString();
+            //DataSet DS1 = DataManager.executeDataset(cmd1);
+            //txtMonthlySalary.Text = DS1.Tables[0].Rows[0][5].ToString();
+            //txtMPFLS.Text = DS1.Tables[0].Rows[0][10].ToString();
+            //txtAAMD.Text = DS1.Tables[0].Rows[0][11].ToString();
         }
 
         private void btnCalcSalary_Click(object sender, EventArgs e)
