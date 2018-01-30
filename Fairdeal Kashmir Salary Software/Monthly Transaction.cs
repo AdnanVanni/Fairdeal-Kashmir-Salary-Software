@@ -20,9 +20,23 @@ namespace Fairdeal_Kashmir_Salary_Software
 
         private void Monthly_Transaction_Load(object sender, EventArgs e)
         {
+           
             this.Location = new Point(0, 0);
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
             PopulateEmpComboBox();
+            Ename.SelectedIndex = -1;
+            const int JANUARY = 1;
+            const int FEBRUARY = 2;
+            const int MARCH = 3;
+            const int APRIL = 4;
+            const int MAY = 5;
+            const int JUNE = 6;
+            const int JULY = 7;
+            const int AUGUST = 8;
+            const int SEPTEMBER = 9;
+            const int OCTOBER = 10;
+            const int NOVEMBER = 11;
+            const int DECEMBER = 12;
         }
         private void PopulateEmpComboBox()
         {
@@ -199,15 +213,14 @@ namespace Fairdeal_Kashmir_Salary_Software
 
         private void Ename_SelectedIndexChanged(object sender, EventArgs e)
         {
+            SqlCommand cmd1 = new SqlCommand();
+            cmd1.CommandText = "select * from employee where EmpName='adnan'";
+            cmd1.Parameters.AddWithValue("@EmpName", Ename.SelectedValue);
 
-            //SqlConnection conn1 = new SqlConnection(DataManager.connectionString);
-            //SqlCommand cmd1 = new SqlCommand("select * from employee where EmpName=@EmpName", conn1);
-            //cmd1.Parameters.AddWithValue("@EmpName", Ename.SelectedItem);
-
-            //DataSet DS1 = DataManager.executeDataset(cmd1);
-            //txtMonthlySalary.Text = DS1.Tables[0].Rows[0][5].ToString();
-            //txtMPFLS.Text = DS1.Tables[0].Rows[0][10].ToString();
-            //txtAAMD.Text = DS1.Tables[0].Rows[0][11].ToString();
+            DataSet DS1 = DataManager.executeDataset(cmd1);
+            txtMonthlySalary.Text = DS1.Tables[0].Rows[0][5].ToString();
+            txtMPFLS.Text = DS1.Tables[0].Rows[0][10].ToString();
+            txtAAMD.Text = DS1.Tables[0].Rows[0][11].ToString();
         }
 
         private void btnCalcSalary_Click(object sender, EventArgs e)
@@ -236,35 +249,43 @@ namespace Fairdeal_Kashmir_Salary_Software
             }
             else
             {
-                a = Convert.ToInt32(txtMonthlySalary.Text);
+                a = 0;
             }
             if(!(txtPF.Text == null || txtPF.Text == ""))
             {
 
-                a = a - Convert.ToInt32(txtPF.Text);
+                a = a + Convert.ToInt32(txtPF.Text);
             }
             if (!(txtAAMD.Text == null || txtAAMD.Text == ""))
             {
 
-                a = a - Convert.ToInt32(txtAAMD.Text);
+                a = a + Convert.ToInt32(txtAAMD.Text);
             }
             if (!(txtMPFLS.Text == null || txtMPFLS.Text == ""))
             {
               
-                 a = a - Convert.ToInt32(txtMPFLS.Text);
+                 a = a + Convert.ToInt32(txtMPFLS.Text);
             }
             if (!(txtTdc.Text == null || txtTdc.Text == ""))
             {
 
-                a = a - Convert.ToInt32(txtTdc.Text);
+                a = a + Convert.ToInt32(txtTdc.Text);
             }
             if (!(txtFine.Text == null || txtFine.Text == ""))
             {
 
-                a = a - Convert.ToInt32(txtFine.Text);
+                a = a + Convert.ToInt32(txtFine.Text);
             }
-           txtNetSalary.Text = a.ToString();
-
+            if (Convert.ToUInt32(txtAbsent) > 0 && txtAbsent.Text != "")
+            {
+                int daysInMonth = System.DateTime.DaysInMonth(Convert.ToInt32(comboBoxYear.SelectedText), Convert.ToInt32(comboBoxMonth.SelectedIndex));
+                int SalaryAbsentExc = Convert.ToInt32(txtMonthlySalary) * (daysInMonth - Convert.ToInt32(txtAbsent) / daysInMonth);
+                txtNetSalary.Text = SalaryAbsentExc.ToString();
+            }
+            else
+            {
+                txtNetSalary.Text = txtMonthlySalary.Text;
+            }
         }
 
         private void txtAbsent_KeyPress(object sender, KeyPressEventArgs e)
@@ -284,6 +305,12 @@ namespace Fairdeal_Kashmir_Salary_Software
                     }
                 }
             }
+        }
+
+        private void txtMonthlySalary_TextChanged(object sender, EventArgs e)
+        {
+           double pfcalc= Convert.ToDouble(txtMonthlySalary.Text) * 0.12;
+            txtPF.Text = pfcalc.ToString();
         }
     }
 }

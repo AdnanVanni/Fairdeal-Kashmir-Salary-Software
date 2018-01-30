@@ -294,6 +294,7 @@
             this.txtMonthlySalary.Name = "txtMonthlySalary";
             this.txtMonthlySalary.Size = new System.Drawing.Size(121, 20);
             this.txtMonthlySalary.TabIndex = 30;
+            this.txtMonthlySalary.TextChanged += new System.EventHandler(this.txtMonthlySalary_TextChanged);
             this.txtMonthlySalary.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMonthlySalary_KeyPress);
             // 
             // lblActualSalary
