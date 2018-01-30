@@ -25,18 +25,18 @@ namespace Fairdeal_Kashmir_Salary_Software
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
             PopulateEmpComboBox();
             Ename.SelectedIndex = -1;
-            const int JANUARY = 1;
-            const int FEBRUARY = 2;
-            const int MARCH = 3;
-            const int APRIL = 4;
-            const int MAY = 5;
-            const int JUNE = 6;
-            const int JULY = 7;
-            const int AUGUST = 8;
-            const int SEPTEMBER = 9;
-            const int OCTOBER = 10;
-            const int NOVEMBER = 11;
-            const int DECEMBER = 12;
+            //const int JANUARY = 1;
+            //const int FEBRUARY = 2;
+            //const int MARCH = 3;
+            //const int APRIL = 4;
+            //const int MAY = 5;
+            //const int JUNE = 6;
+            //const int JULY = 7;
+            //const int AUGUST = 8;
+            //const int SEPTEMBER = 9;
+            //const int OCTOBER = 10;
+            //const int NOVEMBER = 11;
+            //const int DECEMBER = 12;
         }
         private void PopulateEmpComboBox()
         {
@@ -214,8 +214,8 @@ namespace Fairdeal_Kashmir_Salary_Software
         private void Ename_SelectedIndexChanged(object sender, EventArgs e)
         {
             SqlCommand cmd1 = new SqlCommand();
-            cmd1.CommandText = "select * from employee where EmpName='adnan'";
-            cmd1.Parameters.AddWithValue("@EmpName", Ename.SelectedValue);
+            cmd1.CommandText = "select * from employee where EmpName='ad'";
+            //cmd1.Parameters.AddWithValue("@EmpName", Ename.SelectedValue);
 
             DataSet DS1 = DataManager.executeDataset(cmd1);
             txtMonthlySalary.Text = DS1.Tables[0].Rows[0][5].ToString();
@@ -276,14 +276,17 @@ namespace Fairdeal_Kashmir_Salary_Software
 
                 a = a + Convert.ToInt32(txtFine.Text);
             }
-            if (Convert.ToUInt32(txtAbsent) > 0 && txtAbsent.Text != "")
+            if (Convert.ToInt32(txtAbsent.Text) > 0 && txtAbsent.Text != "")
             {
                 int daysInMonth = System.DateTime.DaysInMonth(Convert.ToInt32(comboBoxYear.SelectedText), Convert.ToInt32(comboBoxMonth.SelectedIndex));
-                int SalaryAbsentExc = Convert.ToInt32(txtMonthlySalary) * (daysInMonth - Convert.ToInt32(txtAbsent) / daysInMonth);
+                int SalaryAbsentExc = Convert.ToInt32(txtMonthlySalary.Text) * (daysInMonth - Convert.ToInt32(txtAbsent.Text)) / daysInMonth;
+                SalaryAbsentExc = SalaryAbsentExc - a;
                 txtNetSalary.Text = SalaryAbsentExc.ToString();
             }
+
             else
             {
+               
                 txtNetSalary.Text = txtMonthlySalary.Text;
             }
         }
