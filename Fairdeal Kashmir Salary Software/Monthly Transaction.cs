@@ -25,18 +25,18 @@ namespace Fairdeal_Kashmir_Salary_Software
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
             PopulateEmpComboBox();
             Ename.SelectedIndex = -1;
-            //const int JANUARY = 1;
-            //const int FEBRUARY = 2;
-            //const int MARCH = 3;
-            //const int APRIL = 4;
-            //const int MAY = 5;
-            //const int JUNE = 6;
-            //const int JULY = 7;
-            //const int AUGUST = 8;
-            //const int SEPTEMBER = 9;
-            //const int OCTOBER = 10;
-            //const int NOVEMBER = 11;
-            //const int DECEMBER = 12;
+            const int JANUARY = 1;
+            const int FEBRUARY = 2;
+            const int MARCH = 3;
+            const int APRIL = 4;
+            const int MAY = 5;
+            const int JUNE = 6;
+            const int JULY = 7;
+            const int AUGUST = 8;
+            const int SEPTEMBER = 9;
+            const int OCTOBER = 10;
+            const int NOVEMBER = 11;
+            const int DECEMBER = 12;
         }
         private void PopulateEmpComboBox()
         {
@@ -73,9 +73,15 @@ namespace Fairdeal_Kashmir_Salary_Software
                 MessageBox.Show("Net Salary not calculated");
                 return;
             }
+           
             string MonthYear = comboBoxMonth.Text + comboBoxYear.Text;
             SqlCommand Save = new SqlCommand();
-            Save.CommandText = "INSERT INTO[dbo].[MonthlyTransaction]([EmployeeName] ,[MonthYear] ,[TDC],[Fine],[SalaryInHand],[Memo]) VALUES(@EmployeeName,@MonthYear,@TDC,@Fine,@SalaryInHand,@Memo)";
+            SqlCommand retriveEmpId = new SqlCommand();
+            retriveEmpId.CommandText = "SELECT EmpId FROM dbo.Employee WHERE EmpName = @EmpName";
+            retriveEmpId.Parameters.AddWithValue("@EmpName", Ename.SelectedText);
+            DataManager.executeDataset(retriveEmpId);
+
+            Save.CommandText = "INSERT INTO[dbo].[MonthlyTransaction]([EmployeeId] ,[MonthYear] ,[TDC],[Fine],[SalaryInHand],[Memo]) VALUES(@EmployeeId,@MonthYear,@TDC,@Fine,@SalaryInHand,@Memo)";
             Save.Parameters.AddWithValue("@EmployeeName",Ename.SelectedText);
             Save.Parameters.AddWithValue("@MonthYear",MonthYear);
             Save.Parameters.AddWithValue("@TDC",txtTdc.Text);
@@ -276,14 +282,16 @@ namespace Fairdeal_Kashmir_Salary_Software
 
                 a = a + Convert.ToInt32(txtFine.Text);
             }
-            if (Convert.ToInt32(txtAbsent.Text) > 0 && txtAbsent.Text != "")
+            if (Convert.ToInt32(txtAbsent.Text) > 0)
             {
-                int daysInMonth = System.DateTime.DaysInMonth(Convert.ToInt32(comboBoxYear.SelectedText), Convert.ToInt32(comboBoxMonth.SelectedIndex));
-                int SalaryAbsentExc = Convert.ToInt32(txtMonthlySalary.Text) * (daysInMonth - Convert.ToInt32(txtAbsent.Text)) / daysInMonth;
+                int MonthS = Convert.ToInt32(comboBoxMonth.SelectedIndex.ToString());
+                MonthS++;
+                int YearS = Convert.ToInt32(comboBoxYear.SelectedItem.ToString());
+                Int32 daysInMonth = System.DateTime.DaysInMonth(YearS, MonthS);
+                float SalaryAbsentExc = (float)Convert.ToInt32(txtMonthlySalary.Text) * ((float)daysInMonth - (float)Convert.ToInt32(txtAbsent.Text)) / (float)daysInMonth;
                 SalaryAbsentExc = SalaryAbsentExc - a;
                 txtNetSalary.Text = SalaryAbsentExc.ToString();
             }
-
             else
             {
                
