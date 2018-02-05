@@ -54,6 +54,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtAbsent = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.dataGridViewMT = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMT)).BeginInit();
             this.SuspendLayout();
             // 
             // lblFine
@@ -229,7 +231,7 @@
             // 
             // txtSaveRecord
             // 
-            this.txtSaveRecord.Location = new System.Drawing.Point(478, 481);
+            this.txtSaveRecord.Location = new System.Drawing.Point(384, 490);
             this.txtSaveRecord.Name = "txtSaveRecord";
             this.txtSaveRecord.Size = new System.Drawing.Size(130, 23);
             this.txtSaveRecord.TabIndex = 25;
@@ -328,11 +330,20 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // dataGridViewMT
+            // 
+            this.dataGridViewMT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewMT.Location = new System.Drawing.Point(559, 83);
+            this.dataGridViewMT.Name = "dataGridViewMT";
+            this.dataGridViewMT.Size = new System.Drawing.Size(762, 501);
+            this.dataGridViewMT.TabIndex = 38;
+            // 
             // Monthly_Transaction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(964, 579);
+            this.ClientSize = new System.Drawing.Size(1333, 579);
+            this.Controls.Add(this.dataGridViewMT);
             this.Controls.Add(this.txtAbsent);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblActualSalary);
@@ -360,6 +371,7 @@
             this.Name = "Monthly_Transaction";
             this.Text = "Monthly_Transaction";
             this.Load += new System.EventHandler(this.Monthly_Transaction_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMT)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -391,5 +403,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtAbsent;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.DataGridView dataGridViewMT;
     }
 }

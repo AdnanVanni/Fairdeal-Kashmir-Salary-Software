@@ -33,6 +33,7 @@ namespace Fairdeal_Kashmir_Salary_Software
             Ename.DisplayMember = "EmpName";
             Ename.DataSource = DS1.Tables[0];
             Ename.SelectedIndex = -1;
+            txtAbsent.Text =Convert.ToString(0);
 
             Ename.Text = "--Select--";
             
@@ -83,27 +84,34 @@ namespace Fairdeal_Kashmir_Salary_Software
             string MonthYear = comboBoxMonth.Text + comboBoxYear.Text;
             SqlCommand GetEmp = new SqlCommand();
             GetEmp.CommandText = "select EmpId from Employee Where EmpName=@EmpName";
-            GetEmp.Parameters.AddWithValue("@EmpName", Ename.SelectedText);
-           DataSet DSEmp= DataManager.executeDataset(GetEmp);
-            var empId = DSEmp.Tables[0].Rows[0][0].ToString();
-
+            GetEmp.Parameters.AddWithValue("@EmpName", Ename.SelectedValue);
+            var empId = DataManager.executeScalar(GetEmp).ToString();
+            //saves record in monthly transaction
             SqlCommand Save = new SqlCommand();
-            SqlCommand retriveEmpId = new SqlCommand();
-            retriveEmpId.CommandText = "SELECT EmpId FROM dbo.Employee WHERE EmpName = @EmpName";
-            retriveEmpId.Parameters.AddWithValue("@EmpName", Ename.SelectedText);
-            DataManager.executeDataset(retriveEmpId);
-
             Save.CommandText = "INSERT INTO[dbo].[MonthlyTransaction]([EmployeeId] ,[MonthYear] ,[TDC],[Fine],[SalaryInHand],[Memo]) VALUES(@EmployeeId,@MonthYear,@TDC,@Fine,@SalaryInHand,@Memo)";
-            Save.Parameters.AddWithValue("@EmployeeName",Ename.SelectedText);
+            Save.Parameters.AddWithValue("@EmployeeId",empId);
             Save.Parameters.AddWithValue("@MonthYear",MonthYear);
             Save.Parameters.AddWithValue("@TDC",txtTdc.Text);
             Save.Parameters.AddWithValue("@Fine",txtFine.Text);
             Save.Parameters.AddWithValue("@SalaryInHand",txtNetSalary.Text);
             Save.Parameters.AddWithValue("@Memo",richTextBoxMemo.Text);
             DataManager.executeNonQuery(Save);
-
+           
         }
-
+        private void fillGrid()
+        {
+            SqlCommand cmdd = new SqlCommand();
+            cmdd.CommandText = "SELECT * FROM MonthlyTransaction";
+            SqlConnection connection1 = new SqlConnection(DataManager.connectionString);
+            SqlDataAdapter dataadapter = new SqlDataAdapter(cmdd.CommandText, DataManager.connectionString);
+            connection1.Open();
+            DataSet ds1 = new DataSet();
+            dataadapter.Fill(ds1, "Departments");
+            connection1.Close();
+            dataGridViewMT.DataSource = ds1;
+            dataGridViewMT.DataMember = "Departments";
+            dataGridViewMT.Columns[0].HeaderText = "Department Name/Location";
+        }
         private void txtMonthlySalary_KeyPress(object sender, KeyPressEventArgs e)
         {
             {
@@ -298,7 +306,22 @@ namespace Fairdeal_Kashmir_Salary_Software
 
                 a = a + Convert.ToInt32(txtFine.Text);
             }
-            if (Convert.ToInt32(txtAbsent.Text) > 0)
+
+            if (string.IsNullOrWhiteSpace(txtAbsent.Text))
+            {
+                int Net = Convert.ToInt32(txtMonthlySalary.Text) - a;
+                txtNetSalary.Text = Net.ToString();
+                return;
+            }
+           
+            else if (Convert.ToInt32(txtAbsent.Text) == 0 )
+            {
+                int Net = Convert.ToInt32(txtMonthlySalary.Text) - a;
+                txtNetSalary.Text = Net.ToString();
+                return;
+            }
+
+                else if (Convert.ToInt32(txtAbsent.Text) > 0)
             {
                 int MonthS = Convert.ToInt32(comboBoxMonth.SelectedIndex.ToString());
                 MonthS++;
@@ -307,12 +330,9 @@ namespace Fairdeal_Kashmir_Salary_Software
                 float SalaryAbsentExc = (float)Convert.ToInt32(txtMonthlySalary.Text) * ((float)daysInMonth - (float)Convert.ToInt32(txtAbsent.Text)) / (float)daysInMonth;
                 SalaryAbsentExc = SalaryAbsentExc - a;
                 txtNetSalary.Text = SalaryAbsentExc.ToString();
+                return;
             }
-            else
-            {
-               
-                txtNetSalary.Text = txtMonthlySalary.Text;
-            }
+            
         }
 
         private void txtAbsent_KeyPress(object sender, KeyPressEventArgs e)
