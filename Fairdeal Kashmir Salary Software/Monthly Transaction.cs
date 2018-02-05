@@ -23,8 +23,20 @@ namespace Fairdeal_Kashmir_Salary_Software
            
             this.Location = new Point(0, 0);
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
-            PopulateEmpComboBox();
+
+            
+            SqlCommand cmd15 = new SqlCommand();
+            cmd15.CommandText = "select EmpName from employee";
+            DataSet DS1 = new DataSet();
+            DS1 = DataManager.executeDataset(cmd15);
+            Ename.ValueMember = "EmpName";
+            Ename.DisplayMember = "EmpName";
+            Ename.DataSource = DS1.Tables[0];
             Ename.SelectedIndex = -1;
+
+            Ename.Text = "--Select--";
+            
+
             const int JANUARY = 1;
             const int FEBRUARY = 2;
             const int MARCH = 3;
@@ -38,16 +50,10 @@ namespace Fairdeal_Kashmir_Salary_Software
             const int NOVEMBER = 11;
             const int DECEMBER = 12;
         }
-        private void PopulateEmpComboBox()
+        public void PopulateEmpComboBox()
         {
-            SqlCommand cmd15 = new SqlCommand();
-            cmd15.CommandText = "select EmpId,EmpName from employee";
-            DataSet DS1 = new DataSet();
-               DS1= DataManager.executeDataset(cmd15);
-            Ename.DisplayMember = "EmpName";
-            Ename.ValueMember = "EmpId";
-            Ename.DataSource = DS1.Tables[0];
             
+
         }
 
         private void txtSaveRecord_Click(object sender, EventArgs e)
@@ -74,9 +80,15 @@ namespace Fairdeal_Kashmir_Salary_Software
                 return;
             }
             string MonthYear = comboBoxMonth.Text + comboBoxYear.Text;
+            SqlCommand GetEmp = new SqlCommand();
+            GetEmp.CommandText = "select EmpId from Employee Where EmpName=@EmpName";
+            GetEmp.Parameters.AddWithValue("@EmpName", Ename.SelectedText);
+           DataSet DSEmp= DataManager.executeDataset(GetEmp);
+            var empId = DSEmp.Tables[0].Rows[0][0].ToString();
+
             SqlCommand Save = new SqlCommand();
-            Save.CommandText = "INSERT INTO[dbo].[MonthlyTransaction]([EmployeeName] ,[MonthYear] ,[TDC],[Fine],[SalaryInHand],[Memo]) VALUES(@EmployeeName,@MonthYear,@TDC,@Fine,@SalaryInHand,@Memo)";
-            Save.Parameters.AddWithValue("@EmployeeName",Ename.SelectedText);
+            Save.CommandText = "INSERT INTO[dbo].[MonthlyTransaction]([EmployeeId] ,[MonthYear] ,[TDC],[Fine],[SalaryInHand],[Memo]) VALUES(@EmployeeName,@MonthYear,@TDC,@Fine,@SalaryInHand,@Memo)";
+            Save.Parameters.AddWithValue("@EmployeeId",empId);
             Save.Parameters.AddWithValue("@MonthYear",MonthYear);
             Save.Parameters.AddWithValue("@TDC",txtTdc.Text);
             Save.Parameters.AddWithValue("@Fine",txtFine.Text);
@@ -213,14 +225,18 @@ namespace Fairdeal_Kashmir_Salary_Software
 
         private void Ename_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (Ename.SelectedIndex == -1)
+            { return; }
             SqlCommand cmd1 = new SqlCommand();
-            cmd1.CommandText = "select * from employee where EmpName='adnan'";
-            cmd1.Parameters.AddWithValue("@EmpName", Ename.SelectedValue);
+            
+            cmd1.CommandText = "select * from employee where EmpName=@EmpName";
+            cmd1.Parameters.AddWithValue("@EmpName", Ename.SelectedValue.ToString());
 
             DataSet DS1 = DataManager.executeDataset(cmd1);
             txtMonthlySalary.Text = DS1.Tables[0].Rows[0][5].ToString();
             txtMPFLS.Text = DS1.Tables[0].Rows[0][10].ToString();
             txtAAMD.Text = DS1.Tables[0].Rows[0][11].ToString();
+        
         }
 
         private void btnCalcSalary_Click(object sender, EventArgs e)
