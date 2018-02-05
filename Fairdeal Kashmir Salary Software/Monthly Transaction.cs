@@ -24,7 +24,7 @@ namespace Fairdeal_Kashmir_Salary_Software
             this.Location = new Point(0, 0);
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
 
-            
+            FillGrid();
             SqlCommand cmd15 = new SqlCommand();
             cmd15.CommandText = "select EmpName from employee";
             DataSet DS1 = new DataSet();
@@ -38,22 +38,31 @@ namespace Fairdeal_Kashmir_Salary_Software
             Ename.Text = "--Select--";
             
 
-            const int JANUARY = 1;
-            const int FEBRUARY = 2;
-            const int MARCH = 3;
-            const int APRIL = 4;
-            const int MAY = 5;
-            const int JUNE = 6;
-            const int JULY = 7;
-            const int AUGUST = 8;
-            const int SEPTEMBER = 9;
-            const int OCTOBER = 10;
-            const int NOVEMBER = 11;
-            const int DECEMBER = 12;
+            //const int JANUARY = 1;
+            //const int FEBRUARY = 2;
+            //const int MARCH = 3;
+            //const int APRIL = 4;
+            //const int MAY = 5;
+            //const int JUNE = 6;
+            //const int JULY = 7;
+            //const int AUGUST = 8;
+            //const int SEPTEMBER = 9;
+            //const int OCTOBER = 10;
+            //const int NOVEMBER = 11;
+            //const int DECEMBER = 12;
         }
-        public void PopulateEmpComboBox()
+        private void FillGrid()
         {
+            SqlCommand Fetch = new SqlCommand();
+            Fetch.CommandText = "select * from MonthlyTransaction";
+            //dataGridViewMT.DataSource = DataManager.executeDataset(Fetch);
+            SqlConnection connection1 = new SqlConnection(DataManager.connectionString);
+            SqlDataAdapter dataadapter = new SqlDataAdapter(Fetch.CommandText, DataManager.connectionString);
+            DataSet ds1 = new DataSet();
+            dataadapter.Fill(ds1, "MonthlyTransaction");
             
+            dataGridViewMT.DataSource = ds1;
+            dataGridViewMT.DataMember = "MonthlyTransaction";
 
         }
 
@@ -98,20 +107,7 @@ namespace Fairdeal_Kashmir_Salary_Software
             DataManager.executeNonQuery(Save);
            
         }
-        private void fillGrid()
-        {
-            SqlCommand cmdd = new SqlCommand();
-            cmdd.CommandText = "SELECT * FROM MonthlyTransaction";
-            SqlConnection connection1 = new SqlConnection(DataManager.connectionString);
-            SqlDataAdapter dataadapter = new SqlDataAdapter(cmdd.CommandText, DataManager.connectionString);
-            connection1.Open();
-            DataSet ds1 = new DataSet();
-            dataadapter.Fill(ds1, "Departments");
-            connection1.Close();
-            dataGridViewMT.DataSource = ds1;
-            dataGridViewMT.DataMember = "Departments";
-            dataGridViewMT.Columns[0].HeaderText = "Department Name/Location";
-        }
+       
         private void txtMonthlySalary_KeyPress(object sender, KeyPressEventArgs e)
         {
             {

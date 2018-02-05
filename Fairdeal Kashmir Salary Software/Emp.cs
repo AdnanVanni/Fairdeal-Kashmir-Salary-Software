@@ -44,10 +44,8 @@ namespace Fairdeal_Kashmir_Salary_Software
             cmdd.CommandText = "SELECT * FROM Employee";
             SqlConnection connection1 = new SqlConnection(DataManager.connectionString);
             SqlDataAdapter dataadapter = new SqlDataAdapter(cmdd.CommandText, DataManager.connectionString);
-            connection1.Open();
             DataSet ds1 = new DataSet();
             dataadapter.Fill(ds1, "Employee");
-            connection1.Close();
             dataGridViewEmp.DataSource = ds1;
             dataGridViewEmp.DataMember = "Employee";
             dataGridViewEmp.Columns[1].HeaderText = "Name";
