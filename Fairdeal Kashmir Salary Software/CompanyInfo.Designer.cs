@@ -38,6 +38,7 @@
             this.richTextBox3 = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnCreateDb = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblCompany
@@ -123,11 +124,21 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "Company Head Office Location";
             // 
+            // btnCreateDb
+            // 
+            this.btnCreateDb.Location = new System.Drawing.Point(52, 12);
+            this.btnCreateDb.Name = "btnCreateDb";
+            this.btnCreateDb.Size = new System.Drawing.Size(171, 23);
+            this.btnCreateDb.TabIndex = 10;
+            this.btnCreateDb.Text = "Create database on Local Server";
+            this.btnCreateDb.UseVisualStyleBackColor = true;
+            // 
             // CompanyInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(767, 589);
+            this.Controls.Add(this.btnCreateDb);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.richTextBox3);
@@ -157,5 +168,6 @@
         private System.Windows.Forms.RichTextBox richTextBox3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnCreateDb;
     }
 }
