@@ -132,6 +132,7 @@
             this.btnCreateDb.TabIndex = 10;
             this.btnCreateDb.Text = "Create database on Local Server";
             this.btnCreateDb.UseVisualStyleBackColor = true;
+            this.btnCreateDb.Click += new System.EventHandler(this.btnCreateDb_Click);
             // 
             // CompanyInfo
             // 
