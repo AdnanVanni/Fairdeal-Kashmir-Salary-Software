@@ -62,8 +62,9 @@
             this.txtEmpSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.labelEmp = new System.Windows.Forms.Label();
+            this.labelEmpId = new System.Windows.Forms.Label();
             this.labelMonth = new System.Windows.Forms.Label();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.labelYear = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMT)).BeginInit();
             this.SuspendLayout();
@@ -136,22 +137,6 @@
             this.comboBoxYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxYear.FormattingEnabled = true;
             this.comboBoxYear.Items.AddRange(new object[] {
-            "2001",
-            "2002",
-            "2003",
-            "2004",
-            "2005",
-            "2006",
-            "2007",
-            "2008",
-            "2009",
-            "2010",
-            "2011",
-            "2012",
-            "2013",
-            "2014",
-            "2015",
-            "2016",
             "2017",
             "2018",
             "2019",
@@ -175,7 +160,6 @@
             "2038",
             "2039",
             "2040",
-            "",
             ""});
             this.comboBoxYear.Location = new System.Drawing.Point(219, 103);
             this.comboBoxYear.Name = "comboBoxYear";
@@ -355,6 +339,19 @@
             // comboBoxSMonth
             // 
             this.comboBoxSMonth.FormattingEnabled = true;
+            this.comboBoxSMonth.Items.AddRange(new object[] {
+            "JANUARY",
+            "FEBRUARY",
+            "MARCH",
+            "APRIL",
+            "MAY",
+            "JUNE",
+            "JULY",
+            "AUGUST",
+            "SEPTEMBER",
+            "OCTOBER",
+            "NOVEMBER",
+            "DECEMBER"});
             this.comboBoxSMonth.Location = new System.Drawing.Point(559, 56);
             this.comboBoxSMonth.Name = "comboBoxSMonth";
             this.comboBoxSMonth.Size = new System.Drawing.Size(121, 21);
@@ -363,6 +360,31 @@
             // comboBoxSYear
             // 
             this.comboBoxSYear.FormattingEnabled = true;
+            this.comboBoxSYear.Items.AddRange(new object[] {
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+            "2025",
+            "2026",
+            "2027",
+            "2028",
+            "2029",
+            "2030",
+            "2031",
+            "2033",
+            "2034",
+            "2035",
+            "2036",
+            "2037",
+            "2038",
+            "2039",
+            "2040",
+            ""});
             this.comboBoxSYear.Location = new System.Drawing.Point(686, 56);
             this.comboBoxSYear.Name = "comboBoxSYear";
             this.comboBoxSYear.Size = new System.Drawing.Size(121, 21);
@@ -383,6 +405,7 @@
             this.btnSearch.Size = new System.Drawing.Size(26, 21);
             this.btnSearch.TabIndex = 45;
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnDelete
             // 
@@ -394,29 +417,42 @@
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // labelEmp
+            // labelEmpId
             // 
-            this.labelEmp.AutoSize = true;
-            this.labelEmp.Location = new System.Drawing.Point(50, 554);
-            this.labelEmp.Name = "labelEmp";
-            this.labelEmp.Size = new System.Drawing.Size(0, 13);
-            this.labelEmp.TabIndex = 47;
+            this.labelEmpId.AutoSize = true;
+            this.labelEmpId.Location = new System.Drawing.Point(49, 553);
+            this.labelEmpId.Name = "labelEmpId";
+            this.labelEmpId.Size = new System.Drawing.Size(38, 13);
+            this.labelEmpId.TabIndex = 47;
+            this.labelEmpId.Text = "labelId";
             // 
             // labelMonth
             // 
             this.labelMonth.AutoSize = true;
-            this.labelMonth.Location = new System.Drawing.Point(75, 570);
+            this.labelMonth.Location = new System.Drawing.Point(118, 552);
             this.labelMonth.Name = "labelMonth";
-            this.labelMonth.Size = new System.Drawing.Size(0, 13);
+            this.labelMonth.Size = new System.Drawing.Size(38, 13);
             this.labelMonth.TabIndex = 48;
+            this.labelMonth.Text = "labelM";
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(981, 56);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
+            this.btnRefresh.TabIndex = 49;
+            this.btnRefresh.Text = "button1";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // labelYear
             // 
             this.labelYear.AutoSize = true;
-            this.labelYear.Location = new System.Drawing.Point(129, 569);
+            this.labelYear.Location = new System.Drawing.Point(186, 551);
             this.labelYear.Name = "labelYear";
-            this.labelYear.Size = new System.Drawing.Size(0, 13);
-            this.labelYear.TabIndex = 49;
+            this.labelYear.Size = new System.Drawing.Size(36, 13);
+            this.labelYear.TabIndex = 50;
+            this.labelYear.Text = "labelY";
             // 
             // Monthly_Transaction
             // 
@@ -424,8 +460,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1333, 617);
             this.Controls.Add(this.labelYear);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.labelMonth);
-            this.Controls.Add(this.labelEmp);
+            this.Controls.Add(this.labelEmpId);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtEmpSearch);
@@ -498,8 +535,9 @@
         private System.Windows.Forms.TextBox txtEmpSearch;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Label labelEmp;
+        private System.Windows.Forms.Label labelEmpId;
         private System.Windows.Forms.Label labelMonth;
+        private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Label labelYear;
     }
 }
