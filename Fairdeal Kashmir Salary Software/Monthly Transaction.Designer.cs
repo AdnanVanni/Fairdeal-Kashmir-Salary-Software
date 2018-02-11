@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Monthly_Transaction));
             this.lblFine = new System.Windows.Forms.Label();
             this.lblTdc = new System.Windows.Forms.Label();
             this.lblMonth = new System.Windows.Forms.Label();
@@ -55,6 +56,15 @@
             this.txtAbsent = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.dataGridViewMT = new System.Windows.Forms.DataGridView();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.comboBoxSMonth = new System.Windows.Forms.ComboBox();
+            this.comboBoxSYear = new System.Windows.Forms.ComboBox();
+            this.txtEmpSearch = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.labelEmp = new System.Windows.Forms.Label();
+            this.labelMonth = new System.Windows.Forms.Label();
+            this.labelYear = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMT)).BeginInit();
             this.SuspendLayout();
             // 
@@ -231,7 +241,7 @@
             // 
             // txtSaveRecord
             // 
-            this.txtSaveRecord.Location = new System.Drawing.Point(384, 490);
+            this.txtSaveRecord.Location = new System.Drawing.Point(273, 503);
             this.txtSaveRecord.Name = "txtSaveRecord";
             this.txtSaveRecord.Size = new System.Drawing.Size(130, 23);
             this.txtSaveRecord.TabIndex = 25;
@@ -332,17 +342,95 @@
             // 
             // dataGridViewMT
             // 
+            this.dataGridViewMT.AllowUserToAddRows = false;
+            this.dataGridViewMT.AllowUserToDeleteRows = false;
             this.dataGridViewMT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewMT.Location = new System.Drawing.Point(559, 83);
+            this.dataGridViewMT.MultiSelect = false;
             this.dataGridViewMT.Name = "dataGridViewMT";
-            this.dataGridViewMT.Size = new System.Drawing.Size(762, 501);
+            this.dataGridViewMT.Size = new System.Drawing.Size(724, 501);
             this.dataGridViewMT.TabIndex = 38;
+            this.dataGridViewMT.SelectionChanged += new System.EventHandler(this.dataGridViewMT_SelectionChanged);
+            // 
+            // comboBoxSMonth
+            // 
+            this.comboBoxSMonth.FormattingEnabled = true;
+            this.comboBoxSMonth.Location = new System.Drawing.Point(559, 56);
+            this.comboBoxSMonth.Name = "comboBoxSMonth";
+            this.comboBoxSMonth.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxSMonth.TabIndex = 39;
+            // 
+            // comboBoxSYear
+            // 
+            this.comboBoxSYear.FormattingEnabled = true;
+            this.comboBoxSYear.Location = new System.Drawing.Point(686, 56);
+            this.comboBoxSYear.Name = "comboBoxSYear";
+            this.comboBoxSYear.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxSYear.TabIndex = 40;
+            // 
+            // txtEmpSearch
+            // 
+            this.txtEmpSearch.Location = new System.Drawing.Point(813, 56);
+            this.txtEmpSearch.Name = "txtEmpSearch";
+            this.txtEmpSearch.Size = new System.Drawing.Size(121, 20);
+            this.txtEmpSearch.TabIndex = 41;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
+            this.btnSearch.Location = new System.Drawing.Point(933, 56);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(26, 21);
+            this.btnSearch.TabIndex = 45;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(1132, 56);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(151, 23);
+            this.btnDelete.TabIndex = 46;
+            this.btnDelete.Text = "Delete Selected Record";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // labelEmp
+            // 
+            this.labelEmp.AutoSize = true;
+            this.labelEmp.Location = new System.Drawing.Point(50, 554);
+            this.labelEmp.Name = "labelEmp";
+            this.labelEmp.Size = new System.Drawing.Size(0, 13);
+            this.labelEmp.TabIndex = 47;
+            // 
+            // labelMonth
+            // 
+            this.labelMonth.AutoSize = true;
+            this.labelMonth.Location = new System.Drawing.Point(75, 570);
+            this.labelMonth.Name = "labelMonth";
+            this.labelMonth.Size = new System.Drawing.Size(0, 13);
+            this.labelMonth.TabIndex = 48;
+            // 
+            // labelYear
+            // 
+            this.labelYear.AutoSize = true;
+            this.labelYear.Location = new System.Drawing.Point(129, 569);
+            this.labelYear.Name = "labelYear";
+            this.labelYear.Size = new System.Drawing.Size(0, 13);
+            this.labelYear.TabIndex = 49;
             // 
             // Monthly_Transaction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1333, 579);
+            this.ClientSize = new System.Drawing.Size(1333, 617);
+            this.Controls.Add(this.labelYear);
+            this.Controls.Add(this.labelMonth);
+            this.Controls.Add(this.labelEmp);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.txtEmpSearch);
+            this.Controls.Add(this.comboBoxSYear);
+            this.Controls.Add(this.comboBoxSMonth);
             this.Controls.Add(this.dataGridViewMT);
             this.Controls.Add(this.txtAbsent);
             this.Controls.Add(this.label1);
@@ -404,5 +492,14 @@
         private System.Windows.Forms.TextBox txtAbsent;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.DataGridView dataGridViewMT;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.ComboBox comboBoxSMonth;
+        private System.Windows.Forms.ComboBox comboBoxSYear;
+        private System.Windows.Forms.TextBox txtEmpSearch;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Label labelEmp;
+        private System.Windows.Forms.Label labelMonth;
+        private System.Windows.Forms.Label labelYear;
     }
 }

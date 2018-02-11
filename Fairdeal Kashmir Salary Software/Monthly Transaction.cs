@@ -13,6 +13,7 @@ namespace Fairdeal_Kashmir_Salary_Software
 {
     public partial class Monthly_Transaction : Form
     {
+       public bool flagload = false;
         public Monthly_Transaction()
         {
             InitializeComponent();
@@ -20,23 +21,32 @@ namespace Fairdeal_Kashmir_Salary_Software
 
         private void Monthly_Transaction_Load(object sender, EventArgs e)
         {
+         
+         
+        
+        btnDelete.Visible = false;
            
             this.Location = new Point(0, 0);
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
 
             FillGrid();
+            dataGridViewMT.Rows[0].Selected = false;
+            dataGridViewMT.Rows[1].Selected = false;
+            Ename.SelectedIndex = -1;
             SqlCommand cmd15 = new SqlCommand();
             cmd15.CommandText = "select EmpName from employee";
             DataSet DS1 = new DataSet();
             DS1 = DataManager.executeDataset(cmd15);
+            
+            
+            Ename.DataSource = DS1.Tables[0];
             Ename.ValueMember = "EmpName";
             Ename.DisplayMember = "EmpName";
-            Ename.DataSource = DS1.Tables[0];
-            Ename.SelectedIndex = -1;
             txtAbsent.Text =Convert.ToString(0);
+            dataGridViewMT.Rows[0].Selected = false;
 
-            Ename.Text = "--Select--";
-            
+
+
 
             //const int JANUARY = 1;
             //const int FEBRUARY = 2;
@@ -50,22 +60,31 @@ namespace Fairdeal_Kashmir_Salary_Software
             //const int OCTOBER = 10;
             //const int NOVEMBER = 11;
             //const int DECEMBER = 12;
+            flagload = true;
         }
         private void FillGrid()
         {
             SqlCommand Fetch = new SqlCommand();
-            Fetch.CommandText = "select * from MonthlyTransaction";
+            Fetch.CommandText = "select MT.MonthYear,E.EmpId,MT.EmployeeId,E.EmpName,E.Department,E.SalaryPerMonth,MT.SalaryInHand,E.AdvanceAmt,E.PFloanWithdrawn,MT.TransactionDate from Employee E join MonthlyTransaction MT ON E.EmpId=MT.EmployeeId ORDER BY TRANSACTIONDATE";
             //dataGridViewMT.DataSource = DataManager.executeDataset(Fetch);
             SqlConnection connection1 = new SqlConnection(DataManager.connectionString);
             SqlDataAdapter dataadapter = new SqlDataAdapter(Fetch.CommandText, DataManager.connectionString);
             DataSet ds1 = new DataSet();
-            dataadapter.Fill(ds1, "MonthlyTransaction");
+            dataadapter.Fill (ds1);
             
-            dataGridViewMT.DataSource = ds1;
-            dataGridViewMT.DataMember = "MonthlyTransaction";
-
+            dataGridViewMT.DataSource = ds1.Tables[0].DefaultView;
+            
+            dataGridViewMT.Columns["EmpId"].Visible = false;
+            dataGridViewMT.Columns["EmployeeId"].Visible = false;
+            dataGridViewMT.Columns["TransactionDate"].Visible = false;
+            dataGridViewMT.Columns["MonthYear"].HeaderText = "Month";
+            dataGridViewMT.Columns["AdvanceAmt"].HeaderText = "Advance Amt Balance";
+            dataGridViewMT.Columns["PFloanWithdrawn"].HeaderText = "PF Loan Balance";
+            dataGridViewMT.Columns["SalaryPerMonth"].HeaderText = "Actual Salary";
+            dataGridViewMT.Columns["EmpName"].HeaderText = "Name";
+                        
+           
         }
-
         private void txtSaveRecord_Click(object sender, EventArgs e)
         {
             if (Ename.Text == string.Empty)
@@ -97,7 +116,7 @@ namespace Fairdeal_Kashmir_Salary_Software
             var empId = DataManager.executeScalar(GetEmp).ToString();
             //saves record in monthly transaction
             SqlCommand Save = new SqlCommand();
-            Save.CommandText = "INSERT INTO[dbo].[MonthlyTransaction]([EmployeeId] ,[MonthYear] ,[TDC],[Fine],[SalaryInHand],[Memo]) VALUES(@EmployeeId,@MonthYear,@TDC,@Fine,@SalaryInHand,@Memo)";
+            Save.CommandText = "INSERT INTO[dbo].[MonthlyTransaction]([EmployeeId] ,[MonthYear] ,[TDC],[Fine],[SalaryInHand],[Memo],[TransactionDate]) VALUES(@EmployeeId,@MonthYear,@TDC,@Fine,@SalaryInHand,@Memo,GetDate())";
             Save.Parameters.AddWithValue("@EmployeeId",empId);
             Save.Parameters.AddWithValue("@MonthYear",MonthYear);
             Save.Parameters.AddWithValue("@TDC",txtTdc.Text);
@@ -105,7 +124,9 @@ namespace Fairdeal_Kashmir_Salary_Software
             Save.Parameters.AddWithValue("@SalaryInHand",txtNetSalary.Text);
             Save.Parameters.AddWithValue("@Memo",richTextBoxMemo.Text);
             DataManager.executeNonQuery(Save);
-           
+            Monthly_Transaction MT = new Monthly_Transaction();
+            MT.Show();
+            this.Hide();
         }
        
         private void txtMonthlySalary_KeyPress(object sender, KeyPressEventArgs e)
@@ -233,21 +254,7 @@ namespace Fairdeal_Kashmir_Salary_Software
 
         }
 
-        private void Ename_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (Ename.SelectedIndex == -1)
-            { return; }
-            SqlCommand cmd1 = new SqlCommand();
-            
-            cmd1.CommandText = "select * from employee where EmpName=@EmpName";
-            cmd1.Parameters.AddWithValue("@EmpName", Ename.SelectedValue.ToString());
-
-            DataSet DS1 = DataManager.executeDataset(cmd1);
-            txtMonthlySalary.Text = DS1.Tables[0].Rows[0][5].ToString();
-            txtMPFLS.Text = DS1.Tables[0].Rows[0][10].ToString();
-            txtAAMD.Text = DS1.Tables[0].Rows[0][11].ToString();
-        
-        }
+      
 
         private void btnCalcSalary_Click(object sender, EventArgs e)
         {
@@ -354,6 +361,35 @@ namespace Fairdeal_Kashmir_Salary_Software
         {
            double pfcalc= Convert.ToDouble(txtMonthlySalary.Text) * 0.12;
             txtPF.Text = pfcalc.ToString();
+        }
+
+        private void Ename_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (flagload == false)
+            { return; }
+            SqlCommand cmd1 = new SqlCommand();
+
+            cmd1.CommandText = "select * from employee where EmpName=@EmpName";
+            cmd1.Parameters.AddWithValue("@EmpName", Ename.SelectedValue.ToString());
+
+            DataSet DS1 = DataManager.executeDataset(cmd1);
+            txtMonthlySalary.Text = DS1.Tables[0].Rows[0][5].ToString();
+            txtMPFLS.Text = DS1.Tables[0].Rows[0][10].ToString();
+            txtAAMD.Text = DS1.Tables[0].Rows[0][11].ToString();
+
+        }
+
+        private void dataGridViewMT_SelectionChanged(object sender, EventArgs e)
+        {
+            btnDelete.Visible = true;
+            foreach (DataGridViewRow row in dataGridViewMT.SelectedRows)
+            {
+               labelEmp.Text = row.Cells[9].Value.ToString();
+            }
+        }
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
