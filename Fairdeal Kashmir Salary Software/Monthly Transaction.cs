@@ -116,7 +116,7 @@ namespace Fairdeal_Kashmir_Salary_Software
             var empId = DataManager.executeScalar(GetEmp).ToString();
             //saves record in monthly transaction
             SqlCommand Save = new SqlCommand();
-            Save.CommandText = "INSERT INTO[dbo].[MonthlyTransaction]([Month] ,[EmployeeId] ,[Year],[TDC],[Fine],[SalaryInHand],[Memo],[TransactionDate]) VALUES(@Month,@EmployeeId,@Year,@TDC,@Fine,@SalaryInHand,@Memo,GetDate())";
+            Save.CommandText = "INSERT INTO[dbo].[MonthlyTransaction]([Month] ,[EmployeeId] ,[Year],[TDC],[Fine],[SalaryInHand],[Memo],[AdvAmtSub],[PfLoanSub],[TransactionDate]) VALUES(@Month,@EmployeeId,@Year,@TDC,@Fine,@SalaryInHand,@Memo,@AdvAmtSub,@PfLoanSub,GetDate())";
             
             Save.Parameters.AddWithValue("@Month", comboBoxMonth.SelectedItem);
             Save.Parameters.AddWithValue("@EmployeeId", empId);
@@ -125,6 +125,8 @@ namespace Fairdeal_Kashmir_Salary_Software
             Save.Parameters.AddWithValue("@Fine",txtFine.Text);
             Save.Parameters.AddWithValue("@SalaryInHand",txtNetSalary.Text);
             Save.Parameters.AddWithValue("@Memo",richTextBoxMemo.Text);
+            Save.Parameters.AddWithValue("@AdvAmtSub", Convert.ToDouble(txtAAMD.Text));
+            Save.Parameters.AddWithValue("@PfLoanSub", Convert.ToDouble(txtMPFLS.Text));
             DataManager.executeNonQuery(Save);
             Monthly_Transaction MT = new Monthly_Transaction();
             MT.Show();
@@ -260,7 +262,7 @@ namespace Fairdeal_Kashmir_Salary_Software
 
         private void btnCalcSalary_Click(object sender, EventArgs e)
         {
-            int a;
+            double a;
 
             if (Ename.Text == null || Ename.Text == "")
             {
@@ -289,39 +291,39 @@ namespace Fairdeal_Kashmir_Salary_Software
             if(!(txtPF.Text == null || txtPF.Text == ""))
             {
 
-                a = a + Convert.ToInt32(txtPF.Text);
+                a = a + Convert.ToDouble(txtPF.Text);
             }
             if (!(txtAAMD.Text == null || txtAAMD.Text == ""))
             {
 
-                a = a + Convert.ToInt32(txtAAMD.Text);
+                a = a + Convert.ToDouble(txtAAMD.Text);
             }
             if (!(txtMPFLS.Text == null || txtMPFLS.Text == ""))
             {
               
-                 a = a + Convert.ToInt32(txtMPFLS.Text);
+                 a = a + Convert.ToDouble(txtMPFLS.Text);
             }
             if (!(txtTdc.Text == null || txtTdc.Text == ""))
             {
 
-                a = a + Convert.ToInt32(txtTdc.Text);
+                a = a + Convert.ToDouble(txtTdc.Text);
             }
             if (!(txtFine.Text == null || txtFine.Text == ""))
             {
 
-                a = a + Convert.ToInt32(txtFine.Text);
+                a = a + Convert.ToDouble(txtFine.Text);
             }
 
             if (string.IsNullOrWhiteSpace(txtAbsent.Text))
             {
-                int Net = Convert.ToInt32(txtMonthlySalary.Text) - a;
+                Double Net = Convert.ToDouble(txtMonthlySalary.Text) - a;
                 txtNetSalary.Text = Net.ToString();
                 return;
             }
            
             else if (Convert.ToInt32(txtAbsent.Text) == 0 )
             {
-                int Net = Convert.ToInt32(txtMonthlySalary.Text) - a;
+                double Net = Convert.ToDouble(txtMonthlySalary.Text) - a;
                 txtNetSalary.Text = Net.ToString();
                 return;
             }
@@ -332,7 +334,7 @@ namespace Fairdeal_Kashmir_Salary_Software
                 MonthS++;
                 int YearS = Convert.ToInt32(comboBoxYear.SelectedItem.ToString());
                 Int32 daysInMonth = System.DateTime.DaysInMonth(YearS, MonthS);
-                float SalaryAbsentExc = (float)Convert.ToInt32(txtMonthlySalary.Text) * ((float)daysInMonth - (float)Convert.ToInt32(txtAbsent.Text)) / (float)daysInMonth;
+                double SalaryAbsentExc = (float)Convert.ToInt32(txtMonthlySalary.Text) * ((float)daysInMonth - (float)Convert.ToInt32(txtAbsent.Text)) / (float)daysInMonth;
                 SalaryAbsentExc = SalaryAbsentExc - a;
                 txtNetSalary.Text = SalaryAbsentExc.ToString();
                 return;
@@ -410,7 +412,7 @@ namespace Fairdeal_Kashmir_Salary_Software
                 cmdDel.Parameters.AddWithValue("@Month", labelMonth.Text);
                 cmdDel.Parameters.AddWithValue("@Year", labelYear.Text);
                 int no= DataManager.executeNonQuery(cmdDel);
-                if(no==1)
+                if(no>1)
                 MessageBox.Show("Deleted successsfully");
                 else
                 MessageBox.Show("Something wrong Occured while performing delete");
@@ -422,25 +424,12 @@ namespace Fairdeal_Kashmir_Salary_Software
         {
 
             string EmpName = txtEmpSearch.Text;
-            string Month= comboBoxMonth.SelectedText;
-            string Year= comboBoxSYear.SelectedText;
+            string Month = comboBoxSMonth.Text;
+            string Year= comboBoxSYear.Text;
             SqlCommand Fetch = new SqlCommand();
             Fetch.CommandText = "select MT.Month,MT.Year,E.EmpId,MT.EmployeeId,E.EmpName,E.Department,E.SalaryPerMonth,MT.SalaryInHand,E.AdvanceAmt,E.PFloanWithdrawn,MT.TransactionDate from Employee E join MonthlyTransaction MT ON E.EmpId=MT.EmployeeId where E.EmpName like '%" + EmpName + "%' and MT.Month Like '%" + Month + "%' and MT.Year like '%" + Year + "%' ORDER BY TRANSACTIONDATE ";
             
-            //if (txtEmpSearch.Text == "")
-            //{
-            //    Fetch.CommandText = "select MT.MonthYear,E.EmpId,MT.EmployeeId,E.EmpName,E.Department,E.SalaryPerMonth,MT.SalaryInHand,E.AdvanceAmt,E.PFloanWithdrawn,MT.TransactionDate from Employee E join MonthlyTransaction MT ON E.EmpId=MT.EmployeeId where (MT.MonthYear Like '%" + Month + "%' and MT.MonthYear like '%" + Year + "%') ORDER BY TRANSACTIONDATE ";
-            //}
-            //if (txtEmpSearch.Text != "" && comboBoxSMonth.SelectedText != "")
-            //{
-            //    Fetch.CommandText = "select MT.MonthYear,E.EmpId,MT.EmployeeId,E.EmpName,E.Department,E.SalaryPerMonth,MT.SalaryInHand,E.AdvanceAmt,E.PFloanWithdrawn,MT.TransactionDate from Employee E join MonthlyTransaction MT ON E.EmpId=MT.EmployeeId where E.EmpName like '%" + EmpName + "%' and (MT.MonthYear Like '%" + Month + "%' and MT.MonthYear like '%" + Year + "%') ORDER BY TRANSACTIONDATE ";
-            //}
-
-
-            //dataGridViewMT.DataSource = DataManager.executeDataset(Fetch);
-            //Fetch.Parameters.AddWithValue("@Month",comboBoxSMonth.SelectedValue);
-            //Fetch.Parameters.AddWithValue("@Year", comboBoxSYear.SelectedValue);
-            //Fetch.Parameters.AddWithValue("@EmpName", txtEmpSearch.SelectedText);
+   
             SqlConnection connection1 = new SqlConnection(DataManager.connectionString);
             SqlDataAdapter dataadapter = new SqlDataAdapter(Fetch.CommandText, DataManager.connectionString);
             DataSet ds1 = new DataSet();
@@ -451,7 +440,6 @@ namespace Fairdeal_Kashmir_Salary_Software
             dataGridViewMT.Columns["EmpId"].Visible = false;
             dataGridViewMT.Columns["EmployeeId"].Visible = false;
             dataGridViewMT.Columns["TransactionDate"].Visible = false;
-            dataGridViewMT.Columns["MonthYear"].HeaderText = "Month";
             dataGridViewMT.Columns["AdvanceAmt"].HeaderText = "Advance Amt Balance";
             dataGridViewMT.Columns["PFloanWithdrawn"].HeaderText = "PF Loan Balance";
             dataGridViewMT.Columns["SalaryPerMonth"].HeaderText = "Actual Salary";
@@ -463,6 +451,13 @@ namespace Fairdeal_Kashmir_Salary_Software
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             FillGrid();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Emp eo = new Emp();
+            eo.Show();
+            this.Hide();
         }
     }
 }

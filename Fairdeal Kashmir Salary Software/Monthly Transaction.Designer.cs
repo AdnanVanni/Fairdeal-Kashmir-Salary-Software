@@ -66,6 +66,7 @@
             this.labelMonth = new System.Windows.Forms.Label();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.labelYear = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMT)).BeginInit();
             this.SuspendLayout();
             // 
@@ -454,11 +455,22 @@
             this.labelYear.TabIndex = 50;
             this.labelYear.Text = "labelY";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(276, 62);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 51;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Monthly_Transaction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1333, 617);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.labelYear);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.labelMonth);
@@ -539,5 +551,6 @@
         private System.Windows.Forms.Label labelMonth;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Label labelYear;
+        private System.Windows.Forms.Button button1;
     }
 }

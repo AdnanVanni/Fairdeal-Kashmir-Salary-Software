@@ -277,7 +277,7 @@ namespace Fairdeal_Kashmir_Salary_Software
                 textResidence.Text= row.Cells[15].Value.ToString();
                 dateTimePicker1.Text= row.Cells[4].Value.ToString();
                 listBoxEmpType.SelectedValue= row.Cells[6].Value.ToString();
-                textDesignation.Text= row.Cells[9].Value.ToString();
+                textDesignation.Text= row.Cells[7].Value.ToString();
                 textAcc.Text= row.Cells[2].Value.ToString();
                 textMonthlySalary.Text= row.Cells[5].Value.ToString();
                 textPFLW.Text= row.Cells[9].Value.ToString();
