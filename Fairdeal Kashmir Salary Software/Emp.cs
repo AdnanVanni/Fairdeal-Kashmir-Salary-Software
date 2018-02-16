@@ -403,5 +403,12 @@ namespace Fairdeal_Kashmir_Salary_Software
         {
             fillGridSearch(txtSeach.Text);
         }
+
+        private void report1ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReportForm1 RP1 = new ReportForm1();
+            RP1.Show();
+            this.Hide();
+        }
     }
 }

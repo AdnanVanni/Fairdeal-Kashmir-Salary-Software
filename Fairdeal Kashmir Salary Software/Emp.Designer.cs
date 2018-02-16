@@ -75,6 +75,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtSeach = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.report1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmp)).BeginInit();
             this.SuspendLayout();
@@ -346,7 +348,8 @@
             this.toolStripMenuItem1,
             this.editEmployeeToolStripMenuItem,
             this.departmentsToolStripMenuItem,
-            this.monthlyTransactionToolStripMenuItem});
+            this.monthlyTransactionToolStripMenuItem,
+            this.reportToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1315, 24);
@@ -491,6 +494,21 @@
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
+            // reportToolStripMenuItem
+            // 
+            this.reportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.report1ToolStripMenuItem});
+            this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
+            this.reportToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.reportToolStripMenuItem.Text = "Reports";
+            // 
+            // report1ToolStripMenuItem
+            // 
+            this.report1ToolStripMenuItem.Name = "report1ToolStripMenuItem";
+            this.report1ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.report1ToolStripMenuItem.Text = "Report1";
+            this.report1ToolStripMenuItem.Click += new System.EventHandler(this.report1ToolStripMenuItem_Click);
+            // 
             // Emp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -595,6 +613,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtSeach;
         private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.ToolStripMenuItem reportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem report1ToolStripMenuItem;
     }
 }
 
