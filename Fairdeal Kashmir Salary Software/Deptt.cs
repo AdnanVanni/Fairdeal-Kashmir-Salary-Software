@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 
 namespace Fairdeal_Kashmir_Salary_Software
 {
-    public partial class Deptt : Form
+    public partial class Deptt : MetroFramework.Forms.MetroForm
     {
         public Deptt()
         {

@@ -35,13 +35,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.lblDep = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDeptt)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(45, 62);
+            this.label1.Location = new System.Drawing.Point(46, 92);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 13);
             this.label1.TabIndex = 2;
@@ -49,14 +50,14 @@
             // 
             // txtDName
             // 
-            this.txtDName.Location = new System.Drawing.Point(156, 59);
+            this.txtDName.Location = new System.Drawing.Point(156, 122);
             this.txtDName.Name = "txtDName";
             this.txtDName.Size = new System.Drawing.Size(167, 20);
             this.txtDName.TabIndex = 11;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(156, 111);
+            this.btnAdd.Location = new System.Drawing.Point(156, 169);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 26);
             this.btnAdd.TabIndex = 13;
@@ -79,14 +80,14 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(65, 75);
+            this.label2.Location = new System.Drawing.Point(65, 45);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(0, 13);
             this.label2.TabIndex = 15;
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(248, 111);
+            this.btnDelete.Location = new System.Drawing.Point(248, 169);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 25);
             this.btnDelete.TabIndex = 16;
@@ -97,16 +98,28 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(156, 13);
+            this.label3.Location = new System.Drawing.Point(156, -17);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(0, 13);
             this.label3.TabIndex = 17;
+            // 
+            // lblDep
+            // 
+            this.lblDep.AutoSize = true;
+            this.lblDep.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.lblDep.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.lblDep.Location = new System.Drawing.Point(14, 26);
+            this.lblDep.Name = "lblDep";
+            this.lblDep.Size = new System.Drawing.Size(123, 25);
+            this.lblDep.TabIndex = 18;
+            this.lblDep.Text = "Departments";
             // 
             // Deptt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(724, 512);
+            this.Controls.Add(this.lblDep);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.label2);
@@ -114,7 +127,9 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtDName);
             this.Controls.Add(this.label1);
+            this.DisplayHeader = false;
             this.Name = "Deptt";
+            this.Padding = new System.Windows.Forms.Padding(20, 30, 20, 20);
             this.Text = "Deptt";
             this.Load += new System.EventHandler(this.Deptt_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDeptt)).EndInit();
@@ -131,5 +146,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Label label3;
+        private MetroFramework.Controls.MetroLabel lblDep;
     }
 }

@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 
 namespace Fairdeal_Kashmir_Salary_Software
 {
-    public partial class Emp : Form
+    public partial class Emp : MetroFramework.Forms.MetroForm
     {
         public Emp()
         {

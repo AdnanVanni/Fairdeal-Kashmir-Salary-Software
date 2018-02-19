@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 
 namespace Fairdeal_Kashmir_Salary_Software
 {
-    public partial class Monthly_Transaction : Form
+    public partial class Monthly_Transaction : MetroFramework.Forms.MetroForm
     {
        public bool flagload = false;
         public Monthly_Transaction()
@@ -116,7 +116,7 @@ namespace Fairdeal_Kashmir_Salary_Software
             var empId = DataManager.executeScalar(GetEmp).ToString();
             //saves record in monthly transaction
             SqlCommand Save = new SqlCommand();
-            Save.CommandText = "INSERT INTO[dbo].[MonthlyTransaction]([Month] ,[EmployeeId] ,[Year],[TDC],[Fine],[SalaryInHand],[Memo],[AdvAmtSub],[PfLoanSub],[TransactionDate]) VALUES(@Month,@EmployeeId,@Year,@TDC,@Fine,@SalaryInHand,@Memo,@AdvAmtSub,@PfLoanSub,GetDate())";
+            Save.CommandText = "INSERT INTO[dbo].[MonthlyTransaction]([Month] ,[EmployeeId] ,[Year],[TDC],[Fine],[SalaryInHand],[Memo],[AdvAmtSub],[PfLoanSub],[TransactionDate],[AbsentDays]) VALUES(@Month,@EmployeeId,@Year,@TDC,@Fine,@SalaryInHand,@Memo,@AdvAmtSub,@PfLoanSub,GetDate(),@Absent)";
             
             Save.Parameters.AddWithValue("@Month", comboBoxMonth.SelectedItem);
             Save.Parameters.AddWithValue("@EmployeeId", empId);
@@ -127,7 +127,9 @@ namespace Fairdeal_Kashmir_Salary_Software
             Save.Parameters.AddWithValue("@Memo",richTextBoxMemo.Text);
             Save.Parameters.AddWithValue("@AdvAmtSub", Convert.ToDouble(txtAAMD.Text));
             Save.Parameters.AddWithValue("@PfLoanSub", Convert.ToDouble(txtMPFLS.Text));
-            DataManager.executeNonQuery(Save);
+            Save.Parameters.AddWithValue("@Absent", txtAbsent.Text);
+
+           DataManager.executeNonQuery(Save);
             Monthly_Transaction MT = new Monthly_Transaction();
             MT.Show();
             this.Hide();
@@ -362,8 +364,13 @@ namespace Fairdeal_Kashmir_Salary_Software
         }
 
         private void txtMonthlySalary_TextChanged(object sender, EventArgs e)
-        {
+        { 
            double pfcalc= Convert.ToDouble(txtMonthlySalary.Text) * 0.12;
+            
+            if (pfcalc > 1800)
+            {
+                pfcalc = 1800;
+            }
             txtPF.Text = pfcalc.ToString();
         }
 

@@ -67,13 +67,14 @@
             this.btnRefresh = new System.Windows.Forms.Button();
             this.labelYear = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMT)).BeginInit();
             this.SuspendLayout();
             // 
             // lblFine
             // 
             this.lblFine.AutoSize = true;
-            this.lblFine.Location = new System.Drawing.Point(32, 307);
+            this.lblFine.Location = new System.Drawing.Point(23, 307);
             this.lblFine.Name = "lblFine";
             this.lblFine.Size = new System.Drawing.Size(27, 13);
             this.lblFine.TabIndex = 5;
@@ -82,7 +83,7 @@
             // lblTdc
             // 
             this.lblTdc.AutoSize = true;
-            this.lblTdc.Location = new System.Drawing.Point(32, 343);
+            this.lblTdc.Location = new System.Drawing.Point(23, 347);
             this.lblTdc.Name = "lblTdc";
             this.lblTdc.Size = new System.Drawing.Size(29, 13);
             this.lblTdc.TabIndex = 6;
@@ -91,7 +92,7 @@
             // lblMonth
             // 
             this.lblMonth.AutoSize = true;
-            this.lblMonth.Location = new System.Drawing.Point(32, 111);
+            this.lblMonth.Location = new System.Drawing.Point(22, 103);
             this.lblMonth.Name = "lblMonth";
             this.lblMonth.Size = new System.Drawing.Size(37, 13);
             this.lblMonth.TabIndex = 7;
@@ -100,7 +101,7 @@
             // lblEmployeeNamee
             // 
             this.lblEmployeeNamee.AutoSize = true;
-            this.lblEmployeeNamee.Location = new System.Drawing.Point(32, 74);
+            this.lblEmployeeNamee.Location = new System.Drawing.Point(22, 66);
             this.lblEmployeeNamee.Name = "lblEmployeeNamee";
             this.lblEmployeeNamee.Size = new System.Drawing.Size(53, 13);
             this.lblEmployeeNamee.TabIndex = 8;
@@ -126,7 +127,7 @@
             // 
             this.Ename.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Ename.FormattingEnabled = true;
-            this.Ename.Location = new System.Drawing.Point(128, 71);
+            this.Ename.Location = new System.Drawing.Point(128, 63);
             this.Ename.Name = "Ename";
             this.Ename.Size = new System.Drawing.Size(121, 21);
             this.Ename.TabIndex = 18;
@@ -202,7 +203,7 @@
             // lbLMPFLS
             // 
             this.lbLMPFLS.AutoSize = true;
-            this.lbLMPFLS.Location = new System.Drawing.Point(32, 207);
+            this.lbLMPFLS.Location = new System.Drawing.Point(23, 207);
             this.lbLMPFLS.Name = "lbLMPFLS";
             this.lbLMPFLS.Size = new System.Drawing.Size(132, 13);
             this.lbLMPFLS.TabIndex = 22;
@@ -270,7 +271,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(32, 254);
+            this.label2.Location = new System.Drawing.Point(23, 254);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(162, 13);
             this.label2.TabIndex = 33;
@@ -279,7 +280,7 @@
             // lblPFCalc
             // 
             this.lblPFCalc.AutoSize = true;
-            this.lblPFCalc.Location = new System.Drawing.Point(32, 176);
+            this.lblPFCalc.Location = new System.Drawing.Point(23, 173);
             this.lblPFCalc.Name = "lblPFCalc";
             this.lblPFCalc.Size = new System.Drawing.Size(79, 13);
             this.lblPFCalc.TabIndex = 34;
@@ -297,7 +298,7 @@
             // lblActualSalary
             // 
             this.lblActualSalary.AutoSize = true;
-            this.lblActualSalary.Location = new System.Drawing.Point(32, 141);
+            this.lblActualSalary.Location = new System.Drawing.Point(23, 138);
             this.lblActualSalary.Name = "lblActualSalary";
             this.lblActualSalary.Size = new System.Drawing.Size(69, 13);
             this.lblActualSalary.TabIndex = 35;
@@ -306,7 +307,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(279, 145);
+            this.label1.Location = new System.Drawing.Point(279, 148);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 13);
             this.label1.TabIndex = 36;
@@ -421,7 +422,7 @@
             // labelEmpId
             // 
             this.labelEmpId.AutoSize = true;
-            this.labelEmpId.Location = new System.Drawing.Point(49, 553);
+            this.labelEmpId.Location = new System.Drawing.Point(49, 523);
             this.labelEmpId.Name = "labelEmpId";
             this.labelEmpId.Size = new System.Drawing.Size(38, 13);
             this.labelEmpId.TabIndex = 47;
@@ -430,7 +431,7 @@
             // labelMonth
             // 
             this.labelMonth.AutoSize = true;
-            this.labelMonth.Location = new System.Drawing.Point(118, 552);
+            this.labelMonth.Location = new System.Drawing.Point(118, 522);
             this.labelMonth.Name = "labelMonth";
             this.labelMonth.Size = new System.Drawing.Size(38, 13);
             this.labelMonth.TabIndex = 48;
@@ -449,7 +450,7 @@
             // labelYear
             // 
             this.labelYear.AutoSize = true;
-            this.labelYear.Location = new System.Drawing.Point(186, 551);
+            this.labelYear.Location = new System.Drawing.Point(186, 521);
             this.labelYear.Name = "labelYear";
             this.labelYear.Size = new System.Drawing.Size(36, 13);
             this.labelYear.TabIndex = 50;
@@ -457,7 +458,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(276, 62);
+            this.button1.Location = new System.Drawing.Point(313, 61);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 51;
@@ -465,11 +466,24 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.metroLabel1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.metroLabel1.Location = new System.Drawing.Point(26, 22);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(188, 25);
+            this.metroLabel1.TabIndex = 52;
+            this.metroLabel1.Text = "Monthly Transaction";
+            // 
             // Monthly_Transaction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1333, 617);
+            this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.labelYear);
             this.Controls.Add(this.btnRefresh);
@@ -505,7 +519,9 @@
             this.Controls.Add(this.lblMonth);
             this.Controls.Add(this.lblTdc);
             this.Controls.Add(this.lblFine);
+            this.DisplayHeader = false;
             this.Name = "Monthly_Transaction";
+            this.Padding = new System.Windows.Forms.Padding(20, 30, 20, 20);
             this.Text = "Monthly_Transaction";
             this.Load += new System.EventHandler(this.Monthly_Transaction_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMT)).EndInit();
@@ -552,5 +568,6 @@
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Label labelYear;
         private System.Windows.Forms.Button button1;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
     }
 }

@@ -66,6 +66,8 @@
             this.addDepartmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.monthlyTransactionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createMonthsTransactionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.report1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridViewEmp = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.txtAddNew = new System.Windows.Forms.Button();
@@ -75,8 +77,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtSeach = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.report1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.LblEmpl = new MetroFramework.Controls.MetroLabel();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmp)).BeginInit();
             this.SuspendLayout();
@@ -84,7 +85,7 @@
             // labelName
             // 
             this.labelName.AutoSize = true;
-            this.labelName.Location = new System.Drawing.Point(45, 68);
+            this.labelName.Location = new System.Drawing.Point(48, 106);
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(35, 13);
             this.labelName.TabIndex = 0;
@@ -102,7 +103,7 @@
             // labelParentage
             // 
             this.labelParentage.AutoSize = true;
-            this.labelParentage.Location = new System.Drawing.Point(45, 113);
+            this.labelParentage.Location = new System.Drawing.Point(45, 147);
             this.labelParentage.Name = "labelParentage";
             this.labelParentage.Size = new System.Drawing.Size(56, 13);
             this.labelParentage.TabIndex = 3;
@@ -111,7 +112,7 @@
             // labelResidence
             // 
             this.labelResidence.AutoSize = true;
-            this.labelResidence.Location = new System.Drawing.Point(291, 68);
+            this.labelResidence.Location = new System.Drawing.Point(291, 109);
             this.labelResidence.Name = "labelResidence";
             this.labelResidence.Size = new System.Drawing.Size(58, 13);
             this.labelResidence.TabIndex = 4;
@@ -121,7 +122,7 @@
             // labelJoinDate
             // 
             this.labelJoinDate.AutoSize = true;
-            this.labelJoinDate.Location = new System.Drawing.Point(291, 109);
+            this.labelJoinDate.Location = new System.Drawing.Point(291, 147);
             this.labelJoinDate.Name = "labelJoinDate";
             this.labelJoinDate.Size = new System.Drawing.Size(52, 13);
             this.labelJoinDate.TabIndex = 5;
@@ -131,7 +132,7 @@
             // labelEmpType
             // 
             this.labelEmpType.AutoSize = true;
-            this.labelEmpType.Location = new System.Drawing.Point(291, 150);
+            this.labelEmpType.Location = new System.Drawing.Point(291, 184);
             this.labelEmpType.Name = "labelEmpType";
             this.labelEmpType.Size = new System.Drawing.Size(80, 13);
             this.labelEmpType.TabIndex = 6;
@@ -140,7 +141,7 @@
             // labelDesignation
             // 
             this.labelDesignation.AutoSize = true;
-            this.labelDesignation.Location = new System.Drawing.Point(291, 227);
+            this.labelDesignation.Location = new System.Drawing.Point(291, 254);
             this.labelDesignation.Name = "labelDesignation";
             this.labelDesignation.Size = new System.Drawing.Size(63, 13);
             this.labelDesignation.TabIndex = 7;
@@ -149,7 +150,7 @@
             // labelPhone
             // 
             this.labelPhone.AutoSize = true;
-            this.labelPhone.Location = new System.Drawing.Point(45, 150);
+            this.labelPhone.Location = new System.Drawing.Point(48, 184);
             this.labelPhone.Name = "labelPhone";
             this.labelPhone.Size = new System.Drawing.Size(38, 13);
             this.labelPhone.TabIndex = 8;
@@ -158,7 +159,7 @@
             // labelEmail
             // 
             this.labelEmail.AutoSize = true;
-            this.labelEmail.Location = new System.Drawing.Point(45, 190);
+            this.labelEmail.Location = new System.Drawing.Point(48, 220);
             this.labelEmail.Name = "labelEmail";
             this.labelEmail.Size = new System.Drawing.Size(32, 13);
             this.labelEmail.TabIndex = 9;
@@ -167,35 +168,35 @@
             // txtName
             // 
             this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtName.Location = new System.Drawing.Point(114, 61);
+            this.txtName.Location = new System.Drawing.Point(114, 106);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(141, 20);
+            this.txtName.Size = new System.Drawing.Size(100, 20);
             this.txtName.TabIndex = 10;
             // 
             // textParentage
             // 
-            this.textParentage.Location = new System.Drawing.Point(114, 106);
+            this.textParentage.Location = new System.Drawing.Point(114, 147);
             this.textParentage.Name = "textParentage";
             this.textParentage.Size = new System.Drawing.Size(100, 20);
             this.textParentage.TabIndex = 12;
             // 
             // textPhone
             // 
-            this.textPhone.Location = new System.Drawing.Point(114, 147);
+            this.textPhone.Location = new System.Drawing.Point(114, 184);
             this.textPhone.Name = "textPhone";
             this.textPhone.Size = new System.Drawing.Size(100, 20);
             this.textPhone.TabIndex = 13;
             // 
             // textEmail
             // 
-            this.textEmail.Location = new System.Drawing.Point(114, 183);
+            this.textEmail.Location = new System.Drawing.Point(114, 220);
             this.textEmail.Name = "textEmail";
             this.textEmail.Size = new System.Drawing.Size(100, 20);
             this.textEmail.TabIndex = 14;
             // 
             // textResidence
             // 
-            this.textResidence.Location = new System.Drawing.Point(390, 61);
+            this.textResidence.Location = new System.Drawing.Point(390, 106);
             this.textResidence.Name = "textResidence";
             this.textResidence.Size = new System.Drawing.Size(100, 20);
             this.textResidence.TabIndex = 15;
@@ -203,7 +204,7 @@
             // 
             // textDesignation
             // 
-            this.textDesignation.Location = new System.Drawing.Point(390, 224);
+            this.textDesignation.Location = new System.Drawing.Point(390, 255);
             this.textDesignation.Name = "textDesignation";
             this.textDesignation.Size = new System.Drawing.Size(100, 20);
             this.textDesignation.TabIndex = 18;
@@ -219,7 +220,7 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(390, 106);
+            this.dateTimePicker1.Location = new System.Drawing.Point(390, 147);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(181, 20);
             this.dateTimePicker1.TabIndex = 20;
@@ -228,7 +229,7 @@
             // labelDpt
             // 
             this.labelDpt.AutoSize = true;
-            this.labelDpt.Location = new System.Drawing.Point(45, 219);
+            this.labelDpt.Location = new System.Drawing.Point(45, 254);
             this.labelDpt.Name = "labelDpt";
             this.labelDpt.Size = new System.Drawing.Size(62, 13);
             this.labelDpt.TabIndex = 22;
@@ -350,9 +351,9 @@
             this.departmentsToolStripMenuItem,
             this.monthlyTransactionToolStripMenuItem,
             this.reportToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Location = new System.Drawing.Point(20, 60);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1315, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1275, 24);
             this.menuStrip1.TabIndex = 35;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -408,15 +409,30 @@
             this.createMonthsTransactionToolStripMenuItem.Text = "Create Month\'sTransaction";
             this.createMonthsTransactionToolStripMenuItem.Click += new System.EventHandler(this.createMonthsTransactionToolStripMenuItem_Click);
             // 
+            // reportToolStripMenuItem
+            // 
+            this.reportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.report1ToolStripMenuItem});
+            this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
+            this.reportToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.reportToolStripMenuItem.Text = "Reports";
+            // 
+            // report1ToolStripMenuItem
+            // 
+            this.report1ToolStripMenuItem.Name = "report1ToolStripMenuItem";
+            this.report1ToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
+            this.report1ToolStripMenuItem.Text = "Report1";
+            this.report1ToolStripMenuItem.Click += new System.EventHandler(this.report1ToolStripMenuItem_Click);
+            // 
             // dataGridViewEmp
             // 
             this.dataGridViewEmp.AllowUserToAddRows = false;
             this.dataGridViewEmp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewEmp.Location = new System.Drawing.Point(621, 77);
+            this.dataGridViewEmp.Location = new System.Drawing.Point(621, 106);
             this.dataGridViewEmp.MinimumSize = new System.Drawing.Size(400, 400);
             this.dataGridViewEmp.MultiSelect = false;
             this.dataGridViewEmp.Name = "dataGridViewEmp";
-            this.dataGridViewEmp.Size = new System.Drawing.Size(682, 447);
+            this.dataGridViewEmp.Size = new System.Drawing.Size(682, 418);
             this.dataGridViewEmp.TabIndex = 36;
             this.dataGridViewEmp.SelectionChanged += new System.EventHandler(this.dataGridViewEmp_SelectionChanged);
             // 
@@ -451,7 +467,7 @@
             // comboBoxDept
             // 
             this.comboBoxDept.FormattingEnabled = true;
-            this.comboBoxDept.Location = new System.Drawing.Point(115, 216);
+            this.comboBoxDept.Location = new System.Drawing.Point(114, 254);
             this.comboBoxDept.Name = "comboBoxDept";
             this.comboBoxDept.Size = new System.Drawing.Size(100, 21);
             this.comboBoxDept.TabIndex = 40;
@@ -464,7 +480,7 @@
             "Salaried",
             "Contractual",
             "Hourly"});
-            this.listBoxEmpType.Location = new System.Drawing.Point(390, 150);
+            this.listBoxEmpType.Location = new System.Drawing.Point(390, 184);
             this.listBoxEmpType.Name = "listBoxEmpType";
             this.listBoxEmpType.Size = new System.Drawing.Size(100, 43);
             this.listBoxEmpType.TabIndex = 41;
@@ -479,7 +495,7 @@
             // 
             // txtSeach
             // 
-            this.txtSeach.Location = new System.Drawing.Point(621, 51);
+            this.txtSeach.Location = new System.Drawing.Point(621, 87);
             this.txtSeach.Name = "txtSeach";
             this.txtSeach.Size = new System.Drawing.Size(100, 20);
             this.txtSeach.TabIndex = 43;
@@ -487,34 +503,30 @@
             // btnSearch
             // 
             this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
-            this.btnSearch.Location = new System.Drawing.Point(718, 51);
+            this.btnSearch.Location = new System.Drawing.Point(718, 86);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(26, 20);
             this.btnSearch.TabIndex = 44;
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // reportToolStripMenuItem
+            // LblEmpl
             // 
-            this.reportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.report1ToolStripMenuItem});
-            this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
-            this.reportToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
-            this.reportToolStripMenuItem.Text = "Reports";
-            // 
-            // report1ToolStripMenuItem
-            // 
-            this.report1ToolStripMenuItem.Name = "report1ToolStripMenuItem";
-            this.report1ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.report1ToolStripMenuItem.Text = "Report1";
-            this.report1ToolStripMenuItem.Click += new System.EventHandler(this.report1ToolStripMenuItem_Click);
+            this.LblEmpl.AutoSize = true;
+            this.LblEmpl.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.LblEmpl.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.LblEmpl.Location = new System.Drawing.Point(23, 14);
+            this.LblEmpl.Name = "LblEmpl";
+            this.LblEmpl.Size = new System.Drawing.Size(95, 25);
+            this.LblEmpl.TabIndex = 45;
+            this.LblEmpl.Text = "Employee";
             // 
             // Emp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(183)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1315, 733);
+            this.Controls.Add(this.LblEmpl);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSeach);
             this.Controls.Add(this.label2);
@@ -615,6 +627,7 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.ToolStripMenuItem reportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem report1ToolStripMenuItem;
+        private MetroFramework.Controls.MetroLabel LblEmpl;
     }
 }
 
