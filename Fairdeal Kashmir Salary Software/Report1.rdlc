@@ -6,19 +6,19 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.27708in</Width>
+              <Width>1.42291in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.27708in</Width>
+              <Width>1.58958in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.6in</Width>
+              <Width>2.29792in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.27708in</Width>
+              <Width>1.54791in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.27708in</Width>
+              <Width>2.92292in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -398,10 +398,12 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
+        <RepeatColumnHeaders>true</RepeatColumnHeaders>
+        <FixedColumnHeaders>true</FixedColumnHeaders>
         <DataSetName>DataSet1</DataSetName>
         <Top>0.63542in</Top>
         <Height>0.5in</Height>
-        <Width>6.70832in</Width>
+        <Width>9.78125in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -415,9 +417,9 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>FAIRDEAL MOTORS</Value>
+                <Value>FAIRDEAL MOTORS PVT. LTD.</Value>
                 <Style>
-                  <FontSize>14pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -425,10 +427,9 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>0.14458in</Top>
-        <Left>0.94667in</Left>
-        <Height>0.33333in</Height>
-        <Width>5.17708in</Width>
+        <Left>3.80084in</Left>
+        <Height>0.23833in</Height>
+        <Width>2.07291in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -440,11 +441,53 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Textbox Name="Textbox4">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Salary statement for the month of </Value>
+                <Style />
+              </TextRun>
+              <TextRun>
+                <Value>=First(Fields!Month.Value, "DataSet1")</Value>
+                <Style />
+              </TextRun>
+              <TextRun>
+                <Value xml:space="preserve"> </Value>
+                <Style />
+              </TextRun>
+              <TextRun>
+                <Value>=First(Fields!Year.Value, "DataSet1")</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox4</rd:DefaultName>
+        <Top>0.2661in</Top>
+        <Left>3.2929in</Left>
+        <Height>0.2582in</Height>
+        <Width>3.56542in</Width>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
-    <Height>2in</Height>
+    <Height>3.78125in</Height>
     <Style />
   </Body>
-  <Width>6.70833in</Width>
+  <Width>9.78125in</Width>
   <Page>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>

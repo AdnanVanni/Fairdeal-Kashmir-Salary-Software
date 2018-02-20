@@ -34,9 +34,9 @@
             this.DataSetReport1 = new Fairdeal_Kashmir_Salary_Software.DataSetReport1();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SalaryReportsTableAdapter = new Fairdeal_Kashmir_Salary_Software.DataSetReport1TableAdapters.SalaryReportsTableAdapter();
-            this.comboBoxSYear = new System.Windows.Forms.ComboBox();
-            this.comboBoxSMonth = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.comboBoxSYear = new MetroFramework.Controls.MetroComboBox();
+            this.comboBoxSMonth = new MetroFramework.Controls.MetroComboBox();
+            this.Button1 = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.SalaryReportsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSetReport1)).BeginInit();
             this.SuspendLayout();
@@ -57,9 +57,9 @@
             reportDataSource1.Value = this.SalaryReportsBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Fairdeal_Kashmir_Salary_Software.Report1.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(69, 63);
+            this.reportViewer1.Location = new System.Drawing.Point(12, 83);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(874, 211);
+            this.reportViewer1.Size = new System.Drawing.Size(1024, 570);
             this.reportViewer1.TabIndex = 0;
             // 
             // SalaryReportsTableAdapter
@@ -69,6 +69,7 @@
             // comboBoxSYear
             // 
             this.comboBoxSYear.FormattingEnabled = true;
+            this.comboBoxSYear.ItemHeight = 23;
             this.comboBoxSYear.Items.AddRange(new object[] {
             "2017",
             "2018",
@@ -92,16 +93,17 @@
             "2037",
             "2038",
             "2039",
-            "2040",
-            ""});
-            this.comboBoxSYear.Location = new System.Drawing.Point(196, 25);
+            "2040"});
+            this.comboBoxSYear.Location = new System.Drawing.Point(139, 48);
             this.comboBoxSYear.Name = "comboBoxSYear";
-            this.comboBoxSYear.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxSYear.TabIndex = 42;
+            this.comboBoxSYear.Size = new System.Drawing.Size(123, 29);
+            this.comboBoxSYear.TabIndex = 44;
+            this.comboBoxSYear.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
             // comboBoxSMonth
             // 
             this.comboBoxSMonth.FormattingEnabled = true;
+            this.comboBoxSMonth.ItemHeight = 23;
             this.comboBoxSMonth.Items.AddRange(new object[] {
             "JANUARY",
             "FEBRUARY",
@@ -115,29 +117,30 @@
             "OCTOBER",
             "NOVEMBER",
             "DECEMBER"});
-            this.comboBoxSMonth.Location = new System.Drawing.Point(69, 27);
+            this.comboBoxSMonth.Location = new System.Drawing.Point(12, 48);
             this.comboBoxSMonth.Name = "comboBoxSMonth";
-            this.comboBoxSMonth.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxSMonth.TabIndex = 41;
+            this.comboBoxSMonth.Size = new System.Drawing.Size(121, 29);
+            this.comboBoxSMonth.TabIndex = 45;
+            this.comboBoxSMonth.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
-            // button1
+            // Button1
             // 
-            this.button1.Location = new System.Drawing.Point(339, 25);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(101, 23);
-            this.button1.TabIndex = 43;
-            this.button1.Text = "Display report";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Button1.Location = new System.Drawing.Point(268, 48);
+            this.Button1.Name = "Button1";
+            this.Button1.Size = new System.Drawing.Size(114, 29);
+            this.Button1.TabIndex = 46;
+            this.Button1.Text = "Preview Report";
+            this.Button1.Click += new System.EventHandler(this.Button1_Click_1);
             // 
             // ReportForm1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(955, 302);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBoxSYear);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1162, 741);
+            this.Controls.Add(this.Button1);
             this.Controls.Add(this.comboBoxSMonth);
+            this.Controls.Add(this.comboBoxSYear);
             this.Controls.Add(this.reportViewer1);
             this.Name = "ReportForm1";
             this.Text = "ReportForm1";
@@ -154,8 +157,8 @@
         private System.Windows.Forms.BindingSource SalaryReportsBindingSource;
         private DataSetReport1 DataSetReport1;
         private DataSetReport1TableAdapters.SalaryReportsTableAdapter SalaryReportsTableAdapter;
-        private System.Windows.Forms.ComboBox comboBoxSYear;
-        private System.Windows.Forms.ComboBox comboBoxSMonth;
-        private System.Windows.Forms.Button button1;
+        private MetroFramework.Controls.MetroComboBox comboBoxSYear;
+        private MetroFramework.Controls.MetroComboBox comboBoxSMonth;
+        private MetroFramework.Controls.MetroButton Button1;
     }
 }

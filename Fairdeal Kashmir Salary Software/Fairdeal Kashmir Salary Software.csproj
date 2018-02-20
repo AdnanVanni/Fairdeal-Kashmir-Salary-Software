@@ -103,6 +103,11 @@
       <DependentUpon>CompanyInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="DataManager.cs" />
+    <Compile Include="DataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetReport1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -128,6 +133,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepoerForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RepoerForm2.Designer.cs">
+      <DependentUpon>RepoerForm2.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReportForm1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,10 +166,24 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RepoerForm2.resx">
+      <DependentUpon>RepoerForm2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report1.rdlc" />
     <EmbeddedResource Include="ReportForm1.resx">
       <DependentUpon>ReportForm1.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DataSet2.xsc">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet2.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet2.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet2.xss">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
     <None Include="DataSetReport1.xsc">
       <DependentUpon>DataSetReport1.xsd</DependentUpon>
     </None>
