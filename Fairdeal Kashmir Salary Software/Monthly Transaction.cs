@@ -116,7 +116,7 @@ namespace Fairdeal_Kashmir_Salary_Software
             var empId = DataManager.executeScalar(GetEmp).ToString();
             //saves record in monthly transaction
             SqlCommand Save = new SqlCommand();
-            Save.CommandText = "INSERT INTO[dbo].[MonthlyTransaction]([Month] ,[EmployeeId] ,[Year],[TDC],[Fine],[SalaryInHand],[Memo],[AdvAmtSub],[PfLoanSub],[TransactionDate],[AbsentDays]) VALUES(@Month,@EmployeeId,@Year,@TDC,@Fine,@SalaryInHand,@Memo,@AdvAmtSub,@PfLoanSub,GetDate(),@Absent)";
+            Save.CommandText = "INSERT INTO[dbo].[MonthlyTransaction]([Month] ,[EmployeeId] ,[Year],[TDC],[Fine],[SalaryInHand],[PfMonthly],[Memo],[AdvAmtSub],[PfLoanSub],[TransactionDate],[AbsentDays],[Days]) VALUES(@Month,@EmployeeId,@Year,@TDC,@Fine,@SalaryInHand,@PfMonthly,@Memo,@AdvAmtSub,@PfLoanSub,GetDate(),@Absent)";
             
             Save.Parameters.AddWithValue("@Month", comboBoxMonth.SelectedItem);
             Save.Parameters.AddWithValue("@EmployeeId", empId);
@@ -128,8 +128,14 @@ namespace Fairdeal_Kashmir_Salary_Software
             Save.Parameters.AddWithValue("@AdvAmtSub", Convert.ToDouble(txtAAMD.Text));
             Save.Parameters.AddWithValue("@PfLoanSub", Convert.ToDouble(txtMPFLS.Text));
             Save.Parameters.AddWithValue("@Absent", txtAbsent.Text);
+            Save.Parameters.AddWithValue("@PfMonthly", txtPF.Text);
+            int MonthS = Convert.ToInt32(comboBoxMonth.SelectedIndex.ToString());
+            MonthS++;
+            int YearS = Convert.ToInt32(comboBoxYear.SelectedItem.ToString());
+            Save.Parameters.AddWithValue("@days", System.DateTime.DaysInMonth(YearS, MonthS));
 
-           DataManager.executeNonQuery(Save);
+
+            DataManager.executeNonQuery(Save);
             Monthly_Transaction MT = new Monthly_Transaction();
             MT.Show();
             this.Hide();

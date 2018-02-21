@@ -410,5 +410,12 @@ namespace Fairdeal_Kashmir_Salary_Software
             RP1.Show();
             this.Hide();
         }
+
+        private void report2ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RepoerForm2 rp = new RepoerForm2();
+            rp.Show();
+            this.Hide();
+        }
     }
 }

@@ -170,6 +170,7 @@
       <DependentUpon>RepoerForm2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Report2.rdlc" />
     <EmbeddedResource Include="ReportForm1.resx">
       <DependentUpon>ReportForm1.cs</DependentUpon>
     </EmbeddedResource>

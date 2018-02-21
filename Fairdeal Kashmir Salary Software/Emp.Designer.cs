@@ -78,6 +78,7 @@
             this.txtSeach = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.LblEmpl = new MetroFramework.Controls.MetroLabel();
+            this.report2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmp)).BeginInit();
             this.SuspendLayout();
@@ -412,7 +413,8 @@
             // reportToolStripMenuItem
             // 
             this.reportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.report1ToolStripMenuItem});
+            this.report1ToolStripMenuItem,
+            this.report2ToolStripMenuItem});
             this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
             this.reportToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.reportToolStripMenuItem.Text = "Reports";
@@ -420,7 +422,7 @@
             // report1ToolStripMenuItem
             // 
             this.report1ToolStripMenuItem.Name = "report1ToolStripMenuItem";
-            this.report1ToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
+            this.report1ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.report1ToolStripMenuItem.Text = "Report1";
             this.report1ToolStripMenuItem.Click += new System.EventHandler(this.report1ToolStripMenuItem_Click);
             // 
@@ -520,6 +522,13 @@
             this.LblEmpl.Size = new System.Drawing.Size(95, 25);
             this.LblEmpl.TabIndex = 45;
             this.LblEmpl.Text = "Employee";
+            // 
+            // report2ToolStripMenuItem
+            // 
+            this.report2ToolStripMenuItem.Name = "report2ToolStripMenuItem";
+            this.report2ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.report2ToolStripMenuItem.Text = "Report2";
+            this.report2ToolStripMenuItem.Click += new System.EventHandler(this.report2ToolStripMenuItem_Click);
             // 
             // Emp
             // 
@@ -628,6 +637,7 @@
         private System.Windows.Forms.ToolStripMenuItem reportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem report1ToolStripMenuItem;
         private MetroFramework.Controls.MetroLabel LblEmpl;
+        private System.Windows.Forms.ToolStripMenuItem report2ToolStripMenuItem;
     }
 }
 

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Fairdeal_Kashmir_Salary_Software
 {
@@ -19,20 +20,29 @@ namespace Fairdeal_Kashmir_Salary_Software
 
         private void RepoerForm2_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'DataSet2.SalaryBill' table. You can move, or remove it, as needed.
+            
 
-            this.reportViewer1.RefreshReport();
+            SqlCommand cmdDept = new SqlCommand();
+            cmdDept.CommandText = "SELECT DesignationName from Designation";
+            DataSet DSdept = DataManager.executeDataset(cmdDept);
+            ComboBoxDept.DataSource = DSdept.Tables[0];
+            ComboBoxDept.ValueMember = "DesignationName";
+            ComboBoxDept.DisplayMember = "DesignationName";
+            ComboBoxDept.Text = "--Select--";
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            if (comboBoxSMonth.Text == "" || comboBoxSYear.Text == ""||ComboBoxDept.Text=="")
+            if (comboBoxSMonth.Text == "" || comboBoxSYear.Text == ""||ComboBoxDept.Text == "")
             {
                MessageBox.Show("Select Month and Year");
                 return;
             }
-            this.SalaryReportsTableAdapter.Fill(this., comboBoxSMonth.Text, comboBoxSYear.Text);
 
-
+            this.SalaryBillTableAdapter.Fill(this.DataSet2.SalaryBill, ComboBoxDept.Text, comboBoxSMonth.Text, comboBoxSYear.Text);
+            
+            
             this.reportViewer1.RefreshReport();
         }
     }
