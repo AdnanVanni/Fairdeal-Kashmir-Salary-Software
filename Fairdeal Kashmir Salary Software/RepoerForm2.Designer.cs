@@ -30,17 +30,27 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.SalaryBillBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DataSet2 = new Fairdeal_Kashmir_Salary_Software.DataSet2();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.comboBoxSMonth = new MetroFramework.Controls.MetroComboBox();
             this.comboBoxSYear = new MetroFramework.Controls.MetroComboBox();
             this.Button1 = new MetroFramework.Controls.MetroButton();
             this.ComboBoxDept = new MetroFramework.Controls.MetroComboBox();
-            this.DataSet2 = new Fairdeal_Kashmir_Salary_Software.DataSet2();
-            this.SalaryBillBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.SalaryBillTableAdapter = new Fairdeal_Kashmir_Salary_Software.DataSet2TableAdapters.SalaryBillTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.DataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SalaryBillBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSet2)).BeginInit();
             this.SuspendLayout();
+            // 
+            // SalaryBillBindingSource
+            // 
+            this.SalaryBillBindingSource.DataMember = "SalaryBill";
+            this.SalaryBillBindingSource.DataSource = this.DataSet2;
+            // 
+            // DataSet2
+            // 
+            this.DataSet2.DataSetName = "DataSet2";
+            this.DataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -128,16 +138,6 @@
             this.ComboBoxDept.Size = new System.Drawing.Size(121, 29);
             this.ComboBoxDept.TabIndex = 49;
             // 
-            // DataSet2
-            // 
-            this.DataSet2.DataSetName = "DataSet2";
-            this.DataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // SalaryBillBindingSource
-            // 
-            this.SalaryBillBindingSource.DataMember = "SalaryBill";
-            this.SalaryBillBindingSource.DataSource = this.DataSet2;
-            // 
             // SalaryBillTableAdapter
             // 
             this.SalaryBillTableAdapter.ClearBeforeFill = true;
@@ -155,8 +155,8 @@
             this.Name = "RepoerForm2";
             this.Text = "RepoerForm2";
             this.Load += new System.EventHandler(this.RepoerForm2_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SalaryBillBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSet2)).EndInit();
             this.ResumeLayout(false);
 
         }

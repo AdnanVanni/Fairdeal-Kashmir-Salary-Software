@@ -21,7 +21,11 @@ namespace Fairdeal_Kashmir_Salary_Software
         private void RepoerForm2_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'DataSet2.SalaryBill' table. You can move, or remove it, as needed.
-            
+           // this.SalaryBillTableAdapter.Fill(this.DataSet2.SalaryBill);
+            // TODO: This line of code loads data into the 'DataSet2.SalaryBill' table. You can move, or remove it, as needed.
+            //    this.SalaryBillTableAdapter.Fill(this.DataSet2.SalaryBill);
+            // TODO: This line of code loads data into the 'DataSet2.SalaryBill' table. You can move, or remove it, as needed.
+
 
             SqlCommand cmdDept = new SqlCommand();
             cmdDept.CommandText = "SELECT DesignationName from Designation";
