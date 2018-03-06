@@ -78,8 +78,8 @@ namespace Fairdeal_Kashmir_Salary_Software
             dataGridViewMT.Columns["EmpId"].Visible = false;
             dataGridViewMT.Columns["EmployeeId"].Visible = false;
             dataGridViewMT.Columns["TransactionDate"].Visible = false;
-            dataGridViewMT.Columns["AdvanceAmt"].HeaderText = "Advance Amt Balance";
-            dataGridViewMT.Columns["PFloanWithdrawn"].HeaderText = "PF Loan Balance";
+            dataGridViewMT.Columns["AdvanceAmt"].Visible = false;
+            dataGridViewMT.Columns["PFloanWithdrawn"].Visible = false;
             dataGridViewMT.Columns["SalaryPerMonth"].HeaderText = "Actual Salary";
             dataGridViewMT.Columns["EmpName"].HeaderText = "Name";
             btnDelete.Visible = false;
@@ -114,31 +114,46 @@ namespace Fairdeal_Kashmir_Salary_Software
             GetEmp.CommandText = "select EmpId from Employee Where EmpName=@EmpName";
             GetEmp.Parameters.AddWithValue("@EmpName", Ename.SelectedValue);
             var empId = DataManager.executeScalar(GetEmp).ToString();
-            //saves record in monthly transaction
-            SqlCommand Save = new SqlCommand();
-            Save.CommandText = "INSERT INTO[dbo].[MonthlyTransaction]([Month] ,[EmployeeId] ,[Year],[TDC],[Fine],[SalaryInHand],[PfMonthly],[Memo],[AdvAmtSub],[PfLoanSub],[TransactionDate],[AbsentDays],[DaysInMonth]) VALUES(@Month,@EmployeeId,@Year,@TDC,@Fine,@SalaryInHand,@PfMonthly,@Memo,@AdvAmtSub,@PfLoanSub,GetDate(),@Absent,@days)";
-            
-            Save.Parameters.AddWithValue("@Month", comboBoxMonth.SelectedItem);
-            Save.Parameters.AddWithValue("@EmployeeId", empId);
-            Save.Parameters.AddWithValue("@Year", comboBoxYear.SelectedItem);
-            Save.Parameters.AddWithValue("@TDC",txtTdc.Text);
-            Save.Parameters.AddWithValue("@Fine",txtFine.Text);
-            Save.Parameters.AddWithValue("@SalaryInHand",txtNetSalary.Text);
-            Save.Parameters.AddWithValue("@Memo",richTextBoxMemo.Text);
-            Save.Parameters.AddWithValue("@AdvAmtSub", Convert.ToDouble(txtAAMD.Text));
-            Save.Parameters.AddWithValue("@PfLoanSub", Convert.ToDouble(txtMPFLS.Text));
-            Save.Parameters.AddWithValue("@Absent", txtAbsent.Text);
-            Save.Parameters.AddWithValue("@PfMonthly", txtPF.Text);
-            int MonthS = Convert.ToInt32(comboBoxMonth.SelectedIndex.ToString());
-            MonthS++;
-            int YearS = Convert.ToInt32(comboBoxYear.SelectedItem.ToString());
-            Save.Parameters.AddWithValue("@days", DateTime.DaysInMonth(YearS, MonthS));
+
+            //Checks if transaction Can be committed
+            SqlCommand Check = new SqlCommand();
+            Check.CommandText = "Select AdvanceAmt,PFloanWithdrawn from employee where empId=@EmpId";
+            Check.Parameters.AddWithValue("@EmpId", empId);
+            DataSet dsE= DataManager.executeDataset(Check);
+            var d = dsE.Tables[0].Rows[0][0].ToString();
+            var e5 = dsE.Tables[0].Rows[0][1].ToString();
+                if (Convert.ToDouble(dsE.Tables[0].Rows[0][0].ToString()) >= Convert.ToDouble(txtAAMD.Text) && Convert.ToDouble(dsE.Tables[0].Rows[0][1].ToString()) >= Convert.ToDouble(txtMPFLS.Text))
+            {
+                //saves record in monthly transaction
+                SqlCommand Save = new SqlCommand();
+                Save.CommandText = "INSERT INTO[dbo].[MonthlyTransaction]([Month],[EmployeeId] ,[Year],[TDC],[Fine],[SalaryInHand],[PfMonthly],[Memo],[AdvAmtSub],[PfLoanSub],[TransactionDate],[AbsentDays],[DaysInMonth]) VALUES(@Month,@EmployeeId,@Year,@TDC,@Fine,@SalaryInHand,@PfMonthly,@Memo,@AdvAmtSub,@PfLoanSub,GetDate(),@Absent,@days)";
+
+                Save.Parameters.AddWithValue("@Month", comboBoxMonth.SelectedItem);
+                Save.Parameters.AddWithValue("@EmployeeId", empId);
+                Save.Parameters.AddWithValue("@Year", comboBoxYear.SelectedItem);
+                Save.Parameters.AddWithValue("@TDC", txtTdc.Text);
+                Save.Parameters.AddWithValue("@Fine", txtFine.Text);
+                Save.Parameters.AddWithValue("@SalaryInHand", txtNetSalary.Text);
+                Save.Parameters.AddWithValue("@Memo", richTextBoxMemo.Text);
+                Save.Parameters.AddWithValue("@AdvAmtSub", Convert.ToDouble(txtAAMD.Text));
+                Save.Parameters.AddWithValue("@PfLoanSub", Convert.ToDouble(txtMPFLS.Text));
+                Save.Parameters.AddWithValue("@Absent", txtAbsent.Text);
+                Save.Parameters.AddWithValue("@PfMonthly", txtPF.Text);
+                int MonthS = Convert.ToInt32(comboBoxMonth.SelectedIndex.ToString());
+                MonthS++;
+                int YearS = Convert.ToInt32(comboBoxYear.SelectedItem.ToString());
+                Save.Parameters.AddWithValue("@days", DateTime.DaysInMonth(YearS, MonthS));
 
 
-            DataManager.executeNonQuery(Save);
-            Monthly_Transaction MT = new Monthly_Transaction();
-            MT.Show();
-            this.Hide();
+                DataManager.executeNonQuery(Save);
+                Monthly_Transaction MT = new Monthly_Transaction();
+                MT.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Cannot commit transaction as PF/Advance Amount Balance is insufficient");
+            }
         }
        
         private void txtMonthlySalary_KeyPress(object sender, KeyPressEventArgs e)
@@ -393,6 +408,9 @@ namespace Fairdeal_Kashmir_Salary_Software
             txtMonthlySalary.Text = DS1.Tables[0].Rows[0][5].ToString();
             txtMPFLS.Text = DS1.Tables[0].Rows[0][10].ToString();
             txtAAMD.Text = DS1.Tables[0].Rows[0][11].ToString();
+            
+            lblPFRem.Text = DS1.Tables[0].Rows[0][9].ToString(); 
+            lblAdvAmtBalance.Text= DS1.Tables[0].Rows[0][8].ToString();
 
         }
 

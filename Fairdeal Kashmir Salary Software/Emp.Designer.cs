@@ -43,7 +43,6 @@
             this.textPhone = new System.Windows.Forms.TextBox();
             this.textEmail = new System.Windows.Forms.TextBox();
             this.textResidence = new System.Windows.Forms.TextBox();
-            this.textDesignation = new System.Windows.Forms.TextBox();
             this.textAcc = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.labelDpt = new System.Windows.Forms.Label();
@@ -64,10 +63,13 @@
             this.addEmployeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.departmentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addDepartmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.designationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addDesignationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.monthlyTransactionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createMonthsTransactionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.report1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.report2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridViewEmp = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.txtAddNew = new System.Windows.Forms.Button();
@@ -78,7 +80,12 @@
             this.txtSeach = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.LblEmpl = new MetroFramework.Controls.MetroLabel();
-            this.report2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtPFaccNo = new System.Windows.Forms.TextBox();
+            this.lblID = new System.Windows.Forms.Label();
+            this.txtAid = new System.Windows.Forms.TextBox();
+            this.textDesignation = new System.Windows.Forms.ComboBox();
+            this.copyTransactionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmp)).BeginInit();
             this.SuspendLayout();
@@ -86,7 +93,7 @@
             // labelName
             // 
             this.labelName.AutoSize = true;
-            this.labelName.Location = new System.Drawing.Point(48, 106);
+            this.labelName.Location = new System.Drawing.Point(45, 113);
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(35, 13);
             this.labelName.TabIndex = 0;
@@ -95,7 +102,7 @@
             // labelAccountNumber
             // 
             this.labelAccountNumber.AutoSize = true;
-            this.labelAccountNumber.Location = new System.Drawing.Point(401, 302);
+            this.labelAccountNumber.Location = new System.Drawing.Point(402, 410);
             this.labelAccountNumber.Name = "labelAccountNumber";
             this.labelAccountNumber.Size = new System.Drawing.Size(64, 13);
             this.labelAccountNumber.TabIndex = 2;
@@ -113,7 +120,7 @@
             // labelResidence
             // 
             this.labelResidence.AutoSize = true;
-            this.labelResidence.Location = new System.Drawing.Point(291, 109);
+            this.labelResidence.Location = new System.Drawing.Point(43, 254);
             this.labelResidence.Name = "labelResidence";
             this.labelResidence.Size = new System.Drawing.Size(58, 13);
             this.labelResidence.TabIndex = 4;
@@ -151,7 +158,7 @@
             // labelPhone
             // 
             this.labelPhone.AutoSize = true;
-            this.labelPhone.Location = new System.Drawing.Point(48, 184);
+            this.labelPhone.Location = new System.Drawing.Point(45, 184);
             this.labelPhone.Name = "labelPhone";
             this.labelPhone.Size = new System.Drawing.Size(38, 13);
             this.labelPhone.TabIndex = 8;
@@ -160,7 +167,7 @@
             // labelEmail
             // 
             this.labelEmail.AutoSize = true;
-            this.labelEmail.Location = new System.Drawing.Point(48, 220);
+            this.labelEmail.Location = new System.Drawing.Point(45, 220);
             this.labelEmail.Name = "labelEmail";
             this.labelEmail.Size = new System.Drawing.Size(32, 13);
             this.labelEmail.TabIndex = 9;
@@ -169,7 +176,7 @@
             // txtName
             // 
             this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtName.Location = new System.Drawing.Point(114, 106);
+            this.txtName.Location = new System.Drawing.Point(114, 110);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(100, 20);
             this.txtName.TabIndex = 10;
@@ -197,23 +204,15 @@
             // 
             // textResidence
             // 
-            this.textResidence.Location = new System.Drawing.Point(390, 106);
+            this.textResidence.Location = new System.Drawing.Point(114, 254);
             this.textResidence.Name = "textResidence";
             this.textResidence.Size = new System.Drawing.Size(100, 20);
             this.textResidence.TabIndex = 15;
             this.textResidence.TextChanged += new System.EventHandler(this.textResidence_TextChanged);
             // 
-            // textDesignation
-            // 
-            this.textDesignation.Location = new System.Drawing.Point(390, 255);
-            this.textDesignation.Name = "textDesignation";
-            this.textDesignation.Size = new System.Drawing.Size(100, 20);
-            this.textDesignation.TabIndex = 18;
-            this.textDesignation.TextChanged += new System.EventHandler(this.textDesignation_TextChanged);
-            // 
             // textAcc
             // 
-            this.textAcc.Location = new System.Drawing.Point(404, 327);
+            this.textAcc.Location = new System.Drawing.Point(404, 426);
             this.textAcc.Name = "textAcc";
             this.textAcc.Size = new System.Drawing.Size(100, 20);
             this.textAcc.TabIndex = 19;
@@ -230,7 +229,7 @@
             // labelDpt
             // 
             this.labelDpt.AutoSize = true;
-            this.labelDpt.Location = new System.Drawing.Point(45, 254);
+            this.labelDpt.Location = new System.Drawing.Point(292, 297);
             this.labelDpt.Name = "labelDpt";
             this.labelDpt.Size = new System.Drawing.Size(62, 13);
             this.labelDpt.TabIndex = 22;
@@ -239,7 +238,7 @@
             // labelSalary
             // 
             this.labelSalary.AutoSize = true;
-            this.labelSalary.Location = new System.Drawing.Point(54, 302);
+            this.labelSalary.Location = new System.Drawing.Point(48, 369);
             this.labelSalary.Name = "labelSalary";
             this.labelSalary.Size = new System.Drawing.Size(76, 13);
             this.labelSalary.TabIndex = 24;
@@ -249,7 +248,7 @@
             // labelPFLoanWithdrawn
             // 
             this.labelPFLoanWithdrawn.AutoSize = true;
-            this.labelPFLoanWithdrawn.Location = new System.Drawing.Point(56, 363);
+            this.labelPFLoanWithdrawn.Location = new System.Drawing.Point(45, 449);
             this.labelPFLoanWithdrawn.Name = "labelPFLoanWithdrawn";
             this.labelPFLoanWithdrawn.Size = new System.Drawing.Size(101, 13);
             this.labelPFLoanWithdrawn.TabIndex = 25;
@@ -259,7 +258,7 @@
             // labelPFloanMonthlyDeduction
             // 
             this.labelPFloanMonthlyDeduction.AutoSize = true;
-            this.labelPFloanMonthlyDeduction.Location = new System.Drawing.Point(56, 432);
+            this.labelPFloanMonthlyDeduction.Location = new System.Drawing.Point(48, 488);
             this.labelPFloanMonthlyDeduction.Name = "labelPFloanMonthlyDeduction";
             this.labelPFloanMonthlyDeduction.Size = new System.Drawing.Size(139, 13);
             this.labelPFloanMonthlyDeduction.TabIndex = 26;
@@ -269,7 +268,7 @@
             // labelAdvAmt
             // 
             this.labelAdvAmt.AutoSize = true;
-            this.labelAdvAmt.Location = new System.Drawing.Point(401, 363);
+            this.labelAdvAmt.Location = new System.Drawing.Point(402, 449);
             this.labelAdvAmt.Name = "labelAdvAmt";
             this.labelAdvAmt.Size = new System.Drawing.Size(174, 13);
             this.labelAdvAmt.TabIndex = 27;
@@ -282,7 +281,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelAdvancedMonthlyDeduction.AutoSize = true;
-            this.labelAdvancedMonthlyDeduction.Location = new System.Drawing.Point(402, 432);
+            this.labelAdvancedMonthlyDeduction.Location = new System.Drawing.Point(401, 488);
             this.labelAdvancedMonthlyDeduction.Name = "labelAdvancedMonthlyDeduction";
             this.labelAdvancedMonthlyDeduction.Size = new System.Drawing.Size(187, 13);
             this.labelAdvancedMonthlyDeduction.TabIndex = 28;
@@ -291,7 +290,7 @@
             // 
             // textMonthlySalary
             // 
-            this.textMonthlySalary.Location = new System.Drawing.Point(57, 327);
+            this.textMonthlySalary.Location = new System.Drawing.Point(143, 362);
             this.textMonthlySalary.Name = "textMonthlySalary";
             this.textMonthlySalary.Size = new System.Drawing.Size(100, 20);
             this.textMonthlySalary.TabIndex = 29;
@@ -300,7 +299,7 @@
             // 
             // textPFLW
             // 
-            this.textPFLW.Location = new System.Drawing.Point(57, 392);
+            this.textPFLW.Location = new System.Drawing.Point(48, 465);
             this.textPFLW.Name = "textPFLW";
             this.textPFLW.Size = new System.Drawing.Size(100, 20);
             this.textPFLW.TabIndex = 30;
@@ -309,7 +308,7 @@
             // 
             // textPFMD
             // 
-            this.textPFMD.Location = new System.Drawing.Point(59, 457);
+            this.textPFMD.Location = new System.Drawing.Point(48, 504);
             this.textPFMD.Name = "textPFMD";
             this.textPFMD.Size = new System.Drawing.Size(100, 20);
             this.textPFMD.TabIndex = 31;
@@ -318,7 +317,7 @@
             // 
             // textAACD
             // 
-            this.textAACD.Location = new System.Drawing.Point(404, 392);
+            this.textAACD.Location = new System.Drawing.Point(404, 465);
             this.textAACD.Name = "textAACD";
             this.textAACD.Size = new System.Drawing.Size(100, 20);
             this.textAACD.TabIndex = 32;
@@ -327,7 +326,7 @@
             // 
             // textAAMD
             // 
-            this.textAAMD.Location = new System.Drawing.Point(404, 457);
+            this.textAAMD.Location = new System.Drawing.Point(404, 504);
             this.textAAMD.Name = "textAAMD";
             this.textAAMD.Size = new System.Drawing.Size(100, 20);
             this.textAAMD.TabIndex = 33;
@@ -350,6 +349,7 @@
             this.toolStripMenuItem1,
             this.editEmployeeToolStripMenuItem,
             this.departmentsToolStripMenuItem,
+            this.designationsToolStripMenuItem,
             this.monthlyTransactionToolStripMenuItem,
             this.reportToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(20, 60);
@@ -395,10 +395,26 @@
             this.addDepartmentToolStripMenuItem.Text = "Add Department";
             this.addDepartmentToolStripMenuItem.Click += new System.EventHandler(this.addDepartmentToolStripMenuItem_Click);
             // 
+            // designationsToolStripMenuItem
+            // 
+            this.designationsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addDesignationToolStripMenuItem});
+            this.designationsToolStripMenuItem.Name = "designationsToolStripMenuItem";
+            this.designationsToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
+            this.designationsToolStripMenuItem.Text = "Designations";
+            // 
+            // addDesignationToolStripMenuItem
+            // 
+            this.addDesignationToolStripMenuItem.Name = "addDesignationToolStripMenuItem";
+            this.addDesignationToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.addDesignationToolStripMenuItem.Text = "Add Designation";
+            this.addDesignationToolStripMenuItem.Click += new System.EventHandler(this.addDesignationToolStripMenuItem_Click);
+            // 
             // monthlyTransactionToolStripMenuItem
             // 
             this.monthlyTransactionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.createMonthsTransactionToolStripMenuItem});
+            this.createMonthsTransactionToolStripMenuItem,
+            this.copyTransactionsToolStripMenuItem});
             this.monthlyTransactionToolStripMenuItem.Name = "monthlyTransactionToolStripMenuItem";
             this.monthlyTransactionToolStripMenuItem.Size = new System.Drawing.Size(128, 20);
             this.monthlyTransactionToolStripMenuItem.Text = "Monthly Transaction";
@@ -422,9 +438,16 @@
             // report1ToolStripMenuItem
             // 
             this.report1ToolStripMenuItem.Name = "report1ToolStripMenuItem";
-            this.report1ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.report1ToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
             this.report1ToolStripMenuItem.Text = "Report1";
             this.report1ToolStripMenuItem.Click += new System.EventHandler(this.report1ToolStripMenuItem_Click);
+            // 
+            // report2ToolStripMenuItem
+            // 
+            this.report2ToolStripMenuItem.Name = "report2ToolStripMenuItem";
+            this.report2ToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
+            this.report2ToolStripMenuItem.Text = "Report2";
+            this.report2ToolStripMenuItem.Click += new System.EventHandler(this.report2ToolStripMenuItem_Click);
             // 
             // dataGridViewEmp
             // 
@@ -469,7 +492,7 @@
             // comboBoxDept
             // 
             this.comboBoxDept.FormattingEnabled = true;
-            this.comboBoxDept.Location = new System.Drawing.Point(114, 254);
+            this.comboBoxDept.Location = new System.Drawing.Point(390, 289);
             this.comboBoxDept.Name = "comboBoxDept";
             this.comboBoxDept.Size = new System.Drawing.Size(100, 21);
             this.comboBoxDept.TabIndex = 40;
@@ -523,18 +546,63 @@
             this.LblEmpl.TabIndex = 45;
             this.LblEmpl.Text = "Employee";
             // 
-            // report2ToolStripMenuItem
+            // label3
             // 
-            this.report2ToolStripMenuItem.Name = "report2ToolStripMenuItem";
-            this.report2ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.report2ToolStripMenuItem.Text = "Report2";
-            this.report2ToolStripMenuItem.Click += new System.EventHandler(this.report2ToolStripMenuItem_Click);
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(48, 410);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(59, 13);
+            this.label3.TabIndex = 46;
+            this.label3.Text = "PF Acc No";
+            // 
+            // txtPFaccNo
+            // 
+            this.txtPFaccNo.Location = new System.Drawing.Point(48, 426);
+            this.txtPFaccNo.Name = "txtPFaccNo";
+            this.txtPFaccNo.Size = new System.Drawing.Size(100, 20);
+            this.txtPFaccNo.TabIndex = 47;
+            // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Location = new System.Drawing.Point(292, 113);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(65, 13);
+            this.lblID.TabIndex = 48;
+            this.lblID.Text = "Employee Id";
+            // 
+            // txtAid
+            // 
+            this.txtAid.Location = new System.Drawing.Point(390, 110);
+            this.txtAid.Name = "txtAid";
+            this.txtAid.Size = new System.Drawing.Size(100, 20);
+            this.txtAid.TabIndex = 49;
+            // 
+            // textDesignation
+            // 
+            this.textDesignation.FormattingEnabled = true;
+            this.textDesignation.Location = new System.Drawing.Point(390, 245);
+            this.textDesignation.Name = "textDesignation";
+            this.textDesignation.Size = new System.Drawing.Size(100, 21);
+            this.textDesignation.TabIndex = 50;
+            // 
+            // copyTransactionsToolStripMenuItem
+            // 
+            this.copyTransactionsToolStripMenuItem.Name = "copyTransactionsToolStripMenuItem";
+            this.copyTransactionsToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.copyTransactionsToolStripMenuItem.Text = "Copy Transactions";
+            this.copyTransactionsToolStripMenuItem.Click += new System.EventHandler(this.copyTransactionsToolStripMenuItem_Click);
             // 
             // Emp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1315, 733);
+            this.Controls.Add(this.textDesignation);
+            this.Controls.Add(this.txtAid);
+            this.Controls.Add(this.lblID);
+            this.Controls.Add(this.txtPFaccNo);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.LblEmpl);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSeach);
@@ -559,7 +627,6 @@
             this.Controls.Add(this.labelDpt);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.textAcc);
-            this.Controls.Add(this.textDesignation);
             this.Controls.Add(this.textResidence);
             this.Controls.Add(this.textEmail);
             this.Controls.Add(this.textPhone);
@@ -602,7 +669,6 @@
         private System.Windows.Forms.TextBox textPhone;
         private System.Windows.Forms.TextBox textEmail;
         private System.Windows.Forms.TextBox textResidence;
-        private System.Windows.Forms.TextBox textDesignation;
         private System.Windows.Forms.TextBox textAcc;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label labelDpt;
@@ -638,6 +704,14 @@
         private System.Windows.Forms.ToolStripMenuItem report1ToolStripMenuItem;
         private MetroFramework.Controls.MetroLabel LblEmpl;
         private System.Windows.Forms.ToolStripMenuItem report2ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem designationsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addDesignationToolStripMenuItem;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtPFaccNo;
+        private System.Windows.Forms.Label lblID;
+        private System.Windows.Forms.TextBox txtAid;
+        private System.Windows.Forms.ComboBox textDesignation;
+        private System.Windows.Forms.ToolStripMenuItem copyTransactionsToolStripMenuItem;
     }
 }
 

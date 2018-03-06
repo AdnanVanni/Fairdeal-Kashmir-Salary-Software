@@ -33,10 +33,17 @@ namespace Fairdeal_Kashmir_Salary_Software
             comboBoxDept.ValueMember = "DepartmentName";
             comboBoxDept.DisplayMember = "DepartmentName";
             comboBoxDept.Text = "--Select--";
+            SqlCommand cmdDesg = new SqlCommand();
+            cmdDesg.CommandText = "SELECT * from Designations";
+            DataSet DSdesg = DataManager.executeDataset(cmdDesg);
+            textDesignation.DataSource = DSdesg.Tables[0];
+            textDesignation.ValueMember = "Designation";
+            textDesignation.DisplayMember = "Designation";
+            textDesignation.Text = "--Select--";
 
-            
-          
-            
+
+
+
         }
         private void fillGrid()
         { 
@@ -88,7 +95,11 @@ namespace Fairdeal_Kashmir_Salary_Software
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-        
+            if (txtAid.Text == string.Empty)
+            {
+                MessageBox.Show("Please enter Employee's Id");
+                return;
+            }
             if (txtName.Text == string.Empty)
             {
                 MessageBox.Show("Please enter Employee's name");
@@ -118,11 +129,11 @@ namespace Fairdeal_Kashmir_Salary_Software
                 SqlCommand cmd = new SqlCommand();
                 if (btnSave.Text == "Save")
                 {
-                    cmd.CommandText = "insert into Employee values  (@EmpName,  @AccNumber, @Department, @JoinDate, @SalaryPerMonth, @EmpType, @Designation, @AdvanceAmt, @PFloanWithdrawn, @MonthlyAdvAmountSubtracted, @MonthlyPFLoansubtracted, @Phone, @Email,@Parentage,@Residence)";
+                    cmd.CommandText = "insert into Employee values  (@EmpName,  @AccNumber, @Department, @JoinDate, @SalaryPerMonth, @EmpType, @Designation, @AdvanceAmt, @PFloanWithdrawn, @MonthlyAdvAmountSubtracted, @MonthlyPFLoansubtracted, @Phone, @Email,@Parentage,@Residence,@AId,@PFAccNo)";
                 }
                 if (btnSave.Text == "Update")
                 {
-                    cmd.CommandText = "UPDATE [dbo].[Employee] SET[EmpName] = @EmpName,[AccNumber] = @AccNumber,[Department] = @Department,[JoinDate] = @JoinDate,[SalaryPerMonth] = @SalaryPerMonth,[EmpType] = @EmpType,[Designation] = @Designation, [AdvanceAmt] = @AdvanceAmt,[PFloanWithdrawn] = @PFloanWithdrawn,[MonthlyAdvAmountSubtracted] = @MonthlyAdvAmountSubtracted,[MonthlyPFLoansubtracted] = @MonthlyPFLoansubtracted,[Phone] = @Phone,[Email] = @Email,[Parentage] = @Parentage,[Residence] = @Residence where empId=@label1";
+                    cmd.CommandText = "UPDATE [dbo].[Employee] SET[EmpName] = @EmpName,[AccNumber] = @AccNumber,[Department] = @Department,[JoinDate] = @JoinDate,[SalaryPerMonth] = @SalaryPerMonth,[EmpType] = @EmpType,[Designation] = @Designation, [AdvanceAmt] = @AdvanceAmt,[PFloanWithdrawn] = @PFloanWithdrawn,[MonthlyAdvAmountSubtracted] = @MonthlyAdvAmountSubtracted,[MonthlyPFLoansubtracted] = @MonthlyPFLoansubtracted,[Phone] = @Phone,[Email] = @Email,[Parentage] = @Parentage,[Residence] = @Residence ,AID=@AId,PFAccNo=@PFAccNo where empId=@label1";
                 }
 
                 cmd.Parameters.AddWithValue("@EmpName", txtName.Text);
@@ -141,6 +152,8 @@ namespace Fairdeal_Kashmir_Salary_Software
                 cmd.Parameters.AddWithValue("@Parentage", textParentage.Text);
                 cmd.Parameters.AddWithValue("@Residence", textResidence.Text);
                 cmd.Parameters.AddWithValue("@label1", label1.Text);
+                cmd.Parameters.AddWithValue("@AId", txtAid.Text);
+                cmd.Parameters.AddWithValue("@PFAccNo", txtPFaccNo.Text);
                 cmd.Connection = new SqlConnection();
                 DataManager.executeNonQuery(cmd);
                 MessageBox.Show("Saved");
@@ -277,13 +290,16 @@ namespace Fairdeal_Kashmir_Salary_Software
                 textResidence.Text= row.Cells[15].Value.ToString();
                 dateTimePicker1.Text= row.Cells[4].Value.ToString();
                 listBoxEmpType.SelectedValue= row.Cells[6].Value.ToString();
-                textDesignation.Text= row.Cells[7].Value.ToString();
+                
                 textAcc.Text= row.Cells[2].Value.ToString();
                 textMonthlySalary.Text= row.Cells[5].Value.ToString();
                 textPFLW.Text= row.Cells[9].Value.ToString();
                 textPFMD.Text= row.Cells[11].Value.ToString();
                 textAACD.Text= row.Cells[8].Value.ToString(); ;
                 textAAMD.Text= row.Cells[10].Value.ToString();
+                textDesignation.Text = row.Cells[7].Value.ToString();
+                txtAid.Text= row.Cells[16].Value.ToString();
+
                 //...
 
             }
@@ -415,6 +431,20 @@ namespace Fairdeal_Kashmir_Salary_Software
         {
             RepoerForm2 rp = new RepoerForm2();
             rp.Show();
+            this.Hide();
+        }
+
+        private void addDesignationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Designation d = new Designation();
+            d.Show();
+            this.Hide();
+        }
+
+        private void copyTransactionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Copy_Transactions ct = new Copy_Transactions();
+            ct.Show();
             this.Hide();
         }
     }

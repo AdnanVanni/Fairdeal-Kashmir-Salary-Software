@@ -102,6 +102,12 @@
     <Compile Include="CompanyInfo.Designer.cs">
       <DependentUpon>CompanyInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Copy Transactions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Copy Transactions.Designer.cs">
+      <DependentUpon>Copy Transactions.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataManager.cs" />
     <Compile Include="DataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -118,6 +124,12 @@
     </Compile>
     <Compile Include="Deptt.Designer.cs">
       <DependentUpon>Deptt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Designation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Designation.Designer.cs">
+      <DependentUpon>Designation.cs</DependentUpon>
     </Compile>
     <Compile Include="Emp.cs">
       <SubType>Form</SubType>
@@ -148,8 +160,14 @@
     <EmbeddedResource Include="CompanyInfo.resx">
       <DependentUpon>CompanyInfo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Copy Transactions.resx">
+      <DependentUpon>Copy Transactions.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Deptt.resx">
       <DependentUpon>Deptt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designation.resx">
+      <DependentUpon>Designation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Emp.resx">
       <DependentUpon>Emp.cs</DependentUpon>
