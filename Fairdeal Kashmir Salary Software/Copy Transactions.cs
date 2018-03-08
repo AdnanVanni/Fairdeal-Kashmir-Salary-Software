@@ -43,12 +43,40 @@ namespace Fairdeal_Kashmir_Salary_Software
             Copy.Parameters.AddWithValue("@MonthT", comboBoxMonthTo.Text);
             Copy.Parameters.AddWithValue("@YearT", comboBoxYearTo);
             SqlCommand NotCopied = new SqlCommand();
-            NotCopied.CommandText = "SELECT Emp.EmpName FROM MonthlyTransaction E JOIN Employee Emp on emp.EmpId = e.EmployeeId where (emp.AdvanceAmt < e.AdvAmtSub OR emp.PFloanWithdrawn < e.PfLoanSub) and e.Month = 'MAY' and E.Year = '2020'";
+            NotCopied.CommandText = "SELECT Emp.EmpName FROM MonthlyTransaction E JOIN Employee Emp on emp.EmpId = e.EmployeeId where (emp.AdvanceAmt < e.AdvAmtSub OR emp.PFloanWithdrawn < e.PfLoanSub) and e.Month = @Month and E.Year = @Year";
             NotCopied.Parameters.AddWithValue("@Month", comboBoxMonthFrom.Text);
             NotCopied.Parameters.AddWithValue("@Year", comboBoxYearFrom.Text);
             DataSet DSNC = DataManager.executeDataset(NotCopied);
             listBoxEmployees.DataSource = DSNC.Tables[0];
             listBoxEmployees.DisplayMember = "EmpName";
+
+            listBoxEmployees.ValueMember = "EmpName";
+            label4.Visible = true;
+            listBoxEmployees.Visible = true;
+            //const string sPath = "newhy.txt";
+            //System.IO.StreamWriter SaveFile = new System.IO.StreamWriter(sPath);
+            ////foreach (object item in listBoxEmployees.Items)
+            ////{
+            ////    SaveFile.WriteLine(Convert.ToString(item));
+            ////}
+            //foreach (DataRowView drv in listBoxEmployees.Items)
+            //{
+            //    SaveFile.WriteLine(drv.Row[listBoxEmployees.ValueMember].ToString());
+            //    //if you want to store all the idexes from your listbox, put them into an array 
+            //}
+            reportViewer1.Visible = true;
+            this.copyTableAdapter.Fill(this.DataSetCopy.copy, comboBoxMonthFrom.Text, comboBoxYearFrom.Text);
+
+            this.reportViewer1.RefreshReport();
+
         }
+
+        private void Copy_Transactions_Load(object sender, EventArgs e)
+        {
+            label4.Visible = false;
+            listBoxEmployees.Visible = false;
+            reportViewer1.Visible = false;
+         
         }
+    }
 }

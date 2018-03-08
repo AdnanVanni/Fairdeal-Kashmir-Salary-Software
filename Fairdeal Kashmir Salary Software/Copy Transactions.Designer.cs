@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxMonthFrom = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,7 +43,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.DataSetCopy = new Fairdeal_Kashmir_Salary_Software.DataSetCopy();
+            this.copyBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.copyTableAdapter = new Fairdeal_Kashmir_Salary_Software.DataSetCopyTableAdapters.copyTableAdapter();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetCopy)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.copyBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -240,11 +248,37 @@
             this.label6.TabIndex = 11;
             this.label6.Text = "Month to be copied to";
             // 
+            // reportViewer1
+            // 
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.copyBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Fairdeal_Kashmir_Salary_Software.Report3.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(258, 261);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.Size = new System.Drawing.Size(219, 246);
+            this.reportViewer1.TabIndex = 12;
+            // 
+            // DataSetCopy
+            // 
+            this.DataSetCopy.DataSetName = "DataSetCopy";
+            this.DataSetCopy.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // copyBindingSource
+            // 
+            this.copyBindingSource.DataMember = "copy";
+            this.copyBindingSource.DataSource = this.DataSetCopy;
+            // 
+            // copyTableAdapter
+            // 
+            this.copyTableAdapter.ClearBeforeFill = true;
+            // 
             // Copy_Transactions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(854, 505);
+            this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -253,8 +287,11 @@
             this.Controls.Add(this.panel1);
             this.Name = "Copy_Transactions";
             this.Text = "Copy Transactions";
+            this.Load += new System.EventHandler(this.Copy_Transactions_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetCopy)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.copyBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -275,5 +312,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.BindingSource copyBindingSource;
+        private DataSetCopy DataSetCopy;
+        private DataSetCopyTableAdapters.copyTableAdapter copyTableAdapter;
     }
 }
