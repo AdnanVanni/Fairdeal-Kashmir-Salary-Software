@@ -72,6 +72,8 @@
             this.labelPFAmtBal = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lblAdvAmtBalance = new System.Windows.Forms.Label();
+            this.textBoxConv = new System.Windows.Forms.TextBox();
+            this.lblConv = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMT)).BeginInit();
             this.SuspendLayout();
             // 
@@ -516,11 +518,30 @@
             this.lblAdvAmtBalance.Size = new System.Drawing.Size(0, 13);
             this.lblAdvAmtBalance.TabIndex = 56;
             // 
+            // textBoxConv
+            // 
+            this.textBoxConv.Location = new System.Drawing.Point(355, 175);
+            this.textBoxConv.Name = "textBoxConv";
+            this.textBoxConv.Size = new System.Drawing.Size(121, 20);
+            this.textBoxConv.TabIndex = 58;
+            this.textBoxConv.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxConv_KeyPress);
+            // 
+            // lblConv
+            // 
+            this.lblConv.AutoSize = true;
+            this.lblConv.Location = new System.Drawing.Point(282, 178);
+            this.lblConv.Name = "lblConv";
+            this.lblConv.Size = new System.Drawing.Size(56, 13);
+            this.lblConv.TabIndex = 57;
+            this.lblConv.Text = "Allowance";
+            // 
             // Monthly_Transaction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1333, 642);
+            this.Controls.Add(this.textBoxConv);
+            this.Controls.Add(this.lblConv);
             this.Controls.Add(this.lblAdvAmtBalance);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.labelPFAmtBal);
@@ -615,5 +636,7 @@
         private System.Windows.Forms.Label labelPFAmtBal;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblAdvAmtBalance;
+        private System.Windows.Forms.TextBox textBoxConv;
+        private System.Windows.Forms.Label lblConv;
     }
 }

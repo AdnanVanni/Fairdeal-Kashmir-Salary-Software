@@ -67,6 +67,7 @@
             this.addDesignationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.monthlyTransactionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createMonthsTransactionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.copyTransactionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.report1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.report2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -85,7 +86,8 @@
             this.lblID = new System.Windows.Forms.Label();
             this.txtAid = new System.Windows.Forms.TextBox();
             this.textDesignation = new System.Windows.Forms.ComboBox();
-            this.copyTransactionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.backupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.backupDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmp)).BeginInit();
             this.SuspendLayout();
@@ -102,7 +104,7 @@
             // labelAccountNumber
             // 
             this.labelAccountNumber.AutoSize = true;
-            this.labelAccountNumber.Location = new System.Drawing.Point(402, 410);
+            this.labelAccountNumber.Location = new System.Drawing.Point(387, 410);
             this.labelAccountNumber.Name = "labelAccountNumber";
             this.labelAccountNumber.Size = new System.Drawing.Size(64, 13);
             this.labelAccountNumber.TabIndex = 2;
@@ -212,7 +214,7 @@
             // 
             // textAcc
             // 
-            this.textAcc.Location = new System.Drawing.Point(404, 426);
+            this.textAcc.Location = new System.Drawing.Point(390, 426);
             this.textAcc.Name = "textAcc";
             this.textAcc.Size = new System.Drawing.Size(100, 20);
             this.textAcc.TabIndex = 19;
@@ -238,7 +240,7 @@
             // labelSalary
             // 
             this.labelSalary.AutoSize = true;
-            this.labelSalary.Location = new System.Drawing.Point(48, 369);
+            this.labelSalary.Location = new System.Drawing.Point(42, 350);
             this.labelSalary.Name = "labelSalary";
             this.labelSalary.Size = new System.Drawing.Size(76, 13);
             this.labelSalary.TabIndex = 24;
@@ -268,7 +270,7 @@
             // labelAdvAmt
             // 
             this.labelAdvAmt.AutoSize = true;
-            this.labelAdvAmt.Location = new System.Drawing.Point(402, 449);
+            this.labelAdvAmt.Location = new System.Drawing.Point(387, 449);
             this.labelAdvAmt.Name = "labelAdvAmt";
             this.labelAdvAmt.Size = new System.Drawing.Size(174, 13);
             this.labelAdvAmt.TabIndex = 27;
@@ -281,7 +283,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelAdvancedMonthlyDeduction.AutoSize = true;
-            this.labelAdvancedMonthlyDeduction.Location = new System.Drawing.Point(401, 488);
+            this.labelAdvancedMonthlyDeduction.Location = new System.Drawing.Point(387, 488);
             this.labelAdvancedMonthlyDeduction.Name = "labelAdvancedMonthlyDeduction";
             this.labelAdvancedMonthlyDeduction.Size = new System.Drawing.Size(187, 13);
             this.labelAdvancedMonthlyDeduction.TabIndex = 28;
@@ -290,7 +292,7 @@
             // 
             // textMonthlySalary
             // 
-            this.textMonthlySalary.Location = new System.Drawing.Point(143, 362);
+            this.textMonthlySalary.Location = new System.Drawing.Point(45, 366);
             this.textMonthlySalary.Name = "textMonthlySalary";
             this.textMonthlySalary.Size = new System.Drawing.Size(100, 20);
             this.textMonthlySalary.TabIndex = 29;
@@ -317,7 +319,7 @@
             // 
             // textAACD
             // 
-            this.textAACD.Location = new System.Drawing.Point(404, 465);
+            this.textAACD.Location = new System.Drawing.Point(390, 465);
             this.textAACD.Name = "textAACD";
             this.textAACD.Size = new System.Drawing.Size(100, 20);
             this.textAACD.TabIndex = 32;
@@ -326,7 +328,7 @@
             // 
             // textAAMD
             // 
-            this.textAAMD.Location = new System.Drawing.Point(404, 504);
+            this.textAAMD.Location = new System.Drawing.Point(390, 504);
             this.textAAMD.Name = "textAAMD";
             this.textAAMD.Size = new System.Drawing.Size(100, 20);
             this.textAAMD.TabIndex = 33;
@@ -351,7 +353,8 @@
             this.departmentsToolStripMenuItem,
             this.designationsToolStripMenuItem,
             this.monthlyTransactionToolStripMenuItem,
-            this.reportToolStripMenuItem});
+            this.reportToolStripMenuItem,
+            this.backupToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(20, 60);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1275, 24);
@@ -426,6 +429,13 @@
             this.createMonthsTransactionToolStripMenuItem.Text = "Create Month\'sTransaction";
             this.createMonthsTransactionToolStripMenuItem.Click += new System.EventHandler(this.createMonthsTransactionToolStripMenuItem_Click);
             // 
+            // copyTransactionsToolStripMenuItem
+            // 
+            this.copyTransactionsToolStripMenuItem.Name = "copyTransactionsToolStripMenuItem";
+            this.copyTransactionsToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.copyTransactionsToolStripMenuItem.Text = "Copy Transactions";
+            this.copyTransactionsToolStripMenuItem.Click += new System.EventHandler(this.copyTransactionsToolStripMenuItem_Click);
+            // 
             // reportToolStripMenuItem
             // 
             this.reportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -438,14 +448,14 @@
             // report1ToolStripMenuItem
             // 
             this.report1ToolStripMenuItem.Name = "report1ToolStripMenuItem";
-            this.report1ToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
+            this.report1ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.report1ToolStripMenuItem.Text = "Report1";
             this.report1ToolStripMenuItem.Click += new System.EventHandler(this.report1ToolStripMenuItem_Click);
             // 
             // report2ToolStripMenuItem
             // 
             this.report2ToolStripMenuItem.Name = "report2ToolStripMenuItem";
-            this.report2ToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
+            this.report2ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.report2ToolStripMenuItem.Text = "Report2";
             this.report2ToolStripMenuItem.Click += new System.EventHandler(this.report2ToolStripMenuItem_Click);
             // 
@@ -586,12 +596,20 @@
             this.textDesignation.Size = new System.Drawing.Size(100, 21);
             this.textDesignation.TabIndex = 50;
             // 
-            // copyTransactionsToolStripMenuItem
+            // backupToolStripMenuItem
             // 
-            this.copyTransactionsToolStripMenuItem.Name = "copyTransactionsToolStripMenuItem";
-            this.copyTransactionsToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
-            this.copyTransactionsToolStripMenuItem.Text = "Copy Transactions";
-            this.copyTransactionsToolStripMenuItem.Click += new System.EventHandler(this.copyTransactionsToolStripMenuItem_Click);
+            this.backupToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.backupDatabaseToolStripMenuItem});
+            this.backupToolStripMenuItem.Name = "backupToolStripMenuItem";
+            this.backupToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
+            this.backupToolStripMenuItem.Text = "Backup";
+            // 
+            // backupDatabaseToolStripMenuItem
+            // 
+            this.backupDatabaseToolStripMenuItem.Name = "backupDatabaseToolStripMenuItem";
+            this.backupDatabaseToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.backupDatabaseToolStripMenuItem.Text = "Backup Database";
+            this.backupDatabaseToolStripMenuItem.Click += new System.EventHandler(this.backupDatabaseToolStripMenuItem_Click);
             // 
             // Emp
             // 
@@ -712,6 +730,8 @@
         private System.Windows.Forms.TextBox txtAid;
         private System.Windows.Forms.ComboBox textDesignation;
         private System.Windows.Forms.ToolStripMenuItem copyTransactionsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem backupToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem backupDatabaseToolStripMenuItem;
     }
 }
 

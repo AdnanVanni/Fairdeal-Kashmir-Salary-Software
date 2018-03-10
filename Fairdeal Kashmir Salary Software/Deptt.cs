@@ -27,17 +27,24 @@ namespace Fairdeal_Kashmir_Salary_Software
         }
         private void fillGrid()
         {
-            SqlCommand cmdd = new SqlCommand();
-             cmdd.CommandText = "SELECT * FROM Departments";
-            SqlConnection connection1 = new SqlConnection(DataManager.connectionString);
-            SqlDataAdapter dataadapter = new SqlDataAdapter(cmdd.CommandText, DataManager.connectionString);
-            connection1.Open();
-            DataSet ds1 = new DataSet();
-            dataadapter.Fill(ds1, "Departments");
-            connection1.Close();
-            dataGridViewDeptt.DataSource = ds1;
-            dataGridViewDeptt.DataMember = "Departments";
-            dataGridViewDeptt.Columns[0].HeaderText = "Department Name/Location";
+            try
+            {
+                SqlCommand cmdd = new SqlCommand();
+                cmdd.CommandText = "SELECT * FROM Departments";
+                SqlConnection connection1 = new SqlConnection(DataManager.connectionString);
+                SqlDataAdapter dataadapter = new SqlDataAdapter(cmdd.CommandText, DataManager.connectionString);
+                connection1.Open();
+                DataSet ds1 = new DataSet();
+                dataadapter.Fill(ds1, "Departments");
+                connection1.Close();
+                dataGridViewDeptt.DataSource = ds1;
+                dataGridViewDeptt.DataMember = "Departments";
+                dataGridViewDeptt.Columns[0].HeaderText = "Department Name/Location";
+            }
+            catch (SqlException Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
         }
 
         private void dataGridViewDeptt_SelectionChanged(object sender, EventArgs e)
@@ -61,39 +68,52 @@ namespace Fairdeal_Kashmir_Salary_Software
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            SqlCommand cmdd = new SqlCommand();
+            try
+            {
+                SqlCommand cmdd = new SqlCommand();
 
-            
+
                 cmdd.CommandText = "delete from Departments where departmentName=@DepartmentName";
                 cmdd.Parameters.AddWithValue("@DepartmentName", label2.Text);
 
-            DataManager.executeNonQuery(cmdd);
-            MessageBox.Show("Delete successful");
-            Deptt dep = new Deptt();
-            dep.Show();
-            this.Hide();
+                DataManager.executeNonQuery(cmdd);
+                MessageBox.Show("Delete successful");
+                Deptt dep = new Deptt();
+                dep.Show();
+                this.Hide();
+            }
+            catch (SqlException Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            try
+            {
+                SqlCommand cmdd = new SqlCommand();
+                if (btnAdd.Text == "Add")
+                {
+                    cmdd.CommandText = "insert into departments values (@DepartmentName)";
+                }
+                if (btnAdd.Text == "Update")
+                {
+                    cmdd.CommandText = "Update Departments set DepartmentName=@DepartmentName where departmentName=@DN";
 
-            SqlCommand cmdd = new SqlCommand();
-            if (btnAdd.Text == "Add")
-            {
-                cmdd.CommandText = "insert into departments values (@DepartmentName)";
+                }
+                cmdd.Parameters.AddWithValue("@DepartmentName", txtDName.Text);
+                cmdd.Parameters.AddWithValue("@DN", label2.Text);
+                DataManager.executeNonQuery(cmdd);
+                MessageBox.Show("Saved");
+                Deptt dep = new Deptt();
+                dep.Show();
+                this.Hide();
             }
-            if (btnAdd.Text == "Update")
+            catch (SqlException Ex)
             {
-                cmdd.CommandText = "Update Departments set DepartmentName=@DepartmentName where departmentName=@DN";
-               
+                MessageBox.Show(Ex.Message);
             }
-            cmdd.Parameters.AddWithValue("@DepartmentName", txtDName.Text);
-            cmdd.Parameters.AddWithValue("@DN", label2.Text);
-            DataManager.executeNonQuery(cmdd);
-            MessageBox.Show("Saved");
-            Deptt dep = new Deptt();
-            dep.Show();
-            this.Hide();
         }
     }
 }

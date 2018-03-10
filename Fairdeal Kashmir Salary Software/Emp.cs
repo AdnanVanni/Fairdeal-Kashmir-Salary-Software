@@ -46,51 +46,63 @@ namespace Fairdeal_Kashmir_Salary_Software
 
         }
         private void fillGrid()
-        { 
-            SqlCommand cmdd = new SqlCommand();
-            cmdd.CommandText = "SELECT * FROM Employee";
-            SqlConnection connection1 = new SqlConnection(DataManager.connectionString);
-            SqlDataAdapter dataadapter = new SqlDataAdapter(cmdd.CommandText, DataManager.connectionString);
-            DataSet ds1 = new DataSet();
-            dataadapter.Fill(ds1, "Employee");
-            dataGridViewEmp.DataSource = ds1;
-            dataGridViewEmp.DataMember = "Employee";
-            dataGridViewEmp.Columns[1].HeaderText = "Name";
-            dataGridViewEmp.Columns[2].HeaderText = "Account No.";
-            dataGridViewEmp.Columns[0].Visible = false;
-            dataGridViewEmp.Columns[4].Visible = false;
-            dataGridViewEmp.Columns[5].Visible = false;
-            dataGridViewEmp.Columns[6].Visible = false;
-            dataGridViewEmp.Columns[8].Visible = false;
-            dataGridViewEmp.Columns[9].Visible = false;
-            dataGridViewEmp.Columns[10].Visible = false;
-            dataGridViewEmp.Columns[11].Visible = false;
-
+        {
+            try
+            {
+                SqlCommand cmdd = new SqlCommand();
+                cmdd.CommandText = "SELECT * FROM Employee";
+                SqlConnection connection1 = new SqlConnection(DataManager.connectionString);
+                SqlDataAdapter dataadapter = new SqlDataAdapter(cmdd.CommandText, DataManager.connectionString);
+                DataSet ds1 = new DataSet();
+                dataadapter.Fill(ds1, "Employee");
+                dataGridViewEmp.DataSource = ds1;
+                dataGridViewEmp.DataMember = "Employee";
+                dataGridViewEmp.Columns[1].HeaderText = "Name";
+                dataGridViewEmp.Columns[2].HeaderText = "Account No.";
+                dataGridViewEmp.Columns[0].Visible = false;
+                dataGridViewEmp.Columns[4].Visible = false;
+                dataGridViewEmp.Columns[5].Visible = false;
+                dataGridViewEmp.Columns[6].Visible = false;
+                dataGridViewEmp.Columns[8].Visible = false;
+                dataGridViewEmp.Columns[9].Visible = false;
+                dataGridViewEmp.Columns[10].Visible = false;
+                dataGridViewEmp.Columns[11].Visible = false;
+            }
+            catch (SqlException Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
         }
         private void fillGridSearch(string key)
         {
-            SqlCommand cmdd = new SqlCommand();
-            cmdd.CommandText = "SELECT * FROM Employee where empName like '%" +@key+"%'";
-            cmdd.Parameters.AddWithValue("@key",key);
-            SqlConnection connection1 = new SqlConnection(DataManager.connectionString);
-            SqlDataAdapter dataadapter = new SqlDataAdapter(cmdd.CommandText, DataManager.connectionString);
-            connection1.Open();
-            DataSet ds1 = new DataSet();
-            dataadapter.Fill(ds1, "Employee");
-            connection1.Close();
-            dataGridViewEmp.DataSource = ds1;
-            dataGridViewEmp.DataMember = "Employee";
-            dataGridViewEmp.Columns[1].HeaderText = "Name";
-            dataGridViewEmp.Columns[2].HeaderText = "Account No.";
-            dataGridViewEmp.Columns[0].Visible = false;
-            dataGridViewEmp.Columns[4].Visible = false;
-            dataGridViewEmp.Columns[5].Visible = false;
-            dataGridViewEmp.Columns[6].Visible = false;
-            dataGridViewEmp.Columns[8].Visible = false;
-            dataGridViewEmp.Columns[9].Visible = false;
-            dataGridViewEmp.Columns[10].Visible = false;
-            dataGridViewEmp.Columns[11].Visible = false;
-
+            try
+            {
+                SqlCommand cmdd = new SqlCommand();
+                cmdd.CommandText = "SELECT * FROM Employee where empName like '%" + @key + "%'";
+                cmdd.Parameters.AddWithValue("@key", key);
+                SqlConnection connection1 = new SqlConnection(DataManager.connectionString);
+                SqlDataAdapter dataadapter = new SqlDataAdapter(cmdd.CommandText, DataManager.connectionString);
+                connection1.Open();
+                DataSet ds1 = new DataSet();
+                dataadapter.Fill(ds1, "Employee");
+                connection1.Close();
+                dataGridViewEmp.DataSource = ds1;
+                dataGridViewEmp.DataMember = "Employee";
+                dataGridViewEmp.Columns[1].HeaderText = "Name";
+                dataGridViewEmp.Columns[2].HeaderText = "Account No.";
+                dataGridViewEmp.Columns[0].Visible = false;
+                dataGridViewEmp.Columns[4].Visible = false;
+                dataGridViewEmp.Columns[5].Visible = false;
+                dataGridViewEmp.Columns[6].Visible = false;
+                dataGridViewEmp.Columns[8].Visible = false;
+                dataGridViewEmp.Columns[9].Visible = false;
+                dataGridViewEmp.Columns[10].Visible = false;
+                dataGridViewEmp.Columns[11].Visible = false;
+            }
+            catch (SqlException Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -123,44 +135,50 @@ namespace Fairdeal_Kashmir_Salary_Software
             }
 
             else {
-
-
-
-                SqlCommand cmd = new SqlCommand();
-                if (btnSave.Text == "Save")
+                try
                 {
-                    cmd.CommandText = "insert into Employee values  (@EmpName,  @AccNumber, @Department, @JoinDate, @SalaryPerMonth, @EmpType, @Designation, @AdvanceAmt, @PFloanWithdrawn, @MonthlyAdvAmountSubtracted, @MonthlyPFLoansubtracted, @Phone, @Email,@Parentage,@Residence,@AId,@PFAccNo)";
-                }
-                if (btnSave.Text == "Update")
-                {
-                    cmd.CommandText = "UPDATE [dbo].[Employee] SET[EmpName] = @EmpName,[AccNumber] = @AccNumber,[Department] = @Department,[JoinDate] = @JoinDate,[SalaryPerMonth] = @SalaryPerMonth,[EmpType] = @EmpType,[Designation] = @Designation, [AdvanceAmt] = @AdvanceAmt,[PFloanWithdrawn] = @PFloanWithdrawn,[MonthlyAdvAmountSubtracted] = @MonthlyAdvAmountSubtracted,[MonthlyPFLoansubtracted] = @MonthlyPFLoansubtracted,[Phone] = @Phone,[Email] = @Email,[Parentage] = @Parentage,[Residence] = @Residence ,AID=@AId,PFAccNo=@PFAccNo where empId=@label1";
-                }
 
-                cmd.Parameters.AddWithValue("@EmpName", txtName.Text);
-                cmd.Parameters.AddWithValue("@AccNumber", textAcc.Text);
-                cmd.Parameters.AddWithValue("@Department",comboBoxDept.SelectedValue);
-                cmd.Parameters.AddWithValue("@JoinDate", dateTimePicker1.Value);
-                cmd.Parameters.AddWithValue("@SalaryPerMonth", textMonthlySalary.Text);
-                cmd.Parameters.AddWithValue("@EmpType", listBoxEmpType.Text);
-                cmd.Parameters.AddWithValue("@AdvanceAmt", textAACD.Text);
-                cmd.Parameters.AddWithValue("@PFloanWithdrawn", textPFLW.Text);
-                cmd.Parameters.AddWithValue("@MonthlyAdvAmountSubtracted", textAAMD.Text);
-                cmd.Parameters.AddWithValue("@Designation", textDesignation.Text);
-                cmd.Parameters.AddWithValue("@MonthlyPFLoansubtracted", textPFMD.Text);
-                cmd.Parameters.AddWithValue("@phone", textPhone.Text);
-                cmd.Parameters.AddWithValue("@Email", textEmail.Text);
-                cmd.Parameters.AddWithValue("@Parentage", textParentage.Text);
-                cmd.Parameters.AddWithValue("@Residence", textResidence.Text);
-                cmd.Parameters.AddWithValue("@label1", label1.Text);
-                cmd.Parameters.AddWithValue("@AId", txtAid.Text);
-                cmd.Parameters.AddWithValue("@PFAccNo", txtPFaccNo.Text);
-                cmd.Connection = new SqlConnection();
-                DataManager.executeNonQuery(cmd);
-                MessageBox.Show("Saved");
-                Emp emp = new Emp();
-                emp.Tag = this;
-                emp.Show(this);
-                Hide();
+
+                    SqlCommand cmd = new SqlCommand();
+                    if (btnSave.Text == "Save")
+                    {
+                        cmd.CommandText = "insert into Employee values  (@EmpName,  @AccNumber, @Department, @JoinDate, @SalaryPerMonth, @EmpType, @Designation, @AdvanceAmt, @PFloanWithdrawn, @MonthlyAdvAmountSubtracted, @MonthlyPFLoansubtracted, @Phone, @Email,@Parentage,@Residence,@AId,@PFAccNo)";
+                    }
+                    if (btnSave.Text == "Update")
+                    {
+                        cmd.CommandText = "UPDATE [dbo].[Employee] SET[EmpName] = @EmpName,[AccNumber] = @AccNumber,[Department] = @Department,[JoinDate] = @JoinDate,[SalaryPerMonth] = @SalaryPerMonth,[EmpType] = @EmpType,[Designation] = @Designation, [AdvanceAmt] = @AdvanceAmt,[PFloanWithdrawn] = @PFloanWithdrawn,[MonthlyAdvAmountSubtracted] = @MonthlyAdvAmountSubtracted,[MonthlyPFLoansubtracted] = @MonthlyPFLoansubtracted,[Phone] = @Phone,[Email] = @Email,[Parentage] = @Parentage,[Residence] = @Residence ,AID=@AId,PFAccNo=@PFAccNo where empId=@label1";
+                    }
+
+                    cmd.Parameters.AddWithValue("@EmpName", txtName.Text);
+                    cmd.Parameters.AddWithValue("@AccNumber", textAcc.Text);
+                    cmd.Parameters.AddWithValue("@Department", comboBoxDept.SelectedValue);
+                    cmd.Parameters.AddWithValue("@JoinDate", dateTimePicker1.Value);
+                    cmd.Parameters.AddWithValue("@SalaryPerMonth", textMonthlySalary.Text);
+                    cmd.Parameters.AddWithValue("@EmpType", listBoxEmpType.Text);
+                    cmd.Parameters.AddWithValue("@AdvanceAmt", textAACD.Text);
+                    cmd.Parameters.AddWithValue("@PFloanWithdrawn", textPFLW.Text);
+                    cmd.Parameters.AddWithValue("@MonthlyAdvAmountSubtracted", textAAMD.Text);
+                    cmd.Parameters.AddWithValue("@Designation", textDesignation.Text);
+                    cmd.Parameters.AddWithValue("@MonthlyPFLoansubtracted", textPFMD.Text);
+                    cmd.Parameters.AddWithValue("@phone", textPhone.Text);
+                    cmd.Parameters.AddWithValue("@Email", textEmail.Text);
+                    cmd.Parameters.AddWithValue("@Parentage", textParentage.Text);
+                    cmd.Parameters.AddWithValue("@Residence", textResidence.Text);
+                    cmd.Parameters.AddWithValue("@label1", label1.Text);
+                    cmd.Parameters.AddWithValue("@AId", txtAid.Text);
+                    cmd.Parameters.AddWithValue("@PFAccNo", txtPFaccNo.Text);
+                    cmd.Connection = new SqlConnection();
+                    DataManager.executeNonQuery(cmd);
+                    MessageBox.Show("Saved");
+                    Emp emp = new Emp();
+                    emp.Tag = this;
+                    emp.Show(this);
+                    Hide();
+                }
+                catch (SqlException Ex)
+                {
+                    MessageBox.Show(Ex.Message);
+                }
             }
 
             /*/*txtName.Text = "done"*/
@@ -307,14 +325,21 @@ namespace Fairdeal_Kashmir_Salary_Software
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            SqlCommand cmdDel = new SqlCommand();
-            cmdDel.CommandText = "delete from Employee where empId=@empId";
-            cmdDel.Parameters.AddWithValue("@empId", label1.Text);
-            DataManager.executeNonQuery(cmdDel);
-            MessageBox.Show("Delete successful");
-            Emp emp1 = new Emp();
-            emp1.Show();
-            this.Hide();
+            try
+            {
+                SqlCommand cmdDel = new SqlCommand();
+                cmdDel.CommandText = "delete from Employee where empId=@empId";
+                cmdDel.Parameters.AddWithValue("@empId", label1.Text);
+                DataManager.executeNonQuery(cmdDel);
+                MessageBox.Show("Delete successful");
+                Emp emp1 = new Emp();
+                emp1.Show();
+                this.Hide();
+            }
+            catch (SqlException Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
         }
 
         private void textPFMD_TextChanged(object sender, EventArgs e)
@@ -445,6 +470,13 @@ namespace Fairdeal_Kashmir_Salary_Software
         {
             Copy_Transactions ct = new Copy_Transactions();
             ct.Show();
+            this.Hide();
+        }
+
+        private void backupDatabaseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CompanyInfo CI = new CompanyInfo();
+            CI.Show();
             this.Hide();
         }
     }

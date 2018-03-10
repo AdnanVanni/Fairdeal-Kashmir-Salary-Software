@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -30,22 +31,8 @@ namespace Fairdeal_Kashmir_Salary_Software
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(comboBoxSMonth.Text=="" || comboBoxSYear.Text=="")
-            {
-                MessageBox.Show("Select Month and Year");
-                return;
-            }
-            
-            this.SalaryReportsTableAdapter.Fill(this.DataSetReport1.SalaryReports, comboBoxSMonth.Text, comboBoxSYear.Text);
-            
-
-            this.reportViewer1.RefreshReport();
-
-        }
-
-        private void Button1_Click_1(object sender, EventArgs e)
-        {
-
+            try
+            { 
             if (comboBoxSMonth.Text == "" || comboBoxSYear.Text == "")
             {
                 MessageBox.Show("Select Month and Year");
@@ -56,6 +43,33 @@ namespace Fairdeal_Kashmir_Salary_Software
 
 
             this.reportViewer1.RefreshReport();
+        }
+            catch (SqlException Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
+
+        }
+
+        private void Button1_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                if (comboBoxSMonth.Text == "" || comboBoxSYear.Text == "")
+                {
+                    MessageBox.Show("Select Month and Year");
+                    return;
+                }
+
+                this.SalaryReportsTableAdapter.Fill(this.DataSetReport1.SalaryReports, comboBoxSMonth.Text, comboBoxSYear.Text);
+
+
+                this.reportViewer1.RefreshReport();
+            }
+            catch (SqlException Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
 
         }
     }

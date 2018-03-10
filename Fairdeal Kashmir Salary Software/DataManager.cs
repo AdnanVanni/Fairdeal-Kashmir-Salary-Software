@@ -18,7 +18,7 @@ public class DataManager
     {
         get {
 
-            return (ConfigurationManager.ConnectionStrings["CSString"].ToString());
+            return (ConfigurationManager.ConnectionStrings["Fairdeal_Kashmir_Salary_Software.Properties.Settings.Fairdeal_dbConnectionString"].ToString());
         }
     
     }

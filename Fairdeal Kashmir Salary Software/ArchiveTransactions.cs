@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -25,8 +26,16 @@ namespace Fairdeal_Kashmir_Salary_Software
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            this.ArchiveTransactionsTableAdapter.Fill(this.DataSetArchive.ArchiveTransactions,comboBoxEmp.Text,comboBoxM.Text,comboBoxY.Text);
-            this.reportViewer1.RefreshReport();
+            try
+            {
+                this.ArchiveTransactionsTableAdapter.Fill(this.DataSetArchive.ArchiveTransactions, comboBoxEmp.Text, comboBoxM.Text, comboBoxY.Text);
+                this.reportViewer1.RefreshReport();
+            }
+            
+                 catch (SqlException Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
+        }
         }
     }
-}

@@ -37,17 +37,36 @@ namespace Fairdeal_Kashmir_Salary_Software
                 MessageBox.Show("Select Year");
             }
             SqlCommand Copy = new SqlCommand();
-            Copy.CommandText = "Insert into MonthlyTransaction SELECT @MonthT,E.EmployeeId,@YearT,E.TDC,E.Fine,E.SalaryInHand,E.PfMonthly,E.Benefits,E.Memo,E.TransactionDate,E.AdvAmtSub,E.PfLoanSub,E.AbsentDays,E.DaysInMonth FROM MonthlyTransaction E JOIN Employee Emp on emp.EmpId = e.EmployeeId where emp.AdvanceAmt > e.AdvAmtSub and emp.PFloanWithdrawn > e.PfLoanSub and e.Month = @Month and Year = @Year";
+            Copy.CommandText = "Insert into MonthlyTransaction SELECT @MonthT,E.EmployeeId,@YearT,E.TDC,E.Fine,E.SalaryInHand,E.PfMonthly,E.Memo,E.TransactionDate,E.AdvAmtSub,E.PfLoanSub,E.AbsentDays,E.DaysInMonth,E.Conv FROM MonthlyTransaction E JOIN Employee Emp on emp.EmpId = e.EmployeeId where emp.AdvanceAmt >=e.AdvAmtSub and emp.PFloanWithdrawn >= e.PfLoanSub and e.Month = @Month and Year = @Year"+ " INSERT INTO[dbo].[ArchiveTransactions] SELECT E.EmployeeId, Emp.EmpName, @MonthT, @YearT, emp.PFloanWithdrawn, E.PfLoanSub, emp.AdvanceAmt, e.AdvAmtSub, E.TDC, E.Conv, E.Fine, E.AbsentDays, Emp.SalaryPerMonth, SalaryInHand, E.Memo FROM MonthlyTransaction E JOIN Employee Emp on emp.EmpId = e.EmployeeId where emp.AdvanceAmt >= e.AdvAmtSub and emp.PFloanWithdrawn >= e.PfLoanSub and e.Month = @Month and E.Year = @Year";
+
             Copy.Parameters.AddWithValue("@Month", comboBoxMonthFrom.Text);
             Copy.Parameters.AddWithValue("@Year", comboBoxYearFrom.Text);
             Copy.Parameters.AddWithValue("@MonthT", comboBoxMonthTo.Text);
-            Copy.Parameters.AddWithValue("@YearT", comboBoxYearTo);
+            Copy.Parameters.AddWithValue("@YearT", comboBoxYearTo.Text);
+            try
+            {
+                DataManager.executeNonQuery(Copy);
+            }
+            catch(SqlException Ex)
+            { 
+                    //Your Message
+                    MessageBox.Show(Ex.Message); 
+            }
             SqlCommand NotCopied = new SqlCommand();
             NotCopied.CommandText = "SELECT Emp.EmpName FROM MonthlyTransaction E JOIN Employee Emp on emp.EmpId = e.EmployeeId where (emp.AdvanceAmt < e.AdvAmtSub OR emp.PFloanWithdrawn < e.PfLoanSub) and e.Month = @Month and E.Year = @Year";
-            NotCopied.Parameters.AddWithValue("@Month", comboBoxMonthFrom.Text);
-            NotCopied.Parameters.AddWithValue("@Year", comboBoxYearFrom.Text);
-            DataSet DSNC = DataManager.executeDataset(NotCopied);
-            listBoxEmployees.DataSource = DSNC.Tables[0];
+            NotCopied.Parameters.AddWithValue("@Month", comboBoxMonthFrom.SelectedText);
+            NotCopied.Parameters.AddWithValue("@Year", comboBoxYearFrom.SelectedText);
+            try
+            {
+
+               DataSet DSNC = DataManager.executeDataset(NotCopied);
+                listBoxEmployees.DataSource = DSNC.Tables[0];
+            }
+            catch (SqlException Ex)
+            {
+                //Your Message
+                MessageBox.Show(Ex.Message);
+            }
             listBoxEmployees.DisplayMember = "EmpName";
 
             listBoxEmployees.ValueMember = "EmpName";
