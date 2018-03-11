@@ -21,7 +21,7 @@ namespace Fairdeal_Kashmir_Salary_Software
 
         private void Monthly_Transaction_Load(object sender, EventArgs e)
         {
-
+            labelPrompt.Visible = false;
 
 
             btnDelete.Visible = false;
@@ -115,7 +115,7 @@ namespace Fairdeal_Kashmir_Salary_Software
                 MessageBox.Show("Net Salary not calculated");
                 return;
             }
-           
+            labelPrompt.Visible = true;
             SqlCommand GetEmp = new SqlCommand();
             GetEmp.CommandText = "select EmpId from Employee Where EmpName=@EmpName";
             GetEmp.Parameters.AddWithValue("@EmpName", Ename.SelectedValue);
@@ -163,7 +163,15 @@ namespace Fairdeal_Kashmir_Salary_Software
                 }
                 catch(SqlException Ex)
                 {
-                    MessageBox.Show(Ex.Message);
+                    if (Ex.Number == 2627)
+                    {
+                        MessageBox.Show("You Are Trying To save Duplicate records");
+                        return;
+                    }
+                    else
+                    {
+                        MessageBox.Show(Ex.Message);
+                    }
                 }
 
                 Monthly_Transaction MT = new Monthly_Transaction();
@@ -359,19 +367,19 @@ namespace Fairdeal_Kashmir_Salary_Software
 
             if (string.IsNullOrWhiteSpace(txtAbsent.Text))
             {
-                 Net = Convert.ToDouble(txtMonthlySalary.Text) - a;
-                
-                
-            }
-           
-            else if (Convert.ToInt32(txtAbsent.Text) == 0 )
-            {
-                 Net = Convert.ToDouble(txtMonthlySalary.Text) - a;
-                
-                
+                Net = Convert.ToDouble(txtMonthlySalary.Text) - a;
+
+
             }
 
-                else if (Convert.ToInt32(txtAbsent.Text) > 0)
+            else if (Convert.ToInt32(txtAbsent.Text) == 0)
+            {
+                Net = Convert.ToDouble(txtMonthlySalary.Text) - a;
+
+
+            }
+
+            else if (Convert.ToInt32(txtAbsent.Text) > 0)
             {
                 int MonthS = Convert.ToInt32(comboBoxMonth.SelectedIndex.ToString());
                 MonthS++;
@@ -380,18 +388,11 @@ namespace Fairdeal_Kashmir_Salary_Software
                 double SalaryAbsentExc = Math.Truncate((float)Convert.ToInt32(txtMonthlySalary.Text) * ((float)daysInMonth - (float)Convert.ToInt32(txtAbsent.Text)) / (float)daysInMonth);
                 SalaryAbsentExc = SalaryAbsentExc - a;
                 Net = SalaryAbsentExc;
-                
-            }
-            if (textBoxConv.Text == "" || textBoxConv == null)
-            {
-                txtNetSalary.Text = Net.ToString();
-            }
-            else
-            {
-                Net = Net + Convert.ToDouble(textBoxConv.Text);
-                txtNetSalary.Text = Net.ToString();
-            }
 
+
+                txtNetSalary.Text = Net.ToString();
+
+            }
 
             
         }
@@ -441,9 +442,11 @@ namespace Fairdeal_Kashmir_Salary_Software
                 txtMonthlySalary.Text = DS1.Tables[0].Rows[0][5].ToString();
                 txtMPFLS.Text = DS1.Tables[0].Rows[0][10].ToString();
                 txtAAMD.Text = DS1.Tables[0].Rows[0][11].ToString();
+             textBoxConv.Text=DS1.Tables[0].Rows[0][18].ToString();
+                labelConvAmt.Text= DS1.Tables[0].Rows[0][18].ToString();
 
                 labelPFAmtBal.Text = DS1.Tables[0].Rows[0][9].ToString();
-                lblAdvAmtBalance.Text = DS1.Tables[0].Rows[0][8].ToString();
+                lblAdvAmtBalance.Text = DS1.Tables[0].Rows[0][18].ToString();
             }
             catch(SqlException Ex)
             {
@@ -497,7 +500,7 @@ namespace Fairdeal_Kashmir_Salary_Software
             string Month = comboBoxSMonth.Text;
             string Year= comboBoxSYear.Text;
             SqlCommand Fetch = new SqlCommand();
-            Fetch.CommandText = "select MT.Month,MT.Year,E.EmpId,MT.EmployeeId,E.EmpName,E.Department,E.SalaryPerMonth,MT.SalaryInHand,E.AdvanceAmt,E.PFloanWithdrawn,MT.TransactionDate from Employee E join MonthlyTransaction MT ON E.EmpId=MT.EmployeeId where E.EmpName like '%" + EmpName + "%' and MT.Month Like '%" + Month + "%' and MT.Year like '%" + Year + "%' ORDER BY TRANSACTIONDATE ";
+            Fetch.CommandText = "select MT.Month,MT.Year,E.EmpId,MT.EmployeeId,E.EmpName,E.Department,E.SalaryPerMonth,MT.SalaryInHand,E.AdvanceAmt,E.PFloanWithdrawn,MT.TransactionDate,E.ConvPerMonth FRom Employee E join MonthlyTransaction MT ON E.EmpId=MT.EmployeeId where E.EmpName like '%" + EmpName + "%' and MT.Month Like '%" + Month + "%' and MT.Year like '%" + Year + "%' ORDER BY TRANSACTIONDATE ";
             try
             {
                 SqlConnection connection1 = new SqlConnection(DataManager.connectionString);
@@ -549,6 +552,27 @@ namespace Fairdeal_Kashmir_Salary_Software
                 {
                     e.Handled = true;
                 }
+        }
+
+        private void txtAbsent_TextChanged(object sender, EventArgs e)
+        {
+            if (textBoxConv.Text == "" &&  comboBoxMonth.Text=="" && comboBoxYear.Text=="")
+                return;
+            else
+            {
+                if(txtAbsent.Text!=""&&txtAbsent.Text!="0")
+                {
+
+                
+                int MonthS = Convert.ToInt32(comboBoxMonth.SelectedIndex.ToString());
+                MonthS++;
+                int YearS = Convert.ToInt32(comboBoxYear.SelectedItem.ToString());
+                Int32 daysInMonth = System.DateTime.DaysInMonth(YearS, MonthS);
+                var t= Convert.ToDouble(labelConvAmt.Text) / daysInMonth * (daysInMonth - Convert.ToInt32(txtAbsent.Text));
+                textBoxConv.Text = t.ToString();
+                }
+
+            }
         }
     }
 }

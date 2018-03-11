@@ -28,9 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.comboBoxM = new System.Windows.Forms.ComboBox();
             this.comboBoxY = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.reportViewerPF = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.DataSetPFF = new Fairdeal_Kashmir_Salary_Software.DataSetPFF();
+            this.PFBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.PFTableAdapter = new Fairdeal_Kashmir_Salary_Software.DataSetPFFTableAdapters.PFTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetPFF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PFBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBoxM
@@ -96,17 +104,45 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // reportViewerPF
+            // 
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.PFBindingSource;
+            this.reportViewerPF.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewerPF.LocalReport.ReportEmbeddedResource = "Fairdeal_Kashmir_Salary_Software.Report8.rdlc";
+            this.reportViewerPF.Location = new System.Drawing.Point(20, 141);
+            this.reportViewerPF.Name = "reportViewerPF";
+            this.reportViewerPF.Size = new System.Drawing.Size(1327, 544);
+            this.reportViewerPF.TabIndex = 4;
+            // 
+            // DataSetPFF
+            // 
+            this.DataSetPFF.DataSetName = "DataSetPFF";
+            this.DataSetPFF.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // PFBindingSource
+            // 
+            this.PFBindingSource.DataMember = "PF";
+            this.PFBindingSource.DataSource = this.DataSetPFF;
+            // 
+            // PFTableAdapter
+            // 
+            this.PFTableAdapter.ClearBeforeFill = true;
+            // 
             // PfForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1051, 675);
+            this.ClientSize = new System.Drawing.Size(1355, 780);
+            this.Controls.Add(this.reportViewerPF);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBoxY);
             this.Controls.Add(this.comboBoxM);
             this.Name = "PfForm";
             this.Text = "PfForm";
             this.Load += new System.EventHandler(this.PfForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetPFF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PFBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -116,5 +152,9 @@
         private System.Windows.Forms.ComboBox comboBoxM;
         private System.Windows.Forms.ComboBox comboBoxY;
         private System.Windows.Forms.Button button1;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewerPF;
+        private System.Windows.Forms.BindingSource PFBindingSource;
+        private DataSetPFF DataSetPFF;
+        private DataSetPFFTableAdapters.PFTableAdapter PFTableAdapter;
     }
 }

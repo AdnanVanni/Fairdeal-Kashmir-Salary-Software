@@ -142,11 +142,11 @@ namespace Fairdeal_Kashmir_Salary_Software
                     SqlCommand cmd = new SqlCommand();
                     if (btnSave.Text == "Save")
                     {
-                        cmd.CommandText = "insert into Employee values  (@EmpName,  @AccNumber, @Department, @JoinDate, @SalaryPerMonth, @EmpType, @Designation, @AdvanceAmt, @PFloanWithdrawn, @MonthlyAdvAmountSubtracted, @MonthlyPFLoansubtracted, @Phone, @Email,@Parentage,@Residence,@AId,@PFAccNo)";
+                        cmd.CommandText = "insert into Employee values  (@EmpName,  @AccNumber, @Department, @JoinDate, @SalaryPerMonth, @EmpType, @Designation, @AdvanceAmt, @PFloanWithdrawn, @MonthlyAdvAmountSubtracted, @MonthlyPFLoansubtracted, @Phone, @Email,@Parentage,@Residence,@AId,@PFAccNo,@ConvPerMonth)";
                     }
                     if (btnSave.Text == "Update")
                     {
-                        cmd.CommandText = "UPDATE [dbo].[Employee] SET[EmpName] = @EmpName,[AccNumber] = @AccNumber,[Department] = @Department,[JoinDate] = @JoinDate,[SalaryPerMonth] = @SalaryPerMonth,[EmpType] = @EmpType,[Designation] = @Designation, [AdvanceAmt] = @AdvanceAmt,[PFloanWithdrawn] = @PFloanWithdrawn,[MonthlyAdvAmountSubtracted] = @MonthlyAdvAmountSubtracted,[MonthlyPFLoansubtracted] = @MonthlyPFLoansubtracted,[Phone] = @Phone,[Email] = @Email,[Parentage] = @Parentage,[Residence] = @Residence ,AID=@AId,PFAccNo=@PFAccNo where empId=@label1";
+                        cmd.CommandText = "UPDATE [dbo].[Employee] SET[EmpName] = @EmpName,[AccNumber] = @AccNumber,[Department] = @Department,[JoinDate] = @JoinDate,[SalaryPerMonth] = @SalaryPerMonth,[EmpType] = @EmpType,[Designation] = @Designation, [AdvanceAmt] = @AdvanceAmt,[PFloanWithdrawn] = @PFloanWithdrawn,[MonthlyAdvAmountSubtracted] = @MonthlyAdvAmountSubtracted,[MonthlyPFLoansubtracted] = @MonthlyPFLoansubtracted,[Phone] = @Phone,[Email] = @Email,[Parentage] = @Parentage,[Residence] = @Residence ,AID=@AId,PFAccNo=@PFAccNo,ConvPerMonth=@ConvPerMonth where empId=@label1";
                     }
 
                     cmd.Parameters.AddWithValue("@EmpName", txtName.Text);
@@ -167,6 +167,7 @@ namespace Fairdeal_Kashmir_Salary_Software
                     cmd.Parameters.AddWithValue("@label1", label1.Text);
                     cmd.Parameters.AddWithValue("@AId", txtAid.Text);
                     cmd.Parameters.AddWithValue("@PFAccNo", txtPFaccNo.Text);
+                    cmd.Parameters.AddWithValue("@ConvPerMonth", textBoxConv.Text);
                     cmd.Connection = new SqlConnection();
                     DataManager.executeNonQuery(cmd);
                     MessageBox.Show("Saved");
@@ -177,7 +178,15 @@ namespace Fairdeal_Kashmir_Salary_Software
                 }
                 catch (SqlException Ex)
                 {
-                    MessageBox.Show(Ex.Message);
+                    if (Ex.Number == 2627)
+                    {
+                        MessageBox.Show("You Are Trying To save Duplicate records");
+
+                    }
+                    else
+                    {
+                        MessageBox.Show(Ex.Message);
+                    }
                 }
             }
 
@@ -478,6 +487,28 @@ namespace Fairdeal_Kashmir_Salary_Software
             CompanyInfo CI = new CompanyInfo();
             CI.Show();
             this.Hide();
+        }
+
+        private void pFReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PfForm PF = new PfForm();
+            PF.Show();
+            this.Hide();
+        }
+
+        private void textBoxConv_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+                   (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

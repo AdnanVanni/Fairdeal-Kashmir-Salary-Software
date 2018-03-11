@@ -130,6 +130,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetCopy.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSetPFF.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetPFF.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetReport1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -224,6 +229,7 @@
     <EmbeddedResource Include="Report5.rdlc" />
     <EmbeddedResource Include="Report6.rdlc" />
     <EmbeddedResource Include="Report7.rdlc" />
+    <EmbeddedResource Include="Report8.rdlc" />
     <EmbeddedResource Include="ReportForm1.resx">
       <DependentUpon>ReportForm1.cs</DependentUpon>
     </EmbeddedResource>
@@ -262,6 +268,17 @@
     </None>
     <None Include="DataSetCopy.xss">
       <DependentUpon>DataSetCopy.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetPFF.xsc">
+      <DependentUpon>DataSetPFF.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetPFF.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetPFF.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetPFF.xss">
+      <DependentUpon>DataSetPFF.xsd</DependentUpon>
     </None>
     <None Include="DataSetReport1.xsc">
       <DependentUpon>DataSetReport1.xsd</DependentUpon>
@@ -315,6 +332,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Image\643-643-3032-tata-final-logo-opt.ico" />
     <Content Include="MetroFramework.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -71,6 +71,9 @@
             this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.report1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.report2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pFReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.backupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.backupDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridViewEmp = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.txtAddNew = new System.Windows.Forms.Button();
@@ -86,8 +89,8 @@
             this.lblID = new System.Windows.Forms.Label();
             this.txtAid = new System.Windows.Forms.TextBox();
             this.textDesignation = new System.Windows.Forms.ComboBox();
-            this.backupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.backupDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.textBoxConv = new System.Windows.Forms.TextBox();
+            this.lblConvPerMonth = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmp)).BeginInit();
             this.SuspendLayout();
@@ -440,7 +443,8 @@
             // 
             this.reportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.report1ToolStripMenuItem,
-            this.report2ToolStripMenuItem});
+            this.report2ToolStripMenuItem,
+            this.pFReportToolStripMenuItem});
             this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
             this.reportToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.reportToolStripMenuItem.Text = "Reports";
@@ -448,16 +452,38 @@
             // report1ToolStripMenuItem
             // 
             this.report1ToolStripMenuItem.Name = "report1ToolStripMenuItem";
-            this.report1ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.report1ToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.report1ToolStripMenuItem.Text = "Report1";
             this.report1ToolStripMenuItem.Click += new System.EventHandler(this.report1ToolStripMenuItem_Click);
             // 
             // report2ToolStripMenuItem
             // 
             this.report2ToolStripMenuItem.Name = "report2ToolStripMenuItem";
-            this.report2ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.report2ToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.report2ToolStripMenuItem.Text = "Report2";
             this.report2ToolStripMenuItem.Click += new System.EventHandler(this.report2ToolStripMenuItem_Click);
+            // 
+            // pFReportToolStripMenuItem
+            // 
+            this.pFReportToolStripMenuItem.Name = "pFReportToolStripMenuItem";
+            this.pFReportToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.pFReportToolStripMenuItem.Text = "PF Report ";
+            this.pFReportToolStripMenuItem.Click += new System.EventHandler(this.pFReportToolStripMenuItem_Click);
+            // 
+            // backupToolStripMenuItem
+            // 
+            this.backupToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.backupDatabaseToolStripMenuItem});
+            this.backupToolStripMenuItem.Name = "backupToolStripMenuItem";
+            this.backupToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
+            this.backupToolStripMenuItem.Text = "Backup";
+            // 
+            // backupDatabaseToolStripMenuItem
+            // 
+            this.backupDatabaseToolStripMenuItem.Name = "backupDatabaseToolStripMenuItem";
+            this.backupDatabaseToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.backupDatabaseToolStripMenuItem.Text = "Backup Database";
+            this.backupDatabaseToolStripMenuItem.Click += new System.EventHandler(this.backupDatabaseToolStripMenuItem_Click);
             // 
             // dataGridViewEmp
             // 
@@ -596,26 +622,30 @@
             this.textDesignation.Size = new System.Drawing.Size(100, 21);
             this.textDesignation.TabIndex = 50;
             // 
-            // backupToolStripMenuItem
+            // textBoxConv
             // 
-            this.backupToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.backupDatabaseToolStripMenuItem});
-            this.backupToolStripMenuItem.Name = "backupToolStripMenuItem";
-            this.backupToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
-            this.backupToolStripMenuItem.Text = "Backup";
+            this.textBoxConv.Location = new System.Drawing.Point(390, 366);
+            this.textBoxConv.Name = "textBoxConv";
+            this.textBoxConv.Size = new System.Drawing.Size(100, 20);
+            this.textBoxConv.TabIndex = 51;
+            this.textBoxConv.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxConv_KeyPress);
             // 
-            // backupDatabaseToolStripMenuItem
+            // lblConvPerMonth
             // 
-            this.backupDatabaseToolStripMenuItem.Name = "backupDatabaseToolStripMenuItem";
-            this.backupDatabaseToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
-            this.backupDatabaseToolStripMenuItem.Text = "Backup Database";
-            this.backupDatabaseToolStripMenuItem.Click += new System.EventHandler(this.backupDatabaseToolStripMenuItem_Click);
+            this.lblConvPerMonth.AutoSize = true;
+            this.lblConvPerMonth.Location = new System.Drawing.Point(387, 350);
+            this.lblConvPerMonth.Name = "lblConvPerMonth";
+            this.lblConvPerMonth.Size = new System.Drawing.Size(107, 13);
+            this.lblConvPerMonth.TabIndex = 52;
+            this.lblConvPerMonth.Text = "Allowance per Month";
             // 
             // Emp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1315, 733);
+            this.Controls.Add(this.lblConvPerMonth);
+            this.Controls.Add(this.textBoxConv);
             this.Controls.Add(this.textDesignation);
             this.Controls.Add(this.txtAid);
             this.Controls.Add(this.lblID);
@@ -732,6 +762,9 @@
         private System.Windows.Forms.ToolStripMenuItem copyTransactionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem backupToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem backupDatabaseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pFReportToolStripMenuItem;
+        private System.Windows.Forms.TextBox textBoxConv;
+        private System.Windows.Forms.Label lblConvPerMonth;
     }
 }
 

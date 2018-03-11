@@ -74,6 +74,8 @@
             this.lblAdvAmtBalance = new System.Windows.Forms.Label();
             this.textBoxConv = new System.Windows.Forms.TextBox();
             this.lblConv = new System.Windows.Forms.Label();
+            this.labelPrompt = new System.Windows.Forms.Label();
+            this.labelConvAmt = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMT)).BeginInit();
             this.SuspendLayout();
             // 
@@ -325,6 +327,7 @@
             this.txtAbsent.Name = "txtAbsent";
             this.txtAbsent.Size = new System.Drawing.Size(121, 20);
             this.txtAbsent.TabIndex = 37;
+            this.txtAbsent.TextChanged += new System.EventHandler(this.txtAbsent_TextChanged);
             this.txtAbsent.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAbsent_KeyPress);
             // 
             // contextMenuStrip1
@@ -542,11 +545,31 @@
             this.lblConv.TabIndex = 57;
             this.lblConv.Text = "Allowance";
             // 
+            // labelPrompt
+            // 
+            this.labelPrompt.AutoSize = true;
+            this.labelPrompt.Location = new System.Drawing.Point(422, 453);
+            this.labelPrompt.Name = "labelPrompt";
+            this.labelPrompt.Size = new System.Drawing.Size(144, 13);
+            this.labelPrompt.TabIndex = 59;
+            this.labelPrompt.Text = "This excludes Allowance amt";
+            // 
+            // labelConvAmt
+            // 
+            this.labelConvAmt.AutoSize = true;
+            this.labelConvAmt.Location = new System.Drawing.Point(52, 22);
+            this.labelConvAmt.Name = "labelConvAmt";
+            this.labelConvAmt.Size = new System.Drawing.Size(35, 13);
+            this.labelConvAmt.TabIndex = 60;
+            this.labelConvAmt.Text = "label3";
+            // 
             // Monthly_Transaction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1333, 666);
+            this.Controls.Add(this.labelConvAmt);
+            this.Controls.Add(this.labelPrompt);
             this.Controls.Add(this.textBoxConv);
             this.Controls.Add(this.lblConv);
             this.Controls.Add(this.lblAdvAmtBalance);
@@ -645,5 +668,7 @@
         private System.Windows.Forms.Label lblAdvAmtBalance;
         private System.Windows.Forms.TextBox textBoxConv;
         private System.Windows.Forms.Label lblConv;
+        private System.Windows.Forms.Label labelPrompt;
+        private System.Windows.Forms.Label labelConvAmt;
     }
 }
