@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Fairdeal_Kashmir_Salary_Software
 {
-    public partial class ArchiveTransactions : Form
+    public partial class ArchiveTransactions : MetroFramework.Forms.MetroForm
     {
         public ArchiveTransactions()
         {
@@ -20,8 +20,10 @@ namespace Fairdeal_Kashmir_Salary_Software
 
         private void ArchiveTransactions_Load(object sender, EventArgs e)
         {
+            this.Location = new Point(0, 0);
+            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
             // TODO: This line of code loads data into the 'DataSetArchive.ArchiveTransactions' table. You can move, or remove it, as needed.
-            
+
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -37,5 +39,12 @@ namespace Fairdeal_Kashmir_Salary_Software
                 MessageBox.Show(Ex.Message);
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Emp E = new Emp();
+            E.Show();
+            this.Hide();
         }
+    }
     }

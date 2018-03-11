@@ -454,7 +454,7 @@ namespace Fairdeal_Kashmir_Salary_Software
 
         private void report2ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RepoerForm2 rp = new RepoerForm2();
+            SalaryBill  rp = new SalaryBill();
             rp.Show();
             this.Hide();
         }

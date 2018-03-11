@@ -36,6 +36,7 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.lblDep = new MetroFramework.Controls.MetroLabel();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDeptt)).BeginInit();
             this.SuspendLayout();
             // 
@@ -114,11 +115,22 @@
             this.lblDep.TabIndex = 18;
             this.lblDep.Text = "Departments";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(327, 33);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 52;
+            this.button1.Text = "<<<  HOME";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Deptt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(724, 512);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblDep);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnDelete);
@@ -147,5 +159,6 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Label label3;
         private MetroFramework.Controls.MetroLabel lblDep;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Fairdeal_Kashmir_Salary_Software
 {
-    public partial class ReportForm1 : Form
+    public partial class ReportForm1 : MetroFramework.Forms.MetroForm
     {
         public ReportForm1()
         {
@@ -31,23 +31,6 @@ namespace Fairdeal_Kashmir_Salary_Software
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
-            { 
-            if (comboBoxSMonth.Text == "" || comboBoxSYear.Text == "")
-            {
-                MessageBox.Show("Select Month and Year");
-                return;
-            }
-
-            this.SalaryReportsTableAdapter.Fill(this.DataSetReport1.SalaryReports, comboBoxSMonth.Text, comboBoxSYear.Text);
-
-
-            this.reportViewer1.RefreshReport();
-        }
-            catch (SqlException Ex)
-            {
-                MessageBox.Show(Ex.Message);
-            }
 
         }
 
@@ -70,6 +53,14 @@ namespace Fairdeal_Kashmir_Salary_Software
             {
                 MessageBox.Show(Ex.Message);
             }
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Emp E = new Emp();
+            E.Show();
+            this.Hide();
 
         }
     }

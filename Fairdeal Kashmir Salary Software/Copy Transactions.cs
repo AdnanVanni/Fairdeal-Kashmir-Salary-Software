@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 
 namespace Fairdeal_Kashmir_Salary_Software
 {
-    public partial class Copy_Transactions : Form
+    public partial class Copy_Transactions : MetroFramework.Forms.MetroForm
     {
         public Copy_Transactions()
         {
@@ -92,10 +92,20 @@ namespace Fairdeal_Kashmir_Salary_Software
 
         private void Copy_Transactions_Load(object sender, EventArgs e)
         {
+            this.Location = new Point(0, 0);
+            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+
             label4.Visible = false;
             listBoxEmployees.Visible = false;
             reportViewer1.Visible = false;
          
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Emp E = new Emp();
+            E.Show();
+            this.Hide();
         }
     }
 }

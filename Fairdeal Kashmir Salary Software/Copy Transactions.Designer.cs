@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.copyBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DataSetCopy = new Fairdeal_Kashmir_Salary_Software.DataSetCopy();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxMonthFrom = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,13 +46,22 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.DataSetCopy = new Fairdeal_Kashmir_Salary_Software.DataSetCopy();
-            this.copyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.copyTableAdapter = new Fairdeal_Kashmir_Salary_Software.DataSetCopyTableAdapters.copyTableAdapter();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DataSetCopy)).BeginInit();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.copyBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetCopy)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // copyBindingSource
+            // 
+            this.copyBindingSource.DataMember = "copy";
+            this.copyBindingSource.DataSource = this.DataSetCopy;
+            // 
+            // DataSetCopy
+            // 
+            this.DataSetCopy.DataSetName = "DataSetCopy";
+            this.DataSetCopy.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
@@ -259,25 +270,26 @@
             this.reportViewer1.Size = new System.Drawing.Size(219, 246);
             this.reportViewer1.TabIndex = 12;
             // 
-            // DataSetCopy
-            // 
-            this.DataSetCopy.DataSetName = "DataSetCopy";
-            this.DataSetCopy.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // copyBindingSource
-            // 
-            this.copyBindingSource.DataMember = "copy";
-            this.copyBindingSource.DataSource = this.DataSetCopy;
-            // 
             // copyTableAdapter
             // 
             this.copyTableAdapter.ClearBeforeFill = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(342, 39);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 53;
+            this.button1.Text = "<<<  HOME";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Copy_Transactions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(854, 505);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -288,10 +300,10 @@
             this.Name = "Copy_Transactions";
             this.Text = "Copy Transactions";
             this.Load += new System.EventHandler(this.Copy_Transactions_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.copyBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetCopy)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DataSetCopy)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.copyBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -316,5 +328,6 @@
         private System.Windows.Forms.BindingSource copyBindingSource;
         private DataSetCopy DataSetCopy;
         private DataSetCopyTableAdapters.copyTableAdapter copyTableAdapter;
+        private System.Windows.Forms.Button button1;
     }
 }

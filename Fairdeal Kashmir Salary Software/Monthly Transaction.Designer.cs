@@ -80,7 +80,7 @@
             // lblFine
             // 
             this.lblFine.AutoSize = true;
-            this.lblFine.Location = new System.Drawing.Point(26, 309);
+            this.lblFine.Location = new System.Drawing.Point(36, 323);
             this.lblFine.Name = "lblFine";
             this.lblFine.Size = new System.Drawing.Size(27, 13);
             this.lblFine.TabIndex = 5;
@@ -89,7 +89,7 @@
             // lblTdc
             // 
             this.lblTdc.AutoSize = true;
-            this.lblTdc.Location = new System.Drawing.Point(26, 349);
+            this.lblTdc.Location = new System.Drawing.Point(36, 363);
             this.lblTdc.Name = "lblTdc";
             this.lblTdc.Size = new System.Drawing.Size(29, 13);
             this.lblTdc.TabIndex = 6;
@@ -98,7 +98,7 @@
             // lblMonth
             // 
             this.lblMonth.AutoSize = true;
-            this.lblMonth.Location = new System.Drawing.Point(25, 105);
+            this.lblMonth.Location = new System.Drawing.Point(35, 119);
             this.lblMonth.Name = "lblMonth";
             this.lblMonth.Size = new System.Drawing.Size(37, 13);
             this.lblMonth.TabIndex = 7;
@@ -107,7 +107,7 @@
             // lblEmployeeNamee
             // 
             this.lblEmployeeNamee.AutoSize = true;
-            this.lblEmployeeNamee.Location = new System.Drawing.Point(25, 68);
+            this.lblEmployeeNamee.Location = new System.Drawing.Point(35, 82);
             this.lblEmployeeNamee.Name = "lblEmployeeNamee";
             this.lblEmployeeNamee.Size = new System.Drawing.Size(53, 13);
             this.lblEmployeeNamee.TabIndex = 8;
@@ -115,7 +115,7 @@
             // 
             // txtFine
             // 
-            this.txtFine.Location = new System.Drawing.Point(132, 309);
+            this.txtFine.Location = new System.Drawing.Point(142, 323);
             this.txtFine.Name = "txtFine";
             this.txtFine.Size = new System.Drawing.Size(121, 20);
             this.txtFine.TabIndex = 15;
@@ -123,7 +123,7 @@
             // 
             // txtTdc
             // 
-            this.txtTdc.Location = new System.Drawing.Point(131, 342);
+            this.txtTdc.Location = new System.Drawing.Point(141, 356);
             this.txtTdc.Name = "txtTdc";
             this.txtTdc.Size = new System.Drawing.Size(121, 20);
             this.txtTdc.TabIndex = 16;
@@ -133,7 +133,7 @@
             // 
             this.Ename.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Ename.FormattingEnabled = true;
-            this.Ename.Location = new System.Drawing.Point(131, 65);
+            this.Ename.Location = new System.Drawing.Point(141, 79);
             this.Ename.Name = "Ename";
             this.Ename.Size = new System.Drawing.Size(121, 21);
             this.Ename.TabIndex = 18;
@@ -169,7 +169,7 @@
             "2039",
             "2040",
             ""});
-            this.comboBoxYear.Location = new System.Drawing.Point(222, 105);
+            this.comboBoxYear.Location = new System.Drawing.Point(232, 119);
             this.comboBoxYear.Name = "comboBoxYear";
             this.comboBoxYear.Size = new System.Drawing.Size(84, 21);
             this.comboBoxYear.TabIndex = 19;
@@ -191,14 +191,14 @@
             "OCTOBER",
             "NOVEMBER",
             "DECEMBER"});
-            this.comboBoxMonth.Location = new System.Drawing.Point(132, 105);
+            this.comboBoxMonth.Location = new System.Drawing.Point(142, 119);
             this.comboBoxMonth.Name = "comboBoxMonth";
             this.comboBoxMonth.Size = new System.Drawing.Size(84, 21);
             this.comboBoxMonth.TabIndex = 20;
             // 
             // btnCalcSalary
             // 
-            this.btnCalcSalary.Location = new System.Drawing.Point(132, 434);
+            this.btnCalcSalary.Location = new System.Drawing.Point(142, 448);
             this.btnCalcSalary.Name = "btnCalcSalary";
             this.btnCalcSalary.Size = new System.Drawing.Size(121, 23);
             this.btnCalcSalary.TabIndex = 21;
@@ -209,7 +209,7 @@
             // lbLMPFLS
             // 
             this.lbLMPFLS.AutoSize = true;
-            this.lbLMPFLS.Location = new System.Drawing.Point(26, 209);
+            this.lbLMPFLS.Location = new System.Drawing.Point(36, 223);
             this.lbLMPFLS.Name = "lbLMPFLS";
             this.lbLMPFLS.Size = new System.Drawing.Size(132, 13);
             this.lbLMPFLS.TabIndex = 22;
@@ -217,7 +217,7 @@
             // 
             // txtMPFLS
             // 
-            this.txtMPFLS.Location = new System.Drawing.Point(132, 225);
+            this.txtMPFLS.Location = new System.Drawing.Point(142, 239);
             this.txtMPFLS.Name = "txtMPFLS";
             this.txtMPFLS.Size = new System.Drawing.Size(121, 20);
             this.txtMPFLS.TabIndex = 23;
@@ -225,7 +225,7 @@
             // 
             // txtNetSalary
             // 
-            this.txtNetSalary.Location = new System.Drawing.Point(276, 436);
+            this.txtNetSalary.Location = new System.Drawing.Point(286, 450);
             this.txtNetSalary.Name = "txtNetSalary";
             this.txtNetSalary.Size = new System.Drawing.Size(130, 20);
             this.txtNetSalary.TabIndex = 24;
@@ -233,7 +233,7 @@
             // 
             // txtSaveRecord
             // 
-            this.txtSaveRecord.Location = new System.Drawing.Point(276, 505);
+            this.txtSaveRecord.Location = new System.Drawing.Point(286, 519);
             this.txtSaveRecord.Name = "txtSaveRecord";
             this.txtSaveRecord.Size = new System.Drawing.Size(130, 23);
             this.txtSaveRecord.TabIndex = 25;
@@ -244,7 +244,7 @@
             // lblMemo
             // 
             this.lblMemo.AutoSize = true;
-            this.lblMemo.Location = new System.Drawing.Point(285, 256);
+            this.lblMemo.Location = new System.Drawing.Point(295, 270);
             this.lblMemo.Name = "lblMemo";
             this.lblMemo.Size = new System.Drawing.Size(64, 13);
             this.lblMemo.TabIndex = 27;
@@ -252,7 +252,7 @@
             // 
             // richTextBoxMemo
             // 
-            this.richTextBoxMemo.Location = new System.Drawing.Point(288, 272);
+            this.richTextBoxMemo.Location = new System.Drawing.Point(298, 286);
             this.richTextBoxMemo.Name = "richTextBoxMemo";
             this.richTextBoxMemo.Size = new System.Drawing.Size(217, 96);
             this.richTextBoxMemo.TabIndex = 28;
@@ -260,7 +260,7 @@
             // 
             // txtPF
             // 
-            this.txtPF.Location = new System.Drawing.Point(132, 175);
+            this.txtPF.Location = new System.Drawing.Point(142, 189);
             this.txtPF.Name = "txtPF";
             this.txtPF.Size = new System.Drawing.Size(121, 20);
             this.txtPF.TabIndex = 29;
@@ -268,7 +268,7 @@
             // 
             // txtAAMD
             // 
-            this.txtAAMD.Location = new System.Drawing.Point(131, 272);
+            this.txtAAMD.Location = new System.Drawing.Point(141, 286);
             this.txtAAMD.Name = "txtAAMD";
             this.txtAAMD.Size = new System.Drawing.Size(121, 20);
             this.txtAAMD.TabIndex = 31;
@@ -277,7 +277,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(26, 256);
+            this.label2.Location = new System.Drawing.Point(36, 270);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(162, 13);
             this.label2.TabIndex = 33;
@@ -286,7 +286,7 @@
             // lblPFCalc
             // 
             this.lblPFCalc.AutoSize = true;
-            this.lblPFCalc.Location = new System.Drawing.Point(26, 175);
+            this.lblPFCalc.Location = new System.Drawing.Point(36, 189);
             this.lblPFCalc.Name = "lblPFCalc";
             this.lblPFCalc.Size = new System.Drawing.Size(79, 13);
             this.lblPFCalc.TabIndex = 34;
@@ -294,7 +294,7 @@
             // 
             // txtMonthlySalary
             // 
-            this.txtMonthlySalary.Location = new System.Drawing.Point(132, 140);
+            this.txtMonthlySalary.Location = new System.Drawing.Point(142, 154);
             this.txtMonthlySalary.Name = "txtMonthlySalary";
             this.txtMonthlySalary.Size = new System.Drawing.Size(121, 20);
             this.txtMonthlySalary.TabIndex = 30;
@@ -304,7 +304,7 @@
             // lblActualSalary
             // 
             this.lblActualSalary.AutoSize = true;
-            this.lblActualSalary.Location = new System.Drawing.Point(26, 140);
+            this.lblActualSalary.Location = new System.Drawing.Point(36, 154);
             this.lblActualSalary.Name = "lblActualSalary";
             this.lblActualSalary.Size = new System.Drawing.Size(69, 13);
             this.lblActualSalary.TabIndex = 35;
@@ -313,7 +313,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(282, 150);
+            this.label1.Location = new System.Drawing.Point(292, 164);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 13);
             this.label1.TabIndex = 36;
@@ -321,7 +321,7 @@
             // 
             // txtAbsent
             // 
-            this.txtAbsent.Location = new System.Drawing.Point(355, 147);
+            this.txtAbsent.Location = new System.Drawing.Point(365, 161);
             this.txtAbsent.Name = "txtAbsent";
             this.txtAbsent.Size = new System.Drawing.Size(121, 20);
             this.txtAbsent.TabIndex = 37;
@@ -337,7 +337,7 @@
             this.dataGridViewMT.AllowUserToAddRows = false;
             this.dataGridViewMT.AllowUserToDeleteRows = false;
             this.dataGridViewMT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewMT.Location = new System.Drawing.Point(562, 85);
+            this.dataGridViewMT.Location = new System.Drawing.Point(572, 99);
             this.dataGridViewMT.MultiSelect = false;
             this.dataGridViewMT.Name = "dataGridViewMT";
             this.dataGridViewMT.Size = new System.Drawing.Size(650, 501);
@@ -360,7 +360,7 @@
             "OCTOBER",
             "NOVEMBER",
             "DECEMBER"});
-            this.comboBoxSMonth.Location = new System.Drawing.Point(562, 58);
+            this.comboBoxSMonth.Location = new System.Drawing.Point(572, 72);
             this.comboBoxSMonth.Name = "comboBoxSMonth";
             this.comboBoxSMonth.Size = new System.Drawing.Size(121, 21);
             this.comboBoxSMonth.TabIndex = 39;
@@ -393,14 +393,14 @@
             "2039",
             "2040",
             ""});
-            this.comboBoxSYear.Location = new System.Drawing.Point(689, 58);
+            this.comboBoxSYear.Location = new System.Drawing.Point(699, 72);
             this.comboBoxSYear.Name = "comboBoxSYear";
             this.comboBoxSYear.Size = new System.Drawing.Size(121, 21);
             this.comboBoxSYear.TabIndex = 40;
             // 
             // txtEmpSearch
             // 
-            this.txtEmpSearch.Location = new System.Drawing.Point(816, 58);
+            this.txtEmpSearch.Location = new System.Drawing.Point(826, 72);
             this.txtEmpSearch.Name = "txtEmpSearch";
             this.txtEmpSearch.Size = new System.Drawing.Size(121, 20);
             this.txtEmpSearch.TabIndex = 41;
@@ -408,7 +408,7 @@
             // btnSearch
             // 
             this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
-            this.btnSearch.Location = new System.Drawing.Point(936, 58);
+            this.btnSearch.Location = new System.Drawing.Point(946, 72);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(26, 21);
             this.btnSearch.TabIndex = 45;
@@ -417,7 +417,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(1061, 56);
+            this.btnDelete.Location = new System.Drawing.Point(1071, 70);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(151, 23);
             this.btnDelete.TabIndex = 46;
@@ -428,24 +428,26 @@
             // labelEmpId
             // 
             this.labelEmpId.AutoSize = true;
-            this.labelEmpId.Location = new System.Drawing.Point(52, 525);
+            this.labelEmpId.Location = new System.Drawing.Point(50, 636);
             this.labelEmpId.Name = "labelEmpId";
             this.labelEmpId.Size = new System.Drawing.Size(38, 13);
             this.labelEmpId.TabIndex = 47;
             this.labelEmpId.Text = "labelId";
+            this.labelEmpId.Visible = false;
             // 
             // labelMonth
             // 
             this.labelMonth.AutoSize = true;
-            this.labelMonth.Location = new System.Drawing.Point(121, 524);
+            this.labelMonth.Location = new System.Drawing.Point(112, 636);
             this.labelMonth.Name = "labelMonth";
             this.labelMonth.Size = new System.Drawing.Size(38, 13);
             this.labelMonth.TabIndex = 48;
             this.labelMonth.Text = "labelM";
+            this.labelMonth.Visible = false;
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(968, 57);
+            this.btnRefresh.Location = new System.Drawing.Point(978, 71);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(75, 23);
             this.btnRefresh.TabIndex = 49;
@@ -456,19 +458,20 @@
             // labelYear
             // 
             this.labelYear.AutoSize = true;
-            this.labelYear.Location = new System.Drawing.Point(189, 523);
+            this.labelYear.Location = new System.Drawing.Point(176, 636);
             this.labelYear.Name = "labelYear";
             this.labelYear.Size = new System.Drawing.Size(36, 13);
             this.labelYear.TabIndex = 50;
             this.labelYear.Text = "labelY";
+            this.labelYear.Visible = false;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(315, 26);
+            this.button1.Location = new System.Drawing.Point(365, 40);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 51;
-            this.button1.Text = "button1";
+            this.button1.Text = "<<<  HOME";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -478,7 +481,7 @@
             this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.metroLabel1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.metroLabel1.Location = new System.Drawing.Point(29, 24);
+            this.metroLabel1.Location = new System.Drawing.Point(39, 38);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(188, 25);
             this.metroLabel1.TabIndex = 52;
@@ -487,7 +490,7 @@
             // lblPFRem
             // 
             this.lblPFRem.AutoSize = true;
-            this.lblPFRem.Location = new System.Drawing.Point(26, 403);
+            this.lblPFRem.Location = new System.Drawing.Point(36, 394);
             this.lblPFRem.Name = "lblPFRem";
             this.lblPFRem.Size = new System.Drawing.Size(102, 13);
             this.lblPFRem.TabIndex = 53;
@@ -496,15 +499,17 @@
             // labelPFAmtBal
             // 
             this.labelPFAmtBal.AutoSize = true;
-            this.labelPFAmtBal.Location = new System.Drawing.Point(157, 403);
+            this.labelPFAmtBal.ForeColor = System.Drawing.Color.Red;
+            this.labelPFAmtBal.Location = new System.Drawing.Point(155, 394);
             this.labelPFAmtBal.Name = "labelPFAmtBal";
-            this.labelPFAmtBal.Size = new System.Drawing.Size(0, 13);
+            this.labelPFAmtBal.Size = new System.Drawing.Size(13, 13);
             this.labelPFAmtBal.TabIndex = 54;
+            this.labelPFAmtBal.Text = "..";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(236, 403);
+            this.label5.Location = new System.Drawing.Point(287, 394);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(129, 13);
             this.label5.TabIndex = 55;
@@ -513,14 +518,16 @@
             // lblAdvAmtBalance
             // 
             this.lblAdvAmtBalance.AutoSize = true;
-            this.lblAdvAmtBalance.Location = new System.Drawing.Point(390, 403);
+            this.lblAdvAmtBalance.ForeColor = System.Drawing.Color.Red;
+            this.lblAdvAmtBalance.Location = new System.Drawing.Point(432, 394);
             this.lblAdvAmtBalance.Name = "lblAdvAmtBalance";
-            this.lblAdvAmtBalance.Size = new System.Drawing.Size(0, 13);
+            this.lblAdvAmtBalance.Size = new System.Drawing.Size(13, 13);
             this.lblAdvAmtBalance.TabIndex = 56;
+            this.lblAdvAmtBalance.Text = "..";
             // 
             // textBoxConv
             // 
-            this.textBoxConv.Location = new System.Drawing.Point(355, 175);
+            this.textBoxConv.Location = new System.Drawing.Point(365, 189);
             this.textBoxConv.Name = "textBoxConv";
             this.textBoxConv.Size = new System.Drawing.Size(121, 20);
             this.textBoxConv.TabIndex = 58;
@@ -529,7 +536,7 @@
             // lblConv
             // 
             this.lblConv.AutoSize = true;
-            this.lblConv.Location = new System.Drawing.Point(282, 178);
+            this.lblConv.Location = new System.Drawing.Point(292, 192);
             this.lblConv.Name = "lblConv";
             this.lblConv.Size = new System.Drawing.Size(56, 13);
             this.lblConv.TabIndex = 57;
@@ -539,7 +546,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1333, 642);
+            this.ClientSize = new System.Drawing.Size(1333, 666);
             this.Controls.Add(this.textBoxConv);
             this.Controls.Add(this.lblConv);
             this.Controls.Add(this.lblAdvAmtBalance);

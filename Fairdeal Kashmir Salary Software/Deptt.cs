@@ -115,5 +115,12 @@ namespace Fairdeal_Kashmir_Salary_Software
                 MessageBox.Show(Ex.Message);
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Emp E = new Emp();
+            E.Show();
+            this.Hide();
+        }
     }
 }

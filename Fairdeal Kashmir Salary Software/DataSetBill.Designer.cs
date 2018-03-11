@@ -20,9 +20,9 @@ namespace Fairdeal_Kashmir_Salary_Software {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("DataSet2")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DataSetBill")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class DataSet2 : global::System.Data.DataSet {
+    public partial class DataSetBill : global::System.Data.DataSet {
         
         private SalaryBillDataTable tableSalaryBill;
         
@@ -30,7 +30,7 @@ namespace Fairdeal_Kashmir_Salary_Software {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public DataSet2() {
+        public DataSetBill() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace Fairdeal_Kashmir_Salary_Software {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected DataSet2(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected DataSetBill(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -127,7 +127,7 @@ namespace Fairdeal_Kashmir_Salary_Software {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            DataSet2 cln = ((DataSet2)(base.Clone()));
+            DataSetBill cln = ((DataSetBill)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -199,9 +199,9 @@ namespace Fairdeal_Kashmir_Salary_Software {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "DataSet2";
+            this.DataSetName = "DataSetBill";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/DataSet2.xsd";
+            this.Namespace = "http://tempuri.org/DataSetBill.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableSalaryBill = new SalaryBillDataTable();
@@ -225,7 +225,7 @@ namespace Fairdeal_Kashmir_Salary_Software {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            DataSet2 ds = new DataSet2();
+            DataSetBill ds = new DataSetBill();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -279,15 +279,25 @@ namespace Fairdeal_Kashmir_Salary_Software {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class SalaryBillDataTable : global::System.Data.TypedTableBase<SalaryBillRow> {
             
+            private global::System.Data.DataColumn columnDepartment;
+            
+            private global::System.Data.DataColumn columnmonth;
+            
+            private global::System.Data.DataColumn columnyear;
+            
             private global::System.Data.DataColumn columnEmpName;
             
             private global::System.Data.DataColumn columnDesignation;
             
             private global::System.Data.DataColumn columnSalaryPerMonth;
             
-            private global::System.Data.DataColumn columnDaysInMonth;
+            private global::System.Data.DataColumn columnPERIOD;
             
-            private global::System.Data.DataColumn columnSalaryInHand;
+            private global::System.Data.DataColumn columnAMT;
+            
+            private global::System.Data.DataColumn columnConv;
+            
+            private global::System.Data.DataColumn columnTotalAmount;
             
             private global::System.Data.DataColumn columnPfMonthly;
             
@@ -301,7 +311,7 @@ namespace Fairdeal_Kashmir_Salary_Software {
             
             private global::System.Data.DataColumn columnTotalDeduction;
             
-            private global::System.Data.DataColumn columnSalaryInHand1;
+            private global::System.Data.DataColumn columnNetAmountPayable;
             
             private global::System.Data.DataColumn columnAccNumber;
             
@@ -340,6 +350,30 @@ namespace Fairdeal_Kashmir_Salary_Software {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DepartmentColumn {
+                get {
+                    return this.columnDepartment;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn monthColumn {
+                get {
+                    return this.columnmonth;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn yearColumn {
+                get {
+                    return this.columnyear;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn EmpNameColumn {
                 get {
                     return this.columnEmpName;
@@ -364,17 +398,33 @@ namespace Fairdeal_Kashmir_Salary_Software {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DaysInMonthColumn {
+            public global::System.Data.DataColumn PERIODColumn {
                 get {
-                    return this.columnDaysInMonth;
+                    return this.columnPERIOD;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn SalaryInHandColumn {
+            public global::System.Data.DataColumn AMTColumn {
                 get {
-                    return this.columnSalaryInHand;
+                    return this.columnAMT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ConvColumn {
+                get {
+                    return this.columnConv;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TotalAmountColumn {
+                get {
+                    return this.columnTotalAmount;
                 }
             }
             
@@ -428,9 +478,9 @@ namespace Fairdeal_Kashmir_Salary_Software {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn SalaryInHand1Column {
+            public global::System.Data.DataColumn NetAmountPayableColumn {
                 get {
-                    return this.columnSalaryInHand1;
+                    return this.columnNetAmountPayable;
                 }
             }
             
@@ -479,21 +529,44 @@ namespace Fairdeal_Kashmir_Salary_Software {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public SalaryBillRow AddSalaryBillRow(string EmpName, string Designation, float SalaryPerMonth, float DaysInMonth, float SalaryInHand, float PfMonthly, float PfLoanSub, float Fine, float AdvAmtSub, float TDC, float TotalDeduction, float SalaryInHand1, string AccNumber) {
+            public SalaryBillRow AddSalaryBillRow(
+                        string Department, 
+                        string month, 
+                        string year, 
+                        string EmpName, 
+                        string Designation, 
+                        float SalaryPerMonth, 
+                        float PERIOD, 
+                        float AMT, 
+                        float Conv, 
+                        float TotalAmount, 
+                        float PfMonthly, 
+                        float PfLoanSub, 
+                        float Fine, 
+                        float AdvAmtSub, 
+                        float TDC, 
+                        float TotalDeduction, 
+                        float NetAmountPayable, 
+                        string AccNumber) {
                 SalaryBillRow rowSalaryBillRow = ((SalaryBillRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
+                        Department,
+                        month,
+                        year,
                         EmpName,
                         Designation,
                         SalaryPerMonth,
-                        DaysInMonth,
-                        SalaryInHand,
+                        PERIOD,
+                        AMT,
+                        Conv,
+                        TotalAmount,
                         PfMonthly,
                         PfLoanSub,
                         Fine,
                         AdvAmtSub,
                         TDC,
                         TotalDeduction,
-                        SalaryInHand1,
+                        NetAmountPayable,
                         AccNumber};
                 rowSalaryBillRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSalaryBillRow);
@@ -517,34 +590,49 @@ namespace Fairdeal_Kashmir_Salary_Software {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
+                this.columnDepartment = base.Columns["Department"];
+                this.columnmonth = base.Columns["month"];
+                this.columnyear = base.Columns["year"];
                 this.columnEmpName = base.Columns["EmpName"];
                 this.columnDesignation = base.Columns["Designation"];
                 this.columnSalaryPerMonth = base.Columns["SalaryPerMonth"];
-                this.columnDaysInMonth = base.Columns["DaysInMonth"];
-                this.columnSalaryInHand = base.Columns["SalaryInHand"];
+                this.columnPERIOD = base.Columns["PERIOD"];
+                this.columnAMT = base.Columns["AMT"];
+                this.columnConv = base.Columns["Conv"];
+                this.columnTotalAmount = base.Columns["TotalAmount"];
                 this.columnPfMonthly = base.Columns["PfMonthly"];
                 this.columnPfLoanSub = base.Columns["PfLoanSub"];
                 this.columnFine = base.Columns["Fine"];
                 this.columnAdvAmtSub = base.Columns["AdvAmtSub"];
                 this.columnTDC = base.Columns["TDC"];
                 this.columnTotalDeduction = base.Columns["TotalDeduction"];
-                this.columnSalaryInHand1 = base.Columns["SalaryInHand1"];
+                this.columnNetAmountPayable = base.Columns["NetAmountPayable"];
                 this.columnAccNumber = base.Columns["AccNumber"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
+                this.columnDepartment = new global::System.Data.DataColumn("Department", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDepartment);
+                this.columnmonth = new global::System.Data.DataColumn("month", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmonth);
+                this.columnyear = new global::System.Data.DataColumn("year", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnyear);
                 this.columnEmpName = new global::System.Data.DataColumn("EmpName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEmpName);
                 this.columnDesignation = new global::System.Data.DataColumn("Designation", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDesignation);
                 this.columnSalaryPerMonth = new global::System.Data.DataColumn("SalaryPerMonth", typeof(float), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSalaryPerMonth);
-                this.columnDaysInMonth = new global::System.Data.DataColumn("DaysInMonth", typeof(float), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDaysInMonth);
-                this.columnSalaryInHand = new global::System.Data.DataColumn("SalaryInHand", typeof(float), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSalaryInHand);
+                this.columnPERIOD = new global::System.Data.DataColumn("PERIOD", typeof(float), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPERIOD);
+                this.columnAMT = new global::System.Data.DataColumn("AMT", typeof(float), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAMT);
+                this.columnConv = new global::System.Data.DataColumn("Conv", typeof(float), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnConv);
+                this.columnTotalAmount = new global::System.Data.DataColumn("TotalAmount", typeof(float), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotalAmount);
                 this.columnPfMonthly = new global::System.Data.DataColumn("PfMonthly", typeof(float), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPfMonthly);
                 this.columnPfLoanSub = new global::System.Data.DataColumn("PfLoanSub", typeof(float), null, global::System.Data.MappingType.Element);
@@ -557,13 +645,22 @@ namespace Fairdeal_Kashmir_Salary_Software {
                 base.Columns.Add(this.columnTDC);
                 this.columnTotalDeduction = new global::System.Data.DataColumn("TotalDeduction", typeof(float), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTotalDeduction);
-                this.columnSalaryInHand1 = new global::System.Data.DataColumn("SalaryInHand1", typeof(float), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSalaryInHand1);
+                this.columnNetAmountPayable = new global::System.Data.DataColumn("NetAmountPayable", typeof(float), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNetAmountPayable);
                 this.columnAccNumber = new global::System.Data.DataColumn("AccNumber", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAccNumber);
+                this.columnDepartment.MaxLength = 50;
+                this.columnmonth.AllowDBNull = false;
+                this.columnmonth.MaxLength = 50;
+                this.columnyear.AllowDBNull = false;
+                this.columnyear.MaxLength = 50;
                 this.columnEmpName.MaxLength = 50;
                 this.columnDesignation.MaxLength = 50;
+                this.columnPERIOD.ReadOnly = true;
+                this.columnAMT.ReadOnly = true;
+                this.columnTotalAmount.ReadOnly = true;
                 this.columnTotalDeduction.ReadOnly = true;
+                this.columnNetAmountPayable.ReadOnly = true;
                 this.columnAccNumber.MaxLength = 50;
             }
             
@@ -632,7 +729,7 @@ namespace Fairdeal_Kashmir_Salary_Software {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DataSet2 ds = new DataSet2();
+                DataSetBill ds = new DataSetBill();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -707,6 +804,44 @@ namespace Fairdeal_Kashmir_Salary_Software {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Department {
+                get {
+                    try {
+                        return ((string)(this[this.tableSalaryBill.DepartmentColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Department\' in table \'SalaryBill\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSalaryBill.DepartmentColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string month {
+                get {
+                    return ((string)(this[this.tableSalaryBill.monthColumn]));
+                }
+                set {
+                    this[this.tableSalaryBill.monthColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string year {
+                get {
+                    return ((string)(this[this.tableSalaryBill.yearColumn]));
+                }
+                set {
+                    this[this.tableSalaryBill.yearColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string EmpName {
                 get {
                     try {
@@ -755,33 +890,65 @@ namespace Fairdeal_Kashmir_Salary_Software {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public float DaysInMonth {
+            public float PERIOD {
                 get {
                     try {
-                        return ((float)(this[this.tableSalaryBill.DaysInMonthColumn]));
+                        return ((float)(this[this.tableSalaryBill.PERIODColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DaysInMonth\' in table \'SalaryBill\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'PERIOD\' in table \'SalaryBill\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSalaryBill.DaysInMonthColumn] = value;
+                    this[this.tableSalaryBill.PERIODColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public float SalaryInHand {
+            public float AMT {
                 get {
                     try {
-                        return ((float)(this[this.tableSalaryBill.SalaryInHandColumn]));
+                        return ((float)(this[this.tableSalaryBill.AMTColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SalaryInHand\' in table \'SalaryBill\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'AMT\' in table \'SalaryBill\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSalaryBill.SalaryInHandColumn] = value;
+                    this[this.tableSalaryBill.AMTColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public float Conv {
+                get {
+                    try {
+                        return ((float)(this[this.tableSalaryBill.ConvColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Conv\' in table \'SalaryBill\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSalaryBill.ConvColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public float TotalAmount {
+                get {
+                    try {
+                        return ((float)(this[this.tableSalaryBill.TotalAmountColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TotalAmount\' in table \'SalaryBill\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSalaryBill.TotalAmountColumn] = value;
                 }
             }
             
@@ -883,17 +1050,17 @@ namespace Fairdeal_Kashmir_Salary_Software {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public float SalaryInHand1 {
+            public float NetAmountPayable {
                 get {
                     try {
-                        return ((float)(this[this.tableSalaryBill.SalaryInHand1Column]));
+                        return ((float)(this[this.tableSalaryBill.NetAmountPayableColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SalaryInHand1\' in table \'SalaryBill\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'NetAmountPayable\' in table \'SalaryBill\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableSalaryBill.SalaryInHand1Column] = value;
+                    this[this.tableSalaryBill.NetAmountPayableColumn] = value;
                 }
             }
             
@@ -911,6 +1078,18 @@ namespace Fairdeal_Kashmir_Salary_Software {
                 set {
                     this[this.tableSalaryBill.AccNumberColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDepartmentNull() {
+                return this.IsNull(this.tableSalaryBill.DepartmentColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDepartmentNull() {
+                this[this.tableSalaryBill.DepartmentColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -951,26 +1130,50 @@ namespace Fairdeal_Kashmir_Salary_Software {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsDaysInMonthNull() {
-                return this.IsNull(this.tableSalaryBill.DaysInMonthColumn);
+            public bool IsPERIODNull() {
+                return this.IsNull(this.tableSalaryBill.PERIODColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetDaysInMonthNull() {
-                this[this.tableSalaryBill.DaysInMonthColumn] = global::System.Convert.DBNull;
+            public void SetPERIODNull() {
+                this[this.tableSalaryBill.PERIODColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsSalaryInHandNull() {
-                return this.IsNull(this.tableSalaryBill.SalaryInHandColumn);
+            public bool IsAMTNull() {
+                return this.IsNull(this.tableSalaryBill.AMTColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetSalaryInHandNull() {
-                this[this.tableSalaryBill.SalaryInHandColumn] = global::System.Convert.DBNull;
+            public void SetAMTNull() {
+                this[this.tableSalaryBill.AMTColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsConvNull() {
+                return this.IsNull(this.tableSalaryBill.ConvColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetConvNull() {
+                this[this.tableSalaryBill.ConvColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTotalAmountNull() {
+                return this.IsNull(this.tableSalaryBill.TotalAmountColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTotalAmountNull() {
+                this[this.tableSalaryBill.TotalAmountColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1047,14 +1250,14 @@ namespace Fairdeal_Kashmir_Salary_Software {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsSalaryInHand1Null() {
-                return this.IsNull(this.tableSalaryBill.SalaryInHand1Column);
+            public bool IsNetAmountPayableNull() {
+                return this.IsNull(this.tableSalaryBill.NetAmountPayableColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetSalaryInHand1Null() {
-                this[this.tableSalaryBill.SalaryInHand1Column] = global::System.Convert.DBNull;
+            public void SetNetAmountPayableNull() {
+                this[this.tableSalaryBill.NetAmountPayableColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1105,7 +1308,7 @@ namespace Fairdeal_Kashmir_Salary_Software {
         }
     }
 }
-namespace Fairdeal_Kashmir_Salary_Software.DataSet2TableAdapters {
+namespace Fairdeal_Kashmir_Salary_Software.DataSetBillTableAdapters {
     
     
     /// <summary>
@@ -1229,18 +1432,23 @@ namespace Fairdeal_Kashmir_Salary_Software.DataSet2TableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "SalaryBill";
+            tableMapping.ColumnMappings.Add("Department", "Department");
+            tableMapping.ColumnMappings.Add("month", "month");
+            tableMapping.ColumnMappings.Add("year", "year");
             tableMapping.ColumnMappings.Add("EmpName", "EmpName");
             tableMapping.ColumnMappings.Add("Designation", "Designation");
             tableMapping.ColumnMappings.Add("SalaryPerMonth", "SalaryPerMonth");
-            tableMapping.ColumnMappings.Add("DaysInMonth", "DaysInMonth");
-            tableMapping.ColumnMappings.Add("SalaryInHand", "SalaryInHand");
+            tableMapping.ColumnMappings.Add("PERIOD", "PERIOD");
+            tableMapping.ColumnMappings.Add("AMT", "AMT");
+            tableMapping.ColumnMappings.Add("Conv", "Conv");
+            tableMapping.ColumnMappings.Add("TotalAmount", "TotalAmount");
             tableMapping.ColumnMappings.Add("PfMonthly", "PfMonthly");
             tableMapping.ColumnMappings.Add("PfLoanSub", "PfLoanSub");
             tableMapping.ColumnMappings.Add("Fine", "Fine");
             tableMapping.ColumnMappings.Add("AdvAmtSub", "AdvAmtSub");
             tableMapping.ColumnMappings.Add("TDC", "TDC");
             tableMapping.ColumnMappings.Add("TotalDeduction", "TotalDeduction");
-            tableMapping.ColumnMappings.Add("SalaryInHand1", "SalaryInHand1");
+            tableMapping.ColumnMappings.Add("NetAmountPayable", "NetAmountPayable");
             tableMapping.ColumnMappings.Add("AccNumber", "AccNumber");
             this._adapter.TableMappings.Add(tableMapping);
         }
@@ -1261,7 +1469,7 @@ namespace Fairdeal_Kashmir_Salary_Software.DataSet2TableAdapters {
             this._commandCollection[0].CommandText = "dbo.SalaryBill";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@designation", global::System.Data.SqlDbType.NVarChar, 40, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@department", global::System.Data.SqlDbType.NVarChar, 40, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Month", global::System.Data.SqlDbType.NVarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Year", global::System.Data.SqlDbType.NVarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -1270,13 +1478,13 @@ namespace Fairdeal_Kashmir_Salary_Software.DataSet2TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSet2.SalaryBillDataTable dataTable, string designation, string Month, string Year) {
+        public virtual int Fill(DataSetBill.SalaryBillDataTable dataTable, string department, string Month, string Year) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((designation == null)) {
+            if ((department == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(designation));
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(department));
             }
             if ((Month == null)) {
                 this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
@@ -1301,13 +1509,13 @@ namespace Fairdeal_Kashmir_Salary_Software.DataSet2TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSet2.SalaryBillDataTable GetData(string designation, string Month, string Year) {
+        public virtual DataSetBill.SalaryBillDataTable GetData(string department, string Month, string Year) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((designation == null)) {
+            if ((department == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(designation));
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(department));
             }
             if ((Month == null)) {
                 this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
@@ -1321,7 +1529,7 @@ namespace Fairdeal_Kashmir_Salary_Software.DataSet2TableAdapters {
             else {
                 this.Adapter.SelectCommand.Parameters[3].Value = ((string)(Year));
             }
-            DataSet2.SalaryBillDataTable dataTable = new DataSet2.SalaryBillDataTable();
+            DataSetBill.SalaryBillDataTable dataTable = new DataSetBill.SalaryBillDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1395,7 +1603,7 @@ namespace Fairdeal_Kashmir_Salary_Software.DataSet2TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(DataSet2 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(DataSetBill dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1405,7 +1613,7 @@ namespace Fairdeal_Kashmir_Salary_Software.DataSet2TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(DataSet2 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(DataSetBill dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1415,7 +1623,7 @@ namespace Fairdeal_Kashmir_Salary_Software.DataSet2TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(DataSet2 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(DataSetBill dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -1449,7 +1657,7 @@ namespace Fairdeal_Kashmir_Salary_Software.DataSet2TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(DataSet2 dataSet) {
+        public virtual int UpdateAll(DataSetBill dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

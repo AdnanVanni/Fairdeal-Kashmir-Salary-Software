@@ -30,28 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.ArchiveTransactionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DataSetArchive = new Fairdeal_Kashmir_Salary_Software.DataSetArchive();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.ArchiveTransactionsTableAdapter = new Fairdeal_Kashmir_Salary_Software.DataSetArchiveTableAdapters.ArchiveTransactionsTableAdapter();
             this.comboBoxM = new System.Windows.Forms.ComboBox();
             this.comboBoxY = new System.Windows.Forms.ComboBox();
             this.comboBoxEmp = new System.Windows.Forms.ComboBox();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ArchiveTransactionsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSetArchive)).BeginInit();
             this.SuspendLayout();
-            // 
-            // reportViewer1
-            // 
-            reportDataSource3.Name = "DataSet1";
-            reportDataSource3.Value = this.ArchiveTransactionsBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Fairdeal_Kashmir_Salary_Software.Report5.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(12, 56);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(793, 260);
-            this.reportViewer1.TabIndex = 0;
             // 
             // ArchiveTransactionsBindingSource
             // 
@@ -62,6 +52,17 @@
             // 
             this.DataSetArchive.DataSetName = "DataSetArchive";
             this.DataSetArchive.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // reportViewer1
+            // 
+            reportDataSource3.Name = "DataSet1";
+            reportDataSource3.Value = this.ArchiveTransactionsBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Fairdeal_Kashmir_Salary_Software.Report5.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(12, 118);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.Size = new System.Drawing.Size(793, 260);
+            this.reportViewer1.TabIndex = 0;
             // 
             // ArchiveTransactionsTableAdapter
             // 
@@ -94,7 +95,7 @@
             "2038",
             "2039",
             "2040"});
-            this.comboBoxM.Location = new System.Drawing.Point(266, 29);
+            this.comboBoxM.Location = new System.Drawing.Point(266, 79);
             this.comboBoxM.Name = "comboBoxM";
             this.comboBoxM.Size = new System.Drawing.Size(121, 21);
             this.comboBoxM.TabIndex = 1;
@@ -115,7 +116,7 @@
             "OCTOBER",
             "NOVEMBER",
             "DECEMBER"});
-            this.comboBoxY.Location = new System.Drawing.Point(139, 29);
+            this.comboBoxY.Location = new System.Drawing.Point(139, 79);
             this.comboBoxY.Name = "comboBoxY";
             this.comboBoxY.Size = new System.Drawing.Size(121, 21);
             this.comboBoxY.TabIndex = 2;
@@ -123,14 +124,14 @@
             // comboBoxEmp
             // 
             this.comboBoxEmp.FormattingEnabled = true;
-            this.comboBoxEmp.Location = new System.Drawing.Point(12, 29);
+            this.comboBoxEmp.Location = new System.Drawing.Point(12, 79);
             this.comboBoxEmp.Name = "comboBoxEmp";
             this.comboBoxEmp.Size = new System.Drawing.Size(121, 21);
             this.comboBoxEmp.TabIndex = 3;
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(393, 27);
+            this.btnSearch.Location = new System.Drawing.Point(393, 79);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 4;
@@ -138,11 +139,22 @@
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(393, 23);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 53;
+            this.button1.Text = "<<<  HOME";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // ArchiveTransactions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(802, 401);
+            this.ClientSize = new System.Drawing.Size(826, 401);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.comboBoxEmp);
             this.Controls.Add(this.comboBoxY);
@@ -167,5 +179,6 @@
         private System.Windows.Forms.ComboBox comboBoxY;
         private System.Windows.Forms.ComboBox comboBoxEmp;
         private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button button1;
     }
 }

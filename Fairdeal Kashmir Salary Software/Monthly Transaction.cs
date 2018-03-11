@@ -442,7 +442,7 @@ namespace Fairdeal_Kashmir_Salary_Software
                 txtMPFLS.Text = DS1.Tables[0].Rows[0][10].ToString();
                 txtAAMD.Text = DS1.Tables[0].Rows[0][11].ToString();
 
-                lblPFRem.Text = DS1.Tables[0].Rows[0][9].ToString();
+                labelPFAmtBal.Text = DS1.Tables[0].Rows[0][9].ToString();
                 lblAdvAmtBalance.Text = DS1.Tables[0].Rows[0][8].ToString();
             }
             catch(SqlException Ex)
