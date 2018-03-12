@@ -44,5 +44,12 @@ this.Location = new Point(0, 0);
 
             this.reportViewer1.RefreshReport();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Emp emp1 = new Emp();
+            emp1.Show();
+            this.Hide();
+        }
     }
 }

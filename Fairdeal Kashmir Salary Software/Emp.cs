@@ -39,7 +39,7 @@ namespace Fairdeal_Kashmir_Salary_Software
             textDesignation.DataSource = DSdesg.Tables[0];
             textDesignation.ValueMember = "Designation";
             textDesignation.DisplayMember = "Designation";
-            textDesignation.Text = "--Select--";
+            textDesignation.Text = "";
 
 
 
@@ -509,6 +509,14 @@ namespace Fairdeal_Kashmir_Salary_Software
             {
                 e.Handled = true;
             }
+        }
+
+        private void archivedTransactionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TransactionsArchived AT = new TransactionsArchived();
+            AT.Show();
+            this.Hide();
+
         }
     }
 }

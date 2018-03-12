@@ -96,12 +96,6 @@
     <Reference Include="UIAutomationTypes" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ArchiveTransactions.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ArchiveTransactions.Designer.cs">
-      <DependentUpon>ArchiveTransactions.cs</DependentUpon>
-    </Compile>
     <Compile Include="CompanyInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,10 +109,10 @@
       <DependentUpon>Copy Transactions.cs</DependentUpon>
     </Compile>
     <Compile Include="DataManager.cs" />
-    <Compile Include="DataSetArchive.Designer.cs">
+    <Compile Include="DataSetArch.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetArchive.xsd</DependentUpon>
+      <DependentUpon>DataSetArch.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSetBill.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -189,9 +183,12 @@
     <Compile Include="SalaryBill.Designer.cs">
       <DependentUpon>SalaryBill.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ArchiveTransactions.resx">
-      <DependentUpon>ArchiveTransactions.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="TransactionsArchived.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransactionsArchived.Designer.cs">
+      <DependentUpon>TransactionsArchived.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CompanyInfo.resx">
       <DependentUpon>CompanyInfo.cs</DependentUpon>
     </EmbeddedResource>
@@ -236,16 +233,19 @@
     <EmbeddedResource Include="SalaryBill.resx">
       <DependentUpon>SalaryBill.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="DataSetArchive.xsc">
-      <DependentUpon>DataSetArchive.xsd</DependentUpon>
+    <EmbeddedResource Include="TransactionsArchived.resx">
+      <DependentUpon>TransactionsArchived.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="DataSetArch.xsc">
+      <DependentUpon>DataSetArch.xsd</DependentUpon>
     </None>
-    <None Include="DataSetArchive.xsd">
+    <None Include="DataSetArch.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetArchive.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataSetArch.Designer.cs</LastGenOutput>
     </None>
-    <None Include="DataSetArchive.xss">
-      <DependentUpon>DataSetArchive.xsd</DependentUpon>
+    <None Include="DataSetArch.xss">
+      <DependentUpon>DataSetArch.xsd</DependentUpon>
     </None>
     <None Include="DataSetBill.xsc">
       <DependentUpon>DataSetBill.xsd</DependentUpon>
@@ -332,7 +332,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Image\643-643-3032-tata-final-logo-opt.ico" />
+    <Content Include="Image\643-643-3032-tata-final-logo-opt.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="MetroFramework.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

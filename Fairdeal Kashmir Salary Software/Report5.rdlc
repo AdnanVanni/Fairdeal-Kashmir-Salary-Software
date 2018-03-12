@@ -6,19 +6,16 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.28125in</Width>
+              <Width>1in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.5in</Width>
+              <Width>1in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.73958in</Width>
+              <Width>1in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.59375in</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>1.28125in</Width>
+              <Width>1.30208in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1in</Width>
@@ -31,9 +28,6 @@
             </TablixColumn>
             <TablixColumn>
               <Width>1in</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>1.38542in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1in</Width>
@@ -58,42 +52,6 @@
             <TablixRow>
               <Height>0.25in</Height>
               <TablixCells>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox2">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Employee Id</Value>
-                              <Style>
-                                <FontFamily>Tahoma</FontFamily>
-                                <FontSize>11pt</FontSize>
-                                <FontWeight>Bold</FontWeight>
-                                <Color>White</Color>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox2</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>#7292cc</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <BackgroundColor>#4c68a2</BackgroundColor>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Textbox3">
@@ -283,7 +241,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Advance Loan Balance</Value>
+                              <Value>Adv Loan Balance</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -319,7 +277,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Advance Loan Sub</Value>
+                              <Value>Adv Loan Sub</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -391,7 +349,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Conv/Allowance</Value>
+                              <Value>Conv</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -463,7 +421,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Benefits</Value>
+                              <Value>Absent Days</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -499,7 +457,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Absent Days</Value>
+                              <Value>Actual Salary</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -535,7 +493,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Actual Salary</Value>
+                              <Value>Net Salary</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -560,7 +518,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -572,7 +529,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Net Salary</Value>
+                              <Value>Memo</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -599,80 +556,11 @@
                     </Textbox>
                   </CellContents>
                 </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox31">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Memo</Value>
-                              <Style>
-                                <FontFamily>Tahoma</FontFamily>
-                                <FontSize>11pt</FontSize>
-                                <FontWeight>Bold</FontWeight>
-                                <Color>White</Color>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox31</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>#7292cc</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <BackgroundColor>#4c68a2</BackgroundColor>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
               </TablixCells>
             </TablixRow>
             <TablixRow>
               <Height>0.25in</Height>
               <TablixCells>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="EmployeeId">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Sum(Fields!EmployeeId.Value)</Value>
-                              <Style>
-                                <FontFamily>Tahoma</FontFamily>
-                                <Color>#4d4d4d</Color>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>EmployeeId</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>#e5e5e5</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="EmployeeName">
@@ -784,6 +672,7 @@
                               <Value>=Sum(Fields!PfLoanBalance.Value)</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
+                                <Format>0;(0)</Format>
                                 <Color>#4d4d4d</Color>
                               </Style>
                             </TextRun>
@@ -817,6 +706,7 @@
                               <Value>=Sum(Fields!PfSub.Value)</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
+                                <Format>0;(0)</Format>
                                 <Color>#4d4d4d</Color>
                               </Style>
                             </TextRun>
@@ -949,6 +839,7 @@
                               <Value>=Sum(Fields!Conv.Value)</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
+                                <Format>0;(0)</Format>
                                 <Color>#4d4d4d</Color>
                               </Style>
                             </TextRun>
@@ -990,39 +881,6 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>FINE</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>#e5e5e5</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Benefits">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Sum(Fields!Benefits.Value)</Value>
-                              <Style>
-                                <FontFamily>Tahoma</FontFamily>
-                                <Color>#4d4d4d</Color>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Benefits</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>#e5e5e5</Color>
@@ -1114,6 +972,7 @@
                               <Value>=Sum(Fields!NetSalary.Value)</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
+                                <Format>0;(0)</Format>
                                 <Color>#4d4d4d</Color>
                               </Style>
                             </TextRun>
@@ -1188,8 +1047,6 @@
             <TablixMember />
             <TablixMember />
             <TablixMember />
-            <TablixMember />
-            <TablixMember />
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
@@ -1204,7 +1061,7 @@
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
         <Height>0.5in</Height>
-        <Width>16.78125in</Width>
+        <Width>14.30208in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1215,7 +1072,7 @@
     <Height>2in</Height>
     <Style />
   </Body>
-  <Width>16.78125in</Width>
+  <Width>15in</Width>
   <Page>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>
@@ -1225,18 +1082,18 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="DataSetArchive">
+    <DataSource Name="DataSetArch">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>30a670e4-4371-471a-b65b-72214193c4fc</rd:DataSourceID>
+      <rd:DataSourceID>13e6af89-e5bc-41ea-8851-ecbec04c34e5</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="DataSet1">
       <Query>
-        <DataSourceName>DataSetArchive</DataSourceName>
+        <DataSourceName>DataSetArch</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -1284,10 +1141,6 @@
           <DataField>FINE</DataField>
           <rd:TypeName>System.Single</rd:TypeName>
         </Field>
-        <Field Name="Benefits">
-          <DataField>Benefits</DataField>
-          <rd:TypeName>System.Single</rd:TypeName>
-        </Field>
         <Field Name="AbsentDays">
           <DataField>AbsentDays</DataField>
           <rd:TypeName>System.Single</rd:TypeName>
@@ -1306,15 +1159,15 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>DataSetArchive</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\A\documents\visual studio 2015\Projects\Fairdeal Kashmir Salary Software\Fairdeal Kashmir Salary Software\DataSetArchive.xsd</rd:SchemaPath>
-        <rd:TableName>ArchiveTransactions</rd:TableName>
+        <rd:DataSetName>DataSetArch</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\A\documents\visual studio 2015\Projects\Fairdeal Kashmir Salary Software\Fairdeal Kashmir Salary Software\DataSetArch.xsd</rd:SchemaPath>
+        <rd:TableName>arch</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>ArchiveTransactionsTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>archTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
-  <rd:ReportID>11fb5308-ed7e-4f71-b476-c386adf56595</rd:ReportID>
+  <rd:ReportID>88211156-d099-4274-981d-d96f5677fd52</rd:ReportID>
 </Report>

@@ -20,17 +20,17 @@ namespace Fairdeal_Kashmir_Salary_Software {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("DataSetArchive")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DataSetArch")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class DataSetArchive : global::System.Data.DataSet {
+    public partial class DataSetArch : global::System.Data.DataSet {
         
-        private ArchiveTransactionsDataTable tableArchiveTransactions;
+        private archDataTable tablearch;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public DataSetArchive() {
+        public DataSetArch() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace Fairdeal_Kashmir_Salary_Software {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected DataSetArchive(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected DataSetArch(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace Fairdeal_Kashmir_Salary_Software {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["ArchiveTransactions"] != null)) {
-                    base.Tables.Add(new ArchiveTransactionsDataTable(ds.Tables["ArchiveTransactions"]));
+                if ((ds.Tables["arch"] != null)) {
+                    base.Tables.Add(new archDataTable(ds.Tables["arch"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace Fairdeal_Kashmir_Salary_Software {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public ArchiveTransactionsDataTable ArchiveTransactions {
+        public archDataTable arch {
             get {
-                return this.tableArchiveTransactions;
+                return this.tablearch;
             }
         }
         
@@ -127,7 +127,7 @@ namespace Fairdeal_Kashmir_Salary_Software {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            DataSetArchive cln = ((DataSetArchive)(base.Clone()));
+            DataSetArch cln = ((DataSetArch)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace Fairdeal_Kashmir_Salary_Software {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["ArchiveTransactions"] != null)) {
-                    base.Tables.Add(new ArchiveTransactionsDataTable(ds.Tables["ArchiveTransactions"]));
+                if ((ds.Tables["arch"] != null)) {
+                    base.Tables.Add(new archDataTable(ds.Tables["arch"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace Fairdeal_Kashmir_Salary_Software {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableArchiveTransactions = ((ArchiveTransactionsDataTable)(base.Tables["ArchiveTransactions"]));
+            this.tablearch = ((archDataTable)(base.Tables["arch"]));
             if ((initTable == true)) {
-                if ((this.tableArchiveTransactions != null)) {
-                    this.tableArchiveTransactions.InitVars();
+                if ((this.tablearch != null)) {
+                    this.tablearch.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace Fairdeal_Kashmir_Salary_Software {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "DataSetArchive";
+            this.DataSetName = "DataSetArch";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/DataSetArchive.xsd";
+            this.Namespace = "http://tempuri.org/DataSetArch.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableArchiveTransactions = new ArchiveTransactionsDataTable();
-            base.Tables.Add(this.tableArchiveTransactions);
+            this.tablearch = new archDataTable();
+            base.Tables.Add(this.tablearch);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeArchiveTransactions() {
+        private bool ShouldSerializearch() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace Fairdeal_Kashmir_Salary_Software {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            DataSetArchive ds = new DataSetArchive();
+            DataSetArch ds = new DataSetArch();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,14 +270,14 @@ namespace Fairdeal_Kashmir_Salary_Software {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void ArchiveTransactionsRowChangeEventHandler(object sender, ArchiveTransactionsRowChangeEvent e);
+        public delegate void archRowChangeEventHandler(object sender, archRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class ArchiveTransactionsDataTable : global::System.Data.TypedTableBase<ArchiveTransactionsRow> {
+        public partial class archDataTable : global::System.Data.TypedTableBase<archRow> {
             
             private global::System.Data.DataColumn columnEmployeeId;
             
@@ -301,8 +301,6 @@ namespace Fairdeal_Kashmir_Salary_Software {
             
             private global::System.Data.DataColumn columnFINE;
             
-            private global::System.Data.DataColumn columnBenefits;
-            
             private global::System.Data.DataColumn columnAbsentDays;
             
             private global::System.Data.DataColumn columnActualSalary;
@@ -313,8 +311,8 @@ namespace Fairdeal_Kashmir_Salary_Software {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ArchiveTransactionsDataTable() {
-                this.TableName = "ArchiveTransactions";
+            public archDataTable() {
+                this.TableName = "arch";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -322,7 +320,7 @@ namespace Fairdeal_Kashmir_Salary_Software {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal ArchiveTransactionsDataTable(global::System.Data.DataTable table) {
+            internal archDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -339,7 +337,7 @@ namespace Fairdeal_Kashmir_Salary_Software {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected ArchiveTransactionsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected archDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -434,14 +432,6 @@ namespace Fairdeal_Kashmir_Salary_Software {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn BenefitsColumn {
-                get {
-                    return this.columnBenefits;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn AbsentDaysColumn {
                 get {
                     return this.columnAbsentDays;
@@ -483,50 +473,34 @@ namespace Fairdeal_Kashmir_Salary_Software {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ArchiveTransactionsRow this[int index] {
+            public archRow this[int index] {
                 get {
-                    return ((ArchiveTransactionsRow)(this.Rows[index]));
+                    return ((archRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event ArchiveTransactionsRowChangeEventHandler ArchiveTransactionsRowChanging;
+            public event archRowChangeEventHandler archRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event ArchiveTransactionsRowChangeEventHandler ArchiveTransactionsRowChanged;
+            public event archRowChangeEventHandler archRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event ArchiveTransactionsRowChangeEventHandler ArchiveTransactionsRowDeleting;
+            public event archRowChangeEventHandler archRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event ArchiveTransactionsRowChangeEventHandler ArchiveTransactionsRowDeleted;
+            public event archRowChangeEventHandler archRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddArchiveTransactionsRow(ArchiveTransactionsRow row) {
+            public void AddarchRow(archRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ArchiveTransactionsRow AddArchiveTransactionsRow(
-                        long EmployeeId, 
-                        string EmployeeName, 
-                        string Month, 
-                        string Year, 
-                        float PfLoanBalance, 
-                        float PfSub, 
-                        float AdvLoanBalance, 
-                        float AdvLoanSub, 
-                        float TDC, 
-                        float Conv, 
-                        float FINE, 
-                        float Benefits, 
-                        float AbsentDays, 
-                        float ActualSalary, 
-                        float NetSalary, 
-                        string Memo) {
-                ArchiveTransactionsRow rowArchiveTransactionsRow = ((ArchiveTransactionsRow)(this.NewRow()));
+            public archRow AddarchRow(long EmployeeId, string EmployeeName, string Month, string Year, float PfLoanBalance, float PfSub, float AdvLoanBalance, float AdvLoanSub, float TDC, float Conv, float FINE, float AbsentDays, float ActualSalary, float NetSalary, string Memo) {
+                archRow rowarchRow = ((archRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         EmployeeId,
                         EmployeeName,
@@ -539,20 +513,19 @@ namespace Fairdeal_Kashmir_Salary_Software {
                         TDC,
                         Conv,
                         FINE,
-                        Benefits,
                         AbsentDays,
                         ActualSalary,
                         NetSalary,
                         Memo};
-                rowArchiveTransactionsRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowArchiveTransactionsRow);
-                return rowArchiveTransactionsRow;
+                rowarchRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowarchRow);
+                return rowarchRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                ArchiveTransactionsDataTable cln = ((ArchiveTransactionsDataTable)(base.Clone()));
+                archDataTable cln = ((archDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -560,7 +533,7 @@ namespace Fairdeal_Kashmir_Salary_Software {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new ArchiveTransactionsDataTable();
+                return new archDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -577,7 +550,6 @@ namespace Fairdeal_Kashmir_Salary_Software {
                 this.columnTDC = base.Columns["TDC"];
                 this.columnConv = base.Columns["Conv"];
                 this.columnFINE = base.Columns["FINE"];
-                this.columnBenefits = base.Columns["Benefits"];
                 this.columnAbsentDays = base.Columns["AbsentDays"];
                 this.columnActualSalary = base.Columns["ActualSalary"];
                 this.columnNetSalary = base.Columns["NetSalary"];
@@ -609,8 +581,6 @@ namespace Fairdeal_Kashmir_Salary_Software {
                 base.Columns.Add(this.columnConv);
                 this.columnFINE = new global::System.Data.DataColumn("FINE", typeof(float), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFINE);
-                this.columnBenefits = new global::System.Data.DataColumn("Benefits", typeof(float), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBenefits);
                 this.columnAbsentDays = new global::System.Data.DataColumn("AbsentDays", typeof(float), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAbsentDays);
                 this.columnActualSalary = new global::System.Data.DataColumn("ActualSalary", typeof(float), null, global::System.Data.MappingType.Element);
@@ -627,28 +597,28 @@ namespace Fairdeal_Kashmir_Salary_Software {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ArchiveTransactionsRow NewArchiveTransactionsRow() {
-                return ((ArchiveTransactionsRow)(this.NewRow()));
+            public archRow NewarchRow() {
+                return ((archRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new ArchiveTransactionsRow(builder);
+                return new archRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(ArchiveTransactionsRow);
+                return typeof(archRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.ArchiveTransactionsRowChanged != null)) {
-                    this.ArchiveTransactionsRowChanged(this, new ArchiveTransactionsRowChangeEvent(((ArchiveTransactionsRow)(e.Row)), e.Action));
+                if ((this.archRowChanged != null)) {
+                    this.archRowChanged(this, new archRowChangeEvent(((archRow)(e.Row)), e.Action));
                 }
             }
             
@@ -656,8 +626,8 @@ namespace Fairdeal_Kashmir_Salary_Software {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.ArchiveTransactionsRowChanging != null)) {
-                    this.ArchiveTransactionsRowChanging(this, new ArchiveTransactionsRowChangeEvent(((ArchiveTransactionsRow)(e.Row)), e.Action));
+                if ((this.archRowChanging != null)) {
+                    this.archRowChanging(this, new archRowChangeEvent(((archRow)(e.Row)), e.Action));
                 }
             }
             
@@ -665,8 +635,8 @@ namespace Fairdeal_Kashmir_Salary_Software {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.ArchiveTransactionsRowDeleted != null)) {
-                    this.ArchiveTransactionsRowDeleted(this, new ArchiveTransactionsRowChangeEvent(((ArchiveTransactionsRow)(e.Row)), e.Action));
+                if ((this.archRowDeleted != null)) {
+                    this.archRowDeleted(this, new archRowChangeEvent(((archRow)(e.Row)), e.Action));
                 }
             }
             
@@ -674,14 +644,14 @@ namespace Fairdeal_Kashmir_Salary_Software {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.ArchiveTransactionsRowDeleting != null)) {
-                    this.ArchiveTransactionsRowDeleting(this, new ArchiveTransactionsRowChangeEvent(((ArchiveTransactionsRow)(e.Row)), e.Action));
+                if ((this.archRowDeleting != null)) {
+                    this.archRowDeleting(this, new archRowChangeEvent(((archRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveArchiveTransactionsRow(ArchiveTransactionsRow row) {
+            public void RemovearchRow(archRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -690,7 +660,7 @@ namespace Fairdeal_Kashmir_Salary_Software {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DataSetArchive ds = new DataSetArchive();
+                DataSetArch ds = new DataSetArch();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -708,7 +678,7 @@ namespace Fairdeal_Kashmir_Salary_Software {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "ArchiveTransactionsDataTable";
+                attribute2.FixedValue = "archDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -752,15 +722,15 @@ namespace Fairdeal_Kashmir_Salary_Software {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class ArchiveTransactionsRow : global::System.Data.DataRow {
+        public partial class archRow : global::System.Data.DataRow {
             
-            private ArchiveTransactionsDataTable tableArchiveTransactions;
+            private archDataTable tablearch;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal ArchiveTransactionsRow(global::System.Data.DataRowBuilder rb) : 
+            internal archRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableArchiveTransactions = ((ArchiveTransactionsDataTable)(this.Table));
+                this.tablearch = ((archDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -768,14 +738,14 @@ namespace Fairdeal_Kashmir_Salary_Software {
             public long EmployeeId {
                 get {
                     try {
-                        return ((long)(this[this.tableArchiveTransactions.EmployeeIdColumn]));
+                        return ((long)(this[this.tablearch.EmployeeIdColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'EmployeeId\' in table \'ArchiveTransactions\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'EmployeeId\' in table \'arch\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableArchiveTransactions.EmployeeIdColumn] = value;
+                    this[this.tablearch.EmployeeIdColumn] = value;
                 }
             }
             
@@ -784,14 +754,14 @@ namespace Fairdeal_Kashmir_Salary_Software {
             public string EmployeeName {
                 get {
                     try {
-                        return ((string)(this[this.tableArchiveTransactions.EmployeeNameColumn]));
+                        return ((string)(this[this.tablearch.EmployeeNameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'EmployeeName\' in table \'ArchiveTransactions\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'EmployeeName\' in table \'arch\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableArchiveTransactions.EmployeeNameColumn] = value;
+                    this[this.tablearch.EmployeeNameColumn] = value;
                 }
             }
             
@@ -800,14 +770,14 @@ namespace Fairdeal_Kashmir_Salary_Software {
             public string Month {
                 get {
                     try {
-                        return ((string)(this[this.tableArchiveTransactions.MonthColumn]));
+                        return ((string)(this[this.tablearch.MonthColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Month\' in table \'ArchiveTransactions\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Month\' in table \'arch\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableArchiveTransactions.MonthColumn] = value;
+                    this[this.tablearch.MonthColumn] = value;
                 }
             }
             
@@ -816,14 +786,14 @@ namespace Fairdeal_Kashmir_Salary_Software {
             public string Year {
                 get {
                     try {
-                        return ((string)(this[this.tableArchiveTransactions.YearColumn]));
+                        return ((string)(this[this.tablearch.YearColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Year\' in table \'ArchiveTransactions\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Year\' in table \'arch\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableArchiveTransactions.YearColumn] = value;
+                    this[this.tablearch.YearColumn] = value;
                 }
             }
             
@@ -832,14 +802,14 @@ namespace Fairdeal_Kashmir_Salary_Software {
             public float PfLoanBalance {
                 get {
                     try {
-                        return ((float)(this[this.tableArchiveTransactions.PfLoanBalanceColumn]));
+                        return ((float)(this[this.tablearch.PfLoanBalanceColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PfLoanBalance\' in table \'ArchiveTransactions\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'PfLoanBalance\' in table \'arch\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableArchiveTransactions.PfLoanBalanceColumn] = value;
+                    this[this.tablearch.PfLoanBalanceColumn] = value;
                 }
             }
             
@@ -848,14 +818,14 @@ namespace Fairdeal_Kashmir_Salary_Software {
             public float PfSub {
                 get {
                     try {
-                        return ((float)(this[this.tableArchiveTransactions.PfSubColumn]));
+                        return ((float)(this[this.tablearch.PfSubColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PfSub\' in table \'ArchiveTransactions\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'PfSub\' in table \'arch\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableArchiveTransactions.PfSubColumn] = value;
+                    this[this.tablearch.PfSubColumn] = value;
                 }
             }
             
@@ -864,14 +834,14 @@ namespace Fairdeal_Kashmir_Salary_Software {
             public float AdvLoanBalance {
                 get {
                     try {
-                        return ((float)(this[this.tableArchiveTransactions.AdvLoanBalanceColumn]));
+                        return ((float)(this[this.tablearch.AdvLoanBalanceColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'AdvLoanBalance\' in table \'ArchiveTransactions\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'AdvLoanBalance\' in table \'arch\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableArchiveTransactions.AdvLoanBalanceColumn] = value;
+                    this[this.tablearch.AdvLoanBalanceColumn] = value;
                 }
             }
             
@@ -880,14 +850,14 @@ namespace Fairdeal_Kashmir_Salary_Software {
             public float AdvLoanSub {
                 get {
                     try {
-                        return ((float)(this[this.tableArchiveTransactions.AdvLoanSubColumn]));
+                        return ((float)(this[this.tablearch.AdvLoanSubColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'AdvLoanSub\' in table \'ArchiveTransactions\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'AdvLoanSub\' in table \'arch\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableArchiveTransactions.AdvLoanSubColumn] = value;
+                    this[this.tablearch.AdvLoanSubColumn] = value;
                 }
             }
             
@@ -896,14 +866,14 @@ namespace Fairdeal_Kashmir_Salary_Software {
             public float TDC {
                 get {
                     try {
-                        return ((float)(this[this.tableArchiveTransactions.TDCColumn]));
+                        return ((float)(this[this.tablearch.TDCColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'TDC\' in table \'ArchiveTransactions\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'TDC\' in table \'arch\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableArchiveTransactions.TDCColumn] = value;
+                    this[this.tablearch.TDCColumn] = value;
                 }
             }
             
@@ -912,14 +882,14 @@ namespace Fairdeal_Kashmir_Salary_Software {
             public float Conv {
                 get {
                     try {
-                        return ((float)(this[this.tableArchiveTransactions.ConvColumn]));
+                        return ((float)(this[this.tablearch.ConvColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Conv\' in table \'ArchiveTransactions\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Conv\' in table \'arch\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableArchiveTransactions.ConvColumn] = value;
+                    this[this.tablearch.ConvColumn] = value;
                 }
             }
             
@@ -928,30 +898,14 @@ namespace Fairdeal_Kashmir_Salary_Software {
             public float FINE {
                 get {
                     try {
-                        return ((float)(this[this.tableArchiveTransactions.FINEColumn]));
+                        return ((float)(this[this.tablearch.FINEColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'FINE\' in table \'ArchiveTransactions\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'FINE\' in table \'arch\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableArchiveTransactions.FINEColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public float Benefits {
-                get {
-                    try {
-                        return ((float)(this[this.tableArchiveTransactions.BenefitsColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Benefits\' in table \'ArchiveTransactions\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableArchiveTransactions.BenefitsColumn] = value;
+                    this[this.tablearch.FINEColumn] = value;
                 }
             }
             
@@ -960,14 +914,14 @@ namespace Fairdeal_Kashmir_Salary_Software {
             public float AbsentDays {
                 get {
                     try {
-                        return ((float)(this[this.tableArchiveTransactions.AbsentDaysColumn]));
+                        return ((float)(this[this.tablearch.AbsentDaysColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'AbsentDays\' in table \'ArchiveTransactions\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'AbsentDays\' in table \'arch\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableArchiveTransactions.AbsentDaysColumn] = value;
+                    this[this.tablearch.AbsentDaysColumn] = value;
                 }
             }
             
@@ -976,14 +930,14 @@ namespace Fairdeal_Kashmir_Salary_Software {
             public float ActualSalary {
                 get {
                     try {
-                        return ((float)(this[this.tableArchiveTransactions.ActualSalaryColumn]));
+                        return ((float)(this[this.tablearch.ActualSalaryColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ActualSalary\' in table \'ArchiveTransactions\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ActualSalary\' in table \'arch\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableArchiveTransactions.ActualSalaryColumn] = value;
+                    this[this.tablearch.ActualSalaryColumn] = value;
                 }
             }
             
@@ -992,14 +946,14 @@ namespace Fairdeal_Kashmir_Salary_Software {
             public float NetSalary {
                 get {
                     try {
-                        return ((float)(this[this.tableArchiveTransactions.NetSalaryColumn]));
+                        return ((float)(this[this.tablearch.NetSalaryColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'NetSalary\' in table \'ArchiveTransactions\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'NetSalary\' in table \'arch\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableArchiveTransactions.NetSalaryColumn] = value;
+                    this[this.tablearch.NetSalaryColumn] = value;
                 }
             }
             
@@ -1008,207 +962,195 @@ namespace Fairdeal_Kashmir_Salary_Software {
             public string Memo {
                 get {
                     try {
-                        return ((string)(this[this.tableArchiveTransactions.MemoColumn]));
+                        return ((string)(this[this.tablearch.MemoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Memo\' in table \'ArchiveTransactions\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Memo\' in table \'arch\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableArchiveTransactions.MemoColumn] = value;
+                    this[this.tablearch.MemoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsEmployeeIdNull() {
-                return this.IsNull(this.tableArchiveTransactions.EmployeeIdColumn);
+                return this.IsNull(this.tablearch.EmployeeIdColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetEmployeeIdNull() {
-                this[this.tableArchiveTransactions.EmployeeIdColumn] = global::System.Convert.DBNull;
+                this[this.tablearch.EmployeeIdColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsEmployeeNameNull() {
-                return this.IsNull(this.tableArchiveTransactions.EmployeeNameColumn);
+                return this.IsNull(this.tablearch.EmployeeNameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetEmployeeNameNull() {
-                this[this.tableArchiveTransactions.EmployeeNameColumn] = global::System.Convert.DBNull;
+                this[this.tablearch.EmployeeNameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsMonthNull() {
-                return this.IsNull(this.tableArchiveTransactions.MonthColumn);
+                return this.IsNull(this.tablearch.MonthColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetMonthNull() {
-                this[this.tableArchiveTransactions.MonthColumn] = global::System.Convert.DBNull;
+                this[this.tablearch.MonthColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsYearNull() {
-                return this.IsNull(this.tableArchiveTransactions.YearColumn);
+                return this.IsNull(this.tablearch.YearColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetYearNull() {
-                this[this.tableArchiveTransactions.YearColumn] = global::System.Convert.DBNull;
+                this[this.tablearch.YearColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsPfLoanBalanceNull() {
-                return this.IsNull(this.tableArchiveTransactions.PfLoanBalanceColumn);
+                return this.IsNull(this.tablearch.PfLoanBalanceColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetPfLoanBalanceNull() {
-                this[this.tableArchiveTransactions.PfLoanBalanceColumn] = global::System.Convert.DBNull;
+                this[this.tablearch.PfLoanBalanceColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsPfSubNull() {
-                return this.IsNull(this.tableArchiveTransactions.PfSubColumn);
+                return this.IsNull(this.tablearch.PfSubColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetPfSubNull() {
-                this[this.tableArchiveTransactions.PfSubColumn] = global::System.Convert.DBNull;
+                this[this.tablearch.PfSubColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsAdvLoanBalanceNull() {
-                return this.IsNull(this.tableArchiveTransactions.AdvLoanBalanceColumn);
+                return this.IsNull(this.tablearch.AdvLoanBalanceColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetAdvLoanBalanceNull() {
-                this[this.tableArchiveTransactions.AdvLoanBalanceColumn] = global::System.Convert.DBNull;
+                this[this.tablearch.AdvLoanBalanceColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsAdvLoanSubNull() {
-                return this.IsNull(this.tableArchiveTransactions.AdvLoanSubColumn);
+                return this.IsNull(this.tablearch.AdvLoanSubColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetAdvLoanSubNull() {
-                this[this.tableArchiveTransactions.AdvLoanSubColumn] = global::System.Convert.DBNull;
+                this[this.tablearch.AdvLoanSubColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsTDCNull() {
-                return this.IsNull(this.tableArchiveTransactions.TDCColumn);
+                return this.IsNull(this.tablearch.TDCColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetTDCNull() {
-                this[this.tableArchiveTransactions.TDCColumn] = global::System.Convert.DBNull;
+                this[this.tablearch.TDCColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsConvNull() {
-                return this.IsNull(this.tableArchiveTransactions.ConvColumn);
+                return this.IsNull(this.tablearch.ConvColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetConvNull() {
-                this[this.tableArchiveTransactions.ConvColumn] = global::System.Convert.DBNull;
+                this[this.tablearch.ConvColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsFINENull() {
-                return this.IsNull(this.tableArchiveTransactions.FINEColumn);
+                return this.IsNull(this.tablearch.FINEColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetFINENull() {
-                this[this.tableArchiveTransactions.FINEColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsBenefitsNull() {
-                return this.IsNull(this.tableArchiveTransactions.BenefitsColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetBenefitsNull() {
-                this[this.tableArchiveTransactions.BenefitsColumn] = global::System.Convert.DBNull;
+                this[this.tablearch.FINEColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsAbsentDaysNull() {
-                return this.IsNull(this.tableArchiveTransactions.AbsentDaysColumn);
+                return this.IsNull(this.tablearch.AbsentDaysColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetAbsentDaysNull() {
-                this[this.tableArchiveTransactions.AbsentDaysColumn] = global::System.Convert.DBNull;
+                this[this.tablearch.AbsentDaysColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsActualSalaryNull() {
-                return this.IsNull(this.tableArchiveTransactions.ActualSalaryColumn);
+                return this.IsNull(this.tablearch.ActualSalaryColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetActualSalaryNull() {
-                this[this.tableArchiveTransactions.ActualSalaryColumn] = global::System.Convert.DBNull;
+                this[this.tablearch.ActualSalaryColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsNetSalaryNull() {
-                return this.IsNull(this.tableArchiveTransactions.NetSalaryColumn);
+                return this.IsNull(this.tablearch.NetSalaryColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetNetSalaryNull() {
-                this[this.tableArchiveTransactions.NetSalaryColumn] = global::System.Convert.DBNull;
+                this[this.tablearch.NetSalaryColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsMemoNull() {
-                return this.IsNull(this.tableArchiveTransactions.MemoColumn);
+                return this.IsNull(this.tablearch.MemoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetMemoNull() {
-                this[this.tableArchiveTransactions.MemoColumn] = global::System.Convert.DBNull;
+                this[this.tablearch.MemoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1216,22 +1158,22 @@ namespace Fairdeal_Kashmir_Salary_Software {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class ArchiveTransactionsRowChangeEvent : global::System.EventArgs {
+        public class archRowChangeEvent : global::System.EventArgs {
             
-            private ArchiveTransactionsRow eventRow;
+            private archRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ArchiveTransactionsRowChangeEvent(ArchiveTransactionsRow row, global::System.Data.DataRowAction action) {
+            public archRowChangeEvent(archRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ArchiveTransactionsRow Row {
+            public archRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -1247,7 +1189,7 @@ namespace Fairdeal_Kashmir_Salary_Software {
         }
     }
 }
-namespace Fairdeal_Kashmir_Salary_Software.DataSetArchiveTableAdapters {
+namespace Fairdeal_Kashmir_Salary_Software.DataSetArchTableAdapters {
     
     
     /// <summary>
@@ -1259,7 +1201,7 @@ namespace Fairdeal_Kashmir_Salary_Software.DataSetArchiveTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class ArchiveTransactionsTableAdapter : global::System.ComponentModel.Component {
+    public partial class archTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -1273,7 +1215,7 @@ namespace Fairdeal_Kashmir_Salary_Software.DataSetArchiveTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public ArchiveTransactionsTableAdapter() {
+        public archTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -1370,7 +1312,7 @@ namespace Fairdeal_Kashmir_Salary_Software.DataSetArchiveTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "ArchiveTransactions";
+            tableMapping.DataSetTable = "arch";
             tableMapping.ColumnMappings.Add("EmployeeId", "EmployeeId");
             tableMapping.ColumnMappings.Add("EmployeeName", "EmployeeName");
             tableMapping.ColumnMappings.Add("Month", "Month");
@@ -1382,32 +1324,11 @@ namespace Fairdeal_Kashmir_Salary_Software.DataSetArchiveTableAdapters {
             tableMapping.ColumnMappings.Add("TDC", "TDC");
             tableMapping.ColumnMappings.Add("Conv", "Conv");
             tableMapping.ColumnMappings.Add("FINE", "FINE");
-            tableMapping.ColumnMappings.Add("Benefits", "Benefits");
             tableMapping.ColumnMappings.Add("AbsentDays", "AbsentDays");
             tableMapping.ColumnMappings.Add("ActualSalary", "ActualSalary");
             tableMapping.ColumnMappings.Add("NetSalary", "NetSalary");
             tableMapping.ColumnMappings.Add("Memo", "Memo");
             this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[ArchiveTransactions] ([EmployeeId], [EmployeeName], [Month], [Year], [PfLoanBalance], [PfSub], [AdvLoanBalance], [AdvLoanSub], [TDC], [Conv], [FINE], [Benefits], [AbsentDays], [ActualSalary], [NetSalary], [Memo]) VALUES (@EmployeeId, @EmployeeName, @Month, @Year, @PfLoanBalance, @PfSub, @AdvLoanBalance, @AdvLoanSub, @TDC, @Conv, @FINE, @Benefits, @AbsentDays, @ActualSalary, @NetSalary, @Memo)";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EmployeeId", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmployeeId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EmployeeName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmployeeName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Month", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Month", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Year", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Year", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PfLoanBalance", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PfLoanBalance", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PfSub", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PfSub", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AdvLoanBalance", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AdvLoanBalance", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AdvLoanSub", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AdvLoanSub", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TDC", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TDC", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Conv", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Conv", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FINE", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FINE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Benefits", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Benefits", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AbsentDays", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AbsentDays", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ActualSalary", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ActualSalary", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NetSalary", global::System.Data.SqlDbType.Real, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NetSalary", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Memo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Memo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1423,25 +1344,20 @@ namespace Fairdeal_Kashmir_Salary_Software.DataSetArchiveTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT EmployeeId, EmployeeName, Month, Year, PfLoanBalance, PfSub, AdvLoanBalance, AdvLoanSub, TDC, Conv, FINE, Benefits, AbsentDays, ActualSalary, NetSalary, Memo FROM dbo.ArchiveTransactions where EmployeeName like @NAME and Month like @Month and Year like @Year";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NAME", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "EmployeeName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Month", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Month", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Year", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Year", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].CommandText = "dbo.arch";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Month", global::System.Data.SqlDbType.NVarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Year", global::System.Data.SqlDbType.NVarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NAME", global::System.Data.SqlDbType.NVarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSetArchive.ArchiveTransactionsDataTable dataTable, string NAME, string Month, string Year) {
+        public virtual int Fill(DataSetArch.archDataTable dataTable, string Month, string Year, string NAME) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((NAME == null)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(NAME));
-            }
             if ((Month == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
@@ -1453,6 +1369,12 @@ namespace Fairdeal_Kashmir_Salary_Software.DataSetArchiveTableAdapters {
             }
             else {
                 this.Adapter.SelectCommand.Parameters[2].Value = ((string)(Year));
+            }
+            if ((NAME == null)) {
+                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((string)(NAME));
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1465,14 +1387,8 @@ namespace Fairdeal_Kashmir_Salary_Software.DataSetArchiveTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSetArchive.ArchiveTransactionsDataTable GetData(string NAME, string Month, string Year) {
+        public virtual DataSetArch.archDataTable GetData(string Month, string Year, string NAME) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((NAME == null)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(NAME));
-            }
             if ((Month == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
@@ -1485,171 +1401,15 @@ namespace Fairdeal_Kashmir_Salary_Software.DataSetArchiveTableAdapters {
             else {
                 this.Adapter.SelectCommand.Parameters[2].Value = ((string)(Year));
             }
-            DataSetArchive.ArchiveTransactionsDataTable dataTable = new DataSetArchive.ArchiveTransactionsDataTable();
+            if ((NAME == null)) {
+                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((string)(NAME));
+            }
+            DataSetArch.archDataTable dataTable = new DataSetArch.archDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSetArchive.ArchiveTransactionsDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSetArchive dataSet) {
-            return this.Adapter.Update(dataSet, "ArchiveTransactions");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(
-                    global::System.Nullable<long> EmployeeId, 
-                    string EmployeeName, 
-                    string Month, 
-                    string Year, 
-                    global::System.Nullable<float> PfLoanBalance, 
-                    global::System.Nullable<float> PfSub, 
-                    global::System.Nullable<float> AdvLoanBalance, 
-                    global::System.Nullable<float> AdvLoanSub, 
-                    global::System.Nullable<float> TDC, 
-                    global::System.Nullable<float> Conv, 
-                    global::System.Nullable<float> FINE, 
-                    global::System.Nullable<float> Benefits, 
-                    global::System.Nullable<float> AbsentDays, 
-                    global::System.Nullable<float> ActualSalary, 
-                    global::System.Nullable<float> NetSalary, 
-                    string Memo) {
-            if ((EmployeeId.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((long)(EmployeeId.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            if ((EmployeeName == null)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(EmployeeName));
-            }
-            if ((Month == null)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Month));
-            }
-            if ((Year == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Year));
-            }
-            if ((PfLoanBalance.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((float)(PfLoanBalance.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            if ((PfSub.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((float)(PfSub.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            if ((AdvLoanBalance.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((float)(AdvLoanBalance.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            if ((AdvLoanSub.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((float)(AdvLoanSub.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            if ((TDC.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((float)(TDC.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            if ((Conv.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((float)(Conv.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            if ((FINE.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((float)(FINE.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            if ((Benefits.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((float)(Benefits.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            if ((AbsentDays.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[12].Value = ((float)(AbsentDays.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
-            if ((ActualSalary.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[13].Value = ((float)(ActualSalary.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            if ((NetSalary.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[14].Value = ((float)(NetSalary.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            if ((Memo == null)) {
-                this.Adapter.InsertCommand.Parameters[15].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[15].Value = ((string)(Memo));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
         }
     }
     
@@ -1665,8 +1425,6 @@ namespace Fairdeal_Kashmir_Salary_Software.DataSetArchiveTableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
-        private ArchiveTransactionsTableAdapter _archiveTransactionsTableAdapter;
-        
         private bool _backupDataSetBeforeUpdate;
         
         private global::System.Data.IDbConnection _connection;
@@ -1679,20 +1437,6 @@ namespace Fairdeal_Kashmir_Salary_Software.DataSetArchiveTableAdapters {
             }
             set {
                 this._updateOrder = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public ArchiveTransactionsTableAdapter ArchiveTransactionsTableAdapter {
-            get {
-                return this._archiveTransactionsTableAdapter;
-            }
-            set {
-                this._archiveTransactionsTableAdapter = value;
             }
         }
         
@@ -1715,10 +1459,6 @@ namespace Fairdeal_Kashmir_Salary_Software.DataSetArchiveTableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._archiveTransactionsTableAdapter != null) 
-                            && (this._archiveTransactionsTableAdapter.Connection != null))) {
-                    return this._archiveTransactionsTableAdapter.Connection;
-                }
                 return null;
             }
             set {
@@ -1732,9 +1472,6 @@ namespace Fairdeal_Kashmir_Salary_Software.DataSetArchiveTableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._archiveTransactionsTableAdapter != null)) {
-                    count = (count + 1);
-                }
                 return count;
             }
         }
@@ -1744,17 +1481,8 @@ namespace Fairdeal_Kashmir_Salary_Software.DataSetArchiveTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(DataSetArchive dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(DataSetArch dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._archiveTransactionsTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.ArchiveTransactions.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._archiveTransactionsTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             return result;
         }
         
@@ -1763,16 +1491,8 @@ namespace Fairdeal_Kashmir_Salary_Software.DataSetArchiveTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(DataSetArchive dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(DataSetArch dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._archiveTransactionsTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.ArchiveTransactions.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._archiveTransactionsTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             return result;
         }
         
@@ -1781,16 +1501,8 @@ namespace Fairdeal_Kashmir_Salary_Software.DataSetArchiveTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(DataSetArchive dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(DataSetArch dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._archiveTransactionsTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.ArchiveTransactions.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._archiveTransactionsTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             return result;
         }
         
@@ -1823,17 +1535,12 @@ namespace Fairdeal_Kashmir_Salary_Software.DataSetArchiveTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(DataSetArchive dataSet) {
+        public virtual int UpdateAll(DataSetArch dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
-            }
-            if (((this._archiveTransactionsTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._archiveTransactionsTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
-                        "tring.");
             }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
@@ -1867,15 +1574,6 @@ namespace Fairdeal_Kashmir_Salary_Software.DataSetArchiveTableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._archiveTransactionsTableAdapter != null)) {
-                    revertConnections.Add(this._archiveTransactionsTableAdapter, this._archiveTransactionsTableAdapter.Connection);
-                    this._archiveTransactionsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._archiveTransactionsTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._archiveTransactionsTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._archiveTransactionsTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._archiveTransactionsTableAdapter.Adapter);
-                    }
-                }
                 // 
                 //---- Perform updates -----------
                 //
@@ -1933,10 +1631,6 @@ namespace Fairdeal_Kashmir_Salary_Software.DataSetArchiveTableAdapters {
             finally {
                 if (workConnOpened) {
                     workConnection.Close();
-                }
-                if ((this._archiveTransactionsTableAdapter != null)) {
-                    this._archiveTransactionsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._archiveTransactionsTableAdapter]));
-                    this._archiveTransactionsTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

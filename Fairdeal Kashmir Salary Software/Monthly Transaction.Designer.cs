@@ -562,6 +562,7 @@
             this.labelConvAmt.Size = new System.Drawing.Size(35, 13);
             this.labelConvAmt.TabIndex = 60;
             this.labelConvAmt.Text = "label3";
+            this.labelConvAmt.Visible = false;
             // 
             // Monthly_Transaction
             // 

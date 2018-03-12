@@ -91,6 +91,7 @@
             this.textDesignation = new System.Windows.Forms.ComboBox();
             this.textBoxConv = new System.Windows.Forms.TextBox();
             this.lblConvPerMonth = new System.Windows.Forms.Label();
+            this.archivedTransactionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmp)).BeginInit();
             this.SuspendLayout();
@@ -444,7 +445,8 @@
             this.reportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.report1ToolStripMenuItem,
             this.report2ToolStripMenuItem,
-            this.pFReportToolStripMenuItem});
+            this.pFReportToolStripMenuItem,
+            this.archivedTransactionsToolStripMenuItem});
             this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
             this.reportToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.reportToolStripMenuItem.Text = "Reports";
@@ -452,21 +454,21 @@
             // report1ToolStripMenuItem
             // 
             this.report1ToolStripMenuItem.Name = "report1ToolStripMenuItem";
-            this.report1ToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.report1ToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.report1ToolStripMenuItem.Text = "Report1";
             this.report1ToolStripMenuItem.Click += new System.EventHandler(this.report1ToolStripMenuItem_Click);
             // 
             // report2ToolStripMenuItem
             // 
             this.report2ToolStripMenuItem.Name = "report2ToolStripMenuItem";
-            this.report2ToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.report2ToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.report2ToolStripMenuItem.Text = "Report2";
             this.report2ToolStripMenuItem.Click += new System.EventHandler(this.report2ToolStripMenuItem_Click);
             // 
             // pFReportToolStripMenuItem
             // 
             this.pFReportToolStripMenuItem.Name = "pFReportToolStripMenuItem";
-            this.pFReportToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.pFReportToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.pFReportToolStripMenuItem.Text = "PF Report ";
             this.pFReportToolStripMenuItem.Click += new System.EventHandler(this.pFReportToolStripMenuItem_Click);
             // 
@@ -639,6 +641,13 @@
             this.lblConvPerMonth.TabIndex = 52;
             this.lblConvPerMonth.Text = "Allowance per Month";
             // 
+            // archivedTransactionsToolStripMenuItem
+            // 
+            this.archivedTransactionsToolStripMenuItem.Name = "archivedTransactionsToolStripMenuItem";
+            this.archivedTransactionsToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.archivedTransactionsToolStripMenuItem.Text = "Archived Transactions";
+            this.archivedTransactionsToolStripMenuItem.Click += new System.EventHandler(this.archivedTransactionsToolStripMenuItem_Click);
+            // 
             // Emp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -765,6 +774,7 @@
         private System.Windows.Forms.ToolStripMenuItem pFReportToolStripMenuItem;
         private System.Windows.Forms.TextBox textBoxConv;
         private System.Windows.Forms.Label lblConvPerMonth;
+        private System.Windows.Forms.ToolStripMenuItem archivedTransactionsToolStripMenuItem;
     }
 }
 

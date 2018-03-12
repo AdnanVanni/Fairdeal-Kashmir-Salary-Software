@@ -39,5 +39,12 @@ namespace Fairdeal_Kashmir_Salary_Software
             this.reportViewerPF.RefreshReport();
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Emp emp1 = new Emp();
+            emp1.Show();
+            this.Hide();
+        }
     }
 }

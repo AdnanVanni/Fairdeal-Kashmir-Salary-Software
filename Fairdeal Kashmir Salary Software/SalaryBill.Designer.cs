@@ -29,18 +29,29 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.SalaryBillBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DataSetSalaryBill = new Fairdeal_Kashmir_Salary_Software.DataSetSalaryBill();
             this.comboBoxDept = new System.Windows.Forms.ComboBox();
             this.comboBoxM = new System.Windows.Forms.ComboBox();
             this.comboBoxY = new System.Windows.Forms.ComboBox();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.button1 = new System.Windows.Forms.Button();
-            this.DataSetSalaryBill = new Fairdeal_Kashmir_Salary_Software.DataSetSalaryBill();
-            this.SalaryBillBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.SalaryBillTableAdapter = new Fairdeal_Kashmir_Salary_Software.DataSetSalaryBillTableAdapters.SalaryBillTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.DataSetSalaryBill)).BeginInit();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.SalaryBillBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetSalaryBill)).BeginInit();
             this.SuspendLayout();
+            // 
+            // SalaryBillBindingSource
+            // 
+            this.SalaryBillBindingSource.DataMember = "SalaryBill";
+            this.SalaryBillBindingSource.DataSource = this.DataSetSalaryBill;
+            // 
+            // DataSetSalaryBill
+            // 
+            this.DataSetSalaryBill.DataSetName = "DataSetSalaryBill";
+            this.DataSetSalaryBill.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // comboBoxDept
             // 
@@ -105,9 +116,9 @@
             // 
             // reportViewer1
             // 
-            reportDataSource3.Name = "DataSet1";
-            reportDataSource3.Value = this.SalaryBillBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.SalaryBillBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Fairdeal_Kashmir_Salary_Software.Report7.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(24, 112);
             this.reportViewer1.Name = "reportViewer1";
@@ -124,25 +135,26 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // DataSetSalaryBill
-            // 
-            this.DataSetSalaryBill.DataSetName = "DataSetSalaryBill";
-            this.DataSetSalaryBill.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // SalaryBillBindingSource
-            // 
-            this.SalaryBillBindingSource.DataMember = "SalaryBill";
-            this.SalaryBillBindingSource.DataSource = this.DataSetSalaryBill;
-            // 
             // SalaryBillTableAdapter
             // 
             this.SalaryBillTableAdapter.ClearBeforeFill = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(405, 33);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 52;
+            this.button2.Text = "<<<  HOME";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // SalaryBill
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(952, 634);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.comboBoxY);
@@ -151,8 +163,8 @@
             this.Name = "SalaryBill";
             this.Text = "SalaryBill";
             this.Load += new System.EventHandler(this.SalaryBill_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DataSetSalaryBill)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SalaryBillBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetSalaryBill)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -167,5 +179,6 @@
         private System.Windows.Forms.BindingSource SalaryBillBindingSource;
         private DataSetSalaryBill DataSetSalaryBill;
         private DataSetSalaryBillTableAdapters.SalaryBillTableAdapter SalaryBillTableAdapter;
+        private System.Windows.Forms.Button button2;
     }
 }

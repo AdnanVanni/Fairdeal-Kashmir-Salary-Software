@@ -30,16 +30,27 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.PFBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DataSetPFF = new Fairdeal_Kashmir_Salary_Software.DataSetPFF();
             this.comboBoxM = new System.Windows.Forms.ComboBox();
             this.comboBoxY = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.reportViewerPF = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.DataSetPFF = new Fairdeal_Kashmir_Salary_Software.DataSetPFF();
-            this.PFBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.PFTableAdapter = new Fairdeal_Kashmir_Salary_Software.DataSetPFFTableAdapters.PFTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.DataSetPFF)).BeginInit();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PFBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetPFF)).BeginInit();
             this.SuspendLayout();
+            // 
+            // PFBindingSource
+            // 
+            this.PFBindingSource.DataMember = "PF";
+            this.PFBindingSource.DataSource = this.DataSetPFF;
+            // 
+            // DataSetPFF
+            // 
+            this.DataSetPFF.DataSetName = "DataSetPFF";
+            this.DataSetPFF.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // comboBoxM
             // 
@@ -115,25 +126,26 @@
             this.reportViewerPF.Size = new System.Drawing.Size(1327, 544);
             this.reportViewerPF.TabIndex = 4;
             // 
-            // DataSetPFF
-            // 
-            this.DataSetPFF.DataSetName = "DataSetPFF";
-            this.DataSetPFF.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // PFBindingSource
-            // 
-            this.PFBindingSource.DataMember = "PF";
-            this.PFBindingSource.DataSource = this.DataSetPFF;
-            // 
             // PFTableAdapter
             // 
             this.PFTableAdapter.ClearBeforeFill = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(345, 29);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 52;
+            this.button2.Text = "<<<  HOME";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // PfForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1355, 780);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.reportViewerPF);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBoxY);
@@ -141,8 +153,8 @@
             this.Name = "PfForm";
             this.Text = "PfForm";
             this.Load += new System.EventHandler(this.PfForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DataSetPFF)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PFBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetPFF)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -156,5 +168,6 @@
         private System.Windows.Forms.BindingSource PFBindingSource;
         private DataSetPFF DataSetPFF;
         private DataSetPFFTableAdapters.PFTableAdapter PFTableAdapter;
+        private System.Windows.Forms.Button button2;
     }
 }
