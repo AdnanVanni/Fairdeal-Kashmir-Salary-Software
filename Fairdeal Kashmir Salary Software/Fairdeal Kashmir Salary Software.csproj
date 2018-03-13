@@ -335,6 +335,8 @@
     <Content Include="Image\643-643-3032-tata-final-logo-opt.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Image\if_computer_1055084.ico" />
+    <Content Include="Image\if_document_1055071.ico" />
     <Content Include="MetroFramework.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
