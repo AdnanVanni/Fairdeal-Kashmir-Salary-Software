@@ -22,7 +22,7 @@ namespace Fairdeal_Kashmir_Salary_Software
             label3.ForeColor = System.Drawing.Color.Red;
             fillGrid();
             dataGridViewDeptt.Rows[0].Selected = false;
-            btnDelete.Visible = false;
+           // btnDelete.Visible = false;
             
         }
         private void fillGrid()
@@ -49,14 +49,14 @@ namespace Fairdeal_Kashmir_Salary_Software
 
         private void dataGridViewDeptt_SelectionChanged(object sender, EventArgs e)
         {
-            btnDelete.Visible = true;
+          //  btnDelete.Visible = true;
             
             foreach (DataGridViewRow row in dataGridViewDeptt.SelectedRows)
             {
-                btnAdd.Text = "Update";
-                btnDelete.Visible = true;
+               // btnAdd.Text = "Update";
+              //  btnDelete.Visible = true;
 
-                label3.Text = "*Please note that you are updating " + row.Cells[0].Value.ToString() + "'s details";
+               // label3.Text = "*Please note that you are updating " + row.Cells[0].Value.ToString() + "'s details";
                 label3.ForeColor = System.Drawing.Color.Red;
                 txtDName.Text = row.Cells[0].Value.ToString();
                 label2.Text= row.Cells[0].Value.ToString();
@@ -97,11 +97,11 @@ namespace Fairdeal_Kashmir_Salary_Software
                 {
                     cmdd.CommandText = "insert into departments values (@DepartmentName)";
                 }
-                if (btnAdd.Text == "Update")
-                {
-                    cmdd.CommandText = "Update Departments set DepartmentName=@DepartmentName where departmentName=@DN";
+                //if (btnAdd.Text == "Update")
+                //{
+                //    cmdd.CommandText = "Update Departments set DepartmentName=@DepartmentName where departmentName=@DN";
 
-                }
+                //}
                 cmdd.Parameters.AddWithValue("@DepartmentName", txtDName.Text);
                 cmdd.Parameters.AddWithValue("@DN", label2.Text);
                 DataManager.executeNonQuery(cmdd);

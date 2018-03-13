@@ -16,6 +16,7 @@ namespace Fairdeal_Kashmir_Salary_Software
         public bool flagload = false;
         public Monthly_Transaction()
         {
+            
             InitializeComponent();
         }
 
@@ -388,13 +389,11 @@ namespace Fairdeal_Kashmir_Salary_Software
                 double SalaryAbsentExc = Math.Truncate((float)Convert.ToInt32(txtMonthlySalary.Text) * ((float)daysInMonth - (float)Convert.ToInt32(txtAbsent.Text)) / (float)daysInMonth);
                 SalaryAbsentExc = SalaryAbsentExc - a;
                 Net = SalaryAbsentExc;
-
-
-                txtNetSalary.Text = Net.ToString();
+                
 
             }
+            txtNetSalary.Text = Net.ToString();
 
-            
         }
 
         private void txtAbsent_KeyPress(object sender, KeyPressEventArgs e)

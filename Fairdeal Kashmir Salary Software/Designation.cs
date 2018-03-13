@@ -58,21 +58,21 @@ namespace Fairdeal_Kashmir_Salary_Software
 
         private void btnDelete_Click_1(object sender, EventArgs e)
         {
-            try
-            {
-                SqlCommand cmdd = new SqlCommand();
-                cmdd.CommandText = "delete from Designations where Designation=@DesignationName";
-                cmdd.Parameters.AddWithValue("@DesignationName", label2.Text);
-                DataManager.executeNonQuery(cmdd);
-                MessageBox.Show("Delete successful");
-                Designation dep = new Designation();
-                dep.Show();
-                this.Hide();
-            }
-            catch (SqlException Ex)
-            {
-                MessageBox.Show(Ex.Message);
-            }
+            //try
+            //{
+            //    SqlCommand cmdd = new SqlCommand();
+            //    cmdd.CommandText = "delete from Designations where Designation=@DesignationName";
+            //    cmdd.Parameters.AddWithValue("@DesignationName", label2.Text);
+            //    DataManager.executeNonQuery(cmdd);
+            //    MessageBox.Show("Delete successful");
+            //    Designation dep = new Designation();
+            //    dep.Show();
+            //    this.Hide();
+            //}
+            //catch (SqlException Ex)
+            //{
+            //    MessageBox.Show(Ex.Message);
+            //}
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -86,11 +86,11 @@ namespace Fairdeal_Kashmir_Salary_Software
                 {
                     cmdd.CommandText = "insert into designations values (@DesignationName)";
                 }
-                if (btnAdd.Text == "Update")
-                {
-                    cmdd.CommandText = "Update Designations set Designation=@DesignationName where Designation=@DN";
+                //if (btnAdd.Text == "Update")
+                //{
+                //    cmdd.CommandText = "Update Designations set Designation=@DesignationName where Designation=@DN";
 
-                }
+                //}
                 cmdd.Parameters.AddWithValue("@DesignationName", txtDName.Text);
                 cmdd.Parameters.AddWithValue("@DN", label2.Text);
                 DataManager.executeNonQuery(cmdd);
@@ -111,13 +111,13 @@ namespace Fairdeal_Kashmir_Salary_Software
 
             foreach (DataGridViewRow row in dataGridViewDesg.SelectedRows)
             {
-                btnAdd.Text = "Update";
-                btnDelete.Visible = true;
+               // btnAdd.Text = "Update";
+                //btnDelete.Visible = true;
 
-                label3.Text = "*Please note that you are updating " + row.Cells[0].Value.ToString() + "'s details";
-                label3.ForeColor = System.Drawing.Color.Red;
-                txtDName.Text = row.Cells[0].Value.ToString();
-                label2.Text = row.Cells[0].Value.ToString();
+                //label3.Text = "*Please note that you are updating " + row.Cells[0].Value.ToString() + "'s details";
+                //label3.ForeColor = System.Drawing.Color.Red;
+                //txtDName.Text = row.Cells[0].Value.ToString();
+                //label2.Text = row.Cells[0].Value.ToString();
 
 
             }
