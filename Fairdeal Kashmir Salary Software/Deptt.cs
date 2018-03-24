@@ -15,6 +15,7 @@ namespace Fairdeal_Kashmir_Salary_Software
 
         private void Deptt_Load(object sender, EventArgs e)
         {
+            btnDelete.Visible = false;
             this.Location = new Point(0, 0);
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
             label2.Visible = false;
@@ -22,7 +23,7 @@ namespace Fairdeal_Kashmir_Salary_Software
             label3.ForeColor = System.Drawing.Color.Red;
             fillGrid();
             dataGridViewDeptt.Rows[0].Selected = false;
-           // btnDelete.Visible = false;
+            
             
         }
         private void fillGrid()
@@ -30,7 +31,7 @@ namespace Fairdeal_Kashmir_Salary_Software
             try
             {
                 SqlCommand cmdd = new SqlCommand();
-                cmdd.CommandText = "SELECT * FROM Departments";
+                cmdd.CommandText = "SELECT * FROM Departments order by departmentName";
                 SqlConnection connection1 = new SqlConnection(DataManager.connectionString);
                 SqlDataAdapter dataadapter = new SqlDataAdapter(cmdd.CommandText, DataManager.connectionString);
                 connection1.Open();
@@ -49,14 +50,14 @@ namespace Fairdeal_Kashmir_Salary_Software
 
         private void dataGridViewDeptt_SelectionChanged(object sender, EventArgs e)
         {
-          //  btnDelete.Visible = true;
+         
             
             foreach (DataGridViewRow row in dataGridViewDeptt.SelectedRows)
             {
-               // btnAdd.Text = "Update";
-              //  btnDelete.Visible = true;
+               btnAdd.Text = "Update";
+            
 
-               // label3.Text = "*Please note that you are updating " + row.Cells[0].Value.ToString() + "'s details";
+                label3.Text = "*Please note that you are updating " + row.Cells[0].Value.ToString() + "'s details";
                 label3.ForeColor = System.Drawing.Color.Red;
                 txtDName.Text = row.Cells[0].Value.ToString();
                 label2.Text= row.Cells[0].Value.ToString();
@@ -70,14 +71,7 @@ namespace Fairdeal_Kashmir_Salary_Software
         {
             try
             {
-                SqlCommand cmdd = new SqlCommand();
-
-
-                cmdd.CommandText = "delete from Departments where departmentName=@DepartmentName";
-                cmdd.Parameters.AddWithValue("@DepartmentName", label2.Text);
-
-                DataManager.executeNonQuery(cmdd);
-                MessageBox.Show("Delete successful");
+                
                 Deptt dep = new Deptt();
                 dep.Show();
                 this.Hide();
@@ -97,11 +91,12 @@ namespace Fairdeal_Kashmir_Salary_Software
                 {
                     cmdd.CommandText = "insert into departments values (@DepartmentName)";
                 }
-                //if (btnAdd.Text == "Update")
-                //{
-                //    cmdd.CommandText = "Update Departments set DepartmentName=@DepartmentName where departmentName=@DN";
+                if (btnAdd.Text == "Update")
+                {
+                    cmdd.CommandText = @"Update Departments set DepartmentName=@DepartmentName where departmentName=@DN
+                   update employee set Department=@DepartmentName where department=@DN";
 
-                //}
+                }
                 cmdd.Parameters.AddWithValue("@DepartmentName", txtDName.Text);
                 cmdd.Parameters.AddWithValue("@DN", label2.Text);
                 DataManager.executeNonQuery(cmdd);

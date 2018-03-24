@@ -43,7 +43,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(46, 92);
+            this.label1.Location = new System.Drawing.Point(23, 129);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 13);
             this.label1.TabIndex = 2;
@@ -51,14 +51,14 @@
             // 
             // txtDName
             // 
-            this.txtDName.Location = new System.Drawing.Point(156, 122);
+            this.txtDName.Location = new System.Drawing.Point(136, 122);
             this.txtDName.Name = "txtDName";
-            this.txtDName.Size = new System.Drawing.Size(167, 20);
+            this.txtDName.Size = new System.Drawing.Size(246, 20);
             this.txtDName.TabIndex = 11;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(156, 169);
+            this.btnAdd.Location = new System.Drawing.Point(136, 169);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 26);
             this.btnAdd.TabIndex = 13;
@@ -69,12 +69,13 @@
             // dataGridViewDeptt
             // 
             this.dataGridViewDeptt.AllowUserToAddRows = false;
+            this.dataGridViewDeptt.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGridViewDeptt.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridViewDeptt.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewDeptt.Location = new System.Drawing.Point(548, 59);
             this.dataGridViewDeptt.MultiSelect = false;
             this.dataGridViewDeptt.Name = "dataGridViewDeptt";
-            this.dataGridViewDeptt.Size = new System.Drawing.Size(145, 428);
+            this.dataGridViewDeptt.Size = new System.Drawing.Size(283, 428);
             this.dataGridViewDeptt.TabIndex = 14;
             this.dataGridViewDeptt.SelectionChanged += new System.EventHandler(this.dataGridViewDeptt_SelectionChanged);
             // 
@@ -129,7 +130,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(724, 512);
+            this.ClientSize = new System.Drawing.Size(854, 512);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblDep);
             this.Controls.Add(this.label3);

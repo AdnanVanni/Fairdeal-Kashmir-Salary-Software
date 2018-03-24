@@ -27,14 +27,14 @@ namespace Fairdeal_Kashmir_Salary_Software
             label1.Visible = false;
             btnDelete.Visible = false;
             SqlCommand cmdDept = new SqlCommand();
-            cmdDept.CommandText = "SELECT * from Departments";
+            cmdDept.CommandText = "SELECT * from Departments order by departmentName";
             DataSet DSdept =DataManager.executeDataset(cmdDept);
             comboBoxDept.DataSource = DSdept.Tables[0];
             comboBoxDept.ValueMember = "DepartmentName";
             comboBoxDept.DisplayMember = "DepartmentName";
             comboBoxDept.Text = "--Select--";
             SqlCommand cmdDesg = new SqlCommand();
-            cmdDesg.CommandText = "SELECT * from Designations";
+            cmdDesg.CommandText = "SELECT * from Designations order by designation";
             DataSet DSdesg = DataManager.executeDataset(cmdDesg);
             textDesignation.DataSource = DSdesg.Tables[0];
             textDesignation.ValueMember = "Designation";
@@ -50,7 +50,7 @@ namespace Fairdeal_Kashmir_Salary_Software
             try
             {
                 SqlCommand cmdd = new SqlCommand();
-                cmdd.CommandText = "SELECT * FROM Employee";
+                cmdd.CommandText = "SELECT * FROM Employee order by EmpName";
                 SqlConnection connection1 = new SqlConnection(DataManager.connectionString);
                 SqlDataAdapter dataadapter = new SqlDataAdapter(cmdd.CommandText, DataManager.connectionString);
                 DataSet ds1 = new DataSet();
@@ -78,7 +78,7 @@ namespace Fairdeal_Kashmir_Salary_Software
             try
             {
                 SqlCommand cmdd = new SqlCommand();
-                cmdd.CommandText = "SELECT * FROM Employee where empName like '%" + @key + "%'";
+                cmdd.CommandText = "SELECT * FROM Employee where empName like '%" + @key + "%' order by empName";
                 cmdd.Parameters.AddWithValue("@key", key);
                 SqlConnection connection1 = new SqlConnection(DataManager.connectionString);
                 SqlDataAdapter dataadapter = new SqlDataAdapter(cmdd.CommandText, DataManager.connectionString);
@@ -517,6 +517,14 @@ namespace Fairdeal_Kashmir_Salary_Software
             AT.Show();
             this.Hide();
 
+        }
+
+        private void pFLoanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PfLoan PF = new PfLoan();
+            PF.Show();
+            this.Hide();
+            
         }
     }
 }

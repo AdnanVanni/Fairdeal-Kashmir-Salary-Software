@@ -267,7 +267,7 @@
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Fairdeal_Kashmir_Salary_Software.Report3.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(258, 261);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(219, 246);
+            this.reportViewer1.Size = new System.Drawing.Size(238, 246);
             this.reportViewer1.TabIndex = 12;
             // 
             // copyTableAdapter

@@ -34,7 +34,7 @@ namespace Fairdeal_Kashmir_Salary_Software
             Ename.SelectedIndex = -1;
 
             SqlCommand cmd15 = new SqlCommand();
-            cmd15.CommandText = "select EmpName from employee";
+            cmd15.CommandText = "select EmpName from employee order by EmpName ";
             DataSet DS1 = new DataSet();
             DS1 = DataManager.executeDataset(cmd15);
 
@@ -134,7 +134,7 @@ namespace Fairdeal_Kashmir_Salary_Software
             {
                 //saves record in monthly transaction
                 SqlCommand Save = new SqlCommand();
-                Save.CommandText = "INSERT INTO[dbo].[MonthlyTransaction]([Month],[EmployeeId] ,[Year],[TDC],[Fine],[SalaryInHand],[PfMonthly],[Memo],[AdvAmtSub],[PfLoanSub],[TransactionDate],[AbsentDays],[DaysInMonth],[Conv]) VALUES(@Month,@EmployeeId,@Year,@TDC,@Fine,@SalaryInHand,@PfMonthly,@Memo,@AdvAmtSub,@PfLoanSub,GetDate(),@Absent,@days,@Conv)"+"INSERT INTO[dbo].[ArchiveTransactions] values(@EmployeeId, @EmployeeName, @Month, @Year, @PFloanWithdrawn, @PfLoanSub, @AdvanceAmt, @AdvAmtSub, @TDC, @Conv, @Fine, @Absent, @ActualSalary, @SalaryInHand, @Memo)";
+                Save.CommandText = "INSERT INTO[dbo].[MonthlyTransaction]([Month],[EmployeeId] ,[Year],[TDC],[Fine],[SalaryInHand],[PfMonthly],[Memo],[AdvAmtSub],[PfLoanSub],[TransactionDate],[AbsentDays],[DaysInMonth],[Conv]) VALUES(@Month,@EmployeeId,@Year,@TDC,@Fine,@SalaryInHand,@PfMonthly,@Memo,@AdvAmtSub,@PfLoanSub,GetDate(),@Absent,@days,@Conv)"+ "INSERT INTO[dbo].[ArchiveTransactions] values(@EmployeeId, @EmployeeName, @Month, @Year, @PFloanWithdrawn, @PfLoanSub, @AdvanceAmt, @AdvAmtSub, @TDC, @Conv, @Fine, @Absent, @ActualSalary, @SalaryInHand, @Memo)";
 
 
                 Save.Parameters.AddWithValue("@Month", comboBoxMonth.Text);
@@ -445,7 +445,7 @@ namespace Fairdeal_Kashmir_Salary_Software
                 labelConvAmt.Text= DS1.Tables[0].Rows[0][18].ToString();
 
                 labelPFAmtBal.Text = DS1.Tables[0].Rows[0][9].ToString();
-                lblAdvAmtBalance.Text = DS1.Tables[0].Rows[0][18].ToString();
+                lblAdvAmtBalance.Text = DS1.Tables[0].Rows[0][8].ToString();
             }
             catch(SqlException Ex)
             {
@@ -479,12 +479,13 @@ namespace Fairdeal_Kashmir_Salary_Software
             if (dr == DialogResult.Yes)
             {
                 SqlCommand cmdDel = new SqlCommand();
-                cmdDel.CommandText = "Delete from MonthlyTransaction where EmployeeId=@EmployeeId and Month=@Month and Year=@Year";
+                cmdDel.CommandText = @"Delete from MonthlyTransaction where EmployeeId=@EmployeeId and Month=@Month and Year=@Year
+delete from archivetransactions  where EmployeeId=@EmployeeId and Month=@Month and Year=@Year ";
                 cmdDel.Parameters.AddWithValue("@EmployeeId",labelEmpId.Text);
                 cmdDel.Parameters.AddWithValue("@Month", labelMonth.Text);
                 cmdDel.Parameters.AddWithValue("@Year", labelYear.Text);
                 int no= DataManager.executeNonQuery(cmdDel);
-                if(no>1)
+                if(no==1)
                 MessageBox.Show("Deleted successsfully");
                 else
                 MessageBox.Show("Something wrong Occured while performing delete");
@@ -499,7 +500,10 @@ namespace Fairdeal_Kashmir_Salary_Software
             string Month = comboBoxSMonth.Text;
             string Year= comboBoxSYear.Text;
             SqlCommand Fetch = new SqlCommand();
-            Fetch.CommandText = "select MT.Month,MT.Year,E.EmpId,MT.EmployeeId,E.EmpName,E.Department,E.SalaryPerMonth,MT.SalaryInHand,E.AdvanceAmt,E.PFloanWithdrawn,MT.TransactionDate,E.ConvPerMonth FRom Employee E join MonthlyTransaction MT ON E.EmpId=MT.EmployeeId where E.EmpName like '%" + EmpName + "%' and MT.Month Like '%" + Month + "%' and MT.Year like '%" + Year + "%' ORDER BY TRANSACTIONDATE ";
+            Fetch.CommandText = @"select MT.Month,MT.Year,E.EmpId,MT.EmployeeId,E.EmpName,E.Department,
+                E.SalaryPerMonth,MT.SalaryInHand,E.AdvanceAmt,E.PFloanWithdrawn,MT.TransactionDate,
+            E.ConvPerMonth FRom Employee E join MonthlyTransaction MT ON E.EmpId=MT.EmployeeId
+           where E.EmpName like '%" + EmpName + "%' and MT.Month Like '%" + Month + "%' and MT.Year like '%" + Year + "%' ORDER BY TRANSACTIONDATE ";
             try
             {
                 SqlConnection connection1 = new SqlConnection(DataManager.connectionString);

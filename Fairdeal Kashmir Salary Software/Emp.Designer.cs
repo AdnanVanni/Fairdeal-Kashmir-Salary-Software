@@ -72,6 +72,7 @@
             this.report1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.report2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pFReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.archivedTransactionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backupDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridViewEmp = new System.Windows.Forms.DataGridView();
@@ -91,7 +92,9 @@
             this.textDesignation = new System.Windows.Forms.ComboBox();
             this.textBoxConv = new System.Windows.Forms.TextBox();
             this.lblConvPerMonth = new System.Windows.Forms.Label();
-            this.archivedTransactionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox = new System.Windows.Forms.TextBox();
+            this.pFLoanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmp)).BeginInit();
             this.SuspendLayout();
@@ -184,35 +187,35 @@
             this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtName.Location = new System.Drawing.Point(114, 110);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(100, 20);
+            this.txtName.Size = new System.Drawing.Size(172, 20);
             this.txtName.TabIndex = 10;
             // 
             // textParentage
             // 
             this.textParentage.Location = new System.Drawing.Point(114, 147);
             this.textParentage.Name = "textParentage";
-            this.textParentage.Size = new System.Drawing.Size(100, 20);
+            this.textParentage.Size = new System.Drawing.Size(172, 20);
             this.textParentage.TabIndex = 12;
             // 
             // textPhone
             // 
             this.textPhone.Location = new System.Drawing.Point(114, 184);
             this.textPhone.Name = "textPhone";
-            this.textPhone.Size = new System.Drawing.Size(100, 20);
+            this.textPhone.Size = new System.Drawing.Size(172, 20);
             this.textPhone.TabIndex = 13;
             // 
             // textEmail
             // 
             this.textEmail.Location = new System.Drawing.Point(114, 220);
             this.textEmail.Name = "textEmail";
-            this.textEmail.Size = new System.Drawing.Size(100, 20);
+            this.textEmail.Size = new System.Drawing.Size(172, 20);
             this.textEmail.TabIndex = 14;
             // 
             // textResidence
             // 
             this.textResidence.Location = new System.Drawing.Point(114, 254);
             this.textResidence.Name = "textResidence";
-            this.textResidence.Size = new System.Drawing.Size(100, 20);
+            this.textResidence.Size = new System.Drawing.Size(172, 20);
             this.textResidence.TabIndex = 15;
             this.textResidence.TextChanged += new System.EventHandler(this.textResidence_TextChanged);
             // 
@@ -220,7 +223,7 @@
             // 
             this.textAcc.Location = new System.Drawing.Point(390, 426);
             this.textAcc.Name = "textAcc";
-            this.textAcc.Size = new System.Drawing.Size(100, 20);
+            this.textAcc.Size = new System.Drawing.Size(184, 20);
             this.textAcc.TabIndex = 19;
             this.textAcc.TextChanged += new System.EventHandler(this.textAcc_TextChanged);
             // 
@@ -244,7 +247,7 @@
             // labelSalary
             // 
             this.labelSalary.AutoSize = true;
-            this.labelSalary.Location = new System.Drawing.Point(42, 350);
+            this.labelSalary.Location = new System.Drawing.Point(387, 354);
             this.labelSalary.Name = "labelSalary";
             this.labelSalary.Size = new System.Drawing.Size(76, 13);
             this.labelSalary.TabIndex = 24;
@@ -296,9 +299,9 @@
             // 
             // textMonthlySalary
             // 
-            this.textMonthlySalary.Location = new System.Drawing.Point(45, 366);
+            this.textMonthlySalary.Location = new System.Drawing.Point(390, 370);
             this.textMonthlySalary.Name = "textMonthlySalary";
-            this.textMonthlySalary.Size = new System.Drawing.Size(100, 20);
+            this.textMonthlySalary.Size = new System.Drawing.Size(184, 20);
             this.textMonthlySalary.TabIndex = 29;
             this.textMonthlySalary.TextChanged += new System.EventHandler(this.textMonthlySalary_TextChanged);
             this.textMonthlySalary.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textMonthlySalary_KeyPress);
@@ -307,7 +310,7 @@
             // 
             this.textPFLW.Location = new System.Drawing.Point(48, 465);
             this.textPFLW.Name = "textPFLW";
-            this.textPFLW.Size = new System.Drawing.Size(100, 20);
+            this.textPFLW.Size = new System.Drawing.Size(196, 20);
             this.textPFLW.TabIndex = 30;
             this.textPFLW.TextChanged += new System.EventHandler(this.textPFLW_TextChanged);
             this.textPFLW.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textPFLW_KeyPress);
@@ -316,7 +319,7 @@
             // 
             this.textPFMD.Location = new System.Drawing.Point(48, 504);
             this.textPFMD.Name = "textPFMD";
-            this.textPFMD.Size = new System.Drawing.Size(100, 20);
+            this.textPFMD.Size = new System.Drawing.Size(196, 20);
             this.textPFMD.TabIndex = 31;
             this.textPFMD.TextChanged += new System.EventHandler(this.textPFMD_TextChanged);
             this.textPFMD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textPFMD_KeyPress);
@@ -325,7 +328,7 @@
             // 
             this.textAACD.Location = new System.Drawing.Point(390, 465);
             this.textAACD.Name = "textAACD";
-            this.textAACD.Size = new System.Drawing.Size(100, 20);
+            this.textAACD.Size = new System.Drawing.Size(184, 20);
             this.textAACD.TabIndex = 32;
             this.textAACD.TextChanged += new System.EventHandler(this.textAACD_TextChanged);
             this.textAACD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textAACD_KeyPress);
@@ -334,7 +337,7 @@
             // 
             this.textAAMD.Location = new System.Drawing.Point(390, 504);
             this.textAAMD.Name = "textAAMD";
-            this.textAAMD.Size = new System.Drawing.Size(100, 20);
+            this.textAAMD.Size = new System.Drawing.Size(184, 20);
             this.textAAMD.TabIndex = 33;
             this.textAAMD.TextChanged += new System.EventHandler(this.textAAMD_TextChanged);
             this.textAAMD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textAAMD_KeyPress);
@@ -421,7 +424,8 @@
             // 
             this.monthlyTransactionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.createMonthsTransactionToolStripMenuItem,
-            this.copyTransactionsToolStripMenuItem});
+            this.copyTransactionsToolStripMenuItem,
+            this.pFLoanToolStripMenuItem});
             this.monthlyTransactionToolStripMenuItem.Name = "monthlyTransactionToolStripMenuItem";
             this.monthlyTransactionToolStripMenuItem.Size = new System.Drawing.Size(128, 20);
             this.monthlyTransactionToolStripMenuItem.Text = "Monthly Transaction";
@@ -471,6 +475,13 @@
             this.pFReportToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.pFReportToolStripMenuItem.Text = "PF Report ";
             this.pFReportToolStripMenuItem.Click += new System.EventHandler(this.pFReportToolStripMenuItem_Click);
+            // 
+            // archivedTransactionsToolStripMenuItem
+            // 
+            this.archivedTransactionsToolStripMenuItem.Name = "archivedTransactionsToolStripMenuItem";
+            this.archivedTransactionsToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.archivedTransactionsToolStripMenuItem.Text = "Archived Transactions";
+            this.archivedTransactionsToolStripMenuItem.Click += new System.EventHandler(this.archivedTransactionsToolStripMenuItem_Click);
             // 
             // backupToolStripMenuItem
             // 
@@ -532,7 +543,7 @@
             this.comboBoxDept.FormattingEnabled = true;
             this.comboBoxDept.Location = new System.Drawing.Point(390, 289);
             this.comboBoxDept.Name = "comboBoxDept";
-            this.comboBoxDept.Size = new System.Drawing.Size(100, 21);
+            this.comboBoxDept.Size = new System.Drawing.Size(184, 21);
             this.comboBoxDept.TabIndex = 40;
             this.comboBoxDept.SelectedIndexChanged += new System.EventHandler(this.comboBoxDept_SelectedIndexChanged);
             // 
@@ -597,7 +608,7 @@
             // 
             this.txtPFaccNo.Location = new System.Drawing.Point(48, 426);
             this.txtPFaccNo.Name = "txtPFaccNo";
-            this.txtPFaccNo.Size = new System.Drawing.Size(100, 20);
+            this.txtPFaccNo.Size = new System.Drawing.Size(196, 20);
             this.txtPFaccNo.TabIndex = 47;
             // 
             // lblID
@@ -613,7 +624,7 @@
             // 
             this.txtAid.Location = new System.Drawing.Point(390, 110);
             this.txtAid.Name = "txtAid";
-            this.txtAid.Size = new System.Drawing.Size(100, 20);
+            this.txtAid.Size = new System.Drawing.Size(181, 20);
             this.txtAid.TabIndex = 49;
             // 
             // textDesignation
@@ -621,38 +632,56 @@
             this.textDesignation.FormattingEnabled = true;
             this.textDesignation.Location = new System.Drawing.Point(390, 245);
             this.textDesignation.Name = "textDesignation";
-            this.textDesignation.Size = new System.Drawing.Size(100, 21);
+            this.textDesignation.Size = new System.Drawing.Size(184, 21);
             this.textDesignation.TabIndex = 50;
             // 
             // textBoxConv
             // 
-            this.textBoxConv.Location = new System.Drawing.Point(390, 366);
+            this.textBoxConv.Location = new System.Drawing.Point(48, 308);
             this.textBoxConv.Name = "textBoxConv";
-            this.textBoxConv.Size = new System.Drawing.Size(100, 20);
+            this.textBoxConv.Size = new System.Drawing.Size(196, 20);
             this.textBoxConv.TabIndex = 51;
             this.textBoxConv.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxConv_KeyPress);
             // 
             // lblConvPerMonth
             // 
             this.lblConvPerMonth.AutoSize = true;
-            this.lblConvPerMonth.Location = new System.Drawing.Point(387, 350);
+            this.lblConvPerMonth.Location = new System.Drawing.Point(45, 292);
             this.lblConvPerMonth.Name = "lblConvPerMonth";
             this.lblConvPerMonth.Size = new System.Drawing.Size(107, 13);
             this.lblConvPerMonth.TabIndex = 52;
             this.lblConvPerMonth.Text = "Allowance per Month";
             // 
-            // archivedTransactionsToolStripMenuItem
+            // label4
             // 
-            this.archivedTransactionsToolStripMenuItem.Name = "archivedTransactionsToolStripMenuItem";
-            this.archivedTransactionsToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
-            this.archivedTransactionsToolStripMenuItem.Text = "Archived Transactions";
-            this.archivedTransactionsToolStripMenuItem.Click += new System.EventHandler(this.archivedTransactionsToolStripMenuItem_Click);
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(43, 354);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(102, 13);
+            this.label4.TabIndex = 53;
+            this.label4.Text = "PF opening balance";
+            // 
+            // textBox
+            // 
+            this.textBox.Location = new System.Drawing.Point(46, 370);
+            this.textBox.Name = "textBox";
+            this.textBox.Size = new System.Drawing.Size(198, 20);
+            this.textBox.TabIndex = 54;
+            // 
+            // pFLoanToolStripMenuItem
+            // 
+            this.pFLoanToolStripMenuItem.Name = "pFLoanToolStripMenuItem";
+            this.pFLoanToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.pFLoanToolStripMenuItem.Text = "PF Loan";
+            this.pFLoanToolStripMenuItem.Click += new System.EventHandler(this.pFLoanToolStripMenuItem_Click);
             // 
             // Emp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1315, 733);
+            this.Controls.Add(this.textBox);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.lblConvPerMonth);
             this.Controls.Add(this.textBoxConv);
             this.Controls.Add(this.textDesignation);
@@ -775,6 +804,9 @@
         private System.Windows.Forms.TextBox textBoxConv;
         private System.Windows.Forms.Label lblConvPerMonth;
         private System.Windows.Forms.ToolStripMenuItem archivedTransactionsToolStripMenuItem;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox;
+        private System.Windows.Forms.ToolStripMenuItem pFLoanToolStripMenuItem;
     }
 }
 

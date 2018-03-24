@@ -137,7 +137,7 @@
             this.Ename.FormattingEnabled = true;
             this.Ename.Location = new System.Drawing.Point(141, 79);
             this.Ename.Name = "Ename";
-            this.Ename.Size = new System.Drawing.Size(121, 21);
+            this.Ename.Size = new System.Drawing.Size(175, 21);
             this.Ename.TabIndex = 18;
             this.Ename.SelectedIndexChanged += new System.EventHandler(this.Ename_SelectedIndexChanged);
             this.Ename.Click += new System.EventHandler(this.Ename_Click);
@@ -405,13 +405,13 @@
             // 
             this.txtEmpSearch.Location = new System.Drawing.Point(826, 72);
             this.txtEmpSearch.Name = "txtEmpSearch";
-            this.txtEmpSearch.Size = new System.Drawing.Size(121, 20);
+            this.txtEmpSearch.Size = new System.Drawing.Size(129, 20);
             this.txtEmpSearch.TabIndex = 41;
             // 
             // btnSearch
             // 
             this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
-            this.btnSearch.Location = new System.Drawing.Point(946, 72);
+            this.btnSearch.Location = new System.Drawing.Point(953, 72);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(26, 21);
             this.btnSearch.TabIndex = 45;
@@ -450,7 +450,7 @@
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(978, 71);
+            this.btnRefresh.Location = new System.Drawing.Point(990, 70);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(75, 23);
             this.btnRefresh.TabIndex = 49;
