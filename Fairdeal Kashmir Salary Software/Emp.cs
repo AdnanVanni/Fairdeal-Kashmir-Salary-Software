@@ -526,5 +526,12 @@ namespace Fairdeal_Kashmir_Salary_Software
             this.Hide();
             
         }
+
+        private void advanceLoanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AdvLoan ad = new AdvLoan();
+            ad.Show();
+            this.Hide();
+        }
     }
 }

@@ -68,6 +68,7 @@
             this.monthlyTransactionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createMonthsTransactionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.copyTransactionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pFLoanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.report1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.report2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -94,7 +95,7 @@
             this.lblConvPerMonth = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox = new System.Windows.Forms.TextBox();
-            this.pFLoanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.advanceLoanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmp)).BeginInit();
             this.SuspendLayout();
@@ -425,7 +426,8 @@
             this.monthlyTransactionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.createMonthsTransactionToolStripMenuItem,
             this.copyTransactionsToolStripMenuItem,
-            this.pFLoanToolStripMenuItem});
+            this.pFLoanToolStripMenuItem,
+            this.advanceLoanToolStripMenuItem});
             this.monthlyTransactionToolStripMenuItem.Name = "monthlyTransactionToolStripMenuItem";
             this.monthlyTransactionToolStripMenuItem.Size = new System.Drawing.Size(128, 20);
             this.monthlyTransactionToolStripMenuItem.Text = "Monthly Transaction";
@@ -443,6 +445,13 @@
             this.copyTransactionsToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
             this.copyTransactionsToolStripMenuItem.Text = "Copy Transactions";
             this.copyTransactionsToolStripMenuItem.Click += new System.EventHandler(this.copyTransactionsToolStripMenuItem_Click);
+            // 
+            // pFLoanToolStripMenuItem
+            // 
+            this.pFLoanToolStripMenuItem.Name = "pFLoanToolStripMenuItem";
+            this.pFLoanToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.pFLoanToolStripMenuItem.Text = "PF Loan";
+            this.pFLoanToolStripMenuItem.Click += new System.EventHandler(this.pFLoanToolStripMenuItem_Click);
             // 
             // reportToolStripMenuItem
             // 
@@ -668,12 +677,12 @@
             this.textBox.Size = new System.Drawing.Size(198, 20);
             this.textBox.TabIndex = 54;
             // 
-            // pFLoanToolStripMenuItem
+            // advanceLoanToolStripMenuItem
             // 
-            this.pFLoanToolStripMenuItem.Name = "pFLoanToolStripMenuItem";
-            this.pFLoanToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
-            this.pFLoanToolStripMenuItem.Text = "PF Loan";
-            this.pFLoanToolStripMenuItem.Click += new System.EventHandler(this.pFLoanToolStripMenuItem_Click);
+            this.advanceLoanToolStripMenuItem.Name = "advanceLoanToolStripMenuItem";
+            this.advanceLoanToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.advanceLoanToolStripMenuItem.Text = "Advance Loan";
+            this.advanceLoanToolStripMenuItem.Click += new System.EventHandler(this.advanceLoanToolStripMenuItem_Click);
             // 
             // Emp
             // 
@@ -807,6 +816,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox;
         private System.Windows.Forms.ToolStripMenuItem pFLoanToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem advanceLoanToolStripMenuItem;
     }
 }
 

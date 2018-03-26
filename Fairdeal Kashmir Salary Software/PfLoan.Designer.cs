@@ -44,6 +44,7 @@
             this.comboBoxM = new System.Windows.Forms.ComboBox();
             this.comboBoxY = new System.Windows.Forms.ComboBox();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.labelEmp = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMT)).BeginInit();
             this.SuspendLayout();
             // 
@@ -259,11 +260,21 @@
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click_1);
             // 
+            // labelEmp
+            // 
+            this.labelEmp.AutoSize = true;
+            this.labelEmp.Location = new System.Drawing.Point(163, 315);
+            this.labelEmp.Name = "labelEmp";
+            this.labelEmp.Size = new System.Drawing.Size(50, 13);
+            this.labelEmp.TabIndex = 47;
+            this.labelEmp.Text = "labelEmp";
+            // 
             // PfLoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(969, 723);
+            this.Controls.Add(this.labelEmp);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.comboBoxM);
             this.Controls.Add(this.comboBoxY);
@@ -305,5 +316,6 @@
         private System.Windows.Forms.ComboBox comboBoxM;
         private System.Windows.Forms.ComboBox comboBoxY;
         private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Label labelEmp;
     }
 }

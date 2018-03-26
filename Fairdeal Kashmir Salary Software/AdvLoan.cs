@@ -11,15 +11,14 @@ using System.Windows.Forms;
 
 namespace Fairdeal_Kashmir_Salary_Software
 {
-    
-    public partial class PfLoan : MetroFramework.Forms.MetroForm
+    public partial class AdvLoan : MetroFramework.Forms.MetroForm
     {
-        public PfLoan()
+        public AdvLoan()
         {
             InitializeComponent();
         }
 
-        private void PfLoan_Load(object sender, EventArgs e)
+        private void AdvLoan_Load(object sender, EventArgs e)
         {
             this.Location = new Point(0, 0);
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
@@ -44,13 +43,12 @@ namespace Fairdeal_Kashmir_Salary_Software
             comboBoxEmpS.DisplayMember = "EmpName";
             comboBoxEmpS.SelectedItem = null;
             comboBoxEmpS.SelectedText = null;
-           
         }
         void fillGrid()
         {
             SqlCommand Fetch = new SqlCommand();
-            Fetch.CommandText = @"Select E.EmpId,E.EmpName,FV.Value,pf.Flag,Pf.Month,PF.year,PF.PfAmount,PF.TransactionId
-     from Employee E join PfRecords PF on E.EmpId=PF.EId JOIN FlagValues FV ON PF.Flag=FV.FlagN";
+            Fetch.CommandText = @"Select E.EmpId,E.EmpName,FV.Value,pf.Flag,Pf.Month,PF.year,PF.AdvAmount,PF.TransactionId
+     from Employee E join AdvanceRecords PF on E.EmpId=PF.EId JOIN FlagValues FV ON PF.Flag=FV.FlagN";
             //dataGridViewMT.DataSource = DataManager.executeDataset(Fetch);
             SqlConnection connection1 = new SqlConnection(DataManager.connectionString);
             SqlDataAdapter dataadapter = new SqlDataAdapter(Fetch.CommandText, DataManager.connectionString);
@@ -64,9 +62,9 @@ namespace Fairdeal_Kashmir_Salary_Software
             dataGridViewMT.Columns["Transactionid"].Visible = false;
             btnDelete.Visible = false;
         }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
+
             if (comboBoxEmp.Text == string.Empty)
             {
                 MessageBox.Show("Please select Employee's name");
@@ -92,11 +90,12 @@ namespace Fairdeal_Kashmir_Salary_Software
             GetEmp.CommandText = "select EmpId from Employee Where EmpName=@EmpName";
             GetEmp.Parameters.AddWithValue("@EmpName", comboBoxEmp.SelectedValue);
             var empId = DataManager.executeScalar(GetEmp).ToString();
+            
             SqlCommand Save = new SqlCommand();
-            Save.CommandText = @"INSERT INTO PfRecords 
-                                  VALUES(@EmpId, @PfAmount, @Month, @Year, @Flag)";
+            Save.CommandText = @"INSERT INTO AdvanceRecords 
+                                  VALUES(@EmpId, @AdvAmount, @Month, @Year, @Flag)";
             Save.Parameters.AddWithValue("@EmpId", empId);
-            Save.Parameters.AddWithValue("@PfAmount", txtPfLoan.Text);
+            Save.Parameters.AddWithValue("@AdvAmount", txtPfLoan.Text);
             Save.Parameters.AddWithValue("@Month", comboBoxMonth.Text);
             Save.Parameters.AddWithValue("@Year", comboBoxYear.Text);
             Save.Parameters.AddWithValue("@Flag", 0);
@@ -105,7 +104,64 @@ namespace Fairdeal_Kashmir_Salary_Software
             pf.Show();
             this.Hide();
 
+        }
 
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string EmpName = comboBoxEmpS.Text;
+            string Month = comboBoxM.Text;
+            string Year = comboBoxY.Text;
+            SqlCommand Fetch = new SqlCommand();
+            Fetch.CommandText = @"Select E.EmpId,E.EmpName,FV.VALUE,pf.Flag,Pf.Month,PF.year,PF.AdvAmount,PF.Transactionid
+                     from Employee E join AdvanceRecords PF on E.EmpId=PF.EId JOIN FlagValues FV ON PF.Flag=FV.FlagN WHERE E.EmpName 
+                      like '%" + EmpName + "%' AND PF.Month Like '%" + Month + "%' and PF.Year like '%" + Year + "%' ORDER BY TRANSACTIONid ";
+            //dataGridViewMT.DataSource = DataManager.executeDataset(Fetch);
+            SqlConnection connection1 = new SqlConnection(DataManager.connectionString);
+            SqlDataAdapter dataadapter = new SqlDataAdapter(Fetch.CommandText, DataManager.connectionString);
+            DataSet ds1 = new DataSet();
+            dataadapter.Fill(ds1);
+
+            dataGridViewMT.DataSource = ds1.Tables[0].DefaultView;
+
+            dataGridViewMT.Columns["EmpId"].Visible = false;
+            dataGridViewMT.Columns["Transactionid"].Visible = false;
+            btnDelete.Visible = false;
+        }
+
+        private void dataGridViewMT_SelectionChanged(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dataGridViewMT.SelectedRows)
+            {
+
+
+                labelTT.Text = row.Cells[7].Value.ToString();
+                lblEmp.Text= row.Cells[0].Value.ToString();
+                btnDelete.Visible = true;
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Are you sure you want to delete this record.",
+                    "Continue", MessageBoxButtons.YesNo);
+            switch (dr)
+            {
+
+                case DialogResult.No: break;
+
+            }
+            if (dr == DialogResult.Yes)
+            {
+                SqlCommand cmdDel = new SqlCommand();
+                cmdDel.CommandText = @"Delete from AdvanceRecords where transactionid=@id";
+                cmdDel.Parameters.AddWithValue("id", labelTT.Text);
+                int no = DataManager.executeNonQuery(cmdDel);
+                if (no == 1)
+                    MessageBox.Show("Deleted successsfully");
+                else
+                    MessageBox.Show("Something wrong Occured while performing delete");
+                fillGrid();
+            }
         }
 
         private void txtPfLoan_KeyPress(object sender, KeyPressEventArgs e)
@@ -123,71 +179,6 @@ namespace Fairdeal_Kashmir_Salary_Software
                     e.Handled = true;
                 }
             }
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            DialogResult dr = MessageBox.Show("Are you sure you want to delete this record.",
-                     "Continue", MessageBoxButtons.YesNo);
-            switch (dr)
-            {
-
-                case DialogResult.No: break;
-
-            }
-            if (dr == DialogResult.Yes)
-            {
-                SqlCommand cmdDel = new SqlCommand();
-                cmdDel.CommandText = @"Delete from pfrecords where transactionid=@id";
-                cmdDel.Parameters.AddWithValue("id", labelTT.Text);
-                int no = DataManager.executeNonQuery(cmdDel);
-                if (no == 1)
-                    MessageBox.Show("Deleted successsfully");
-                else
-                    MessageBox.Show("Something wrong Occured while performing delete");
-                fillGrid();
-            }
-        }
-
-        private void dataGridViewMT_SelectionChanged(object sender, EventArgs e)
-        {
-            foreach (DataGridViewRow row in dataGridViewMT.SelectedRows)
-            {
-
-               
-                labelTT.Text =  row.Cells[7].Value.ToString();
-                labelEmp.Text= row.Cells[0].Value.ToString();
-
-                btnDelete.Visible = true;
-            }
-        }
-
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-           
-
-        }
-
-        private void btnSearch_Click_1(object sender, EventArgs e)
-        {
-            string EmpName = comboBoxEmpS.Text;
-            string Month = comboBoxM.Text;
-            string Year = comboBoxY.Text;
-            SqlCommand Fetch = new SqlCommand();
-            Fetch.CommandText = @"Select E.EmpId,E.EmpName,FV.Value,pf.Flag,Pf.Month,PF.year,PF.PfAmount,PF.Transactionid from Employee E join PfRecords PF 
-on E.EmpId=PF.EId JOIN FlagValues FV ON PF.Flag=FV.FlagN WHERE E.EmpName like '%" + EmpName + "%' AND PF.Month Like '%" + Month + "%' and PF.Year like '%" + Year + "%' ORDER BY TRANSACTIONid ";
-            //dataGridViewMT.DataSource = DataManager.executeDataset(Fetch);
-            SqlConnection connection1 = new SqlConnection(DataManager.connectionString);
-            SqlDataAdapter dataadapter = new SqlDataAdapter(Fetch.CommandText, DataManager.connectionString);
-            DataSet ds1 = new DataSet();
-            dataadapter.Fill(ds1);
-
-            dataGridViewMT.DataSource = ds1.Tables[0].DefaultView;
-
-            dataGridViewMT.Columns["EmpId"].Visible = false;
-            dataGridViewMT.Columns["Flag"].Visible = false;
-            dataGridViewMT.Columns["Transactionid"].Visible = false;
-            btnDelete.Visible = false;
         }
     }
 }
