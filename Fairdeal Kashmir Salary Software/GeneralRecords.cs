@@ -110,6 +110,12 @@ namespace Fairdeal_Kashmir_Salary_Software
 
 
         }
-     
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            GeneralRecords GR = new GeneralRecords();
+            GR.Show();
+            this.Hide();
+        }
     }
 }

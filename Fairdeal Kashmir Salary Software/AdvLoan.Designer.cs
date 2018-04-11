@@ -222,6 +222,7 @@
             "2029",
             "2030",
             "2031",
+            "2032",
             "2033",
             "2034",
             "2035",
@@ -229,8 +230,7 @@
             "2037",
             "2038",
             "2039",
-            "2040",
-            ""});
+            "2040"});
             this.comboBoxYear.Location = new System.Drawing.Point(218, 152);
             this.comboBoxYear.Name = "comboBoxYear";
             this.comboBoxYear.Size = new System.Drawing.Size(84, 21);
@@ -306,7 +306,7 @@
             this.Controls.Add(this.lblMonth);
             this.Controls.Add(this.comboBoxEmp);
             this.Name = "AdvLoan";
-            this.Text = "AdvLoan";
+            this.Text = "Advance Loan";
             this.Load += new System.EventHandler(this.AdvLoan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMT)).EndInit();
             this.ResumeLayout(false);

@@ -345,7 +345,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(405, 550);
+            this.btnSave.Location = new System.Drawing.Point(326, 550);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 34;
@@ -355,6 +355,7 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
             this.editEmployeeToolStripMenuItem,
@@ -366,14 +367,15 @@
             this.generalRecordsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(20, 60);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1275, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1275, 29);
             this.menuStrip1.TabIndex = 35;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // toolStripMenuItem1
             // 
+            this.toolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(112, 20);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(146, 25);
             this.toolStripMenuItem1.Text = "                               ";
             // 
             // editEmployeeToolStripMenuItem
@@ -381,7 +383,7 @@
             this.editEmployeeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addEmployeeToolStripMenuItem});
             this.editEmployeeToolStripMenuItem.Name = "editEmployeeToolStripMenuItem";
-            this.editEmployeeToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
+            this.editEmployeeToolStripMenuItem.Size = new System.Drawing.Size(74, 25);
             this.editEmployeeToolStripMenuItem.Text = " Employee";
             this.editEmployeeToolStripMenuItem.Click += new System.EventHandler(this.editEmployeeToolStripMenuItem_Click);
             // 
@@ -397,7 +399,7 @@
             this.departmentsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addDepartmentToolStripMenuItem});
             this.departmentsToolStripMenuItem.Name = "departmentsToolStripMenuItem";
-            this.departmentsToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
+            this.departmentsToolStripMenuItem.Size = new System.Drawing.Size(87, 25);
             this.departmentsToolStripMenuItem.Text = "Departments";
             // 
             // addDepartmentToolStripMenuItem
@@ -412,7 +414,7 @@
             this.designationsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addDesignationToolStripMenuItem});
             this.designationsToolStripMenuItem.Name = "designationsToolStripMenuItem";
-            this.designationsToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
+            this.designationsToolStripMenuItem.Size = new System.Drawing.Size(87, 25);
             this.designationsToolStripMenuItem.Text = "Designations";
             // 
             // addDesignationToolStripMenuItem
@@ -430,7 +432,7 @@
             this.pFLoanToolStripMenuItem,
             this.advanceLoanToolStripMenuItem});
             this.monthlyTransactionToolStripMenuItem.Name = "monthlyTransactionToolStripMenuItem";
-            this.monthlyTransactionToolStripMenuItem.Size = new System.Drawing.Size(128, 20);
+            this.monthlyTransactionToolStripMenuItem.Size = new System.Drawing.Size(128, 25);
             this.monthlyTransactionToolStripMenuItem.Text = "Monthly Transaction";
             // 
             // createMonthsTransactionToolStripMenuItem
@@ -469,7 +471,7 @@
             this.pFReportToolStripMenuItem,
             this.archivedTransactionsToolStripMenuItem});
             this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
-            this.reportToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.reportToolStripMenuItem.Size = new System.Drawing.Size(59, 25);
             this.reportToolStripMenuItem.Text = "Reports";
             // 
             // report1ToolStripMenuItem
@@ -506,7 +508,7 @@
             this.backupToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.backupDatabaseToolStripMenuItem});
             this.backupToolStripMenuItem.Name = "backupToolStripMenuItem";
-            this.backupToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
+            this.backupToolStripMenuItem.Size = new System.Drawing.Size(58, 25);
             this.backupToolStripMenuItem.Text = "Backup";
             // 
             // backupDatabaseToolStripMenuItem
@@ -521,7 +523,7 @@
             this.generalRecordsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.generalRecordsToolStripMenuItem1});
             this.generalRecordsToolStripMenuItem.Name = "generalRecordsToolStripMenuItem";
-            this.generalRecordsToolStripMenuItem.Size = new System.Drawing.Size(104, 20);
+            this.generalRecordsToolStripMenuItem.Size = new System.Drawing.Size(104, 25);
             this.generalRecordsToolStripMenuItem.Text = "General Records";
             // 
             // generalRecordsToolStripMenuItem1
@@ -535,11 +537,11 @@
             // 
             this.dataGridViewEmp.AllowUserToAddRows = false;
             this.dataGridViewEmp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewEmp.Location = new System.Drawing.Point(621, 106);
+            this.dataGridViewEmp.Location = new System.Drawing.Point(599, 135);
             this.dataGridViewEmp.MinimumSize = new System.Drawing.Size(400, 400);
             this.dataGridViewEmp.MultiSelect = false;
             this.dataGridViewEmp.Name = "dataGridViewEmp";
-            this.dataGridViewEmp.Size = new System.Drawing.Size(682, 428);
+            this.dataGridViewEmp.Size = new System.Drawing.Size(704, 496);
             this.dataGridViewEmp.TabIndex = 36;
             this.dataGridViewEmp.SelectionChanged += new System.EventHandler(this.dataGridViewEmp_SelectionChanged);
             // 
@@ -553,7 +555,7 @@
             // 
             // txtAddNew
             // 
-            this.txtAddNew.Location = new System.Drawing.Point(496, 550);
+            this.txtAddNew.Location = new System.Drawing.Point(415, 550);
             this.txtAddNew.Name = "txtAddNew";
             this.txtAddNew.Size = new System.Drawing.Size(75, 23);
             this.txtAddNew.TabIndex = 38;
@@ -563,7 +565,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(590, 550);
+            this.btnDelete.Location = new System.Drawing.Point(513, 550);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 39;
@@ -602,7 +604,7 @@
             // 
             // txtSeach
             // 
-            this.txtSeach.Location = new System.Drawing.Point(621, 87);
+            this.txtSeach.Location = new System.Drawing.Point(599, 110);
             this.txtSeach.Name = "txtSeach";
             this.txtSeach.Size = new System.Drawing.Size(100, 20);
             this.txtSeach.TabIndex = 43;
@@ -610,7 +612,7 @@
             // btnSearch
             // 
             this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
-            this.btnSearch.Location = new System.Drawing.Point(718, 86);
+            this.btnSearch.Location = new System.Drawing.Point(705, 109);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(26, 20);
             this.btnSearch.TabIndex = 44;

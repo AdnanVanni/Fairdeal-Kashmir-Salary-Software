@@ -92,6 +92,7 @@
             "2029",
             "2030",
             "2031",
+            "2032",
             "2033",
             "2034",
             "2035",
@@ -144,14 +145,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1355, 780);
+            this.ClientSize = new System.Drawing.Size(1355, 772);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.reportViewerPF);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBoxY);
             this.Controls.Add(this.comboBoxM);
             this.Name = "PfForm";
-            this.Text = "PfForm";
+            this.Text = "PF Form";
             this.Load += new System.EventHandler(this.PfForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PFBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSetPFF)).EndInit();

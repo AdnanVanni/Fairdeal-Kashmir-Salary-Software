@@ -58,6 +58,95 @@ intersect
 										    end) as SumAdv from AdvanceRecords group by EId)P
 										   ON  P.EId=EMPLOYEE.EmpId inner join MonthlyTransaction MT ON Employee.EmpId=mt.EmployeeId where mt.month=@month and mt.year=@year and (MT.AdvAmtSub)<=(Sumadv)
 										   )l)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+INSERT INTO PFRECORDS select Eid,PfAmount,@MonthT,@YearT,Flag from pfrecords where month=@Month and year=@Year AND FLAG<>0 and EId in(
+(select EMPID FROM EMPLOYEE INNER JOIN  (Select EId,Sum(Case Flag
+                                           when '0' then pfamount 
+										   when '1' then -PfAmount
+										   when '2' then 0 end) as 
+										   SumPF from PfRecords group by EId)P
+										   ON  P.EId=EMPLOYEE.EmpId
+										    inner join MonthlyTransaction MT 
+											ON Employee.EmpId=mt.EmployeeId 
+											where
+										    mt.month=@Month and mt.year=@Year and (MT.PfLoanSub)<=(SumPF))
+
+											intersect
+
+	( select empid FROM EMPLOYEE INNER JOIN  (Select EId,Sum(Case Flag
+                                           when '0' then AdvAmount 
+										   when '1' then -advAmount
+										    end) as SumAdv from AdvanceRecords group by EId)P
+										   ON  P.EId=EMPLOYEE.EmpId inner join MonthlyTransaction MT ON Employee.EmpId=mt.EmployeeId where mt.month=@month and mt.year=@year and (MT.AdvAmtSub)<=(Sumadv)
+										 )
+
+										 )
+
+
+											INSERT INTO AdvanceRecords 
+											select Eid,AdvAmount,@MonthT,@YearT,Flag from AdvanceRecords where month=@Month and year=@Year and FLAG<>0 AND EId in
+(select EMPID FROM EMPLOYEE INNER JOIN  (Select EId,Sum(Case Flag
+                                           when '0' then AdvAmount 
+										   when '1' then -AdvAmount
+										   end) as 
+										   Sumadv from AdvanceRecords group by EId)P
+										   ON  P.EId=EMPLOYEE.EmpId
+										    inner join MonthlyTransaction MT 
+											ON Employee.EmpId=mt.EmployeeId 
+											where
+										    mt.month=@Month and mt.year=@Year and (MT.PfLoanSub)<=(Sumadv)
+											INTERSECT
+											
+(select EMPID FROM EMPLOYEE INNER JOIN  (Select EId,Sum(Case Flag
+                                           when '0' then pfamount 
+										   when '1' then -PfAmount
+										   when '2' then 0 end) as 
+										   SumPF from PfRecords group by EId)P
+										   ON  P.EId=EMPLOYEE.EmpId
+										    inner join MonthlyTransaction MT 
+											ON Employee.EmpId=mt.EmployeeId 
+											where
+										    mt.month=@Month and mt.year=@Year and (MT.PfLoanSub)<=(SumPF)))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 						
 
 						
@@ -67,21 +156,21 @@ INSERT INTO [dbo].[ArchiveTransactions]
                     E.AbsentDays, Emp.SalaryPerMonth, SalaryInHand, E.Memo FROM MonthlyTransaction
                      E JOIN Employee Emp on emp.EmpId = e.EmployeeId where e.Month = @Month and E.Year = @Year  and E.EmployeeId in (  select EmpId from(select EmpName,EMPID,	
  SumPF FROM EMPLOYEE INNER JOIN  (Select EId,Sum(Case Flag
-                                           when '0' then -pfamount 
-										   when '1' then PfAmount
+                                           when '0' then pfamount 
+										   when '1' then -PfAmount
 										   when '2' then 0 end) as SumPF from PfRecords group by EId)P
 										   ON  P.EId=EMPLOYEE.EmpId inner join MonthlyTransaction MT ON Employee.EmpId=mt.EmployeeId where
-										    mt.month=@month and mt.year=@year and (MT.PfLoanSub)<=(SumPF))k
+										    mt.month=@Month and mt.year=@Year and (MT.PfLoanSub)<=(SumPF))k
 
 intersect
 
 	 select empid from (select EmpName,EMPID,AdvanceAmt,isnull(P.SumAdv+AdvanceAmt,0) as
 					  Total,P.SumAdv FROM EMPLOYEE INNER JOIN  (Select EId,Sum(Case Flag
-                                           when '0' then -AdvAmount 
-										   when '1' then advAmount
+                                           when '0' then AdvAmount 
+										   when '1' then -advAmount
 										    end) as SumAdv from AdvanceRecords group by EId)P
 										   ON  P.EId=EMPLOYEE.EmpId inner join MonthlyTransaction MT ON Employee.EmpId=mt.EmployeeId
-where mt.month=@month and mt.year=@year and (MT.AdvAmtSub)<=(Sumadv)
+where mt.month=@Month and mt.year=@Year and (MT.AdvAmtSub)<=(Sumadv)
 										   )l)
 						";
 

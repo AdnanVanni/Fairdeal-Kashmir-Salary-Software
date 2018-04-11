@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.SalaryReportsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DataSetReport1 = new Fairdeal_Kashmir_Salary_Software.DataSetReport1();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -54,9 +54,9 @@
             // 
             // reportViewer1
             // 
-            reportDataSource3.Name = "DataSet1";
-            reportDataSource3.Value = this.SalaryReportsBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
+            reportDataSource2.Name = "DataSet1";
+            reportDataSource2.Value = this.SalaryReportsBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Fairdeal_Kashmir_Salary_Software.Report1.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(12, 107);
             this.reportViewer1.Name = "reportViewer1";
@@ -87,6 +87,7 @@
             "2029",
             "2030",
             "2031",
+            "2032",
             "2033",
             "2034",
             "2035",
@@ -135,7 +136,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(391, 22);
+            this.button2.Location = new System.Drawing.Point(410, 28);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 53;

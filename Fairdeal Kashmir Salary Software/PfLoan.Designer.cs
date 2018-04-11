@@ -99,6 +99,7 @@
             "2029",
             "2030",
             "2031",
+            "2032",
             "2033",
             "2034",
             "2035",
@@ -106,8 +107,7 @@
             "2037",
             "2038",
             "2039",
-            "2040",
-            ""});
+            "2040"});
             this.comboBoxYear.Location = new System.Drawing.Point(217, 112);
             this.comboBoxYear.Name = "comboBoxYear";
             this.comboBoxYear.Size = new System.Drawing.Size(84, 21);
@@ -186,6 +186,7 @@
             this.labelTT.Size = new System.Drawing.Size(35, 13);
             this.labelTT.TabIndex = 30;
             this.labelTT.Text = "label1";
+            this.labelTT.Visible = false;
             // 
             // comboBoxEmpS
             // 
@@ -269,6 +270,7 @@
             this.labelEmp.Size = new System.Drawing.Size(50, 13);
             this.labelEmp.TabIndex = 47;
             this.labelEmp.Text = "labelEmp";
+            this.labelEmp.Visible = false;
             // 
             // button1
             // 
@@ -303,7 +305,7 @@
             this.Controls.Add(this.lblMonth);
             this.Controls.Add(this.comboBoxEmp);
             this.Name = "PfLoan";
-            this.Text = "PfLoan";
+            this.Text = "PF Loan";
             this.Load += new System.EventHandler(this.PfLoan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMT)).EndInit();
             this.ResumeLayout(false);

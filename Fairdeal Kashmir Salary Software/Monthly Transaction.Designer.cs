@@ -162,6 +162,7 @@
             "2029",
             "2030",
             "2031",
+            "2032",
             "2033",
             "2034",
             "2035",
@@ -169,8 +170,7 @@
             "2037",
             "2038",
             "2039",
-            "2040",
-            ""});
+            "2040"});
             this.comboBoxYear.Location = new System.Drawing.Point(232, 119);
             this.comboBoxYear.Name = "comboBoxYear";
             this.comboBoxYear.Size = new System.Drawing.Size(84, 21);
