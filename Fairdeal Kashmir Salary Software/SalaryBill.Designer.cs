@@ -122,7 +122,7 @@
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Fairdeal_Kashmir_Salary_Software.Report7.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(24, 112);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(918, 499);
+            this.reportViewer1.Size = new System.Drawing.Size(1194, 570);
             this.reportViewer1.TabIndex = 3;
             // 
             // button1
@@ -153,7 +153,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(952, 634);
+            this.ClientSize = new System.Drawing.Size(1231, 705);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.reportViewer1);

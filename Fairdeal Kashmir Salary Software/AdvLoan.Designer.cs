@@ -45,6 +45,7 @@
             this.comboBoxEmp = new System.Windows.Forms.ComboBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.lblEmp = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMT)).BeginInit();
             this.SuspendLayout();
             // 
@@ -120,6 +121,7 @@
             this.labelTT.Size = new System.Drawing.Size(35, 13);
             this.labelTT.TabIndex = 57;
             this.labelTT.Text = "label1";
+            this.labelTT.Visible = false;
             // 
             // btnSave
             // 
@@ -269,12 +271,24 @@
             this.lblEmp.Size = new System.Drawing.Size(50, 13);
             this.lblEmp.TabIndex = 62;
             this.lblEmp.Text = "labelEmp";
+            this.lblEmp.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(296, 36);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 63;
+            this.button1.Text = "<<<  HOME";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // AdvLoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1017, 557);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblEmp);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.comboBoxM);
@@ -318,5 +332,6 @@
         private System.Windows.Forms.Label lblMonth;
         private System.Windows.Forms.ComboBox comboBoxEmp;
         private System.Windows.Forms.Label lblEmp;
+        private System.Windows.Forms.Button button1;
     }
 }

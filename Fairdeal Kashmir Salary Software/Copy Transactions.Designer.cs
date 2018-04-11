@@ -30,8 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.copyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DataSetCopy = new Fairdeal_Kashmir_Salary_Software.DataSetCopy();
+            this.NotCopiedListBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DataSetCopyNot = new Fairdeal_Kashmir_Salary_Software.DataSetCopyNot();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxMonthFrom = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,10 +49,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.copyTableAdapter = new Fairdeal_Kashmir_Salary_Software.DataSetCopyTableAdapters.copyTableAdapter();
             this.button1 = new System.Windows.Forms.Button();
+            this.reportViewer2 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.copyTableAdapter = new Fairdeal_Kashmir_Salary_Software.DataSetCopyTableAdapters.copyTableAdapter();
+            this.NotCopiedListTableAdapter = new Fairdeal_Kashmir_Salary_Software.DataSetCopyNotTableAdapters.NotCopiedListTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.copyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSetCopy)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NotCopiedListBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetCopyNot)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,6 +69,16 @@
             // 
             this.DataSetCopy.DataSetName = "DataSetCopy";
             this.DataSetCopy.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // NotCopiedListBindingSource
+            // 
+            this.NotCopiedListBindingSource.DataMember = "NotCopiedList";
+            this.NotCopiedListBindingSource.DataSource = this.DataSetCopyNot;
+            // 
+            // DataSetCopyNot
+            // 
+            this.DataSetCopyNot.DataSetName = "DataSetCopyNot";
+            this.DataSetCopyNot.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label1
             // 
@@ -269,10 +286,7 @@
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(238, 246);
             this.reportViewer1.TabIndex = 12;
-            // 
-            // copyTableAdapter
-            // 
-            this.copyTableAdapter.ClearBeforeFill = true;
+            this.reportViewer1.Visible = false;
             // 
             // button1
             // 
@@ -284,11 +298,32 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // reportViewer2
+            // 
+            reportDataSource2.Name = "DataSet1";
+            reportDataSource2.Value = this.NotCopiedListBindingSource;
+            this.reportViewer2.LocalReport.DataSources.Add(reportDataSource2);
+            this.reportViewer2.LocalReport.ReportEmbeddedResource = "Fairdeal_Kashmir_Salary_Software.Report10.rdlc";
+            this.reportViewer2.Location = new System.Drawing.Point(247, 261);
+            this.reportViewer2.Name = "reportViewer2";
+            this.reportViewer2.Size = new System.Drawing.Size(396, 333);
+            this.reportViewer2.TabIndex = 54;
+            this.reportViewer2.Visible = false;
+            // 
+            // copyTableAdapter
+            // 
+            this.copyTableAdapter.ClearBeforeFill = true;
+            // 
+            // NotCopiedListTableAdapter
+            // 
+            this.NotCopiedListTableAdapter.ClearBeforeFill = true;
+            // 
             // Copy_Transactions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(854, 505);
+            this.ClientSize = new System.Drawing.Size(1070, 617);
+            this.Controls.Add(this.reportViewer2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.label6);
@@ -302,6 +337,8 @@
             this.Load += new System.EventHandler(this.Copy_Transactions_Load);
             ((System.ComponentModel.ISupportInitialize)(this.copyBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSetCopy)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NotCopiedListBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetCopyNot)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -329,5 +366,9 @@
         private DataSetCopy DataSetCopy;
         private DataSetCopyTableAdapters.copyTableAdapter copyTableAdapter;
         private System.Windows.Forms.Button button1;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer2;
+        private System.Windows.Forms.BindingSource NotCopiedListBindingSource;
+        private DataSetCopyNot DataSetCopyNot;
+        private DataSetCopyNotTableAdapters.NotCopiedListTableAdapter NotCopiedListTableAdapter;
     }
 }

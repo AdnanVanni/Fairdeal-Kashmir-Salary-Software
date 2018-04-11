@@ -88,7 +88,12 @@ namespace Fairdeal_Kashmir_Salary_Software
                 btnDelete.Visible = false;
             }
             catch (SqlException Ex)
-            { MessageBox.Show(Ex.Message);
+            {
+                if (Ex.Number == 2627)
+                {
+                    MessageBox.Show("You Are Trying To save Duplicate records");
+                }else
+                    MessageBox.Show(Ex.Message);
             }
         
            
@@ -124,17 +129,36 @@ namespace Fairdeal_Kashmir_Salary_Software
 
             //Checks if transaction Can be committed
             SqlCommand Check = new SqlCommand();
-            Check.CommandText = "Select AdvanceAmt,PFloanWithdrawn,SalaryPerMonth from employee where empId=@EmpId";
+            Check.CommandText = @"Select isnull(PFloanWithdrawn,0) from Employee  where empId=@EmpId
+Select isnull(sum(PFAmount),0) from Pfrecords where eId=@EmpId and Flag=0
+Select isnull(sum(PFAmount),0)from Pfrecords where eId=@EmpId and Flag=1
+Select isnull(sum(PFAmount),0) from Pfrecords where eId=@EmpId and Flag=2
+            Select isnull(AdvanceAmt,0) from Employee where empId=@EmpId
+Select isnull(sum(AdvAmount),0) from AdvanceRecords where eId=@EmpId and Flag=0
+Select isnull(sum(AdvAmount),0) from AdvanceRecords where eId=@EmpId and Flag=1";
             Check.Parameters.AddWithValue("@EmpId", empId);
             DataSet dsE= DataManager.executeDataset(Check);
-            var d = dsE.Tables[0].Rows[0][0].ToString();
-            var e5 = dsE.Tables[0].Rows[0][1].ToString();
-           var salary= dsE.Tables[0].Rows[0][2].ToString();
-            if (Convert.ToDouble(dsE.Tables[0].Rows[0][0].ToString()) >= Convert.ToDouble(txtAAMD.Text) && Convert.ToDouble(dsE.Tables[0].Rows[0][1].ToString()) >= Convert.ToDouble(txtMPFLS.Text))
+            var OB = dsE.Tables[0].Rows[0][0].ToString();
+            var Loan= dsE.Tables[1].Rows[0][0].ToString();
+            var refund=dsE.Tables[2].Rows[0][0].ToString();
+            var MonPf = dsE.Tables[3].Rows[0][0].ToString();
+            var OB1 = dsE.Tables[4].Rows[0][0].ToString();
+            var Loan1 = dsE.Tables[5].Rows[0][0].ToString();
+            var refund1 = dsE.Tables[6].Rows[0][0].ToString();
+            Double RemaningPf =   Convert.ToDouble(Loan)- Convert.ToDouble(refund);
+            Double RemaningAdv = Convert.ToDouble(Loan1)-Convert.ToDouble(refund1) ;
+
+          
+            if (RemaningAdv >= Convert.ToDouble(txtAAMD.Text) &&  RemaningPf >= Convert.ToDouble(txtMPFLS.Text))
             {
                 //saves record in monthly transaction
                 SqlCommand Save = new SqlCommand();
-                Save.CommandText = "INSERT INTO[dbo].[MonthlyTransaction]([Month],[EmployeeId] ,[Year],[TDC],[Fine],[SalaryInHand],[PfMonthly],[Memo],[AdvAmtSub],[PfLoanSub],[TransactionDate],[AbsentDays],[DaysInMonth],[Conv]) VALUES(@Month,@EmployeeId,@Year,@TDC,@Fine,@SalaryInHand,@PfMonthly,@Memo,@AdvAmtSub,@PfLoanSub,GetDate(),@Absent,@days,@Conv)"+ "INSERT INTO[dbo].[ArchiveTransactions] values(@EmployeeId, @EmployeeName, @Month, @Year, @PFloanWithdrawn, @PfLoanSub, @AdvanceAmt, @AdvAmtSub, @TDC, @Conv, @Fine, @Absent, @ActualSalary, @SalaryInHand, @Memo)";
+                Save.CommandText = @"INSERT INTO[dbo].[MonthlyTransaction]([Month],[EmployeeId] ,[Year],[TDC],[Fine],[SalaryInHand],[PfMonthly],[Memo],[AdvAmtSub],[PfLoanSub],[TransactionDate],[AbsentDays],[DaysInMonth],[Conv]) 
+VALUES(@Month,@EmployeeId,@Year,@TDC,@Fine,@SalaryInHand,@PfMonthly,@Memo,@AdvAmtSub,@PfLoanSub,GetDate(),@Absent,@days,@Conv) 
+INSERT INTO[dbo].[ArchiveTransactions] values(@EmployeeId, @EmployeeName, @Month, @Year, @PFloanWithdrawn, @PfLoanSub, @AdvanceAmt, @AdvAmtSub, @TDC, @Conv, @Fine, @Absent, @ActualSalary, @SalaryInHand, @Memo)
+                    Insert into PfRecords VALUES(@EmployeeId,@PfLoanSub, @Month, @Year,1) 
+                    Insert into PfRecords VALUES(@EmployeeId,@PfMonthly, @Month, @Year,2)
+                    Insert into AdvanceRecords VALUES(@EmployeeId,@AdvAmtSub, @Month, @Year,1)";
 
 
                 Save.Parameters.AddWithValue("@Month", comboBoxMonth.Text);
@@ -146,8 +170,8 @@ namespace Fairdeal_Kashmir_Salary_Software
                 Save.Parameters.AddWithValue("@Fine", txtFine.Text);
                 Save.Parameters.AddWithValue("@SalaryInHand", txtNetSalary.Text);
                 Save.Parameters.AddWithValue("@Memo", richTextBoxMemo.Text);
-                Save.Parameters.AddWithValue("@PFloanWithdrawn",e5);
-                Save.Parameters.AddWithValue("@AdvanceAmt", d);
+                Save.Parameters.AddWithValue("@PFloanWithdrawn",RemaningPf);
+                Save.Parameters.AddWithValue("@AdvanceAmt",RemaningAdv);
                 Save.Parameters.AddWithValue("@AdvAmtSub", Convert.ToDouble(txtAAMD.Text));
                 Save.Parameters.AddWithValue("@PfLoanSub", Convert.ToDouble(txtMPFLS.Text));
                 Save.Parameters.AddWithValue("@Absent", txtAbsent.Text);
@@ -215,6 +239,7 @@ namespace Fairdeal_Kashmir_Salary_Software
                 if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
                 {
                     e.Handled = true;
+                    
                 }
             }
         }
@@ -439,15 +464,36 @@ namespace Fairdeal_Kashmir_Salary_Software
 
                 DataSet DS1 = DataManager.executeDataset(cmd1);
                 txtMonthlySalary.Text = DS1.Tables[0].Rows[0][5].ToString();
-                txtMPFLS.Text = DS1.Tables[0].Rows[0][10].ToString();
-                txtAAMD.Text = DS1.Tables[0].Rows[0][11].ToString();
+                txtMPFLS.Text = DS1.Tables[0].Rows[0][11].ToString();
+                txtAAMD.Text = DS1.Tables[0].Rows[0][10].ToString();
              textBoxConv.Text=DS1.Tables[0].Rows[0][18].ToString();
                 labelConvAmt.Text= DS1.Tables[0].Rows[0][18].ToString();
+                var empId= DS1.Tables[0].Rows[0][0].ToString();
+                SqlCommand Check = new SqlCommand();
+                Check.CommandText = @"Select isnull(PFloanWithdrawn,0) from Employee  where empId=@EmpId
+Select isnull(sum(PFAmount),0) from Pfrecords where eId=@EmpId and Flag=0
+Select isnull(sum(PFAmount),0)from Pfrecords where eId=@EmpId and Flag=1
+Select isnull(sum(PFAmount),0) from Pfrecords where eId=@EmpId and Flag=2
+            Select isnull(AdvanceAmt,0) from Employee where empId=@EmpId
+Select isnull(sum(AdvAmount),0) from AdvanceRecords where eId=@EmpId and Flag=0
+Select isnull(sum(AdvAmount),0) from AdvanceRecords where eId=@EmpId and Flag=1";
+                Check.Parameters.AddWithValue("@EmpId", empId);
+                DataSet dsE = DataManager.executeDataset(Check);
+                var OB = dsE.Tables[0].Rows[0][0].ToString();
+                var Loan = dsE.Tables[1].Rows[0][0].ToString();
+                var refund = dsE.Tables[2].Rows[0][0].ToString();
+                var MonPf = dsE.Tables[3].Rows[0][0].ToString();
+                var OB1 = dsE.Tables[4].Rows[0][0].ToString();
+                var Loan1 = dsE.Tables[5].Rows[0][0].ToString();
+                var refund1 = dsE.Tables[6].Rows[0][0].ToString();
+                Double RemaningPf = Convert.ToDouble(Loan) - (Convert.ToDouble(refund) );
+                Double RemaningAdv = Convert.ToDouble(Loan1) - Convert.ToDouble(refund1) ;
+                labelPFAmtBal.Text = RemaningPf.ToString();
+                lblAdvAmtBalance.Text = RemaningAdv.ToString();
+                txtNetSalary.Text = "";
 
-                labelPFAmtBal.Text = DS1.Tables[0].Rows[0][9].ToString();
-                lblAdvAmtBalance.Text = DS1.Tables[0].Rows[0][8].ToString();
             }
-            catch(SqlException Ex)
+            catch (SqlException Ex)
             {
                 MessageBox.Show(Ex.Message);
 
@@ -480,12 +526,14 @@ namespace Fairdeal_Kashmir_Salary_Software
             {
                 SqlCommand cmdDel = new SqlCommand();
                 cmdDel.CommandText = @"Delete from MonthlyTransaction where EmployeeId=@EmployeeId and Month=@Month and Year=@Year
-delete from archivetransactions  where EmployeeId=@EmployeeId and Month=@Month and Year=@Year ";
+Delete from PFRecords where EId=@EmployeeId and Month=@Month and Year=@Year and Flag <>0
+Delete from AdvanceRecords where EId=@EmployeeId and Month=@Month and Year=@Year and flag<>0
+delete from archivetransactions  where EmployeeId=@EmployeeId and Month=@Month and Year=@Year";
                 cmdDel.Parameters.AddWithValue("@EmployeeId",labelEmpId.Text);
                 cmdDel.Parameters.AddWithValue("@Month", labelMonth.Text);
                 cmdDel.Parameters.AddWithValue("@Year", labelYear.Text);
                 int no= DataManager.executeNonQuery(cmdDel);
-                if(no==1)
+                if(no>=1)
                 MessageBox.Show("Deleted successsfully");
                 else
                 MessageBox.Show("Something wrong Occured while performing delete");

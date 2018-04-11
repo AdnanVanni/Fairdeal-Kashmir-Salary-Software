@@ -326,6 +326,8 @@ namespace Fairdeal_Kashmir_Salary_Software
                 textAAMD.Text= row.Cells[10].Value.ToString();
                 textDesignation.Text = row.Cells[7].Value.ToString();
                 txtAid.Text= row.Cells[16].Value.ToString();
+                textBoxConv.Text= row.Cells[18].Value.ToString();
+                txtPFaccNo.Text= row.Cells[17].Value.ToString();
 
                 //...
 
@@ -513,9 +515,7 @@ namespace Fairdeal_Kashmir_Salary_Software
 
         private void archivedTransactionsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TransactionsArchived AT = new TransactionsArchived();
-            AT.Show();
-            this.Hide();
+          
 
         }
 
@@ -531,6 +531,13 @@ namespace Fairdeal_Kashmir_Salary_Software
         {
             AdvLoan ad = new AdvLoan();
             ad.Show();
+            this.Hide();
+        }
+
+        private void generalRecordsToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            GeneralRecords gr = new GeneralRecords();
+            gr.Show();
             this.Hide();
         }
     }

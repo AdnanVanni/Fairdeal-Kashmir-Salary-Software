@@ -26,11 +26,22 @@ namespace Fairdeal_Kashmir_Salary_Software.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-U4LB68R\\SQLEXPRESS;Initial Catalog=\"Fairdeal db\";User ID=sa;P" +
-            "assword=sa")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-U4LB68R\\SQLEXPRESS;Initial Catalog=\"Fairdeal db\";Integrated S" +
+            "ecurity=SSPI")]
         public string Fairdeal_dbConnectionString {
             get {
                 return ((string)(this["Fairdeal_dbConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-U4LB68R\\SQLEXPRESS;Initial Catalog=\"Fairdeal db\";Persist Secu" +
+            "rity Info=True;User ID=sa;Password=sa")]
+        public string Fairdeal_dbConnectionString1 {
+            get {
+                return ((string)(this["Fairdeal_dbConnectionString1"]));
             }
         }
     }

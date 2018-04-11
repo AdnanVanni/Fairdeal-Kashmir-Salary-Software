@@ -189,5 +189,12 @@ on E.EmpId=PF.EId JOIN FlagValues FV ON PF.Flag=FV.FlagN WHERE E.EmpName like '%
             dataGridViewMT.Columns["Transactionid"].Visible = false;
             btnDelete.Visible = false;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Emp et = new Emp();
+            et.Show();
+            this.Hide();
+        }
     }
 }

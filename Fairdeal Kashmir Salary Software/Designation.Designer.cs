@@ -69,14 +69,14 @@
             // dataGridViewDesg
             // 
             this.dataGridViewDesg.AllowUserToAddRows = false;
-            this.dataGridViewDesg.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridViewDesg.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGridViewDesg.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridViewDesg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewDesg.GridColor = System.Drawing.SystemColors.ControlLightLight;
             this.dataGridViewDesg.Location = new System.Drawing.Point(529, 53);
             this.dataGridViewDesg.MultiSelect = false;
             this.dataGridViewDesg.Name = "dataGridViewDesg";
-            this.dataGridViewDesg.Size = new System.Drawing.Size(285, 428);
+            this.dataGridViewDesg.Size = new System.Drawing.Size(285, 608);
             this.dataGridViewDesg.TabIndex = 22;
             this.dataGridViewDesg.SelectionChanged += new System.EventHandler(this.dataGridViewDesg_SelectionChanged);
             // 
@@ -130,7 +130,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(985, 459);
+            this.ClientSize = new System.Drawing.Size(985, 780);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.label3);

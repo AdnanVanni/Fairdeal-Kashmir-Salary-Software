@@ -37,7 +37,53 @@ namespace Fairdeal_Kashmir_Salary_Software
                 MessageBox.Show("Select Year");
             }
             SqlCommand Copy = new SqlCommand();
-            Copy.CommandText = "Insert into MonthlyTransaction SELECT @MonthT,E.EmployeeId,@YearT,E.TDC,E.Fine,E.SalaryInHand,E.PfMonthly,E.Memo,E.TransactionDate,E.AdvAmtSub,E.PfLoanSub,E.AbsentDays,E.DaysInMonth,E.Conv FROM MonthlyTransaction E JOIN Employee Emp on emp.EmpId = e.EmployeeId where emp.AdvanceAmt >=e.AdvAmtSub and emp.PFloanWithdrawn >= e.PfLoanSub and e.Month = @Month and Year = @Year"+ " INSERT INTO[dbo].[ArchiveTransactions] SELECT E.EmployeeId, Emp.EmpName, @MonthT, @YearT, emp.PFloanWithdrawn, E.PfLoanSub, emp.AdvanceAmt, e.AdvAmtSub, E.TDC, E.Conv, E.Fine, E.AbsentDays, Emp.SalaryPerMonth, SalaryInHand, E.Memo FROM MonthlyTransaction E JOIN Employee Emp on emp.EmpId = e.EmployeeId where emp.AdvanceAmt >= e.AdvAmtSub and emp.PFloanWithdrawn >= e.PfLoanSub and e.Month = @Month and E.Year = @Year";
+            Copy.CommandText = @"Insert into MonthlyTransaction SELECT @MonthT,E.EmployeeId,@YearT,E.TDC,
+                E.Fine,E.SalaryInHand,E.PfMonthly,E.Memo,E.TransactionDate,E.AdvAmtSub,E.PfLoanSub,
+            E.AbsentDays,E.DaysInMonth,E.Conv FROM MonthlyTransaction E JOIN Employee
+                Emp on emp.EmpId = e.EmployeeId where  e.Month = @Month and
+                Year = @Year and E.EmployeeId in (   select EmpId from(select EmpName,EMPID,	
+ SumPF FROM EMPLOYEE INNER JOIN  (Select EId,Sum(Case Flag
+                                           when '0' then pfamount 
+										   when '1' then -PfAmount
+										   when '2' then 0 end) as SumPF from PfRecords group by EId)P
+										   ON  P.EId=EMPLOYEE.EmpId inner join MonthlyTransaction MT ON Employee.EmpId=mt.EmployeeId where
+										    mt.month=@month and mt.year=@year and (MT.PfLoanSub)<=(SumPF))k
+
+intersect
+
+	 select empid from (select EmpName,EMPID,AdvanceAmt,isnull(P.SumAdv+AdvanceAmt,0) as
+					  Total,P.SumAdv FROM EMPLOYEE INNER JOIN  (Select EId,Sum(Case Flag
+                                           when '0' then AdvAmount 
+										   when '1' then -advAmount
+										    end) as SumAdv from AdvanceRecords group by EId)P
+										   ON  P.EId=EMPLOYEE.EmpId inner join MonthlyTransaction MT ON Employee.EmpId=mt.EmployeeId where mt.month=@month and mt.year=@year and (MT.AdvAmtSub)<=(Sumadv)
+										   )l)
+						
+
+						
+INSERT INTO [dbo].[ArchiveTransactions]
+        SELECT E.EmployeeId, Emp.EmpName, @MonthT, @YearT, emp.PFloanWithdrawn,
+                    E.PfLoanSub, emp.AdvanceAmt, e.AdvAmtSub, E.TDC, E.Conv, E.Fine,
+                    E.AbsentDays, Emp.SalaryPerMonth, SalaryInHand, E.Memo FROM MonthlyTransaction
+                     E JOIN Employee Emp on emp.EmpId = e.EmployeeId where e.Month = @Month and E.Year = @Year  and E.EmployeeId in (  select EmpId from(select EmpName,EMPID,	
+ SumPF FROM EMPLOYEE INNER JOIN  (Select EId,Sum(Case Flag
+                                           when '0' then -pfamount 
+										   when '1' then PfAmount
+										   when '2' then 0 end) as SumPF from PfRecords group by EId)P
+										   ON  P.EId=EMPLOYEE.EmpId inner join MonthlyTransaction MT ON Employee.EmpId=mt.EmployeeId where
+										    mt.month=@month and mt.year=@year and (MT.PfLoanSub)<=(SumPF))k
+
+intersect
+
+	 select empid from (select EmpName,EMPID,AdvanceAmt,isnull(P.SumAdv+AdvanceAmt,0) as
+					  Total,P.SumAdv FROM EMPLOYEE INNER JOIN  (Select EId,Sum(Case Flag
+                                           when '0' then -AdvAmount 
+										   when '1' then advAmount
+										    end) as SumAdv from AdvanceRecords group by EId)P
+										   ON  P.EId=EMPLOYEE.EmpId inner join MonthlyTransaction MT ON Employee.EmpId=mt.EmployeeId
+where mt.month=@month and mt.year=@year and (MT.AdvAmtSub)<=(Sumadv)
+										   )l)
+						";
 
             Copy.Parameters.AddWithValue("@Month", comboBoxMonthFrom.Text);
             Copy.Parameters.AddWithValue("@Year", comboBoxYearFrom.Text);
@@ -52,26 +98,31 @@ namespace Fairdeal_Kashmir_Salary_Software
                     //Your Message
                     MessageBox.Show(Ex.Message); 
             }
-            SqlCommand NotCopied = new SqlCommand();
-            NotCopied.CommandText = "SELECT Emp.EmpName FROM MonthlyTransaction E JOIN Employee Emp on emp.EmpId = e.EmployeeId where (emp.AdvanceAmt < e.AdvAmtSub OR emp.PFloanWithdrawn < e.PfLoanSub) and e.Month = @Month and E.Year = @Year";
-            NotCopied.Parameters.AddWithValue("@Month", comboBoxMonthFrom.SelectedText);
-            NotCopied.Parameters.AddWithValue("@Year", comboBoxYearFrom.SelectedText);
-            try
-            {
-
-               DataSet DSNC = DataManager.executeDataset(NotCopied);
-                listBoxEmployees.DataSource = DSNC.Tables[0];
-            }
-            catch (SqlException Ex)
-            {
-                //Your Message
-                MessageBox.Show(Ex.Message);
-            }
-            listBoxEmployees.DisplayMember = "EmpName";
-
-            listBoxEmployees.ValueMember = "EmpName";
             label4.Visible = true;
-            listBoxEmployees.Visible = true;
+            reportViewer2.Visible = true;
+            // TODO: This line of code loads data into the 'DataSetCopyNot.NotCopiedList' table. You can move, or remove it, as needed.
+            this.NotCopiedListTableAdapter.Fill(this.DataSetCopyNot.NotCopiedList, comboBoxMonthFrom.Text, comboBoxYearFrom.Text);
+            this.reportViewer2.RefreshReport();
+            //SqlCommand NotCopied = new SqlCommand();
+            //NotCopied.CommandText = "SELECT Emp.EmpName FROM MonthlyTransaction E JOIN Employee Emp on emp.EmpId = e.EmployeeId where (emp.AdvanceAmt < e.AdvAmtSub OR emp.PFloanWithdrawn < e.PfLoanSub) and e.Month = @Month and E.Year = @Year";
+            //NotCopied.Parameters.AddWithValue("@Month", comboBoxMonthFrom.SelectedText);
+            //NotCopied.Parameters.AddWithValue("@Year", comboBoxYearFrom.SelectedText);
+            //try
+            //{
+
+            //   DataSet DSNC = DataManager.executeDataset(NotCopied);
+            //    listBoxEmployees.DataSource = DSNC.Tables[0];
+            //}
+            //catch (SqlException Ex)
+            //{
+            //    //Your Message
+            //    MessageBox.Show(Ex.Message);
+            //}
+            //listBoxEmployees.DisplayMember = "EmpName";
+
+            //listBoxEmployees.ValueMember = "EmpName";
+            //label4.Visible = true;
+            //listBoxEmployees.Visible = true;
             //const string sPath = "newhy.txt";
             //System.IO.StreamWriter SaveFile = new System.IO.StreamWriter(sPath);
             ////foreach (object item in listBoxEmployees.Items)
@@ -83,22 +134,25 @@ namespace Fairdeal_Kashmir_Salary_Software
             //    SaveFile.WriteLine(drv.Row[listBoxEmployees.ValueMember].ToString());
             //    //if you want to store all the idexes from your listbox, put them into an array 
             //}
-            reportViewer1.Visible = true;
-            this.copyTableAdapter.Fill(this.DataSetCopy.copy, comboBoxMonthFrom.Text, comboBoxYearFrom.Text);
+            //reportViewer1.Visible = true;
+            //this.copyTableAdapter.Fill(this.DataSetCopy.copy, comboBoxMonthFrom.Text, comboBoxYearFrom.Text);
 
-            this.reportViewer1.RefreshReport();
+            //this.reportViewer1.RefreshReport();
 
         }
 
         private void Copy_Transactions_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'DataSetCopyNot.NotCopiedList' table. You can move, or remove it, as needed.
+            //this.NotCopiedListTableAdapter.Fill(this.DataSetCopyNot.NotCopiedList,comboBoxMonthFrom.Text,comboBoxYearFrom.Text);
             this.Location = new Point(0, 0);
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
 
             label4.Visible = false;
             listBoxEmployees.Visible = false;
             reportViewer1.Visible = false;
-         
+
+            
         }
 
         private void button1_Click(object sender, EventArgs e)

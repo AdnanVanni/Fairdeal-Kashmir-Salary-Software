@@ -117,6 +117,11 @@
       <DependentUpon>Copy Transactions.cs</DependentUpon>
     </Compile>
     <Compile Include="DataManager.cs" />
+    <Compile Include="DataSetAllAdv.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetAllAdv.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetArch.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -131,6 +136,21 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetCopy.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetCopyNot.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetCopyNot.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetGR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetGR.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetPFAllRecords.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetPFAllRecords.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSetPFF.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -164,6 +184,12 @@
     </Compile>
     <Compile Include="Emp.Designer.cs">
       <DependentUpon>Emp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GeneralRecords.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GeneralRecords.Designer.cs">
+      <DependentUpon>GeneralRecords.cs</DependentUpon>
     </Compile>
     <Compile Include="Monthly Transaction.cs">
       <SubType>Form</SubType>
@@ -221,6 +247,9 @@
     <EmbeddedResource Include="Emp.resx">
       <DependentUpon>Emp.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GeneralRecords.resx">
+      <DependentUpon>GeneralRecords.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Monthly Transaction.resx">
       <DependentUpon>Monthly Transaction.cs</DependentUpon>
     </EmbeddedResource>
@@ -241,6 +270,9 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Report10.rdlc" />
+    <EmbeddedResource Include="Report11.rdlc" />
+    <EmbeddedResource Include="Report12.rdlc" />
     <EmbeddedResource Include="Report2.rdlc" />
     <EmbeddedResource Include="Report3.rdlc" />
     <EmbeddedResource Include="Report4.rdlc" />
@@ -248,6 +280,7 @@
     <EmbeddedResource Include="Report6.rdlc" />
     <EmbeddedResource Include="Report7.rdlc" />
     <EmbeddedResource Include="Report8.rdlc" />
+    <EmbeddedResource Include="Report9.rdlc" />
     <EmbeddedResource Include="ReportForm1.resx">
       <DependentUpon>ReportForm1.cs</DependentUpon>
     </EmbeddedResource>
@@ -257,6 +290,17 @@
     <EmbeddedResource Include="TransactionsArchived.resx">
       <DependentUpon>TransactionsArchived.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DataSetAllAdv.xsc">
+      <DependentUpon>DataSetAllAdv.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetAllAdv.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetAllAdv.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetAllAdv.xss">
+      <DependentUpon>DataSetAllAdv.xsd</DependentUpon>
+    </None>
     <None Include="DataSetArch.xsc">
       <DependentUpon>DataSetArch.xsd</DependentUpon>
     </None>
@@ -289,6 +333,39 @@
     </None>
     <None Include="DataSetCopy.xss">
       <DependentUpon>DataSetCopy.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetCopyNot.xsc">
+      <DependentUpon>DataSetCopyNot.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetCopyNot.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetCopyNot.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetCopyNot.xss">
+      <DependentUpon>DataSetCopyNot.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetGR.xsc">
+      <DependentUpon>DataSetGR.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetGR.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetGR.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetGR.xss">
+      <DependentUpon>DataSetGR.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetPFAllRecords.xsc">
+      <DependentUpon>DataSetPFAllRecords.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetPFAllRecords.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetPFAllRecords.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetPFAllRecords.xss">
+      <DependentUpon>DataSetPFAllRecords.xsd</DependentUpon>
     </None>
     <None Include="DataSetPFF.xsc">
       <DependentUpon>DataSetPFF.xsd</DependentUpon>

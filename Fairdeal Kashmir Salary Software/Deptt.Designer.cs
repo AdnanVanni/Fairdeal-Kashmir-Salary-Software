@@ -75,7 +75,7 @@
             this.dataGridViewDeptt.Location = new System.Drawing.Point(548, 59);
             this.dataGridViewDeptt.MultiSelect = false;
             this.dataGridViewDeptt.Name = "dataGridViewDeptt";
-            this.dataGridViewDeptt.Size = new System.Drawing.Size(283, 428);
+            this.dataGridViewDeptt.Size = new System.Drawing.Size(283, 608);
             this.dataGridViewDeptt.TabIndex = 14;
             this.dataGridViewDeptt.SelectionChanged += new System.EventHandler(this.dataGridViewDeptt_SelectionChanged);
             // 
@@ -130,7 +130,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(854, 512);
+            this.ClientSize = new System.Drawing.Size(854, 780);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblDep);
             this.Controls.Add(this.label3);

@@ -69,6 +69,7 @@
             this.createMonthsTransactionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.copyTransactionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pFLoanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.advanceLoanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.report1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.report2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -76,6 +77,8 @@
             this.archivedTransactionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backupDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.generalRecordsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.generalRecordsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridViewEmp = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.txtAddNew = new System.Windows.Forms.Button();
@@ -93,9 +96,6 @@
             this.textDesignation = new System.Windows.Forms.ComboBox();
             this.textBoxConv = new System.Windows.Forms.TextBox();
             this.lblConvPerMonth = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox = new System.Windows.Forms.TextBox();
-            this.advanceLoanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmp)).BeginInit();
             this.SuspendLayout();
@@ -260,9 +260,9 @@
             this.labelPFLoanWithdrawn.AutoSize = true;
             this.labelPFLoanWithdrawn.Location = new System.Drawing.Point(45, 449);
             this.labelPFLoanWithdrawn.Name = "labelPFLoanWithdrawn";
-            this.labelPFLoanWithdrawn.Size = new System.Drawing.Size(101, 13);
+            this.labelPFLoanWithdrawn.Size = new System.Drawing.Size(105, 13);
             this.labelPFLoanWithdrawn.TabIndex = 25;
-            this.labelPFLoanWithdrawn.Text = "PF Loan Withdrawn";
+            this.labelPFLoanWithdrawn.Text = "PF Opening Balance";
             this.labelPFLoanWithdrawn.Click += new System.EventHandler(this.labelPFLoanWithdrawn_Click);
             // 
             // labelPFloanMonthlyDeduction
@@ -280,9 +280,9 @@
             this.labelAdvAmt.AutoSize = true;
             this.labelAdvAmt.Location = new System.Drawing.Point(387, 449);
             this.labelAdvAmt.Name = "labelAdvAmt";
-            this.labelAdvAmt.Size = new System.Drawing.Size(174, 13);
+            this.labelAdvAmt.Size = new System.Drawing.Size(180, 13);
             this.labelAdvAmt.TabIndex = 27;
-            this.labelAdvAmt.Text = "Advanced Amount Current Balance";
+            this.labelAdvAmt.Text = "Advanced Amount Opening Balance";
             this.labelAdvAmt.Click += new System.EventHandler(this.labelAdvAmt_Click);
             // 
             // labelAdvancedMonthlyDeduction
@@ -362,7 +362,8 @@
             this.designationsToolStripMenuItem,
             this.monthlyTransactionToolStripMenuItem,
             this.reportToolStripMenuItem,
-            this.backupToolStripMenuItem});
+            this.backupToolStripMenuItem,
+            this.generalRecordsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(20, 60);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1275, 24);
@@ -453,6 +454,13 @@
             this.pFLoanToolStripMenuItem.Text = "PF Loan";
             this.pFLoanToolStripMenuItem.Click += new System.EventHandler(this.pFLoanToolStripMenuItem_Click);
             // 
+            // advanceLoanToolStripMenuItem
+            // 
+            this.advanceLoanToolStripMenuItem.Name = "advanceLoanToolStripMenuItem";
+            this.advanceLoanToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.advanceLoanToolStripMenuItem.Text = "Advance Loan";
+            this.advanceLoanToolStripMenuItem.Click += new System.EventHandler(this.advanceLoanToolStripMenuItem_Click);
+            // 
             // reportToolStripMenuItem
             // 
             this.reportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -487,6 +495,7 @@
             // 
             // archivedTransactionsToolStripMenuItem
             // 
+            this.archivedTransactionsToolStripMenuItem.Enabled = false;
             this.archivedTransactionsToolStripMenuItem.Name = "archivedTransactionsToolStripMenuItem";
             this.archivedTransactionsToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.archivedTransactionsToolStripMenuItem.Text = "Archived Transactions";
@@ -507,6 +516,21 @@
             this.backupDatabaseToolStripMenuItem.Text = "Backup Database";
             this.backupDatabaseToolStripMenuItem.Click += new System.EventHandler(this.backupDatabaseToolStripMenuItem_Click);
             // 
+            // generalRecordsToolStripMenuItem
+            // 
+            this.generalRecordsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.generalRecordsToolStripMenuItem1});
+            this.generalRecordsToolStripMenuItem.Name = "generalRecordsToolStripMenuItem";
+            this.generalRecordsToolStripMenuItem.Size = new System.Drawing.Size(104, 20);
+            this.generalRecordsToolStripMenuItem.Text = "General Records";
+            // 
+            // generalRecordsToolStripMenuItem1
+            // 
+            this.generalRecordsToolStripMenuItem1.Name = "generalRecordsToolStripMenuItem1";
+            this.generalRecordsToolStripMenuItem1.Size = new System.Drawing.Size(159, 22);
+            this.generalRecordsToolStripMenuItem1.Text = "General Records";
+            this.generalRecordsToolStripMenuItem1.Click += new System.EventHandler(this.generalRecordsToolStripMenuItem1_Click);
+            // 
             // dataGridViewEmp
             // 
             this.dataGridViewEmp.AllowUserToAddRows = false;
@@ -515,7 +539,7 @@
             this.dataGridViewEmp.MinimumSize = new System.Drawing.Size(400, 400);
             this.dataGridViewEmp.MultiSelect = false;
             this.dataGridViewEmp.Name = "dataGridViewEmp";
-            this.dataGridViewEmp.Size = new System.Drawing.Size(682, 418);
+            this.dataGridViewEmp.Size = new System.Drawing.Size(682, 428);
             this.dataGridViewEmp.TabIndex = 36;
             this.dataGridViewEmp.SelectionChanged += new System.EventHandler(this.dataGridViewEmp_SelectionChanged);
             // 
@@ -646,7 +670,7 @@
             // 
             // textBoxConv
             // 
-            this.textBoxConv.Location = new System.Drawing.Point(48, 308);
+            this.textBoxConv.Location = new System.Drawing.Point(46, 370);
             this.textBoxConv.Name = "textBoxConv";
             this.textBoxConv.Size = new System.Drawing.Size(196, 20);
             this.textBoxConv.TabIndex = 51;
@@ -655,42 +679,17 @@
             // lblConvPerMonth
             // 
             this.lblConvPerMonth.AutoSize = true;
-            this.lblConvPerMonth.Location = new System.Drawing.Point(45, 292);
+            this.lblConvPerMonth.Location = new System.Drawing.Point(45, 354);
             this.lblConvPerMonth.Name = "lblConvPerMonth";
             this.lblConvPerMonth.Size = new System.Drawing.Size(107, 13);
             this.lblConvPerMonth.TabIndex = 52;
             this.lblConvPerMonth.Text = "Allowance per Month";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(43, 354);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(102, 13);
-            this.label4.TabIndex = 53;
-            this.label4.Text = "PF opening balance";
-            // 
-            // textBox
-            // 
-            this.textBox.Location = new System.Drawing.Point(46, 370);
-            this.textBox.Name = "textBox";
-            this.textBox.Size = new System.Drawing.Size(198, 20);
-            this.textBox.TabIndex = 54;
-            // 
-            // advanceLoanToolStripMenuItem
-            // 
-            this.advanceLoanToolStripMenuItem.Name = "advanceLoanToolStripMenuItem";
-            this.advanceLoanToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
-            this.advanceLoanToolStripMenuItem.Text = "Advance Loan";
-            this.advanceLoanToolStripMenuItem.Click += new System.EventHandler(this.advanceLoanToolStripMenuItem_Click);
             // 
             // Emp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1315, 733);
-            this.Controls.Add(this.textBox);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.lblConvPerMonth);
             this.Controls.Add(this.textBoxConv);
             this.Controls.Add(this.textDesignation);
@@ -813,10 +812,10 @@
         private System.Windows.Forms.TextBox textBoxConv;
         private System.Windows.Forms.Label lblConvPerMonth;
         private System.Windows.Forms.ToolStripMenuItem archivedTransactionsToolStripMenuItem;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox;
         private System.Windows.Forms.ToolStripMenuItem pFLoanToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem advanceLoanToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem generalRecordsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem generalRecordsToolStripMenuItem1;
     }
 }
 
