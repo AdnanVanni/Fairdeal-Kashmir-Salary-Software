@@ -197,10 +197,7 @@ namespace Fairdeal_Kashmir_Salary_Software
 
         private void editEmployeeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Emp emp = new Emp();
-            emp.Tag = this;
-            emp.Show(this);
-            Hide();
+            
         }
       
         private void textMonthlySalary_KeyPress(object sender, KeyPressEventArgs e)

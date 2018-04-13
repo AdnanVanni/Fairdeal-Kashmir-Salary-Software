@@ -140,7 +140,7 @@
             // labelJoinDate
             // 
             this.labelJoinDate.AutoSize = true;
-            this.labelJoinDate.Location = new System.Drawing.Point(291, 147);
+            this.labelJoinDate.Location = new System.Drawing.Point(306, 154);
             this.labelJoinDate.Name = "labelJoinDate";
             this.labelJoinDate.Size = new System.Drawing.Size(52, 13);
             this.labelJoinDate.TabIndex = 5;
@@ -150,7 +150,7 @@
             // labelEmpType
             // 
             this.labelEmpType.AutoSize = true;
-            this.labelEmpType.Location = new System.Drawing.Point(291, 184);
+            this.labelEmpType.Location = new System.Drawing.Point(306, 184);
             this.labelEmpType.Name = "labelEmpType";
             this.labelEmpType.Size = new System.Drawing.Size(80, 13);
             this.labelEmpType.TabIndex = 6;
@@ -159,7 +159,7 @@
             // labelDesignation
             // 
             this.labelDesignation.AutoSize = true;
-            this.labelDesignation.Location = new System.Drawing.Point(291, 254);
+            this.labelDesignation.Location = new System.Drawing.Point(306, 253);
             this.labelDesignation.Name = "labelDesignation";
             this.labelDesignation.Size = new System.Drawing.Size(63, 13);
             this.labelDesignation.TabIndex = 7;
@@ -239,7 +239,7 @@
             // labelDpt
             // 
             this.labelDpt.AutoSize = true;
-            this.labelDpt.Location = new System.Drawing.Point(292, 297);
+            this.labelDpt.Location = new System.Drawing.Point(307, 297);
             this.labelDpt.Name = "labelDpt";
             this.labelDpt.Size = new System.Drawing.Size(62, 13);
             this.labelDpt.TabIndex = 22;
@@ -345,9 +345,9 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(326, 550);
+            this.btnSave.Location = new System.Drawing.Point(390, 550);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.Size = new System.Drawing.Size(68, 23);
             this.btnSave.TabIndex = 34;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -390,7 +390,7 @@
             // addEmployeeToolStripMenuItem
             // 
             this.addEmployeeToolStripMenuItem.Name = "addEmployeeToolStripMenuItem";
-            this.addEmployeeToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.addEmployeeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.addEmployeeToolStripMenuItem.Text = "Add Employee";
             this.addEmployeeToolStripMenuItem.Click += new System.EventHandler(this.addEmployeeToolStripMenuItem_Click);
             // 
@@ -555,9 +555,9 @@
             // 
             // txtAddNew
             // 
-            this.txtAddNew.Location = new System.Drawing.Point(415, 550);
+            this.txtAddNew.Location = new System.Drawing.Point(481, 550);
             this.txtAddNew.Name = "txtAddNew";
-            this.txtAddNew.Size = new System.Drawing.Size(75, 23);
+            this.txtAddNew.Size = new System.Drawing.Size(68, 23);
             this.txtAddNew.TabIndex = 38;
             this.txtAddNew.Text = "Add New";
             this.txtAddNew.UseVisualStyleBackColor = true;
@@ -565,9 +565,9 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(513, 550);
+            this.btnDelete.Location = new System.Drawing.Point(434, 608);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.Size = new System.Drawing.Size(68, 23);
             this.btnDelete.TabIndex = 39;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -649,7 +649,7 @@
             // lblID
             // 
             this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(292, 113);
+            this.lblID.Location = new System.Drawing.Point(306, 113);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(65, 13);
             this.lblID.TabIndex = 48;
