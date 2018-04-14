@@ -1326,7 +1326,7 @@
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
         <Height>1.67708in</Height>
-        <Width>12.55666in</Width>
+        <Width>12.55665in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1360,7 +1360,6 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox43</rd:DefaultName>
-          <Top>0in</Top>
           <Left>6.76042in</Left>
           <Height>0.25in</Height>
           <Width>1in</Width>
@@ -1827,7 +1826,9 @@
                 </TextRun>
                 <TextRun>
                   <Value>=Sum(Fields!TOTAL.Value, "DataSet1")+Sum(Fields!PfLoanSub.Value, "DataSet1")+(0.05*Sum(Fields!TOTAL.Value, "DataSet1"))+Sum(Fields!INSURANCE.Value, "DataSet1")</Value>
-                  <Style />
+                  <Style>
+                    <Format>0.00;(0.00)</Format>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style />

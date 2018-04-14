@@ -34,7 +34,6 @@
             this.labelParentage = new System.Windows.Forms.Label();
             this.labelResidence = new System.Windows.Forms.Label();
             this.labelJoinDate = new System.Windows.Forms.Label();
-            this.labelEmpType = new System.Windows.Forms.Label();
             this.labelDesignation = new System.Windows.Forms.Label();
             this.labelPhone = new System.Windows.Forms.Label();
             this.labelEmail = new System.Windows.Forms.Label();
@@ -84,7 +83,6 @@
             this.txtAddNew = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.comboBoxDept = new System.Windows.Forms.ComboBox();
-            this.listBoxEmpType = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtSeach = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -147,19 +145,10 @@
             this.labelJoinDate.Text = "Join Date";
             this.labelJoinDate.Click += new System.EventHandler(this.labelJoinDate_Click);
             // 
-            // labelEmpType
-            // 
-            this.labelEmpType.AutoSize = true;
-            this.labelEmpType.Location = new System.Drawing.Point(306, 184);
-            this.labelEmpType.Name = "labelEmpType";
-            this.labelEmpType.Size = new System.Drawing.Size(80, 13);
-            this.labelEmpType.TabIndex = 6;
-            this.labelEmpType.Text = "Employee Type";
-            // 
             // labelDesignation
             // 
             this.labelDesignation.AutoSize = true;
-            this.labelDesignation.Location = new System.Drawing.Point(306, 253);
+            this.labelDesignation.Location = new System.Drawing.Point(306, 191);
             this.labelDesignation.Name = "labelDesignation";
             this.labelDesignation.Size = new System.Drawing.Size(63, 13);
             this.labelDesignation.TabIndex = 7;
@@ -239,7 +228,7 @@
             // labelDpt
             // 
             this.labelDpt.AutoSize = true;
-            this.labelDpt.Location = new System.Drawing.Point(307, 297);
+            this.labelDpt.Location = new System.Drawing.Point(306, 227);
             this.labelDpt.Name = "labelDpt";
             this.labelDpt.Size = new System.Drawing.Size(62, 13);
             this.labelDpt.TabIndex = 22;
@@ -390,7 +379,7 @@
             // addEmployeeToolStripMenuItem
             // 
             this.addEmployeeToolStripMenuItem.Name = "addEmployeeToolStripMenuItem";
-            this.addEmployeeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.addEmployeeToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.addEmployeeToolStripMenuItem.Text = "Add Employee";
             this.addEmployeeToolStripMenuItem.Click += new System.EventHandler(this.addEmployeeToolStripMenuItem_Click);
             // 
@@ -565,34 +554,22 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(434, 608);
+            this.btnDelete.Location = new System.Drawing.Point(390, 608);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(68, 23);
+            this.btnDelete.Size = new System.Drawing.Size(159, 23);
             this.btnDelete.TabIndex = 39;
-            this.btnDelete.Text = "Delete";
+            this.btnDelete.Text = "Delete Selected Record";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // comboBoxDept
             // 
             this.comboBoxDept.FormattingEnabled = true;
-            this.comboBoxDept.Location = new System.Drawing.Point(390, 289);
+            this.comboBoxDept.Location = new System.Drawing.Point(387, 220);
             this.comboBoxDept.Name = "comboBoxDept";
             this.comboBoxDept.Size = new System.Drawing.Size(184, 21);
             this.comboBoxDept.TabIndex = 40;
             this.comboBoxDept.SelectedIndexChanged += new System.EventHandler(this.comboBoxDept_SelectedIndexChanged);
-            // 
-            // listBoxEmpType
-            // 
-            this.listBoxEmpType.FormattingEnabled = true;
-            this.listBoxEmpType.Items.AddRange(new object[] {
-            "Salaried",
-            "Contractual",
-            "Hourly"});
-            this.listBoxEmpType.Location = new System.Drawing.Point(390, 184);
-            this.listBoxEmpType.Name = "listBoxEmpType";
-            this.listBoxEmpType.Size = new System.Drawing.Size(100, 43);
-            this.listBoxEmpType.TabIndex = 41;
             // 
             // label2
             // 
@@ -606,13 +583,13 @@
             // 
             this.txtSeach.Location = new System.Drawing.Point(599, 110);
             this.txtSeach.Name = "txtSeach";
-            this.txtSeach.Size = new System.Drawing.Size(100, 20);
+            this.txtSeach.Size = new System.Drawing.Size(176, 20);
             this.txtSeach.TabIndex = 43;
             // 
             // btnSearch
             // 
             this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
-            this.btnSearch.Location = new System.Drawing.Point(705, 109);
+            this.btnSearch.Location = new System.Drawing.Point(781, 110);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(26, 20);
             this.btnSearch.TabIndex = 44;
@@ -665,9 +642,9 @@
             // textDesignation
             // 
             this.textDesignation.FormattingEnabled = true;
-            this.textDesignation.Location = new System.Drawing.Point(390, 245);
+            this.textDesignation.Location = new System.Drawing.Point(390, 181);
             this.textDesignation.Name = "textDesignation";
-            this.textDesignation.Size = new System.Drawing.Size(184, 21);
+            this.textDesignation.Size = new System.Drawing.Size(181, 21);
             this.textDesignation.TabIndex = 50;
             // 
             // textBoxConv
@@ -703,7 +680,6 @@
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSeach);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.listBoxEmpType);
             this.Controls.Add(this.comboBoxDept);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.txtAddNew);
@@ -731,7 +707,6 @@
             this.Controls.Add(this.labelEmail);
             this.Controls.Add(this.labelPhone);
             this.Controls.Add(this.labelDesignation);
-            this.Controls.Add(this.labelEmpType);
             this.Controls.Add(this.labelJoinDate);
             this.Controls.Add(this.labelResidence);
             this.Controls.Add(this.labelParentage);
@@ -756,7 +731,6 @@
         private System.Windows.Forms.Label labelParentage;
         private System.Windows.Forms.Label labelResidence;
         private System.Windows.Forms.Label labelJoinDate;
-        private System.Windows.Forms.Label labelEmpType;
         private System.Windows.Forms.Label labelDesignation;
         private System.Windows.Forms.Label labelPhone;
         private System.Windows.Forms.Label labelEmail;
@@ -792,7 +766,6 @@
         private System.Windows.Forms.Button txtAddNew;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.ComboBox comboBoxDept;
-        private System.Windows.Forms.ListBox listBoxEmpType;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtSeach;
         private System.Windows.Forms.Button btnSearch;

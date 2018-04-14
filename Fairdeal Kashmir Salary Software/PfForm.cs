@@ -19,7 +19,9 @@ namespace Fairdeal_Kashmir_Salary_Software
 
         private void PfForm_Load(object sender, EventArgs e)
         {
-            
+            // TODO: This line of code loads data into the 'DataSetPFF.PF' table. You can move, or remove it, as needed.
+         
+
             this.Location = new Point(0, 0);
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
 

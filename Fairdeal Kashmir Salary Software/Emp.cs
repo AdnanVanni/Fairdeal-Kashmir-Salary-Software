@@ -154,7 +154,7 @@ namespace Fairdeal_Kashmir_Salary_Software
                     cmd.Parameters.AddWithValue("@Department", comboBoxDept.SelectedValue);
                     cmd.Parameters.AddWithValue("@JoinDate", dateTimePicker1.Value);
                     cmd.Parameters.AddWithValue("@SalaryPerMonth", textMonthlySalary.Text);
-                    cmd.Parameters.AddWithValue("@EmpType", listBoxEmpType.Text);
+                    cmd.Parameters.AddWithValue("@EmpType", "");
                     cmd.Parameters.AddWithValue("@AdvanceAmt", textAACD.Text);
                     cmd.Parameters.AddWithValue("@PFloanWithdrawn", textPFLW.Text);
                     cmd.Parameters.AddWithValue("@MonthlyAdvAmountSubtracted", textAAMD.Text);
@@ -313,7 +313,8 @@ namespace Fairdeal_Kashmir_Salary_Software
                 comboBoxDept.Text= row.Cells[3].Value.ToString();
                 textResidence.Text= row.Cells[15].Value.ToString();
                 dateTimePicker1.Text= row.Cells[4].Value.ToString();
-                listBoxEmpType.SelectedValue= row.Cells[6].Value.ToString();
+
+                
                 
                 textAcc.Text= row.Cells[2].Value.ToString();
                 textMonthlySalary.Text= row.Cells[5].Value.ToString();

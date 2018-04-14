@@ -69,7 +69,7 @@ namespace Fairdeal_Kashmir_Salary_Software
             try
             {
                 SqlCommand Fetch = new SqlCommand();
-                Fetch.CommandText = "select MT.Month,MT.Year,E.EmpId,MT.EmployeeId,E.EmpName,E.Department,E.SalaryPerMonth,MT.SalaryInHand,E.AdvanceAmt,E.PFloanWithdrawn,MT.TransactionDate,MT.Conv from Employee E join MonthlyTransaction MT ON E.EmpId=MT.EmployeeId ORDER BY TRANSACTIONDATE";
+                Fetch.CommandText = "select MT.Month,MT.Year,E.EmpId,MT.EmployeeId,E.EmpName,E.Department,E.SalaryPerMonth,MT.SalaryInHand,E.AdvanceAmt,E.PFloanWithdrawn,MT.TransactionDate,MT.Conv from Employee E join MonthlyTransaction MT ON E.EmpId=MT.EmployeeId WHERE MT.Year=(SELECT YEAR(GETDATE())) and MT.MONTH=(SELECT datename(month,GETDATE())) ORDER BY TRANSACTIONDATE";
                 //dataGridViewMT.DataSource = DataManager.executeDataset(Fetch);
                 SqlConnection connection1 = new SqlConnection(DataManager.connectionString);
                 SqlDataAdapter dataadapter = new SqlDataAdapter(Fetch.CommandText, DataManager.connectionString);
@@ -453,6 +453,7 @@ INSERT INTO[dbo].[ArchiveTransactions] values(@EmployeeId, @EmployeeName, @Month
 
         private void Ename_SelectedIndexChanged(object sender, EventArgs e)
         {
+            txtNetSalary.Clear();
             if (flagload == false)
             { return; }
             try

@@ -269,18 +269,20 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Content Include="Report1.rdlc" />
-    <Content Include="Report10.rdlc" />
-    <Content Include="Report11.rdlc" />
-    <Content Include="Report12.rdlc" />
-    <Content Include="Report2.rdlc" />
-    <Content Include="Report3.rdlc" />
-    <Content Include="Report4.rdlc" />
-    <Content Include="Report5.rdlc" />
-    <Content Include="Report6.rdlc" />
-    <Content Include="Report7.rdlc" />
-    <Content Include="Report8.rdlc" />
-    <Content Include="Report9.rdlc" />
+    <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Report10.rdlc" />
+    <EmbeddedResource Include="Report11.rdlc" />
+    <EmbeddedResource Include="Report12.rdlc" />
+    <EmbeddedResource Include="Report2.rdlc" />
+    <EmbeddedResource Include="Report3.rdlc" />
+    <EmbeddedResource Include="Report4.rdlc" />
+    <EmbeddedResource Include="Report5.rdlc" />
+    <EmbeddedResource Include="Report6.rdlc" />
+    <EmbeddedResource Include="Report7.rdlc" />
+    <EmbeddedResource Include="Report8.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report9.rdlc" />
     <EmbeddedResource Include="ReportForm1.resx">
       <DependentUpon>ReportForm1.cs</DependentUpon>
     </EmbeddedResource>
@@ -433,7 +435,9 @@
     <Content Include="Image\643-643-3032-tata-final-logo-opt.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Image\if_computer_1055084.ico" />
+    <Content Include="Image\if_computer_1055084.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Image\if_document_1055071.ico" />
     <Content Include="MetroFramework.txt" />
     <None Include="Resources\981.png" />

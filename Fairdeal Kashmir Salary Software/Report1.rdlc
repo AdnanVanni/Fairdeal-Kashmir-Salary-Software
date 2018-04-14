@@ -393,6 +393,7 @@
                               <Value>=Sum(Fields!SalaryInHand.Value)</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
+                                <Format>0;(0)</Format>
                                 <Color>#4d4d4d</Color>
                               </Style>
                             </TextRun>

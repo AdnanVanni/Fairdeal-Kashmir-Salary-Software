@@ -124,6 +124,7 @@
             this.reportViewerPF.LocalReport.ReportEmbeddedResource = "Fairdeal_Kashmir_Salary_Software.Report8.rdlc";
             this.reportViewerPF.Location = new System.Drawing.Point(20, 141);
             this.reportViewerPF.Name = "reportViewerPF";
+            this.reportViewerPF.ServerReport.ReportPath = "Report8.rdlc";
             this.reportViewerPF.Size = new System.Drawing.Size(1327, 544);
             this.reportViewerPF.TabIndex = 4;
             // 

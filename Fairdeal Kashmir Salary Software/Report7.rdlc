@@ -1893,7 +1893,9 @@
                 </TextRun>
                 <TextRun>
                   <Value>=Sum(Fields!AMT.Value, "DataSet1")</Value>
-                  <Style />
+                  <Style>
+                    <Format>0;(0)</Format>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style />

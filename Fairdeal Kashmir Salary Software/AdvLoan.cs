@@ -48,7 +48,7 @@ namespace Fairdeal_Kashmir_Salary_Software
         {
             SqlCommand Fetch = new SqlCommand();
             Fetch.CommandText = @"Select E.EmpId,E.EmpName,FV.Value,pf.Flag,Pf.Month,PF.year,PF.AdvAmount,PF.TransactionId
-     from Employee E join AdvanceRecords PF on E.EmpId=PF.EId JOIN FlagValues FV ON PF.Flag=FV.FlagN";
+     from Employee E join AdvanceRecords PF on E.EmpId=PF.EId JOIN FlagValues FV ON PF.Flag=FV.FlagN WHERE PF.year=(SELECT YEAR(GETDATE()))";
             //dataGridViewMT.DataSource = DataManager.executeDataset(Fetch);
             SqlConnection connection1 = new SqlConnection(DataManager.connectionString);
             SqlDataAdapter dataadapter = new SqlDataAdapter(Fetch.CommandText, DataManager.connectionString);
