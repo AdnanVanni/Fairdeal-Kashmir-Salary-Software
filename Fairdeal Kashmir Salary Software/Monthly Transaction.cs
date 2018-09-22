@@ -504,13 +504,50 @@ Select isnull(sum(AdvAmount),0) from AdvanceRecords where eId=@EmpId and Flag=1"
 
         private void dataGridViewMT_SelectionChanged(object sender, EventArgs e)
         {
+
             
             foreach (DataGridViewRow row in dataGridViewMT.SelectedRows)
             {
-             labelEmpId.Text = row.Cells[2].Value.ToString();
+                labelEmpId.Text = row.Cells[2].Value.ToString();
                 labelMonth.Text = row.Cells[0].Value.ToString();
-                labelYear.Text= row.Cells[1].Value.ToString();
+                labelYear.Text = row.Cells[1].Value.ToString();
                 btnDelete.Visible = true;
+                ////////////////////////////////////
+                SqlCommand cmdd = new SqlCommand();
+                cmdd.CommandText = "select m.*,e.empname,e.SalaryPerMonth from MonthlyTransaction m join employee e on m.employeeid=e.EmpId where m.EmployeeId=@EmpId and m.Month=@Month And m.Year=@Year";
+                cmdd.Parameters.AddWithValue("@Month", row.Cells[0].Value.ToString());
+                cmdd.Parameters.AddWithValue("@Year", row.Cells[1].Value.ToString());
+                cmdd.Parameters.AddWithValue("@EmpId", labelEmpId.Text);
+                DataSet DS7 = DataManager.executeDataset(cmdd);
+                DataTable DT7 = DS7.Tables[0];
+
+                comboBoxMonth.Text = DT7.Rows[0][0].ToString();
+                comboBoxYear.Text = DT7.Rows[0][2].ToString();
+                Ename.Text = DT7.Rows[0][14].ToString();
+                txtMonthlySalary.Text = DT7.Rows[0][15].ToString();
+                txtAbsent.Text = DT7.Rows[0][11].ToString();
+                txtPF.Text = DT7.Rows[0][6].ToString();
+                textBoxConv.Text = DT7.Rows[0][13].ToString();
+                txtMPFLS.Text = DT7.Rows[0][10].ToString();
+                txtAAMD.Text = DT7.Rows[0][9].ToString();
+                txtFine.Text = DT7.Rows[0][4].ToString();
+                txtTdc.Text = DT7.Rows[0][3].ToString();
+                txtNetSalary.Text = DT7.Rows[0][6].ToString();
+                txtNetSalary.Text = "";
+                UpdateBtn.Visible = true;
+                txtSaveRecord.Visible = false;
+                txtMonthlySalary.Enabled = false;
+                comboBoxMonth.Enabled = false;
+                comboBoxYear.Enabled = false;
+                Ename.Enabled = false;
+                txtMPFLS.Enabled = false;
+                txtAAMD.Enabled = false;
+
+
+
+
+
+
             }
         }
         private void btnDelete_Click(object sender, EventArgs e)
@@ -551,7 +588,7 @@ delete from archivetransactions  where EmployeeId=@EmployeeId and Month=@Month a
             SqlCommand Fetch = new SqlCommand();
             Fetch.CommandText = @"select MT.Month,MT.Year,E.EmpId,MT.EmployeeId,E.EmpName,E.Department,
                 E.SalaryPerMonth,MT.SalaryInHand,E.AdvanceAmt,E.PFloanWithdrawn,MT.TransactionDate,
-            E.ConvPerMonth FRom Employee E join MonthlyTransaction MT ON E.EmpId=MT.EmployeeId
+            MT.Conv FRom Employee E join MonthlyTransaction MT ON E.EmpId=MT.EmployeeId
            where E.EmpName like '%" + EmpName + "%' and MT.Month Like '%" + Month + "%' and MT.Year like '%" + Year + "%' ORDER BY TRANSACTIONDATE ";
             try
             {
@@ -625,6 +662,65 @@ delete from archivetransactions  where EmployeeId=@EmployeeId and Month=@Month a
                 }
 
             }
+        }
+
+        private void UpdateBtn_Click(object sender, EventArgs e)
+        {
+            if (Ename.Text == string.Empty)
+            {
+                MessageBox.Show("Please select Employee's name");
+                return;
+            }
+
+            else if (comboBoxMonth.Text == string.Empty)
+            {
+                MessageBox.Show("Please select the Month");
+                return;
+            }
+            else if (comboBoxYear.Text == string.Empty)
+            {
+                MessageBox.Show("Please select the year!");
+                return;
+            }
+            else if (txtNetSalary.Text == string.Empty)
+            {
+                MessageBox.Show("Net Salary not calculated");
+                return;
+            }
+            SqlCommand cmdp = new SqlCommand();
+            cmdp.CommandText = @"Update MonthlyTransaction set tdc=@tdc,Fine=@fine,SalaryInHand=@salaryinhand,PfMonthly=@PfMonthly
+,Memo=@Memo,TransactionDate=GETDATE(),AbsentDays=@Absent,
+Conv=@Conv where EmployeeId=@EmpId and Month=@Month And Year=@Year
+Update PfRecords set PfAmount=@PfMonthly where EId=@EmpId and Month=@Month And Year=@Year and Flag=2";
+            cmdp.Parameters.AddWithValue("@EmpId", labelEmpId.Text);
+            cmdp.Parameters.AddWithValue("@Month", labelMonth.Text);
+            cmdp.Parameters.AddWithValue("@Year", labelYear.Text);
+            cmdp.Parameters.AddWithValue("@PfMonthly",txtPF.Text);
+            cmdp.Parameters.AddWithValue("@tdc", txtTdc.Text);
+            cmdp.Parameters.AddWithValue("@fine", txtFine.Text);
+            cmdp.Parameters.AddWithValue("@salaryInHand", txtNetSalary.Text);
+            cmdp.Parameters.AddWithValue("@Memo", richTextBoxMemo.Text);
+            cmdp.Parameters.AddWithValue("@Absent", txtAbsent.Text);
+            cmdp.Parameters.AddWithValue("@Conv",textBoxConv.Text);
+            
+
+
+            int n= DataManager.executeNonQuery(cmdp);
+            if (n > 0)
+            {
+                MessageBox.Show("Record Updated");
+                Monthly_Transaction mt = new Monthly_Transaction();
+                mt.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Record Updation error");
+                Monthly_Transaction mt = new Monthly_Transaction();
+                mt.Show();
+                this.Hide();
+            }
+
         }
     }
 }

@@ -51,6 +51,8 @@
             // 
             // comboBoxEmp
             // 
+            this.comboBoxEmp.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.comboBoxEmp.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBoxEmp.FormattingEnabled = true;
             this.comboBoxEmp.Location = new System.Drawing.Point(127, 66);
             this.comboBoxEmp.Name = "comboBoxEmp";

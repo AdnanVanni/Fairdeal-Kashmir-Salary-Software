@@ -76,6 +76,7 @@
             this.lblConv = new System.Windows.Forms.Label();
             this.labelPrompt = new System.Windows.Forms.Label();
             this.labelConvAmt = new System.Windows.Forms.Label();
+            this.UpdateBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMT)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,9 +85,9 @@
             this.lblFine.AutoSize = true;
             this.lblFine.Location = new System.Drawing.Point(36, 323);
             this.lblFine.Name = "lblFine";
-            this.lblFine.Size = new System.Drawing.Size(27, 13);
+            this.lblFine.Size = new System.Drawing.Size(64, 13);
             this.lblFine.TabIndex = 5;
-            this.lblFine.Text = "Fine";
+            this.lblFine.Text = "Outstanding";
             // 
             // lblTdc
             // 
@@ -133,7 +134,8 @@
             // 
             // Ename
             // 
-            this.Ename.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Ename.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.Ename.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.Ename.FormattingEnabled = true;
             this.Ename.Location = new System.Drawing.Point(141, 79);
             this.Ename.Name = "Ename";
@@ -564,11 +566,23 @@
             this.labelConvAmt.Text = "label3";
             this.labelConvAmt.Visible = false;
             // 
+            // UpdateBtn
+            // 
+            this.UpdateBtn.Location = new System.Drawing.Point(142, 519);
+            this.UpdateBtn.Name = "UpdateBtn";
+            this.UpdateBtn.Size = new System.Drawing.Size(121, 23);
+            this.UpdateBtn.TabIndex = 61;
+            this.UpdateBtn.Text = "Update Record";
+            this.UpdateBtn.UseVisualStyleBackColor = true;
+            this.UpdateBtn.Visible = false;
+            this.UpdateBtn.Click += new System.EventHandler(this.UpdateBtn_Click);
+            // 
             // Monthly_Transaction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1333, 666);
+            this.Controls.Add(this.UpdateBtn);
             this.Controls.Add(this.labelConvAmt);
             this.Controls.Add(this.labelPrompt);
             this.Controls.Add(this.textBoxConv);
@@ -671,5 +685,6 @@
         private System.Windows.Forms.Label lblConv;
         private System.Windows.Forms.Label labelPrompt;
         private System.Windows.Forms.Label labelConvAmt;
+        private System.Windows.Forms.Button UpdateBtn;
     }
 }

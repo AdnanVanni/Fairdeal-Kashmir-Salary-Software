@@ -100,7 +100,7 @@ namespace Fairdeal_Kashmir_Salary_Software
             Save.Parameters.AddWithValue("@Year", comboBoxYear.Text);
             Save.Parameters.AddWithValue("@Flag", 0);
             DataManager.executeNonQuery(Save);
-            PfLoan pf = new PfLoan();
+            AdvLoan pf = new AdvLoan();
             pf.Show();
             this.Hide();
 
