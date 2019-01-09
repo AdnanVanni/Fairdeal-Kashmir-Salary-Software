@@ -36,10 +36,14 @@ namespace Fairdeal_Kashmir_Salary_Software
             {
                 MessageBox.Show("Select Year");
             }
+            int MonthS = Convert.ToInt32(comboBoxMonthTo.SelectedIndex.ToString());
+            MonthS++;
+            int YearS = Convert.ToInt32(comboBoxYearTo.SelectedItem.ToString());
+            Int32 daysInMonth = System.DateTime.DaysInMonth(YearS, MonthS);
             SqlCommand Copy = new SqlCommand();
             Copy.CommandText = @"Insert into MonthlyTransaction SELECT @MonthT,E.EmployeeId,@YearT,E.TDC,
                 E.Fine,E.SalaryInHand,E.PfMonthly,E.Memo,E.TransactionDate,E.AdvAmtSub,E.PfLoanSub,
-            E.AbsentDays,E.DaysInMonth,E.Conv FROM MonthlyTransaction E JOIN Employee
+            E.AbsentDays,@daysInMonth,E.Conv FROM MonthlyTransaction E JOIN Employee
                 Emp on emp.EmpId = e.EmployeeId where  e.Month = @Month and
                 Year = @Year and E.EmployeeId in (   select EmpId from(select EmpName,EMPID,	
  SumPF FROM EMPLOYEE INNER JOIN  (Select EId,Sum(Case Flag
@@ -173,7 +177,7 @@ intersect
 where mt.month=@Month and mt.year=@Year and (MT.AdvAmtSub)<=(Sumadv)
 										   )l)
 						";
-
+             Copy.Parameters.AddWithValue("@daysInMonth", daysInMonth);
             Copy.Parameters.AddWithValue("@Month", comboBoxMonthFrom.Text);
             Copy.Parameters.AddWithValue("@Year", comboBoxYearFrom.Text);
             Copy.Parameters.AddWithValue("@MonthT", comboBoxMonthTo.Text);
