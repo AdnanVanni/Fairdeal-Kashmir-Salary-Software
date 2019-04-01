@@ -43,7 +43,7 @@ namespace Fairdeal_Kashmir_Salary_Software
             SqlCommand Copy = new SqlCommand();
             Copy.CommandText = @"Insert into MonthlyTransaction SELECT @MonthT,E.EmployeeId,@YearT,E.TDC,
                 E.Fine,E.SalaryInHand,E.PfMonthly,E.Memo,E.TransactionDate,E.AdvAmtSub,E.PfLoanSub,
-            E.AbsentDays,@daysInMonth,E.Conv FROM MonthlyTransaction E JOIN Employee
+            E.AbsentDays,@daysInMonth,E.Conv,E.PercDeduction,E.PercDedAmt FROM MonthlyTransaction E JOIN Employee
                 Emp on emp.EmpId = e.EmployeeId where  e.Month = @Month and
                 Year = @Year and E.EmployeeId in (   select EmpId from(select EmpName,EMPID,	
  SumPF FROM EMPLOYEE INNER JOIN  (Select EId,Sum(Case Flag
@@ -157,7 +157,7 @@ INSERT INTO PFRECORDS select Eid,PfAmount,@MonthT,@YearT,Flag from pfrecords whe
 INSERT INTO [dbo].[ArchiveTransactions]
         SELECT E.EmployeeId, Emp.EmpName, @MonthT, @YearT, emp.PFloanWithdrawn,
                     E.PfLoanSub, emp.AdvanceAmt, e.AdvAmtSub, E.TDC, E.Conv, E.Fine,
-                    E.AbsentDays, Emp.SalaryPerMonth, SalaryInHand, E.Memo FROM MonthlyTransaction
+                    E.AbsentDays, Emp.SalaryPerMonth, SalaryInHand, E.Memo,E.PercDeduction,E.PercDedAmt FROM MonthlyTransaction
                      E JOIN Employee Emp on emp.EmpId = e.EmployeeId where e.Month = @Month and E.Year = @Year  and E.EmployeeId in (  select EmpId from(select EmpName,EMPID,	
  SumPF FROM EMPLOYEE INNER JOIN  (Select EId,Sum(Case Flag
                                            when '0' then pfamount 

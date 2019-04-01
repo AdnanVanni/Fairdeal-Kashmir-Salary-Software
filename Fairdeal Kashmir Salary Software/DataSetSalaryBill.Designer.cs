@@ -315,6 +315,8 @@ namespace Fairdeal_Kashmir_Salary_Software {
             
             private global::System.Data.DataColumn columnAccNumber;
             
+            private global::System.Data.DataColumn columnPERCDEDAMT;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public SalaryBillDataTable() {
@@ -494,6 +496,14 @@ namespace Fairdeal_Kashmir_Salary_Software {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PERCDEDAMTColumn {
+                get {
+                    return this.columnPERCDEDAMT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -547,7 +557,8 @@ namespace Fairdeal_Kashmir_Salary_Software {
                         float TDC, 
                         float TotalDeduction, 
                         float NetAmountPayable, 
-                        string AccNumber) {
+                        string AccNumber, 
+                        float PERCDEDAMT) {
                 SalaryBillRow rowSalaryBillRow = ((SalaryBillRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Department,
@@ -567,7 +578,8 @@ namespace Fairdeal_Kashmir_Salary_Software {
                         TDC,
                         TotalDeduction,
                         NetAmountPayable,
-                        AccNumber};
+                        AccNumber,
+                        PERCDEDAMT};
                 rowSalaryBillRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSalaryBillRow);
                 return rowSalaryBillRow;
@@ -608,6 +620,7 @@ namespace Fairdeal_Kashmir_Salary_Software {
                 this.columnTotalDeduction = base.Columns["TotalDeduction"];
                 this.columnNetAmountPayable = base.Columns["NetAmountPayable"];
                 this.columnAccNumber = base.Columns["AccNumber"];
+                this.columnPERCDEDAMT = base.Columns["PERCDEDAMT"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -649,6 +662,8 @@ namespace Fairdeal_Kashmir_Salary_Software {
                 base.Columns.Add(this.columnNetAmountPayable);
                 this.columnAccNumber = new global::System.Data.DataColumn("AccNumber", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAccNumber);
+                this.columnPERCDEDAMT = new global::System.Data.DataColumn("PERCDEDAMT", typeof(float), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPERCDEDAMT);
                 this.columnDepartment.MaxLength = 50;
                 this.columnmonth.AllowDBNull = false;
                 this.columnmonth.MaxLength = 50;
@@ -662,6 +677,7 @@ namespace Fairdeal_Kashmir_Salary_Software {
                 this.columnTotalDeduction.ReadOnly = true;
                 this.columnNetAmountPayable.ReadOnly = true;
                 this.columnAccNumber.MaxLength = 50;
+                this.columnPERCDEDAMT.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1082,6 +1098,22 @@ namespace Fairdeal_Kashmir_Salary_Software {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public float PERCDEDAMT {
+                get {
+                    try {
+                        return ((float)(this[this.tableSalaryBill.PERCDEDAMTColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PERCDEDAMT\' in table \'SalaryBill\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSalaryBill.PERCDEDAMTColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsDepartmentNull() {
                 return this.IsNull(this.tableSalaryBill.DepartmentColumn);
             }
@@ -1271,6 +1303,18 @@ namespace Fairdeal_Kashmir_Salary_Software {
             public void SetAccNumberNull() {
                 this[this.tableSalaryBill.AccNumberColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPERCDEDAMTNull() {
+                return this.IsNull(this.tableSalaryBill.PERCDEDAMTColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPERCDEDAMTNull() {
+                this[this.tableSalaryBill.PERCDEDAMTColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -1450,6 +1494,7 @@ namespace Fairdeal_Kashmir_Salary_Software.DataSetSalaryBillTableAdapters {
             tableMapping.ColumnMappings.Add("TotalDeduction", "TotalDeduction");
             tableMapping.ColumnMappings.Add("NetAmountPayable", "NetAmountPayable");
             tableMapping.ColumnMappings.Add("AccNumber", "AccNumber");
+            tableMapping.ColumnMappings.Add("PERCDEDAMT", "PERCDEDAMT");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

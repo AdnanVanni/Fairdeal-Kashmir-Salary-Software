@@ -20,17 +20,17 @@ namespace Fairdeal_Kashmir_Salary_Software {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("DataSetCopyNot")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DataSetSalryBIllFinacialYear")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class DataSetCopyNot : global::System.Data.DataSet {
+    public partial class DataSetSalryBIllFinacialYear : global::System.Data.DataSet {
         
-        private NotCopiedListDataTable tableNotCopiedList;
+        private SalaryBillSumFinancialYearDataTable tableSalaryBillSumFinancialYear;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public DataSetCopyNot() {
+        public DataSetSalryBIllFinacialYear() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace Fairdeal_Kashmir_Salary_Software {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected DataSetCopyNot(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected DataSetSalryBIllFinacialYear(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace Fairdeal_Kashmir_Salary_Software {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["NotCopiedList"] != null)) {
-                    base.Tables.Add(new NotCopiedListDataTable(ds.Tables["NotCopiedList"]));
+                if ((ds.Tables["SalaryBillSumFinancialYear"] != null)) {
+                    base.Tables.Add(new SalaryBillSumFinancialYearDataTable(ds.Tables["SalaryBillSumFinancialYear"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace Fairdeal_Kashmir_Salary_Software {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public NotCopiedListDataTable NotCopiedList {
+        public SalaryBillSumFinancialYearDataTable SalaryBillSumFinancialYear {
             get {
-                return this.tableNotCopiedList;
+                return this.tableSalaryBillSumFinancialYear;
             }
         }
         
@@ -127,7 +127,7 @@ namespace Fairdeal_Kashmir_Salary_Software {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            DataSetCopyNot cln = ((DataSetCopyNot)(base.Clone()));
+            DataSetSalryBIllFinacialYear cln = ((DataSetSalryBIllFinacialYear)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace Fairdeal_Kashmir_Salary_Software {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["NotCopiedList"] != null)) {
-                    base.Tables.Add(new NotCopiedListDataTable(ds.Tables["NotCopiedList"]));
+                if ((ds.Tables["SalaryBillSumFinancialYear"] != null)) {
+                    base.Tables.Add(new SalaryBillSumFinancialYearDataTable(ds.Tables["SalaryBillSumFinancialYear"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace Fairdeal_Kashmir_Salary_Software {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableNotCopiedList = ((NotCopiedListDataTable)(base.Tables["NotCopiedList"]));
+            this.tableSalaryBillSumFinancialYear = ((SalaryBillSumFinancialYearDataTable)(base.Tables["SalaryBillSumFinancialYear"]));
             if ((initTable == true)) {
-                if ((this.tableNotCopiedList != null)) {
-                    this.tableNotCopiedList.InitVars();
+                if ((this.tableSalaryBillSumFinancialYear != null)) {
+                    this.tableSalaryBillSumFinancialYear.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace Fairdeal_Kashmir_Salary_Software {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "DataSetCopyNot";
+            this.DataSetName = "DataSetSalryBIllFinacialYear";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/DataSetCopyNot.xsd";
+            this.Namespace = "http://tempuri.org/DataSetSalryBIllFinacialYear.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableNotCopiedList = new NotCopiedListDataTable();
-            base.Tables.Add(this.tableNotCopiedList);
+            this.tableSalaryBillSumFinancialYear = new SalaryBillSumFinancialYearDataTable();
+            base.Tables.Add(this.tableSalaryBillSumFinancialYear);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeNotCopiedList() {
+        private bool ShouldSerializeSalaryBillSumFinancialYear() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace Fairdeal_Kashmir_Salary_Software {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            DataSetCopyNot ds = new DataSetCopyNot();
+            DataSetSalryBIllFinacialYear ds = new DataSetSalryBIllFinacialYear();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,21 +270,47 @@ namespace Fairdeal_Kashmir_Salary_Software {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void NotCopiedListRowChangeEventHandler(object sender, NotCopiedListRowChangeEvent e);
+        public delegate void SalaryBillSumFinancialYearRowChangeEventHandler(object sender, SalaryBillSumFinancialYearRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class NotCopiedListDataTable : global::System.Data.TypedTableBase<NotCopiedListRow> {
+        public partial class SalaryBillSumFinancialYearDataTable : global::System.Data.TypedTableBase<SalaryBillSumFinancialYearRow> {
             
-            private global::System.Data.DataColumn columnEMPname;
+            private global::System.Data.DataColumn columndepartment;
+            
+            private global::System.Data.DataColumn columnMonthlysalarysum;
+            
+            private global::System.Data.DataColumn columnDAYSINMONTH;
+            
+            private global::System.Data.DataColumn columnamtsum;
+            
+            private global::System.Data.DataColumn columnconvsum;
+            
+            private global::System.Data.DataColumn columntotalamtsum;
+            
+            private global::System.Data.DataColumn columnPfloansum;
+            
+            private global::System.Data.DataColumn columnPfloansubsum;
+            
+            private global::System.Data.DataColumn columnfinesum;
+            
+            private global::System.Data.DataColumn columnadvamtsubsum;
+            
+            private global::System.Data.DataColumn columntdcsum;
+            
+            private global::System.Data.DataColumn columnPERCDEDAMT;
+            
+            private global::System.Data.DataColumn columntotaldedsum;
+            
+            private global::System.Data.DataColumn columnnetpayablesum;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public NotCopiedListDataTable() {
-                this.TableName = "NotCopiedList";
+            public SalaryBillSumFinancialYearDataTable() {
+                this.TableName = "SalaryBillSumFinancialYear";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -292,7 +318,7 @@ namespace Fairdeal_Kashmir_Salary_Software {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal NotCopiedListDataTable(global::System.Data.DataTable table) {
+            internal SalaryBillSumFinancialYearDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -309,16 +335,120 @@ namespace Fairdeal_Kashmir_Salary_Software {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected NotCopiedListDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected SalaryBillSumFinancialYearDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn EMPnameColumn {
+            public global::System.Data.DataColumn departmentColumn {
                 get {
-                    return this.columnEMPname;
+                    return this.columndepartment;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MonthlysalarysumColumn {
+                get {
+                    return this.columnMonthlysalarysum;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DAYSINMONTHColumn {
+                get {
+                    return this.columnDAYSINMONTH;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn amtsumColumn {
+                get {
+                    return this.columnamtsum;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn convsumColumn {
+                get {
+                    return this.columnconvsum;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn totalamtsumColumn {
+                get {
+                    return this.columntotalamtsum;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PfloansumColumn {
+                get {
+                    return this.columnPfloansum;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PfloansubsumColumn {
+                get {
+                    return this.columnPfloansubsum;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn finesumColumn {
+                get {
+                    return this.columnfinesum;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn advamtsubsumColumn {
+                get {
+                    return this.columnadvamtsubsum;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn tdcsumColumn {
+                get {
+                    return this.columntdcsum;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PERCDEDAMTColumn {
+                get {
+                    return this.columnPERCDEDAMT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn totaldedsumColumn {
+                get {
+                    return this.columntotaldedsum;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn netpayablesumColumn {
+                get {
+                    return this.columnnetpayablesum;
                 }
             }
             
@@ -333,45 +463,58 @@ namespace Fairdeal_Kashmir_Salary_Software {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public NotCopiedListRow this[int index] {
+            public SalaryBillSumFinancialYearRow this[int index] {
                 get {
-                    return ((NotCopiedListRow)(this.Rows[index]));
+                    return ((SalaryBillSumFinancialYearRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event NotCopiedListRowChangeEventHandler NotCopiedListRowChanging;
+            public event SalaryBillSumFinancialYearRowChangeEventHandler SalaryBillSumFinancialYearRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event NotCopiedListRowChangeEventHandler NotCopiedListRowChanged;
+            public event SalaryBillSumFinancialYearRowChangeEventHandler SalaryBillSumFinancialYearRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event NotCopiedListRowChangeEventHandler NotCopiedListRowDeleting;
+            public event SalaryBillSumFinancialYearRowChangeEventHandler SalaryBillSumFinancialYearRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event NotCopiedListRowChangeEventHandler NotCopiedListRowDeleted;
+            public event SalaryBillSumFinancialYearRowChangeEventHandler SalaryBillSumFinancialYearRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddNotCopiedListRow(NotCopiedListRow row) {
+            public void AddSalaryBillSumFinancialYearRow(SalaryBillSumFinancialYearRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public NotCopiedListRow AddNotCopiedListRow(string EMPname) {
-                NotCopiedListRow rowNotCopiedListRow = ((NotCopiedListRow)(this.NewRow()));
+            public SalaryBillSumFinancialYearRow AddSalaryBillSumFinancialYearRow(string department, double Monthlysalarysum, string DAYSINMONTH, double amtsum, double convsum, double totalamtsum, double Pfloansum, double Pfloansubsum, double finesum, double advamtsubsum, double tdcsum, double PERCDEDAMT, double totaldedsum, double netpayablesum) {
+                SalaryBillSumFinancialYearRow rowSalaryBillSumFinancialYearRow = ((SalaryBillSumFinancialYearRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        EMPname};
-                rowNotCopiedListRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowNotCopiedListRow);
-                return rowNotCopiedListRow;
+                        department,
+                        Monthlysalarysum,
+                        DAYSINMONTH,
+                        amtsum,
+                        convsum,
+                        totalamtsum,
+                        Pfloansum,
+                        Pfloansubsum,
+                        finesum,
+                        advamtsubsum,
+                        tdcsum,
+                        PERCDEDAMT,
+                        totaldedsum,
+                        netpayablesum};
+                rowSalaryBillSumFinancialYearRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowSalaryBillSumFinancialYearRow);
+                return rowSalaryBillSumFinancialYearRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                NotCopiedListDataTable cln = ((NotCopiedListDataTable)(base.Clone()));
+                SalaryBillSumFinancialYearDataTable cln = ((SalaryBillSumFinancialYearDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -379,48 +522,99 @@ namespace Fairdeal_Kashmir_Salary_Software {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new NotCopiedListDataTable();
+                return new SalaryBillSumFinancialYearDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnEMPname = base.Columns["EMPname"];
+                this.columndepartment = base.Columns["department"];
+                this.columnMonthlysalarysum = base.Columns["Monthlysalarysum"];
+                this.columnDAYSINMONTH = base.Columns["DAYSINMONTH"];
+                this.columnamtsum = base.Columns["amtsum"];
+                this.columnconvsum = base.Columns["convsum"];
+                this.columntotalamtsum = base.Columns["totalamtsum"];
+                this.columnPfloansum = base.Columns["Pfloansum"];
+                this.columnPfloansubsum = base.Columns["Pfloansubsum"];
+                this.columnfinesum = base.Columns["finesum"];
+                this.columnadvamtsubsum = base.Columns["advamtsubsum"];
+                this.columntdcsum = base.Columns["tdcsum"];
+                this.columnPERCDEDAMT = base.Columns["PERCDEDAMT"];
+                this.columntotaldedsum = base.Columns["totaldedsum"];
+                this.columnnetpayablesum = base.Columns["netpayablesum"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnEMPname = new global::System.Data.DataColumn("EMPname", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEMPname);
-                this.columnEMPname.ReadOnly = true;
-                this.columnEMPname.MaxLength = 50;
+                this.columndepartment = new global::System.Data.DataColumn("department", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndepartment);
+                this.columnMonthlysalarysum = new global::System.Data.DataColumn("Monthlysalarysum", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMonthlysalarysum);
+                this.columnDAYSINMONTH = new global::System.Data.DataColumn("DAYSINMONTH", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDAYSINMONTH);
+                this.columnamtsum = new global::System.Data.DataColumn("amtsum", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnamtsum);
+                this.columnconvsum = new global::System.Data.DataColumn("convsum", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnconvsum);
+                this.columntotalamtsum = new global::System.Data.DataColumn("totalamtsum", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntotalamtsum);
+                this.columnPfloansum = new global::System.Data.DataColumn("Pfloansum", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPfloansum);
+                this.columnPfloansubsum = new global::System.Data.DataColumn("Pfloansubsum", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPfloansubsum);
+                this.columnfinesum = new global::System.Data.DataColumn("finesum", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfinesum);
+                this.columnadvamtsubsum = new global::System.Data.DataColumn("advamtsubsum", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnadvamtsubsum);
+                this.columntdcsum = new global::System.Data.DataColumn("tdcsum", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntdcsum);
+                this.columnPERCDEDAMT = new global::System.Data.DataColumn("PERCDEDAMT", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPERCDEDAMT);
+                this.columntotaldedsum = new global::System.Data.DataColumn("totaldedsum", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntotaldedsum);
+                this.columnnetpayablesum = new global::System.Data.DataColumn("netpayablesum", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnetpayablesum);
+                this.columndepartment.MaxLength = 50;
+                this.columnMonthlysalarysum.ReadOnly = true;
+                this.columnDAYSINMONTH.MaxLength = 50;
+                this.columnamtsum.ReadOnly = true;
+                this.columnconvsum.ReadOnly = true;
+                this.columntotalamtsum.ReadOnly = true;
+                this.columnPfloansum.ReadOnly = true;
+                this.columnPfloansubsum.ReadOnly = true;
+                this.columnfinesum.ReadOnly = true;
+                this.columnadvamtsubsum.ReadOnly = true;
+                this.columntdcsum.ReadOnly = true;
+                this.columnPERCDEDAMT.ReadOnly = true;
+                this.columntotaldedsum.ReadOnly = true;
+                this.columnnetpayablesum.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public NotCopiedListRow NewNotCopiedListRow() {
-                return ((NotCopiedListRow)(this.NewRow()));
+            public SalaryBillSumFinancialYearRow NewSalaryBillSumFinancialYearRow() {
+                return ((SalaryBillSumFinancialYearRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new NotCopiedListRow(builder);
+                return new SalaryBillSumFinancialYearRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(NotCopiedListRow);
+                return typeof(SalaryBillSumFinancialYearRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.NotCopiedListRowChanged != null)) {
-                    this.NotCopiedListRowChanged(this, new NotCopiedListRowChangeEvent(((NotCopiedListRow)(e.Row)), e.Action));
+                if ((this.SalaryBillSumFinancialYearRowChanged != null)) {
+                    this.SalaryBillSumFinancialYearRowChanged(this, new SalaryBillSumFinancialYearRowChangeEvent(((SalaryBillSumFinancialYearRow)(e.Row)), e.Action));
                 }
             }
             
@@ -428,8 +622,8 @@ namespace Fairdeal_Kashmir_Salary_Software {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.NotCopiedListRowChanging != null)) {
-                    this.NotCopiedListRowChanging(this, new NotCopiedListRowChangeEvent(((NotCopiedListRow)(e.Row)), e.Action));
+                if ((this.SalaryBillSumFinancialYearRowChanging != null)) {
+                    this.SalaryBillSumFinancialYearRowChanging(this, new SalaryBillSumFinancialYearRowChangeEvent(((SalaryBillSumFinancialYearRow)(e.Row)), e.Action));
                 }
             }
             
@@ -437,8 +631,8 @@ namespace Fairdeal_Kashmir_Salary_Software {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.NotCopiedListRowDeleted != null)) {
-                    this.NotCopiedListRowDeleted(this, new NotCopiedListRowChangeEvent(((NotCopiedListRow)(e.Row)), e.Action));
+                if ((this.SalaryBillSumFinancialYearRowDeleted != null)) {
+                    this.SalaryBillSumFinancialYearRowDeleted(this, new SalaryBillSumFinancialYearRowChangeEvent(((SalaryBillSumFinancialYearRow)(e.Row)), e.Action));
                 }
             }
             
@@ -446,14 +640,14 @@ namespace Fairdeal_Kashmir_Salary_Software {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.NotCopiedListRowDeleting != null)) {
-                    this.NotCopiedListRowDeleting(this, new NotCopiedListRowChangeEvent(((NotCopiedListRow)(e.Row)), e.Action));
+                if ((this.SalaryBillSumFinancialYearRowDeleting != null)) {
+                    this.SalaryBillSumFinancialYearRowDeleting(this, new SalaryBillSumFinancialYearRowChangeEvent(((SalaryBillSumFinancialYearRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveNotCopiedListRow(NotCopiedListRow row) {
+            public void RemoveSalaryBillSumFinancialYearRow(SalaryBillSumFinancialYearRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -462,7 +656,7 @@ namespace Fairdeal_Kashmir_Salary_Software {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DataSetCopyNot ds = new DataSetCopyNot();
+                DataSetSalryBIllFinacialYear ds = new DataSetSalryBIllFinacialYear();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -480,7 +674,7 @@ namespace Fairdeal_Kashmir_Salary_Software {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "NotCopiedListDataTable";
+                attribute2.FixedValue = "SalaryBillSumFinancialYearDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -524,43 +718,417 @@ namespace Fairdeal_Kashmir_Salary_Software {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class NotCopiedListRow : global::System.Data.DataRow {
+        public partial class SalaryBillSumFinancialYearRow : global::System.Data.DataRow {
             
-            private NotCopiedListDataTable tableNotCopiedList;
+            private SalaryBillSumFinancialYearDataTable tableSalaryBillSumFinancialYear;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal NotCopiedListRow(global::System.Data.DataRowBuilder rb) : 
+            internal SalaryBillSumFinancialYearRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableNotCopiedList = ((NotCopiedListDataTable)(this.Table));
+                this.tableSalaryBillSumFinancialYear = ((SalaryBillSumFinancialYearDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string EMPname {
+            public string department {
                 get {
                     try {
-                        return ((string)(this[this.tableNotCopiedList.EMPnameColumn]));
+                        return ((string)(this[this.tableSalaryBillSumFinancialYear.departmentColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'EMPname\' in table \'NotCopiedList\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'department\' in table \'SalaryBillSumFinancialYear\' is DBNull" +
+                                ".", e);
                     }
                 }
                 set {
-                    this[this.tableNotCopiedList.EMPnameColumn] = value;
+                    this[this.tableSalaryBillSumFinancialYear.departmentColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsEMPnameNull() {
-                return this.IsNull(this.tableNotCopiedList.EMPnameColumn);
+            public double Monthlysalarysum {
+                get {
+                    try {
+                        return ((double)(this[this.tableSalaryBillSumFinancialYear.MonthlysalarysumColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Monthlysalarysum\' in table \'SalaryBillSumFinancialYear\' is " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSalaryBillSumFinancialYear.MonthlysalarysumColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetEMPnameNull() {
-                this[this.tableNotCopiedList.EMPnameColumn] = global::System.Convert.DBNull;
+            public string DAYSINMONTH {
+                get {
+                    try {
+                        return ((string)(this[this.tableSalaryBillSumFinancialYear.DAYSINMONTHColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DAYSINMONTH\' in table \'SalaryBillSumFinancialYear\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableSalaryBillSumFinancialYear.DAYSINMONTHColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double amtsum {
+                get {
+                    try {
+                        return ((double)(this[this.tableSalaryBillSumFinancialYear.amtsumColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'amtsum\' in table \'SalaryBillSumFinancialYear\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSalaryBillSumFinancialYear.amtsumColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double convsum {
+                get {
+                    try {
+                        return ((double)(this[this.tableSalaryBillSumFinancialYear.convsumColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'convsum\' in table \'SalaryBillSumFinancialYear\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSalaryBillSumFinancialYear.convsumColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double totalamtsum {
+                get {
+                    try {
+                        return ((double)(this[this.tableSalaryBillSumFinancialYear.totalamtsumColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'totalamtsum\' in table \'SalaryBillSumFinancialYear\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableSalaryBillSumFinancialYear.totalamtsumColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double Pfloansum {
+                get {
+                    try {
+                        return ((double)(this[this.tableSalaryBillSumFinancialYear.PfloansumColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Pfloansum\' in table \'SalaryBillSumFinancialYear\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableSalaryBillSumFinancialYear.PfloansumColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double Pfloansubsum {
+                get {
+                    try {
+                        return ((double)(this[this.tableSalaryBillSumFinancialYear.PfloansubsumColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Pfloansubsum\' in table \'SalaryBillSumFinancialYear\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableSalaryBillSumFinancialYear.PfloansubsumColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double finesum {
+                get {
+                    try {
+                        return ((double)(this[this.tableSalaryBillSumFinancialYear.finesumColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'finesum\' in table \'SalaryBillSumFinancialYear\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSalaryBillSumFinancialYear.finesumColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double advamtsubsum {
+                get {
+                    try {
+                        return ((double)(this[this.tableSalaryBillSumFinancialYear.advamtsubsumColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'advamtsubsum\' in table \'SalaryBillSumFinancialYear\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableSalaryBillSumFinancialYear.advamtsubsumColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double tdcsum {
+                get {
+                    try {
+                        return ((double)(this[this.tableSalaryBillSumFinancialYear.tdcsumColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'tdcsum\' in table \'SalaryBillSumFinancialYear\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSalaryBillSumFinancialYear.tdcsumColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double PERCDEDAMT {
+                get {
+                    try {
+                        return ((double)(this[this.tableSalaryBillSumFinancialYear.PERCDEDAMTColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PERCDEDAMT\' in table \'SalaryBillSumFinancialYear\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableSalaryBillSumFinancialYear.PERCDEDAMTColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double totaldedsum {
+                get {
+                    try {
+                        return ((double)(this[this.tableSalaryBillSumFinancialYear.totaldedsumColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'totaldedsum\' in table \'SalaryBillSumFinancialYear\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableSalaryBillSumFinancialYear.totaldedsumColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double netpayablesum {
+                get {
+                    try {
+                        return ((double)(this[this.tableSalaryBillSumFinancialYear.netpayablesumColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'netpayablesum\' in table \'SalaryBillSumFinancialYear\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSalaryBillSumFinancialYear.netpayablesumColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsdepartmentNull() {
+                return this.IsNull(this.tableSalaryBillSumFinancialYear.departmentColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetdepartmentNull() {
+                this[this.tableSalaryBillSumFinancialYear.departmentColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMonthlysalarysumNull() {
+                return this.IsNull(this.tableSalaryBillSumFinancialYear.MonthlysalarysumColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMonthlysalarysumNull() {
+                this[this.tableSalaryBillSumFinancialYear.MonthlysalarysumColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDAYSINMONTHNull() {
+                return this.IsNull(this.tableSalaryBillSumFinancialYear.DAYSINMONTHColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDAYSINMONTHNull() {
+                this[this.tableSalaryBillSumFinancialYear.DAYSINMONTHColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsamtsumNull() {
+                return this.IsNull(this.tableSalaryBillSumFinancialYear.amtsumColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetamtsumNull() {
+                this[this.tableSalaryBillSumFinancialYear.amtsumColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsconvsumNull() {
+                return this.IsNull(this.tableSalaryBillSumFinancialYear.convsumColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetconvsumNull() {
+                this[this.tableSalaryBillSumFinancialYear.convsumColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IstotalamtsumNull() {
+                return this.IsNull(this.tableSalaryBillSumFinancialYear.totalamtsumColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SettotalamtsumNull() {
+                this[this.tableSalaryBillSumFinancialYear.totalamtsumColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPfloansumNull() {
+                return this.IsNull(this.tableSalaryBillSumFinancialYear.PfloansumColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPfloansumNull() {
+                this[this.tableSalaryBillSumFinancialYear.PfloansumColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPfloansubsumNull() {
+                return this.IsNull(this.tableSalaryBillSumFinancialYear.PfloansubsumColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPfloansubsumNull() {
+                this[this.tableSalaryBillSumFinancialYear.PfloansubsumColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsfinesumNull() {
+                return this.IsNull(this.tableSalaryBillSumFinancialYear.finesumColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetfinesumNull() {
+                this[this.tableSalaryBillSumFinancialYear.finesumColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsadvamtsubsumNull() {
+                return this.IsNull(this.tableSalaryBillSumFinancialYear.advamtsubsumColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetadvamtsubsumNull() {
+                this[this.tableSalaryBillSumFinancialYear.advamtsubsumColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IstdcsumNull() {
+                return this.IsNull(this.tableSalaryBillSumFinancialYear.tdcsumColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SettdcsumNull() {
+                this[this.tableSalaryBillSumFinancialYear.tdcsumColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPERCDEDAMTNull() {
+                return this.IsNull(this.tableSalaryBillSumFinancialYear.PERCDEDAMTColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPERCDEDAMTNull() {
+                this[this.tableSalaryBillSumFinancialYear.PERCDEDAMTColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IstotaldedsumNull() {
+                return this.IsNull(this.tableSalaryBillSumFinancialYear.totaldedsumColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SettotaldedsumNull() {
+                this[this.tableSalaryBillSumFinancialYear.totaldedsumColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsnetpayablesumNull() {
+                return this.IsNull(this.tableSalaryBillSumFinancialYear.netpayablesumColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetnetpayablesumNull() {
+                this[this.tableSalaryBillSumFinancialYear.netpayablesumColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -568,22 +1136,22 @@ namespace Fairdeal_Kashmir_Salary_Software {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class NotCopiedListRowChangeEvent : global::System.EventArgs {
+        public class SalaryBillSumFinancialYearRowChangeEvent : global::System.EventArgs {
             
-            private NotCopiedListRow eventRow;
+            private SalaryBillSumFinancialYearRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public NotCopiedListRowChangeEvent(NotCopiedListRow row, global::System.Data.DataRowAction action) {
+            public SalaryBillSumFinancialYearRowChangeEvent(SalaryBillSumFinancialYearRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public NotCopiedListRow Row {
+            public SalaryBillSumFinancialYearRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -599,7 +1167,7 @@ namespace Fairdeal_Kashmir_Salary_Software {
         }
     }
 }
-namespace Fairdeal_Kashmir_Salary_Software.DataSetCopyNotTableAdapters {
+namespace Fairdeal_Kashmir_Salary_Software.DataSetSalryBIllFinacialYearTableAdapters {
     
     
     /// <summary>
@@ -611,7 +1179,7 @@ namespace Fairdeal_Kashmir_Salary_Software.DataSetCopyNotTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class NotCopiedListTableAdapter : global::System.ComponentModel.Component {
+    public partial class SalaryBillSumFinancialYearTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -625,7 +1193,7 @@ namespace Fairdeal_Kashmir_Salary_Software.DataSetCopyNotTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public NotCopiedListTableAdapter() {
+        public SalaryBillSumFinancialYearTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -722,8 +1290,21 @@ namespace Fairdeal_Kashmir_Salary_Software.DataSetCopyNotTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "NotCopiedList";
-            tableMapping.ColumnMappings.Add("EMPname", "EMPname");
+            tableMapping.DataSetTable = "SalaryBillSumFinancialYear";
+            tableMapping.ColumnMappings.Add("department", "department");
+            tableMapping.ColumnMappings.Add("Monthlysalarysum", "Monthlysalarysum");
+            tableMapping.ColumnMappings.Add("DAYSINMONTH", "DAYSINMONTH");
+            tableMapping.ColumnMappings.Add("amtsum", "amtsum");
+            tableMapping.ColumnMappings.Add("convsum", "convsum");
+            tableMapping.ColumnMappings.Add("totalamtsum", "totalamtsum");
+            tableMapping.ColumnMappings.Add("Pfloansum", "Pfloansum");
+            tableMapping.ColumnMappings.Add("Pfloansubsum", "Pfloansubsum");
+            tableMapping.ColumnMappings.Add("finesum", "finesum");
+            tableMapping.ColumnMappings.Add("advamtsubsum", "advamtsubsum");
+            tableMapping.ColumnMappings.Add("tdcsum", "tdcsum");
+            tableMapping.ColumnMappings.Add("PERCDEDAMT", "PERCDEDAMT");
+            tableMapping.ColumnMappings.Add("totaldedsum", "totaldedsum");
+            tableMapping.ColumnMappings.Add("netpayablesum", "netpayablesum");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -740,30 +1321,30 @@ namespace Fairdeal_Kashmir_Salary_Software.DataSetCopyNotTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "dbo.NotCopiedList";
+            this._commandCollection[0].CommandText = "dbo.SalaryBillSumFinancialYear";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Month", global::System.Data.SqlDbType.NVarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Year", global::System.Data.SqlDbType.NVarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@month", global::System.Data.SqlDbType.NVarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSetCopyNot.NotCopiedListDataTable dataTable, string Month, string Year) {
+        public virtual int Fill(DataSetSalryBIllFinacialYear.SalaryBillSumFinancialYearDataTable dataTable, string Year, string month) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((Month == null)) {
+            if ((Year == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Month));
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Year));
             }
-            if ((Year == null)) {
+            if ((month == null)) {
                 this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(Year));
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(month));
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -776,21 +1357,21 @@ namespace Fairdeal_Kashmir_Salary_Software.DataSetCopyNotTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSetCopyNot.NotCopiedListDataTable GetData(string Month, string Year) {
+        public virtual DataSetSalryBIllFinacialYear.SalaryBillSumFinancialYearDataTable GetData(string Year, string month) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((Month == null)) {
+            if ((Year == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Month));
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Year));
             }
-            if ((Year == null)) {
+            if ((month == null)) {
                 this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(Year));
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(month));
             }
-            DataSetCopyNot.NotCopiedListDataTable dataTable = new DataSetCopyNot.NotCopiedListDataTable();
+            DataSetSalryBIllFinacialYear.SalaryBillSumFinancialYearDataTable dataTable = new DataSetSalryBIllFinacialYear.SalaryBillSumFinancialYearDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -864,7 +1445,7 @@ namespace Fairdeal_Kashmir_Salary_Software.DataSetCopyNotTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(DataSetCopyNot dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(DataSetSalryBIllFinacialYear dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -874,7 +1455,7 @@ namespace Fairdeal_Kashmir_Salary_Software.DataSetCopyNotTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(DataSetCopyNot dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(DataSetSalryBIllFinacialYear dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -884,7 +1465,7 @@ namespace Fairdeal_Kashmir_Salary_Software.DataSetCopyNotTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(DataSetCopyNot dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(DataSetSalryBIllFinacialYear dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -918,7 +1499,7 @@ namespace Fairdeal_Kashmir_Salary_Software.DataSetCopyNotTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(DataSetCopyNot dataSet) {
+        public virtual int UpdateAll(DataSetSalryBIllFinacialYear dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

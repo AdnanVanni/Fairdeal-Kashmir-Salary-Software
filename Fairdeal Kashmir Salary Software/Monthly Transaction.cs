@@ -23,6 +23,7 @@ namespace Fairdeal_Kashmir_Salary_Software
         private void Monthly_Transaction_Load(object sender, EventArgs e)
         {
             labelPrompt.Visible = false;
+            lblPercAmtTxt.Visible = false;
 
 
             btnDelete.Visible = false;
@@ -98,6 +99,40 @@ namespace Fairdeal_Kashmir_Salary_Software
         
            
         }
+        private void FillGridAferUpdate()
+        {
+            string EmpName = txtEmpSearch.Text;
+            string Month = comboBoxSMonth.Text;
+            string Year = comboBoxSYear.Text;
+            SqlCommand Fetch = new SqlCommand();
+            Fetch.CommandText = @"select MT.Month,MT.Year,E.EmpId,MT.EmployeeId,E.EmpName,E.Department,
+                E.SalaryPerMonth,MT.SalaryInHand,E.AdvanceAmt,E.PFloanWithdrawn,MT.TransactionDate,
+            MT.Conv FRom Employee E join MonthlyTransaction MT ON E.EmpId=MT.EmployeeId
+           where E.EmpName like '%" + EmpName + "%' and MT.Month Like '%" + Month + "%' and MT.Year like '%" + Year + "%' ORDER BY TRANSACTIONDATE ";
+            try
+            {
+                SqlConnection connection1 = new SqlConnection(DataManager.connectionString);
+                SqlDataAdapter dataadapter = new SqlDataAdapter(Fetch.CommandText, DataManager.connectionString);
+                DataSet ds1 = new DataSet();
+                dataadapter.Fill(ds1);
+
+                dataGridViewMT.DataSource = ds1.Tables[0].DefaultView;
+            }
+            catch (SqlException Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
+
+
+            dataGridViewMT.Columns["EmpId"].Visible = false;
+            dataGridViewMT.Columns["EmployeeId"].Visible = false;
+            dataGridViewMT.Columns["TransactionDate"].Visible = false;
+            dataGridViewMT.Columns["AdvanceAmt"].HeaderText = "Advance Amt Balance";
+            dataGridViewMT.Columns["PFloanWithdrawn"].HeaderText = "PF Loan Balance";
+            dataGridViewMT.Columns["SalaryPerMonth"].HeaderText = "Actual Salary";
+            dataGridViewMT.Columns["EmpName"].HeaderText = "Name";
+            btnDelete.Visible = false;
+        }
         private void txtSaveRecord_Click(object sender, EventArgs e)
         {
             if (Ename.Text == string.Empty)
@@ -153,9 +188,16 @@ Select isnull(sum(AdvAmount),0) from AdvanceRecords where eId=@EmpId and Flag=1"
             {
                 //saves record in monthly transaction
                 SqlCommand Save = new SqlCommand();
-                Save.CommandText = @"INSERT INTO[dbo].[MonthlyTransaction]([Month],[EmployeeId] ,[Year],[TDC],[Fine],[SalaryInHand],[PfMonthly],[Memo],[AdvAmtSub],[PfLoanSub],[TransactionDate],[AbsentDays],[DaysInMonth],[Conv]) 
-VALUES(@Month,@EmployeeId,@Year,@TDC,@Fine,@SalaryInHand,@PfMonthly,@Memo,@AdvAmtSub,@PfLoanSub,GetDate(),@Absent,@days,@Conv) 
-INSERT INTO[dbo].[ArchiveTransactions] values(@EmployeeId, @EmployeeName, @Month, @Year, @PFloanWithdrawn, @PfLoanSub, @AdvanceAmt, @AdvAmtSub, @TDC, @Conv, @Fine, @Absent, @ActualSalary, @SalaryInHand, @Memo)
+                Save.CommandText = @"INSERT INTO[dbo].[MonthlyTransaction]([Month],[EmployeeId] ,
+[Year],[TDC],[Fine],[SalaryInHand],[PfMonthly],[Memo],[AdvAmtSub],[PfLoanSub],[TransactionDate],
+[AbsentDays],[DaysInMonth],[Conv],[PercDeduction],[PercDedAmt]) 
+VALUES(@Month,@EmployeeId,@Year,@TDC,@Fine,@SalaryInHand,@PfMonthly,@Memo,@AdvAmtSub,@PfLoanSub,
+GetDate(),@Absent,@days,@Conv,@PercDeduction,@PercDedAmt) 
+
+INSERT INTO[dbo].[ArchiveTransactions] values(@EmployeeId, @EmployeeName,
+@Month, @Year, @PFloanWithdrawn, @PfLoanSub, @AdvanceAmt, @AdvAmtSub, @TDC, @Conv, 
+@Fine, @Absent, @ActualSalary, @SalaryInHand, @Memo,@PercDeduction,@PercDedAmt)
+
                     Insert into PfRecords VALUES(@EmployeeId,@PfLoanSub, @Month, @Year,1) 
                     Insert into PfRecords VALUES(@EmployeeId,@PfMonthly, @Month, @Year,2)
                     Insert into AdvanceRecords VALUES(@EmployeeId,@AdvAmtSub, @Month, @Year,1)";
@@ -170,14 +212,16 @@ INSERT INTO[dbo].[ArchiveTransactions] values(@EmployeeId, @EmployeeName, @Month
                 Save.Parameters.AddWithValue("@Fine", txtFine.Text);
                 Save.Parameters.AddWithValue("@SalaryInHand", txtNetSalary.Text);
                 Save.Parameters.AddWithValue("@Memo", richTextBoxMemo.Text);
-                Save.Parameters.AddWithValue("@PFloanWithdrawn",RemaningPf);
-                Save.Parameters.AddWithValue("@AdvanceAmt",RemaningAdv);
+                Save.Parameters.AddWithValue("@PFloanWithdrawn", RemaningPf);
+                Save.Parameters.AddWithValue("@AdvanceAmt", RemaningAdv);
                 Save.Parameters.AddWithValue("@AdvAmtSub", Convert.ToDouble(txtAAMD.Text));
                 Save.Parameters.AddWithValue("@PfLoanSub", Convert.ToDouble(txtMPFLS.Text));
                 Save.Parameters.AddWithValue("@Absent", txtAbsent.Text);
                 Save.Parameters.AddWithValue("@PfMonthly", txtPF.Text);
                 Save.Parameters.AddWithValue("@Conv", textBoxConv.Text);
                 Save.Parameters.AddWithValue("@ActualSalary", textBoxConv.Text);
+                Save.Parameters.AddWithValue("@PercDedAmt", lblPercAmt.Text);
+                Save.Parameters.AddWithValue("@PercDeduction", txtPercentageDeduction.Text);
                 int MonthS = Convert.ToInt32(comboBoxMonth.SelectedIndex.ToString());
                 MonthS++;
                 int YearS = Convert.ToInt32(comboBoxYear.SelectedItem.ToString());
@@ -339,11 +383,12 @@ INSERT INTO[dbo].[ArchiveTransactions] values(@EmployeeId, @EmployeeName, @Month
 
         private void btnCalcSalary_Click(object sender, EventArgs e)
         {
+            double amtt;
             double a;
             double Net=0;
             if (Ename.Text == null || Ename.Text == "")
             {
-                MessageBox.Show("Please select employee");
+                       MessageBox.Show("Please select employee");
                 return;
             }
             if(comboBoxMonth.Text== null || comboBoxMonth.Text=="")
@@ -363,7 +408,7 @@ INSERT INTO[dbo].[ArchiveTransactions] values(@EmployeeId, @EmployeeName, @Month
             }
             else
             {
-                a = 0;
+                a = 0;//a =amount
             }
             if(!(txtPF.Text == null || txtPF.Text == ""))
             {
@@ -398,26 +443,37 @@ INSERT INTO[dbo].[ArchiveTransactions] values(@EmployeeId, @EmployeeName, @Month
 
             }
 
-            else if (Convert.ToInt32(txtAbsent.Text) == 0)
+            else if (Convert.ToDouble(txtAbsent.Text) == 0)
             {
                 Net = Convert.ToDouble(txtMonthlySalary.Text) - a;
 
 
             }
 
-            else if (Convert.ToInt32(txtAbsent.Text) > 0)
+            else if (Convert.ToDouble(txtAbsent.Text) > 0)
             {
                 int MonthS = Convert.ToInt32(comboBoxMonth.SelectedIndex.ToString());
                 MonthS++;
                 int YearS = Convert.ToInt32(comboBoxYear.SelectedItem.ToString());
                 Int32 daysInMonth = System.DateTime.DaysInMonth(YearS, MonthS);
-                double SalaryAbsentExc = Math.Truncate((float)Convert.ToInt32(txtMonthlySalary.Text) * ((float)daysInMonth - (float)Convert.ToInt32(txtAbsent.Text)) / (float)daysInMonth);
+                double SalaryAbsentExc = Math.Truncate((float)Convert.ToDouble(txtMonthlySalary.Text) * ((float)daysInMonth - (float)Convert.ToDouble(txtAbsent.Text)) / (float)daysInMonth);
                 SalaryAbsentExc = SalaryAbsentExc - a;
                 Net = SalaryAbsentExc;
                 
 
             }
+            //in case percentage deduction is zero
+            if (txtPercentageDeduction.Text=="0" || String.IsNullOrEmpty(txtPercentageDeduction.Text))
             txtNetSalary.Text = Net.ToString();
+            else//in case percentage deduction is not zero
+            {
+                amtt = Convert.ToDouble(txtPercentageDeduction.Text) / 100 * Convert.ToDouble(txtMonthlySalary.Text);
+                lblPercAmt.Text = amtt.ToString();
+                lblPercAmtTxt.Visible = true;                                                 
+                Net = Net - amtt;
+                txtNetSalary.Text = Net.ToString();
+
+            }
 
         }
 
@@ -441,18 +497,33 @@ INSERT INTO[dbo].[ArchiveTransactions] values(@EmployeeId, @EmployeeName, @Month
         }
 
         private void txtMonthlySalary_TextChanged(object sender, EventArgs e)
-        { 
-           double pfcalc= Convert.ToDouble(txtMonthlySalary.Text) * 0.12;
-            
-            if (pfcalc > 1800)
+        {
+            if ((txtMonthlySalary.Text)!="")
             {
-                pfcalc = 1800;
+                double pfcalc = Convert.ToDouble(txtMonthlySalary.Text) * 0.12;
+
+                if (pfcalc > 1800)
+                {
+                    pfcalc = 1800;
+                }
+                txtPF.Text = pfcalc.ToString();
+
+                double percCal = 0;
+
+                if (Convert.ToDouble(txtMonthlySalary.Text) < 15000)
+                {
+                    txtPercentageDeduction.Text = "1.75";
+
+                }
+                else { txtPercentageDeduction.Text = "0"; }
+
             }
-            txtPF.Text = pfcalc.ToString();
         }
 
         private void Ename_SelectedIndexChanged(object sender, EventArgs e)
         {
+            lblPercAmt.Text = "";
+
             txtNetSalary.Clear();
             if (flagload == false)
             { return; }
@@ -504,7 +575,7 @@ Select isnull(sum(AdvAmount),0) from AdvanceRecords where eId=@EmpId and Flag=1"
 
         private void dataGridViewMT_SelectionChanged(object sender, EventArgs e)
         {
-
+          lblPercAmt.Text = "";
             
             foreach (DataGridViewRow row in dataGridViewMT.SelectedRows)
             {
@@ -523,8 +594,8 @@ Select isnull(sum(AdvAmount),0) from AdvanceRecords where eId=@EmpId and Flag=1"
 
                 comboBoxMonth.Text = DT7.Rows[0][0].ToString();
                 comboBoxYear.Text = DT7.Rows[0][2].ToString();
-                Ename.Text = DT7.Rows[0][14].ToString();
-                txtMonthlySalary.Text = DT7.Rows[0][15].ToString();
+                Ename.Text = DT7.Rows[0][16].ToString();
+                txtMonthlySalary.Text = DT7.Rows[0][17].ToString();
                 txtAbsent.Text = DT7.Rows[0][11].ToString();
                 txtPF.Text = DT7.Rows[0][6].ToString();
                 textBoxConv.Text = DT7.Rows[0][13].ToString();
@@ -533,6 +604,9 @@ Select isnull(sum(AdvAmount),0) from AdvanceRecords where eId=@EmpId and Flag=1"
                 txtFine.Text = DT7.Rows[0][4].ToString();
                 txtTdc.Text = DT7.Rows[0][3].ToString();
                 txtNetSalary.Text = DT7.Rows[0][6].ToString();
+                txtPercentageDeduction.Text= DT7.Rows[0][14].ToString();
+                lblPercAmt.Visible = true;
+                lblPercAmt.Text = DT7.Rows[0][15].ToString();
                 txtNetSalary.Text = "";
                 UpdateBtn.Visible = true;
                 txtSaveRecord.Visible = false;
@@ -616,6 +690,8 @@ delete from archivetransactions  where EmployeeId=@EmployeeId and Month=@Month a
 
         }
 
+
+
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             FillGrid();
@@ -657,7 +733,7 @@ delete from archivetransactions  where EmployeeId=@EmployeeId and Month=@Month a
                 MonthS++;
                 int YearS = Convert.ToInt32(comboBoxYear.SelectedItem.ToString());
                 Int32 daysInMonth = System.DateTime.DaysInMonth(YearS, MonthS);
-                var t= Convert.ToDouble(labelConvAmt.Text) / daysInMonth * (daysInMonth - Convert.ToInt32(txtAbsent.Text));
+                var t= (Convert.ToDouble(labelConvAmt.Text) / Convert.ToDouble(daysInMonth)) * (Convert.ToDouble(daysInMonth) - Convert.ToDouble(txtAbsent.Text));
                 textBoxConv.Text = t.ToString();
                 }
 
@@ -690,7 +766,7 @@ delete from archivetransactions  where EmployeeId=@EmployeeId and Month=@Month a
             SqlCommand cmdp = new SqlCommand();
             cmdp.CommandText = @"Update MonthlyTransaction set tdc=@tdc,Fine=@fine,SalaryInHand=@salaryinhand,PfMonthly=@PfMonthly
 ,Memo=@Memo,TransactionDate=GETDATE(),AbsentDays=@Absent,
-Conv=@Conv where EmployeeId=@EmpId and Month=@Month And Year=@Year
+Conv=@Conv,PercDedAmt=@PercDedAmt,PercDeduction=@PercDeduction where EmployeeId=@EmpId and Month=@Month And Year=@Year
 Update PfRecords set PfAmount=@PfMonthly where EId=@EmpId and Month=@Month And Year=@Year and Flag=2";
             cmdp.Parameters.AddWithValue("@EmpId", labelEmpId.Text);
             cmdp.Parameters.AddWithValue("@Month", labelMonth.Text);
@@ -702,16 +778,18 @@ Update PfRecords set PfAmount=@PfMonthly where EId=@EmpId and Month=@Month And Y
             cmdp.Parameters.AddWithValue("@Memo", richTextBoxMemo.Text);
             cmdp.Parameters.AddWithValue("@Absent", txtAbsent.Text);
             cmdp.Parameters.AddWithValue("@Conv",textBoxConv.Text);
-            
+
+            cmdp.Parameters.AddWithValue("@PercDedAmt", lblPercAmt.Text);
+            cmdp.Parameters.AddWithValue("@PercDeduction", txtPercentageDeduction.Text);
+
 
 
             int n= DataManager.executeNonQuery(cmdp);
             if (n > 0)
             {
                 MessageBox.Show("Record Updated");
-                Monthly_Transaction mt = new Monthly_Transaction();
-                mt.Show();
-                this.Hide();
+
+                FillGridAferUpdate();
             }
             else
             {
@@ -721,6 +799,28 @@ Update PfRecords set PfAmount=@PfMonthly where EId=@EmpId and Month=@Month And Y
                 this.Hide();
             }
 
+        }
+
+        private void txtPercentageDeduction_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            {
+                if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+                       (e.KeyChar != '.'))
+                {
+                    e.Handled = true;
+                }
+
+                // only allow one decimal point
+                if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+                {
+                    e.Handled = true;
+                }
+            }
+        }
+
+        private void txtPercentageDeduction_TextChanged(object sender, EventArgs e)
+        {
+            lblPercAmtTxt.Visible = true;
         }
     }
 }

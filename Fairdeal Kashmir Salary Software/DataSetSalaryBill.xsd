@@ -42,6 +42,7 @@
               <Mapping SourceColumn="TotalDeduction" DataSetColumn="TotalDeduction" />
               <Mapping SourceColumn="NetAmountPayable" DataSetColumn="NetAmountPayable" />
               <Mapping SourceColumn="AccNumber" DataSetColumn="AccNumber" />
+              <Mapping SourceColumn="PERCDEDAMT" DataSetColumn="PERCDEDAMT" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -53,7 +54,7 @@
   <xs:element name="DataSetSalaryBill" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetSalaryBill" msprop:Generator_UserDSName="DataSetSalaryBill">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="SalaryBill" msprop:Generator_TableClassName="SalaryBillDataTable" msprop:Generator_TableVarName="tableSalaryBill" msprop:Generator_TablePropName="SalaryBill" msprop:Generator_RowDeletingName="SalaryBillRowDeleting" msprop:Generator_RowChangingName="SalaryBillRowChanging" msprop:Generator_RowEvHandlerName="SalaryBillRowChangeEventHandler" msprop:Generator_RowDeletedName="SalaryBillRowDeleted" msprop:Generator_UserTableName="SalaryBill" msprop:Generator_RowChangedName="SalaryBillRowChanged" msprop:Generator_RowEvArgName="SalaryBillRowChangeEvent" msprop:Generator_RowClassName="SalaryBillRow">
+        <xs:element name="SalaryBill" msprop:Generator_TableClassName="SalaryBillDataTable" msprop:Generator_TableVarName="tableSalaryBill" msprop:Generator_RowChangedName="SalaryBillRowChanged" msprop:Generator_TablePropName="SalaryBill" msprop:Generator_RowDeletingName="SalaryBillRowDeleting" msprop:Generator_RowChangingName="SalaryBillRowChanging" msprop:Generator_RowEvHandlerName="SalaryBillRowChangeEventHandler" msprop:Generator_RowDeletedName="SalaryBillRowDeleted" msprop:Generator_RowClassName="SalaryBillRow" msprop:Generator_UserTableName="SalaryBill" msprop:Generator_RowEvArgName="SalaryBillRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Department" msprop:Generator_ColumnVarNameInTable="columnDepartment" msprop:Generator_ColumnPropNameInRow="Department" msprop:Generator_ColumnPropNameInTable="DepartmentColumn" msprop:Generator_UserColumnName="Department" minOccurs="0">
@@ -110,6 +111,7 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="PERCDEDAMT" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPERCDEDAMT" msprop:Generator_ColumnPropNameInRow="PERCDEDAMT" msprop:Generator_ColumnPropNameInTable="PERCDEDAMTColumn" msprop:Generator_UserColumnName="PERCDEDAMT" type="xs:float" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

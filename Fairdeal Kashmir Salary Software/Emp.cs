@@ -538,5 +538,19 @@ namespace Fairdeal_Kashmir_Salary_Software
             gr.Show();
             this.Hide();
         }
+
+        private void salaryBillFinancialYearToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SalaryBillFinacialYear s = new SalaryBillFinacialYear();
+            s.Show();
+            this.Hide();
+        }
+
+        private void salarySumMonthToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SumSalaryEmpYear s = new SumSalaryEmpYear();
+            s.Show();
+            this.Hide();
+        }
     }
 }

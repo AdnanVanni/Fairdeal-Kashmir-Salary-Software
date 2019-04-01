@@ -77,6 +77,10 @@
             this.labelPrompt = new System.Windows.Forms.Label();
             this.labelConvAmt = new System.Windows.Forms.Label();
             this.UpdateBtn = new System.Windows.Forms.Button();
+            this.lblPercentageDeduction = new System.Windows.Forms.Label();
+            this.txtPercentageDeduction = new System.Windows.Forms.TextBox();
+            this.lblPercAmt = new System.Windows.Forms.Label();
+            this.lblPercAmtTxt = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMT)).BeginInit();
             this.SuspendLayout();
             // 
@@ -118,7 +122,7 @@
             // 
             // txtFine
             // 
-            this.txtFine.Location = new System.Drawing.Point(142, 323);
+            this.txtFine.Location = new System.Drawing.Point(142, 316);
             this.txtFine.Name = "txtFine";
             this.txtFine.Size = new System.Drawing.Size(121, 20);
             this.txtFine.TabIndex = 15;
@@ -202,7 +206,7 @@
             // 
             // btnCalcSalary
             // 
-            this.btnCalcSalary.Location = new System.Drawing.Point(142, 448);
+            this.btnCalcSalary.Location = new System.Drawing.Point(141, 469);
             this.btnCalcSalary.Name = "btnCalcSalary";
             this.btnCalcSalary.Size = new System.Drawing.Size(121, 23);
             this.btnCalcSalary.TabIndex = 21;
@@ -229,7 +233,7 @@
             // 
             // txtNetSalary
             // 
-            this.txtNetSalary.Location = new System.Drawing.Point(286, 450);
+            this.txtNetSalary.Location = new System.Drawing.Point(286, 469);
             this.txtNetSalary.Name = "txtNetSalary";
             this.txtNetSalary.Size = new System.Drawing.Size(130, 20);
             this.txtNetSalary.TabIndex = 24;
@@ -237,7 +241,7 @@
             // 
             // txtSaveRecord
             // 
-            this.txtSaveRecord.Location = new System.Drawing.Point(286, 519);
+            this.txtSaveRecord.Location = new System.Drawing.Point(286, 533);
             this.txtSaveRecord.Name = "txtSaveRecord";
             this.txtSaveRecord.Size = new System.Drawing.Size(130, 23);
             this.txtSaveRecord.TabIndex = 25;
@@ -342,10 +346,10 @@
             this.dataGridViewMT.AllowUserToAddRows = false;
             this.dataGridViewMT.AllowUserToDeleteRows = false;
             this.dataGridViewMT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewMT.Location = new System.Drawing.Point(572, 99);
+            this.dataGridViewMT.Location = new System.Drawing.Point(543, 99);
             this.dataGridViewMT.MultiSelect = false;
             this.dataGridViewMT.Name = "dataGridViewMT";
-            this.dataGridViewMT.Size = new System.Drawing.Size(650, 501);
+            this.dataGridViewMT.Size = new System.Drawing.Size(748, 626);
             this.dataGridViewMT.TabIndex = 38;
             this.dataGridViewMT.SelectionChanged += new System.EventHandler(this.dataGridViewMT_SelectionChanged);
             // 
@@ -365,7 +369,7 @@
             "OCTOBER",
             "NOVEMBER",
             "DECEMBER"});
-            this.comboBoxSMonth.Location = new System.Drawing.Point(572, 72);
+            this.comboBoxSMonth.Location = new System.Drawing.Point(543, 70);
             this.comboBoxSMonth.Name = "comboBoxSMonth";
             this.comboBoxSMonth.Size = new System.Drawing.Size(121, 21);
             this.comboBoxSMonth.TabIndex = 39;
@@ -398,14 +402,14 @@
             "2039",
             "2040",
             ""});
-            this.comboBoxSYear.Location = new System.Drawing.Point(699, 72);
+            this.comboBoxSYear.Location = new System.Drawing.Point(670, 70);
             this.comboBoxSYear.Name = "comboBoxSYear";
             this.comboBoxSYear.Size = new System.Drawing.Size(121, 21);
             this.comboBoxSYear.TabIndex = 40;
             // 
             // txtEmpSearch
             // 
-            this.txtEmpSearch.Location = new System.Drawing.Point(826, 72);
+            this.txtEmpSearch.Location = new System.Drawing.Point(797, 70);
             this.txtEmpSearch.Name = "txtEmpSearch";
             this.txtEmpSearch.Size = new System.Drawing.Size(129, 20);
             this.txtEmpSearch.TabIndex = 41;
@@ -413,7 +417,7 @@
             // btnSearch
             // 
             this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
-            this.btnSearch.Location = new System.Drawing.Point(953, 72);
+            this.btnSearch.Location = new System.Drawing.Point(932, 70);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(26, 21);
             this.btnSearch.TabIndex = 45;
@@ -422,7 +426,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(1071, 70);
+            this.btnDelete.Location = new System.Drawing.Point(1140, 68);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(151, 23);
             this.btnDelete.TabIndex = 46;
@@ -452,7 +456,7 @@
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(990, 70);
+            this.btnRefresh.Location = new System.Drawing.Point(1059, 68);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(75, 23);
             this.btnRefresh.TabIndex = 49;
@@ -495,7 +499,7 @@
             // lblPFRem
             // 
             this.lblPFRem.AutoSize = true;
-            this.lblPFRem.Location = new System.Drawing.Point(36, 394);
+            this.lblPFRem.Location = new System.Drawing.Point(35, 423);
             this.lblPFRem.Name = "lblPFRem";
             this.lblPFRem.Size = new System.Drawing.Size(102, 13);
             this.lblPFRem.TabIndex = 53;
@@ -505,7 +509,7 @@
             // 
             this.labelPFAmtBal.AutoSize = true;
             this.labelPFAmtBal.ForeColor = System.Drawing.Color.Red;
-            this.labelPFAmtBal.Location = new System.Drawing.Point(155, 394);
+            this.labelPFAmtBal.Location = new System.Drawing.Point(155, 423);
             this.labelPFAmtBal.Name = "labelPFAmtBal";
             this.labelPFAmtBal.Size = new System.Drawing.Size(13, 13);
             this.labelPFAmtBal.TabIndex = 54;
@@ -514,17 +518,17 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(287, 394);
+            this.label5.Location = new System.Drawing.Point(287, 423);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(129, 13);
+            this.label5.Size = new System.Drawing.Size(169, 13);
             this.label5.TabIndex = 55;
-            this.label5.Text = "Advance Loan Balance is";
+            this.label5.Text = "Advance Loan Balance is Rupees";
             // 
             // lblAdvAmtBalance
             // 
             this.lblAdvAmtBalance.AutoSize = true;
             this.lblAdvAmtBalance.ForeColor = System.Drawing.Color.Red;
-            this.lblAdvAmtBalance.Location = new System.Drawing.Point(432, 394);
+            this.lblAdvAmtBalance.Location = new System.Drawing.Point(462, 423);
             this.lblAdvAmtBalance.Name = "lblAdvAmtBalance";
             this.lblAdvAmtBalance.Size = new System.Drawing.Size(13, 13);
             this.lblAdvAmtBalance.TabIndex = 56;
@@ -550,7 +554,7 @@
             // labelPrompt
             // 
             this.labelPrompt.AutoSize = true;
-            this.labelPrompt.Location = new System.Drawing.Point(422, 453);
+            this.labelPrompt.Location = new System.Drawing.Point(276, 492);
             this.labelPrompt.Name = "labelPrompt";
             this.labelPrompt.Size = new System.Drawing.Size(144, 13);
             this.labelPrompt.TabIndex = 59;
@@ -568,7 +572,7 @@
             // 
             // UpdateBtn
             // 
-            this.UpdateBtn.Location = new System.Drawing.Point(142, 519);
+            this.UpdateBtn.Location = new System.Drawing.Point(141, 533);
             this.UpdateBtn.Name = "UpdateBtn";
             this.UpdateBtn.Size = new System.Drawing.Size(121, 23);
             this.UpdateBtn.TabIndex = 61;
@@ -577,11 +581,52 @@
             this.UpdateBtn.Visible = false;
             this.UpdateBtn.Click += new System.EventHandler(this.UpdateBtn_Click);
             // 
+            // lblPercentageDeduction
+            // 
+            this.lblPercentageDeduction.AutoSize = true;
+            this.lblPercentageDeduction.Location = new System.Drawing.Point(38, 393);
+            this.lblPercentageDeduction.Name = "lblPercentageDeduction";
+            this.lblPercentageDeduction.Size = new System.Drawing.Size(67, 13);
+            this.lblPercentageDeduction.TabIndex = 62;
+            this.lblPercentageDeduction.Text = "% Deduction";
+            // 
+            // txtPercentageDeduction
+            // 
+            this.txtPercentageDeduction.Location = new System.Drawing.Point(141, 390);
+            this.txtPercentageDeduction.Name = "txtPercentageDeduction";
+            this.txtPercentageDeduction.Size = new System.Drawing.Size(121, 20);
+            this.txtPercentageDeduction.TabIndex = 63;
+            this.txtPercentageDeduction.TextChanged += new System.EventHandler(this.txtPercentageDeduction_TextChanged);
+            this.txtPercentageDeduction.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPercentageDeduction_KeyPress);
+            // 
+            // lblPercAmt
+            // 
+            this.lblPercAmt.AutoSize = true;
+            this.lblPercAmt.ForeColor = System.Drawing.Color.Red;
+            this.lblPercAmt.Location = new System.Drawing.Point(422, 397);
+            this.lblPercAmt.Name = "lblPercAmt";
+            this.lblPercAmt.Size = new System.Drawing.Size(13, 13);
+            this.lblPercAmt.TabIndex = 64;
+            this.lblPercAmt.Text = "..";
+            // 
+            // lblPercAmtTxt
+            // 
+            this.lblPercAmtTxt.AutoSize = true;
+            this.lblPercAmtTxt.Location = new System.Drawing.Point(295, 397);
+            this.lblPercAmtTxt.Name = "lblPercAmtTxt";
+            this.lblPercAmtTxt.Size = new System.Drawing.Size(125, 13);
+            this.lblPercAmtTxt.TabIndex = 65;
+            this.lblPercAmtTxt.Text = "% Deduction amounts to ";
+            // 
             // Monthly_Transaction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1333, 666);
+            this.ClientSize = new System.Drawing.Size(1333, 748);
+            this.Controls.Add(this.lblPercAmtTxt);
+            this.Controls.Add(this.lblPercAmt);
+            this.Controls.Add(this.txtPercentageDeduction);
+            this.Controls.Add(this.lblPercentageDeduction);
             this.Controls.Add(this.UpdateBtn);
             this.Controls.Add(this.labelConvAmt);
             this.Controls.Add(this.labelPrompt);
@@ -686,5 +731,9 @@
         private System.Windows.Forms.Label labelPrompt;
         private System.Windows.Forms.Label labelConvAmt;
         private System.Windows.Forms.Button UpdateBtn;
+        private System.Windows.Forms.Label lblPercentageDeduction;
+        private System.Windows.Forms.TextBox txtPercentageDeduction;
+        private System.Windows.Forms.Label lblPercAmt;
+        private System.Windows.Forms.Label lblPercAmtTxt;
     }
 }

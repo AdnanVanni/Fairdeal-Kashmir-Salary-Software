@@ -167,6 +167,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetSalaryBill.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSetSalryBIllFinacialYear.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetSalryBIllFinacialYear.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetSUMsalary.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetSUMsalary.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Deptt.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -223,6 +233,18 @@
     <Compile Include="SalaryBill.Designer.cs">
       <DependentUpon>SalaryBill.cs</DependentUpon>
     </Compile>
+    <Compile Include="SalaryBillFinacialYear.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalaryBillFinacialYear.Designer.cs">
+      <DependentUpon>SalaryBillFinacialYear.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SumSalaryEmpYear.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SumSalaryEmpYear.Designer.cs">
+      <DependentUpon>SumSalaryEmpYear.cs</DependentUpon>
+    </Compile>
     <Compile Include="TransactionsArchived.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -273,6 +295,12 @@
     <EmbeddedResource Include="Report10.rdlc" />
     <EmbeddedResource Include="Report11.rdlc" />
     <EmbeddedResource Include="Report12.rdlc" />
+    <EmbeddedResource Include="Report13.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalarySumYear.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report2.rdlc" />
     <EmbeddedResource Include="Report3.rdlc" />
     <EmbeddedResource Include="Report4.rdlc" />
@@ -282,12 +310,20 @@
     <EmbeddedResource Include="Report8.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report9.rdlc" />
+    <EmbeddedResource Include="Report9.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportForm1.resx">
       <DependentUpon>ReportForm1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SalaryBill.resx">
       <DependentUpon>SalaryBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalaryBillFinacialYear.resx">
+      <DependentUpon>SalaryBillFinacialYear.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SumSalaryEmpYear.resx">
+      <DependentUpon>SumSalaryEmpYear.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TransactionsArchived.resx">
       <DependentUpon>TransactionsArchived.cs</DependentUpon>
@@ -401,6 +437,28 @@
     </None>
     <None Include="DataSetSalaryBill.xss">
       <DependentUpon>DataSetSalaryBill.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetSalryBIllFinacialYear.xsc">
+      <DependentUpon>DataSetSalryBIllFinacialYear.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetSalryBIllFinacialYear.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetSalryBIllFinacialYear.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetSalryBIllFinacialYear.xss">
+      <DependentUpon>DataSetSalryBIllFinacialYear.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetSUMsalary.xsc">
+      <DependentUpon>DataSetSUMsalary.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetSUMsalary.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetSUMsalary.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetSUMsalary.xss">
+      <DependentUpon>DataSetSUMsalary.xsd</DependentUpon>
     </None>
     <None Include="Fairdeal Kashmir Salary Software_TemporaryKey.pfx" />
     <None Include="packages.config" />

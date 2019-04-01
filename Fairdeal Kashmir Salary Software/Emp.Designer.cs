@@ -73,11 +73,9 @@
             this.report1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.report2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pFReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.archivedTransactionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salaryBillFinancialYearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backupDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.generalRecordsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.generalRecordsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridViewEmp = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.txtAddNew = new System.Windows.Forms.Button();
@@ -94,6 +92,7 @@
             this.textDesignation = new System.Windows.Forms.ComboBox();
             this.textBoxConv = new System.Windows.Forms.TextBox();
             this.lblConvPerMonth = new System.Windows.Forms.Label();
+            this.salarySumMonthToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmp)).BeginInit();
             this.SuspendLayout();
@@ -352,8 +351,7 @@
             this.designationsToolStripMenuItem,
             this.monthlyTransactionToolStripMenuItem,
             this.reportToolStripMenuItem,
-            this.backupToolStripMenuItem,
-            this.generalRecordsToolStripMenuItem});
+            this.backupToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(20, 60);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1275, 29);
@@ -458,7 +456,8 @@
             this.report1ToolStripMenuItem,
             this.report2ToolStripMenuItem,
             this.pFReportToolStripMenuItem,
-            this.archivedTransactionsToolStripMenuItem});
+            this.salaryBillFinancialYearToolStripMenuItem,
+            this.salarySumMonthToolStripMenuItem});
             this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
             this.reportToolStripMenuItem.Size = new System.Drawing.Size(59, 25);
             this.reportToolStripMenuItem.Text = "Reports";
@@ -466,31 +465,30 @@
             // report1ToolStripMenuItem
             // 
             this.report1ToolStripMenuItem.Name = "report1ToolStripMenuItem";
-            this.report1ToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.report1ToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.report1ToolStripMenuItem.Text = "Report1";
             this.report1ToolStripMenuItem.Click += new System.EventHandler(this.report1ToolStripMenuItem_Click);
             // 
             // report2ToolStripMenuItem
             // 
             this.report2ToolStripMenuItem.Name = "report2ToolStripMenuItem";
-            this.report2ToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.report2ToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.report2ToolStripMenuItem.Text = "Report2";
             this.report2ToolStripMenuItem.Click += new System.EventHandler(this.report2ToolStripMenuItem_Click);
             // 
             // pFReportToolStripMenuItem
             // 
             this.pFReportToolStripMenuItem.Name = "pFReportToolStripMenuItem";
-            this.pFReportToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.pFReportToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.pFReportToolStripMenuItem.Text = "PF Report ";
             this.pFReportToolStripMenuItem.Click += new System.EventHandler(this.pFReportToolStripMenuItem_Click);
             // 
-            // archivedTransactionsToolStripMenuItem
+            // salaryBillFinancialYearToolStripMenuItem
             // 
-            this.archivedTransactionsToolStripMenuItem.Enabled = false;
-            this.archivedTransactionsToolStripMenuItem.Name = "archivedTransactionsToolStripMenuItem";
-            this.archivedTransactionsToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
-            this.archivedTransactionsToolStripMenuItem.Text = "Archived Transactions";
-            this.archivedTransactionsToolStripMenuItem.Click += new System.EventHandler(this.archivedTransactionsToolStripMenuItem_Click);
+            this.salaryBillFinancialYearToolStripMenuItem.Name = "salaryBillFinancialYearToolStripMenuItem";
+            this.salaryBillFinancialYearToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.salaryBillFinancialYearToolStripMenuItem.Text = "Salary Bill Dept Monthly";
+            this.salaryBillFinancialYearToolStripMenuItem.Click += new System.EventHandler(this.salaryBillFinancialYearToolStripMenuItem_Click);
             // 
             // backupToolStripMenuItem
             // 
@@ -506,21 +504,6 @@
             this.backupDatabaseToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.backupDatabaseToolStripMenuItem.Text = "Backup Database";
             this.backupDatabaseToolStripMenuItem.Click += new System.EventHandler(this.backupDatabaseToolStripMenuItem_Click);
-            // 
-            // generalRecordsToolStripMenuItem
-            // 
-            this.generalRecordsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.generalRecordsToolStripMenuItem1});
-            this.generalRecordsToolStripMenuItem.Name = "generalRecordsToolStripMenuItem";
-            this.generalRecordsToolStripMenuItem.Size = new System.Drawing.Size(104, 25);
-            this.generalRecordsToolStripMenuItem.Text = "General Records";
-            // 
-            // generalRecordsToolStripMenuItem1
-            // 
-            this.generalRecordsToolStripMenuItem1.Name = "generalRecordsToolStripMenuItem1";
-            this.generalRecordsToolStripMenuItem1.Size = new System.Drawing.Size(159, 22);
-            this.generalRecordsToolStripMenuItem1.Text = "General Records";
-            this.generalRecordsToolStripMenuItem1.Click += new System.EventHandler(this.generalRecordsToolStripMenuItem1_Click);
             // 
             // dataGridViewEmp
             // 
@@ -664,6 +647,13 @@
             this.lblConvPerMonth.TabIndex = 52;
             this.lblConvPerMonth.Text = "Allowance per Month";
             // 
+            // salarySumMonthToolStripMenuItem
+            // 
+            this.salarySumMonthToolStripMenuItem.Name = "salarySumMonthToolStripMenuItem";
+            this.salarySumMonthToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.salarySumMonthToolStripMenuItem.Text = "Salary Sum";
+            this.salarySumMonthToolStripMenuItem.Click += new System.EventHandler(this.salarySumMonthToolStripMenuItem_Click);
+            // 
             // Emp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -786,11 +776,10 @@
         private System.Windows.Forms.ToolStripMenuItem pFReportToolStripMenuItem;
         private System.Windows.Forms.TextBox textBoxConv;
         private System.Windows.Forms.Label lblConvPerMonth;
-        private System.Windows.Forms.ToolStripMenuItem archivedTransactionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pFLoanToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem advanceLoanToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem generalRecordsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem generalRecordsToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem salaryBillFinancialYearToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salarySumMonthToolStripMenuItem;
     }
 }
 
